@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity.Views" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity.Views" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" />
+  <xs:complexType name="ArrayOfEntityDocumentDataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityDocumentDataView" nillable="true" type="tns:EntityDocumentDataView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntityDocumentDataView" nillable="true" type="tns:ArrayOfEntityDocumentDataView" />
+  <xs:complexType name="EntityDocumentDataView">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="ContactType" type="q1:EntityContactType" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="CreateAccountInfo" nillable="true" type="q2:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="DocumentId" type="xs:long" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityDocumentId" type="xs:long" />
+      <xs:element minOccurs="0" name="EntityFormId" type="xs:long" />
+      <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+      <xs:element minOccurs="0" name="HasImage" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="ModifiedAccountInfo" nillable="true" type="q3:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReadyToSendDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReceivedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReturnedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Version" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityDocumentDataView" nillable="true" type="tns:EntityDocumentDataView" />
+</xs:schema>

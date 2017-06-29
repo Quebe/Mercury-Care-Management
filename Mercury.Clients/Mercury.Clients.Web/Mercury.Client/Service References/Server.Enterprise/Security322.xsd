@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Controls" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Controls" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" />
+  <xs:complexType name="FormControlLabel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q1:FormControl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlLabel" nillable="true" type="tns:FormControlLabel" />
+  <xs:complexType name="FormControlMetric">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q2:FormControl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="MemberMetricId" type="xs:long" />
+          <xs:element minOccurs="0" name="MetricDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MetricId" type="xs:long" />
+          <xs:element minOccurs="0" name="MetricName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MetricValue" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlMetric" nillable="true" type="tns:FormControlMetric" />
+  <xs:complexType name="FormControlService">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q3:FormControl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="MemberServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="MostRecentMemberServiceDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MostRecentMemberServiceDateVisible" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MostRecentMemberServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="ServiceDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ServiceDateVisible" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlService" nillable="true" type="tns:FormControlService" />
+  <xs:complexType name="FormControlSectionColumn">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q4:FormControl">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlSectionColumn" nillable="true" type="tns:FormControlSectionColumn" />
+  <xs:complexType name="FormControlCollection">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q5:FormControl">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="CollectionType" type="q6:FormControlCollectionType" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Items" nillable="true" type="q7:ArrayOflong" />
+          <xs:element minOccurs="0" name="SelectedItem" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlCollection" nillable="true" type="tns:FormControlCollection" />
+  <xs:complexType name="FormControlButton">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q8:FormControl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlButton" nillable="true" type="tns:FormControlButton" />
+  <xs:complexType name="FormControlSection">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q9:FormControl">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlSection" nillable="true" type="tns:FormControlSection" />
+  <xs:complexType name="FormControlAddress">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q10:FormControl">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="AddressType" type="q11:EntityAddressType" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EntityAddressId" type="xs:long" />
+          <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipPlus4" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlAddress" nillable="true" type="tns:FormControlAddress" />
+  <xs:complexType name="FormControlText">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q12:FormControl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlText" nillable="true" type="tns:FormControlText" />
+  <xs:complexType name="FormControlInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q13:FormControl">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="ButtonPosition" type="q14:FormControlSpinnerButtonPosition" />
+          <xs:element minOccurs="0" name="Columns" type="xs:int" />
+          <xs:element minOccurs="0" name="DateFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayDateFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmptyMessage" nillable="true" type="xs:string" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="InputType" type="q15:FormControlInputType" />
+          <xs:element minOccurs="0" name="Mask" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MaxLength" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxValue" type="xs:double" />
+          <xs:element minOccurs="0" name="MinDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MinValue" type="xs:double" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="NumericType" type="q16:FormControlNumericType" />
+          <xs:element minOccurs="0" name="Rows" type="xs:int" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="SelectionOnFocus" type="q17:FormControlSelectionOnFocus" />
+          <xs:element minOccurs="0" name="ShowSpinButtons" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="TextMode" type="q18:FormControlTextMode" />
+          <xs:element minOccurs="0" name="Validation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Wrap" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlInput" nillable="true" type="tns:FormControlInput" />
+  <xs:complexType name="FormControlSelection">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q19:FormControl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowCustomText" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Columns" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomText" nillable="true" type="xs:string" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="DataSource" type="q20:FormControlDataSource" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="Direction" type="q21:FormControlSelectionDirection" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" minOccurs="0" name="Items" nillable="true" type="q22:ArrayOfFormControlSelectionItem" />
+          <xs:element minOccurs="0" name="MaxLength" type="xs:int" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="ReferenceSource" type="q23:FormControlSelectionReferenceSource" />
+          <xs:element minOccurs="0" name="Rows" type="xs:int" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="SelectionMode" type="q24:FormControlSelectionMode" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="SelectionType" type="q25:FormControlSelectionType" />
+          <xs:element minOccurs="0" name="Wrap" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlSelection" nillable="true" type="tns:FormControlSelection" />
+  <xs:complexType name="FormControlEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" base="q26:FormControl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowCustomEntityName" type="xs:boolean" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="DisplayAgeFormat" type="q27:FormControlEntityDisplayAgeFormat" />
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="DisplayStyle" type="q28:FormControlEntityDisplayStyle" />
+          <xs:element minOccurs="0" name="EntityName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityObjectId" type="xs:long" />
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="EntityType" type="q29:EntityType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlEntity" nillable="true" type="tns:FormControlEntity" />
+</xs:schema>

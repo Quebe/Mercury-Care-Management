@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Services.Responses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Services.Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd15" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd66" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Request" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd63" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd36" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Member" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Provider" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Case" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd78" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Services.Responses.Objects" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="tns:ServiceException" />
+      <xs:element minOccurs="0" name="HasException" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="ServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InnerException" nillable="true" type="tns:ServiceException" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetSite" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceException" nillable="true" type="tns:ServiceException" />
+  <xs:complexType name="DataExplorerNodeExecutionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Collection" nillable="true" type="q1:ArrayOflong" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CompileMessages" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RowCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataExplorerNodeExecutionResponse" nillable="true" type="tns:DataExplorerNodeExecutionResponse" />
+  <xs:complexType name="DictionaryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Dictionary" nillable="true" type="q3:ArrayOfKeyValueOflongstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DictionaryResponse" nillable="true" type="tns:DictionaryResponse" />
+  <xs:complexType name="ObjectSaveResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:long" />
+          <xs:element minOccurs="0" name="InstanceId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObjectSaveResponse" nillable="true" type="tns:ObjectSaveResponse" />
+  <xs:complexType name="DictionaryStringResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Dictionary" nillable="true" type="q4:ArrayOfKeyValueOfstringstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DictionaryStringResponse" nillable="true" type="tns:DictionaryStringResponse" />
+  <xs:complexType name="BooleanResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BooleanResponse" nillable="true" type="tns:BooleanResponse" />
+  <xs:complexType name="DictionaryKeyCountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Dictionary" nillable="true" type="q5:ArrayOfKeyValueOfstringlong" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DictionaryKeyCountResponse" nillable="true" type="tns:DictionaryKeyCountResponse" />
+  <xs:complexType name="WorkflowResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChainWorkQueueItemId" type="xs:long" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Request" minOccurs="0" name="UserInteractionRequest" nillable="true" type="q6:WorkflowUserInteractionRequestBase" />
+          <xs:element minOccurs="0" name="WorkQueueItemId" type="xs:long" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" minOccurs="0" name="Workflow" nillable="true" type="q7:Workflow" />
+          <xs:element minOccurs="0" name="WorkflowInstanceId" type="ser:guid" />
+          <xs:element minOccurs="0" name="WorkflowMessage" nillable="true" type="xs:string" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows" minOccurs="0" name="WorkflowStatus" type="q8:WorkflowStatus" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows" minOccurs="0" name="WorkflowSteps" nillable="true" type="q9:ArrayOfWorkflowStep" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowResponse" nillable="true" type="tns:WorkflowResponse" />
+  <xs:complexType name="GetWorkResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" minOccurs="0" name="WorkQueue" nillable="true" type="q10:WorkQueue" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" minOccurs="0" name="WorkQueueItem" nillable="true" type="q11:WorkQueueItem" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" minOccurs="0" name="Workflow" nillable="true" type="q12:Workflow" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetWorkResponse" nillable="true" type="tns:GetWorkResponse" />
+  <xs:complexType name="MemberDemographicsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="Entity" nillable="true" type="q13:Entity" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="EntityAddresses" nillable="true" type="q14:ArrayOfEntityAddress" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="EntityContactInformations" nillable="true" type="q15:ArrayOfEntityContactInformation" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Member" minOccurs="0" name="Member" nillable="true" type="q16:Member" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Member" minOccurs="0" name="MemberCurrentEnrollmentCoverages" nillable="true" type="q17:ArrayOfMemberEnrollmentCoverage" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Member" minOccurs="0" name="MemberCurrentEnrollmentPcps" nillable="true" type="q18:ArrayOfMemberEnrollmentPcp" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Member" minOccurs="0" name="MemberEnrollments" nillable="true" type="q19:ArrayOfMemberEnrollment" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Member" minOccurs="0" name="MemberRelationships" nillable="true" type="q20:ArrayOfMemberRelationship" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Provider" minOccurs="0" name="ProviderAffiliations" nillable="true" type="q21:ArrayOfProviderAffiliation" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Provider" minOccurs="0" name="Providers" nillable="true" type="q22:ArrayOfProvider" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberDemographicsResponse" nillable="true" type="tns:MemberDemographicsResponse" />
+  <xs:complexType name="MemberCaseModificationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Case" minOccurs="0" name="MemberCase" nillable="true" type="q23:MemberCase" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" minOccurs="0" name="SaveOutcome" type="q24:MemberCaseActionOutcome" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberCaseModificationResponse" nillable="true" type="tns:MemberCaseModificationResponse" />
+  <xs:complexType name="MemberCaseCreateResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Case" minOccurs="0" name="MemberCase" nillable="true" type="q25:MemberCase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberCaseCreateResponse" nillable="true" type="tns:MemberCaseCreateResponse" />
+  <xs:complexType name="FormSubmitResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" minOccurs="0" name="Collection" nillable="true" type="q26:ArrayOfFormCompileMessage" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" minOccurs="0" name="Form" nillable="true" type="q27:Form" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormSubmitResponse" nillable="true" type="tns:FormSubmitResponse" />
+  <xs:complexType name="FormControlRaiseEventResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" minOccurs="0" name="Form" nillable="true" type="q28:Form" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlRaiseEventResponse" nillable="true" type="tns:FormControlRaiseEventResponse" />
+  <xs:complexType name="FormControlValueChangedResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" minOccurs="0" name="Form" nillable="true" type="q29:Form" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControlValueChangedResponse" nillable="true" type="tns:FormControlValueChangedResponse" />
+  <xs:complexType name="ImageResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageBase64" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MimeType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImageResponse" nillable="true" type="tns:ImageResponse" />
+  <xs:complexType name="StringListResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ResultList" nillable="true" type="q30:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StringListResponse" nillable="true" type="tns:StringListResponse" />
+  <xs:complexType name="StringResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StringResponse" nillable="true" type="tns:StringResponse" />
+  <xs:complexType name="ImportExportResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Mercury.Server.Services.Responses.Objects" minOccurs="0" name="Results" nillable="true" type="q31:ArrayOfImportExportResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImportExportResponse" nillable="true" type="tns:ImportExportResponse" />
+</xs:schema>

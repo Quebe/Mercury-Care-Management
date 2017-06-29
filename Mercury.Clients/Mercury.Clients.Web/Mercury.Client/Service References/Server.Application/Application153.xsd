@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Authorizations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Authorizations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:complexType name="AuthorizationType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CategoryId" type="xs:long" />
+          <xs:element minOccurs="0" name="ServiceType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Subcategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubcategoryId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthorizationType" nillable="true" type="tns:AuthorizationType" />
+  <xs:complexType name="ArrayOfAuthorizationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthorizationType" nillable="true" type="tns:AuthorizationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthorizationType" nillable="true" type="tns:ArrayOfAuthorizationType" />
+  <xs:complexType name="ArrayOfAuthorization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Authorization" nillable="true" type="tns:Authorization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthorization" nillable="true" type="tns:ArrayOfAuthorization" />
+  <xs:complexType name="Authorization">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q2:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccidentDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AdmittingDiagnosisCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdmittingDiagnosisDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdmittingDiagnosisVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="AssignedToUserAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthorizationCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthorizationNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthorizationServiceType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthorizationStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthorizationSubcategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DischargeDiagnosisCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DischargeDiagnosisDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DischargeDiagnosisVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EstimatedBirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastMenstrualDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="OnsetDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PrincipalDiagnosisCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrincipalDiagnosisDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrincipalDiagnosisVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="ReceivedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReferralDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReferringProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="ReferringProviderName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="ServiceProviderName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceProviderSpecialtyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Authorization" nillable="true" type="tns:Authorization" />
+  <xs:complexType name="ArrayOfAuthorizationLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthorizationLine" nillable="true" type="tns:AuthorizationLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthorizationLine" nillable="true" type="tns:ArrayOfAuthorizationLine" />
+  <xs:complexType name="AuthorizationLine">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdmissionDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AuthorizationId" type="xs:long" />
+          <xs:element minOccurs="0" name="DischargeDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LineNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ModifierCode1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RevenueCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RevenueDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ServiceDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Units" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UtilizedUnits" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthorizationLine" nillable="true" type="tns:AuthorizationLine" />
+</xs:schema>

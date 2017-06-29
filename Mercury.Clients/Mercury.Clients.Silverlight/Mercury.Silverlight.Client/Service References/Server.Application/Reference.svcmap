@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9a93d1eb-8914-4b2b-bfba-5977cdec9a34" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:10080/Core/Application.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Application.xsd" MetadataType="Schema" ID="03e4bb6a-e19a-4332-9bed-40f95292fe80" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd2" />
+    <MetadataFile FileName="Application1.xsd" MetadataType="Schema" ID="cd563b32-2ea1-4fc5-97b3-9b4b6eb36e81" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd4" />
+    <MetadataFile FileName="Application2.xsd" MetadataType="Schema" ID="086fd939-a7de-43f9-9f30-e8ded037fed9" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd21" />
+    <MetadataFile FileName="Application3.xsd" MetadataType="Schema" ID="125bc69e-9cb6-4719-84c1-2fa5eabc63aa" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd20" />
+    <MetadataFile FileName="Application4.xsd" MetadataType="Schema" ID="539d5e3e-c282-4dd0-8512-bdb09ed0799c" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd23" />
+    <MetadataFile FileName="Application5.xsd" MetadataType="Schema" ID="a0dd6b8e-cdce-4a34-8d1c-665632dfa079" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd22" />
+    <MetadataFile FileName="Application6.xsd" MetadataType="Schema" ID="4bcc3dc6-f352-4ed3-a89b-657740d700f3" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd25" />
+    <MetadataFile FileName="Application7.xsd" MetadataType="Schema" ID="f4cae645-d6d5-4ad9-8a78-de37f1f428aa" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd24" />
+    <MetadataFile FileName="Application8.xsd" MetadataType="Schema" ID="cba6bdea-3adc-4d9e-98c7-2f254696846f" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd27" />
+    <MetadataFile FileName="Application9.xsd" MetadataType="Schema" ID="55afadf3-6440-40a1-94b9-767fa4530ee0" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd26" />
+    <MetadataFile FileName="Application10.xsd" MetadataType="Schema" ID="68570fdd-e24d-4646-aa44-c01df93b8a3d" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd29" />
+    <MetadataFile FileName="Application11.xsd" MetadataType="Schema" ID="1b41dae4-ef30-4722-929f-9026e738f860" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd28" />
+    <MetadataFile FileName="Application12.xsd" MetadataType="Schema" ID="aa28e8ee-0cc9-478d-8535-53f0ddffa6d0" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd61" />
+    <MetadataFile FileName="Application13.xsd" MetadataType="Schema" ID="3eccf03f-e883-42df-91a0-aeaaf88aec4e" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd60" />
+    <MetadataFile FileName="Application14.xsd" MetadataType="Schema" ID="326f5628-c53d-49b0-87c9-5c3af2a20eac" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd63" />
+    <MetadataFile FileName="Application15.xsd" MetadataType="Schema" ID="8e97ea80-c508-48e5-b193-6411b15ff68a" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd62" />
+    <MetadataFile FileName="Application16.xsd" MetadataType="Schema" ID="e9b73327-8743-4543-9b71-67d404289d64" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd65" />
+    <MetadataFile FileName="Application17.xsd" MetadataType="Schema" ID="8bb873b6-7cff-4ea9-be40-a7c4cbd6790d" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd64" />
+    <MetadataFile FileName="Application18.xsd" MetadataType="Schema" ID="30eb0b32-42c1-4b6e-a193-e9ac5a5fe2d0" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd67" />
+    <MetadataFile FileName="Application19.xsd" MetadataType="Schema" ID="34d7a194-8f67-4c24-a859-2265b6cbf025" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd66" />
+    <MetadataFile FileName="Application20.xsd" MetadataType="Schema" ID="8e9251a1-ab56-48de-8f5c-21e61de17745" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd69" />
+    <MetadataFile FileName="Application21.xsd" MetadataType="Schema" ID="09ff00da-d5e0-421b-bc7e-76f3874fedf9" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd68" />
+    <MetadataFile FileName="Application22.xsd" MetadataType="Schema" ID="6501bc2e-df37-414b-afea-0814ab5979ae" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd9" />
+    <MetadataFile FileName="Application23.xsd" MetadataType="Schema" ID="aa5e4ec6-8033-4edc-9ae8-cb0141f262b5" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd41" />
+    <MetadataFile FileName="Application24.xsd" MetadataType="Schema" ID="dd34411a-d8f7-44fe-a8f9-606f94a65f1b" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd40" />
+    <MetadataFile FileName="Application25.xsd" MetadataType="Schema" ID="8cd1abf5-6e33-4f5c-8c93-0bbdb29fd0dd" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd43" />
+    <MetadataFile FileName="Application26.xsd" MetadataType="Schema" ID="ea583ab2-7517-4fbb-9aef-e3ae1f499039" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd42" />
+    <MetadataFile FileName="Application27.xsd" MetadataType="Schema" ID="0a78886f-ea6a-4394-88e1-2d2406db5a93" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd45" />
+    <MetadataFile FileName="Application28.xsd" MetadataType="Schema" ID="541da4f5-a4df-4e2d-9baa-1bb900f26a8f" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd44" />
+    <MetadataFile FileName="Application29.xsd" MetadataType="Schema" ID="787ad766-8769-4730-920b-d5145fef832b" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd47" />
+    <MetadataFile FileName="Application30.xsd" MetadataType="Schema" ID="4ef1d8da-a27f-49f8-9d53-91ba6c650468" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd46" />
+    <MetadataFile FileName="Application31.xsd" MetadataType="Schema" ID="9406cb1e-8193-48ca-9ddf-02bad002bb26" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd49" />
+    <MetadataFile FileName="Application32.xsd" MetadataType="Schema" ID="f0839ab6-9a7e-49c1-a05b-e4bac16f1ef7" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd48" />
+    <MetadataFile FileName="Application33.xsd" MetadataType="Schema" ID="c00593ad-fb12-47a1-9a26-2136c03c0e53" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd1" />
+    <MetadataFile FileName="Application.wsdl" MetadataType="Wsdl" ID="2d530ae6-3478-48b6-8f54-37d9d7a08d3f" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?wsdl" />
+    <MetadataFile FileName="Application34.xsd" MetadataType="Schema" ID="6af850f4-9c11-43a3-8fdf-a91a42d49602" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd7" />
+    <MetadataFile FileName="Application35.xsd" MetadataType="Schema" ID="fee018c0-f3ee-4081-a425-f5007ba8149d" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd3" />
+    <MetadataFile FileName="Application36.xsd" MetadataType="Schema" ID="ef4351ca-d85b-4a74-baaf-bcdced230f7c" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd5" />
+    <MetadataFile FileName="Application37.xsd" MetadataType="Schema" ID="bd51a1df-6a74-405d-8e9c-4345d65432d6" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd31" />
+    <MetadataFile FileName="Application38.xsd" MetadataType="Schema" ID="6545567e-20ce-4067-86ab-188abd7f2caa" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd30" />
+    <MetadataFile FileName="Application39.xsd" MetadataType="Schema" ID="4f32772c-895e-4635-9170-0b31790bd6bd" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd33" />
+    <MetadataFile FileName="Application40.xsd" MetadataType="Schema" ID="6e91e75b-390d-42b9-b3e9-eda17012b475" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd32" />
+    <MetadataFile FileName="Application41.xsd" MetadataType="Schema" ID="607ce95c-fc57-4468-817c-4a0fee2ee16b" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd35" />
+    <MetadataFile FileName="Application42.xsd" MetadataType="Schema" ID="6c10011b-cd24-4e3f-b3d3-301068dcea30" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd34" />
+    <MetadataFile FileName="Application43.xsd" MetadataType="Schema" ID="4626eca3-a4ca-4437-9fe2-fcfd033852ac" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd37" />
+    <MetadataFile FileName="Application44.xsd" MetadataType="Schema" ID="7f8d2bca-471f-4985-be25-2d34bec33d5e" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd36" />
+    <MetadataFile FileName="Application45.xsd" MetadataType="Schema" ID="8ac4ff2e-4971-4c97-bdaa-300057a6ca50" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd39" />
+    <MetadataFile FileName="Application46.xsd" MetadataType="Schema" ID="2bde3f31-88e5-433c-a613-188a14322539" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd38" />
+    <MetadataFile FileName="Application47.xsd" MetadataType="Schema" ID="ea07d0d5-ca20-47cc-9e2f-f1b3460f41af" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd11" />
+    <MetadataFile FileName="Application48.xsd" MetadataType="Schema" ID="85720394-3915-4b45-ac7c-27724ee067e8" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd10" />
+    <MetadataFile FileName="Application49.xsd" MetadataType="Schema" ID="1aa86447-3515-47de-9a26-3e08de8bc827" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd13" />
+    <MetadataFile FileName="Application50.xsd" MetadataType="Schema" ID="867e2cea-b5a8-4705-bd30-665812d57d99" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd12" />
+    <MetadataFile FileName="Application51.xsd" MetadataType="Schema" ID="7c64ebf9-c639-4ce1-bea2-a16998eb0b34" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd15" />
+    <MetadataFile FileName="Application52.xsd" MetadataType="Schema" ID="4f5fb4cd-59cd-4b00-ba4e-edd1280d9f70" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd14" />
+    <MetadataFile FileName="Application53.xsd" MetadataType="Schema" ID="f5b05181-6327-40f7-9110-581137f13fef" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd17" />
+    <MetadataFile FileName="Application54.xsd" MetadataType="Schema" ID="40acf135-317c-400f-8837-628bd012036e" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd16" />
+    <MetadataFile FileName="Application55.xsd" MetadataType="Schema" ID="a2ba46a2-b822-4e25-9765-ac00e1b9ca96" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd19" />
+    <MetadataFile FileName="Application56.xsd" MetadataType="Schema" ID="8b72c5d9-bf96-486b-a03e-51ea86e25606" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd18" />
+    <MetadataFile FileName="Application.disco" MetadataType="Disco" ID="c431c56d-89cd-4dba-92ef-c9f5595d8879" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?disco" />
+    <MetadataFile FileName="Application57.xsd" MetadataType="Schema" ID="2c58de14-f991-4bfd-8180-50f511c425e7" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd8" />
+    <MetadataFile FileName="Application71.xsd" MetadataType="Schema" ID="9f962195-c553-4e3d-a565-3da2f4dba450" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd71" />
+    <MetadataFile FileName="Application58.xsd" MetadataType="Schema" ID="f67226f9-12e2-456c-a251-e5e9cfe6d1ec" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd70" />
+    <MetadataFile FileName="Application711.xsd" MetadataType="Schema" ID="dfdd380a-4e68-4773-b428-4f33a94020e7" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd73" />
+    <MetadataFile FileName="Application712.xsd" MetadataType="Schema" ID="b5cb6b18-a00d-4294-a6e8-aabb4b07dc88" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd72" />
+    <MetadataFile FileName="Application59.xsd" MetadataType="Schema" ID="25b703c9-fc69-445f-a2fd-6ac1914f8488" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd0" />
+    <MetadataFile FileName="Application60.xsd" MetadataType="Schema" ID="9680428a-460c-4647-ab76-f87dcc757498" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd51" />
+    <MetadataFile FileName="Application61.xsd" MetadataType="Schema" ID="f41f18f3-2c85-4f1d-9005-287a8d0551b8" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd50" />
+    <MetadataFile FileName="Application62.xsd" MetadataType="Schema" ID="9c2d281f-ee57-443d-91eb-2e3dd9878ea0" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd53" />
+    <MetadataFile FileName="Application63.xsd" MetadataType="Schema" ID="79f9863a-ac1a-43e9-a2aa-3ef21b459789" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd52" />
+    <MetadataFile FileName="Application64.xsd" MetadataType="Schema" ID="3c239121-0cb3-4ab0-a8df-9e53ceeb0e43" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd55" />
+    <MetadataFile FileName="Application65.xsd" MetadataType="Schema" ID="f4263811-e128-4baf-a7c3-456a10c084cb" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd54" />
+    <MetadataFile FileName="Application66.xsd" MetadataType="Schema" ID="c79885c4-fbac-43d8-b98a-e19bca51ad68" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd57" />
+    <MetadataFile FileName="Application67.xsd" MetadataType="Schema" ID="7bed998c-fb4f-4431-843f-b9d7acc5b22c" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd56" />
+    <MetadataFile FileName="Application68.xsd" MetadataType="Schema" ID="02f55abe-3657-4a0e-89fb-ed572d4712e8" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd59" />
+    <MetadataFile FileName="Application69.xsd" MetadataType="Schema" ID="91aad665-cdcd-4ef4-8202-c95313f4e958" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd58" />
+    <MetadataFile FileName="Application70.xsd" MetadataType="Schema" ID="e878cf33-2cd7-4c09-a06d-8feea93fcd26" SourceId="1" SourceUrl="http://localhost:10080/Core/Application.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

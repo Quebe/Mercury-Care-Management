@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DataFilterOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IsLessThan" />
+      <xs:enumeration value="IsLessThanOrEqualTo" />
+      <xs:enumeration value="IsEqualTo" />
+      <xs:enumeration value="IsNotEqualTo" />
+      <xs:enumeration value="IsGreaterThanOrEqualTo" />
+      <xs:enumeration value="IsGreaterThan" />
+      <xs:enumeration value="StartsWith" />
+      <xs:enumeration value="EndsWith" />
+      <xs:enumeration value="Contains" />
+      <xs:enumeration value="IsContainedIn" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataFilterOperator" nillable="true" type="tns:DataFilterOperator" />
+  <xs:simpleType name="DataSortDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataSortDirection" nillable="true" type="tns:DataSortDirection" />
+</xs:schema>

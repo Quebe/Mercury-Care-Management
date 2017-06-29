@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="Mercury.Silverlight.Controls.MemberEnrollmentHistory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+             
+    xmlns:TelerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+    xmlns:TelerikData="clr-namespace:Telerik.Windows.Data;assembly=Telerik.Windows.Data"           
+             
+    xmlns:MercuryValueConverters ="clr-namespace:Mercury.Client.ValueConverters;assembly=Mercury.Silverlight.Client"    
+             
+    d:DesignHeight="400" d:DesignWidth="600">
+
+    <UserControl.Resources>
+
+        <MercuryValueConverters:DateToStringFormatter x:Key="DateToStringFormatter"></MercuryValueConverters:DateToStringFormatter>
+
+        <MercuryValueConverters:TerminationDateToStringFormatter x:Key="TerminationDateToStringFormatter"></MercuryValueConverters:TerminationDateToStringFormatter>
+
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+
+        <TelerikGridView:RadGridView x:Name="MemberEnrollmentGrid" Grid.Column="0" Grid.Row="0" VerticalAlignment="Stretch" AutoGenerateColumns="False" ShowGroupPanel="True" IsReadOnly="True"
+                                                                                             
+                                                                    SelectionMode="Single" DataLoading="MemberEnrollmentGrid_DataLoading" DataLoaded="MemberEnrollmentGrid_DataLoaded"                                    
+                                                                                             
+                                                                    ColumnWidth="*" RowIndicatorVisibility="Collapsed"
+                                                                                             
+                                                                    >
+
+            <TelerikGridView:RadGridView.Columns>
+
+                <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Program.Insurer.Name}" Header="Insurer" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Program.Name}" Header="Program" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Sponsor.Name}" Header="Sponsor" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Subscriber.Name}" Header="Subscriber" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=ProgramMemberId}" Header="Member Id" MaxWidth="100"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=MostRecentEnrollmentCoverage.RateCode}" Header="Rate Code" MaxWidth="80"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=MostRecentEnrollmentPcp.PcpProvider.Name}" Header="PCP Provider" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=EffectiveDate, Converter={StaticResource DateToStringFormatter}}" Header="Effective" Width="80" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=TerminationDate, Converter={StaticResource TerminationDateToStringFormatter}}" Header="Termination" Width="80" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+            </TelerikGridView:RadGridView.Columns>
+
+            <TelerikGridView:RadGridView.ChildTableDefinitions>
+
+                <TelerikGridView:GridViewTableDefinition>
+
+                    <TelerikGridView:GridViewTableDefinition.Relation>
+
+                        <TelerikData:PropertyRelation ParentPropertyName="EnrollmentCoverages"></TelerikData:PropertyRelation>
+
+                    </TelerikGridView:GridViewTableDefinition.Relation>
+
+                </TelerikGridView:GridViewTableDefinition>
+
+                <TelerikGridView:GridViewTableDefinition>
+
+                    <TelerikGridView:GridViewTableDefinition.Relation>
+
+                        <TelerikData:PropertyRelation ParentPropertyName="EnrollmentPcps"></TelerikData:PropertyRelation>
+
+                    </TelerikGridView:GridViewTableDefinition.Relation>
+
+                </TelerikGridView:GridViewTableDefinition>
+
+            </TelerikGridView:RadGridView.ChildTableDefinitions>
+
+
+        </TelerikGridView:RadGridView>
+
+    </Grid>
+    
+</UserControl>

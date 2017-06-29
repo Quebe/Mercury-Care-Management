@@ -1,0 +1,312 @@
+﻿@model Mercury.Clients.Mvc.Models.Controls.EntityContactModel
+
+@{ Html.ViewData.TemplateInfo.HtmlFieldPrefix = "EntityContactModel"; }
+
+<div id="EntityContactControlContainer">
+
+    @if (!Model.StoreModelStateInMemory) { 
+
+    <div id="EntityContactModelStateData" style="display: none;">
+
+        @Html.TextBoxFor(model => Model.Entity.Id)
+
+        @Html.TextBoxFor(model => Model.Entity.EntityType)
+
+        @Html.TextBoxFor(model => Model.Member.Id)
+
+        @Html.TextBoxFor(model => Model.Provider.Id)
+
+        @Html.TextBoxFor(model => Model.RelatedEntity.Id)
+
+
+        @Html.TextBoxFor(model => Model.AllowCancel)
+
+        @Html.TextBoxFor(model => Model.AllowEditContactDateTime)
+
+        @Html.TextBoxFor(model => Model.AllowEditRegarding)
+
+        @Html.TextBoxFor(model => Model.AllowEditRelatedEntity)
+
+
+        @Html.TextBoxFor(model => Model.Attempt)
+
+        @Html.TextBoxFor(model => Model.ContactRegarding)
+
+        @Html.TextBoxFor(model => Model.IntroductionScript)
+
+    </div>
+        
+    }
+    
+    <script type="text/javascript">
+
+        $(window).resize(function () {
+
+            var controlContainer = $("#EntityContactControlContainer");
+
+            var gridContainer = $("#EntityContactInformationGridContainer");
+                
+
+            var availableHeight = controlContainer.parent().height();
+
+            availableHeight = availableHeight - $("#EntityContactStep1SectionTitle").outerHeight();
+
+            availableHeight = availableHeight - $("#EntityContactStep2SectionTitle").outerHeight();
+
+            availableHeight = availableHeight - $("#EntityContactStep2").outerHeight();
+
+            if (availableHeight < 100) { availableHeight = 100; }
+
+
+            gridContainer.outerHeight(availableHeight);
+
+            return;
+
+        });
+
+        $(document).ready(function () {
+
+            $("#DateTimeSelection").datepicker();
+
+        });
+
+    </script>
+
+    <div id="EntityContactStep1SectionTitle" class="SectionTitle" style="margin-top: 0px;">Step 1: Select a Contact Method</div>
+    
+    <div id="EntityContactInformationGridContainer" style="width: 100%; height: 145px;">
+        
+        @Html.Raw(Model.EntityContactInformationGrid.Render())
+    
+    </div>
+
+    <div id="EntityContactStep2SectionTitle" class="SectionTitle" style="margin-top: 0px;">Step 2: Record Contact Results</div>
+
+    <div id="EntityContactStep2" style="padding: .125in;">
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr style="height: 24px;">
+        
+        <td style="width: 110px; min-width: 110px; white-space: nowrap; padding-right: .125in;">Contact Direction: </td>
+        
+        <td style="">
+
+            @Html.DropDownListFor(model => Model.ContactDirection, 
+            
+                new SelectList ( new [] {
+
+                    new SelectListItem { Text = "Inbound", Value = "2" },
+                    
+                    new SelectListItem { Text = "Outbound", Value = "1" }
+                    
+                    }, "Value", "Text", ((Int32) Model.ContactDirection).ToString ()), new { style = "width: 100px;" })                       
+
+        </td>
+        
+        <td style="white-space: nowrap; padding-left: .125in; padding-right: .125in;">
+
+            @Html.LabelFor(model => Model.ContactDateTime, "Contact Date & Time:")
+        
+            @((Model.AllowEditContactDateTime) ? "Contact Date/Time:" : String.Empty)
+        
+            <input type="text" id="DateTimeSelection" />
+
+        </td>
+        
+        <td>
+
+            @if (Model.AllowEditContactDateTime) {
+            
+                
+            }
+                           
+        </td>           
+
+        <td style="width: 100%;">&nbsp;</td>
+    
+    </tr></table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: .0625in;"><tr style="height: 24px;">
+        
+        <td style="width: 110px; white-space: nowrap; padding-right: .125in;">Contact Regarding: </td>
+        
+        <td style="">
+
+            @if (Model.AllowEditRegarding) {
+
+                @Html.TextBoxFor(model => Model.ContactRegarding)
+
+            }
+            
+            else {
+
+                @Html.LabelFor(model => Model.ContactRegarding, Model.ContactRegarding)
+
+            }
+        
+        </td>
+           
+    </tr></table>
+
+    @if (Model.RelatedEntity != null) { 
+
+    <div id="RelatedEntitySection" runat="server">
+            
+        <div id="RelatedMemberInformation" style="display: none;" runat="server">
+
+            <table width="100%" cellpadding="0" cellspacing="0">
+    
+                <tr class="" style="height: 36px;">
+
+                    <td style="max-width: 24px; padding-right: 4px;"><img id="RelatedMemberInformationMemberNoteWarning"  src="/Images/Common24/NoteWarning.png" alt="Warning from Note" style="display: none;" runat="server" /></td>   
+        
+                    <td style="max-width: 24px; padding-right: 4px;"><img id="RelatedMemberInformationMemberNoteCritical" src="/Images/Common24/NoteCritical.png" alt="Critical from Note" style="display: none;" runat="server" /></td>   
+
+        
+                    <td style="text-align: left"><b>Regarding Member:</b> <asp:Label id="RelatedMemberInformationMemberName" Text="** No Member Selected" runat="server" /></td>
+                        
+                    <td style="text-align: left"><b>Birth Date:</b> <asp:Label id="RelatedMemberInformationMemberBirthDate" Text="" runat="server" /></td>
+                        
+                    <td style="text-align: left"><b>Age:</b> <asp:Label id="RelatedMemberInformationMemberAge" Text="" runat="server" /></td>
+                        
+                    <td style="text-align: left"><b>Gender:</b> <asp:Label id="RelatedMemberInformationMemberGender" Text="" runat="server" /></td>
+                        
+                    <td style="text-align: left"><b>Program:</b> <asp:Label id="RelatedMemberInformationMemberProgram" Text="" runat="server" /></td>
+                                                
+                    <td style="text-align: left"><b>Id:</b> <asp:Label id="RelatedMemberInformationMemberProgramMemberId" Text="" runat="server" /></td>
+
+                    <td style="width: 50px; text-align: center;"><a id="RelatedMemberInformationCoverageToggle" href="#" onclick="javascript:RelatedMemberInformationCoverage_Toggle()" title="Toggle Coverage Information">(more)</a></td>
+
+                </tr>
+        
+            </table>
+
+            <div id="RelatedMemberInformationCoverage" style="display: none;" runat="server">
+            
+                <table width="100%" cellpadding="0" cellspacing="0">
+    
+                    <tr class="" style="height: 36px;">
+
+                        <td style="text-align: left"><b>Benefit Plan:</b> <asp:Label id="RelatedMemberInformationMemberCoverageBenefitPlan" Text="** Not Enrolled" runat="server" /></td>
+                        
+                        <td style="text-align: left"><b>Coverage Type:</b> <asp:Label id="RelatedMemberInformationMemberCoverageType" Text="" runat="server" /></td>
+                        
+                        <td style="text-align: left"><b>Coverage Level:</b> <asp:Label id="RelatedMemberInformationMemberCoverageLevel" Text="" runat="server" /></td>
+                        
+                        <td style="text-align: left"><b>Rate Code:</b> <asp:Label id="RelatedMemberInformationMemberCoverageRateCode" Text="" runat="server" /></td>
+
+                    </tr>
+        
+                </table>
+            
+                <table width="100%" cellpadding="0" cellspacing="0">
+    
+                    <tr class="" style="height: 36px;">
+
+                        <td style="text-align: left"><b>PCP Name:</b> <asp:Label id="RelatedMemberInformationMemberPcpName" Text="** No PCP" runat="server" /></td>
+                        
+                        <td style="text-align: left"><b>PCP Affiliate Name:</b> <asp:Label id="RelatedMemberInformationMemberPcpAffiliateName" Text="" runat="server" /></td>
+                        
+                    </tr>
+        
+                </table>
+
+            </div>
+
+        </div>
+                
+        <div id="RelatedProviderInformation" style="display: none;" runat="server">
+
+            <table width="100%" cellpadding="0" cellspacing="0">
+    
+                <tr class="" style="height: 36px;">
+
+                    <td style="max-width: 24px; padding-right: 4px;"><img id="RelatedProviderInformationProviderNoteWarning"  src="/Images/Common24/NoteWarning.png" alt="Warning from Note" style="display: none;" runat="server" /></td>   
+        
+                    <td style="max-width: 24px; padding-right: 4px;"><img id="RelatedProviderInformationProviderNoteCritical" src="/Images/Common24/NoteCritical.png" alt="Critical from Note" style="display: none;" runat="server" /></td>   
+
+        
+                    <td style="text-align: left"><b>Regarding Provider:</b> <asp:Label id="RelatedProviderInformationProviderName" Text="** No Provider Selected" runat="server" /></td>
+                        
+                    <td style="text-align: left"><b>NPI:</b> <asp:Label id="RelatedProviderInformationProviderNpi" Text="" runat="server" /></td>
+
+                    <td style="text-align: left"><b>Program:</b> <asp:Label id="RelatedProviderInformationProviderProgram" Text="" runat="server" /></td>
+                                                
+                    <td style="text-align: left"><b>Id:</b> <asp:Label id="RelatedProviderInformationProviderProgramProviderId" Text="" runat="server" /></td>
+
+                </tr>
+        
+            </table>
+
+        </div>
+        
+    </div>
+        
+    }
+    
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: .0625in;"><tr style="height: 24px;">
+        
+        <td style="width: 110px; white-space: nowrap; padding-right: .125in; vertical-align: top;">Introduction Script: </td>
+        
+        <td style="">@Model.IntroductionScript</td>
+           
+    </tr></table>
+    
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: .0625in;"><tr style="height: 24px;">
+        
+        <td style="width: 110px; white-space: nowrap; padding-right: .125in; vertical-align: top;">Contact Remarks: </td>
+        
+        <td style="">@Html.TextAreaFor(model => Model.ContactRemarks, new { rows = "3", MaxLength = "999", EmptyMessage = "(optional)", style = "width: 100%;" })</td>    
+           
+    </tr></table>
+    
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: .0625in;"><tr style="height: 24px;">
+        
+        <td style="width: 110px; white-space: nowrap; padding-right: .125in;">Contact Outcome: </td>
+        
+        <td style="width: 125px;">
+
+            @Html.DropDownListFor(model => Model.ContactOutcome, 
+            
+                new SelectList ( new [] {
+
+                    new SelectListItem { Text = "Successful", Value = "1" },
+                    
+                    new SelectListItem { Text = "No Answer", Value = "2" },
+                    
+                    new SelectListItem { Text = "Left Message", Value = "3" },
+                    
+                    new SelectListItem { Text = "Busy", Value = "4" },
+                        
+                    new SelectListItem { Text = "Wrong Number", Value = "5" },
+                    
+                    new SelectListItem { Text = "Disconnected", Value = "6" },
+                        
+                    new SelectListItem { Text = "Refused Call", Value = "7" },
+                    
+                    new SelectListItem { Text = "Rescheduled Call", Value = "8" },
+                        
+                    new SelectListItem { Text = "Not Available", Value = "9" },
+                    
+                    new SelectListItem { Text = "Language Barrier", Value = "10" },
+                    
+                    new SelectListItem { Text = "Deceased", Value = "11" }
+                        
+                    }, "Value", "Text", ((Int32)Model.ContactOutcome).ToString ()), new { style = "width: 150px;" })                       
+                        
+        </td>
+
+        <td align="left" style=""><span style="color: red;">@Model.ActionResponseLabel</span></td>
+        
+        <td align="right" style="margin-left: .125in; width: 80px;"><input type="button" id="ButtonOk" class="BasicButton" value="Ok" /></td>
+        
+        <td align="right" style="margin-left: .125in; width: 80px;">
+        
+            <input type="button" id="ButtonCancel" class="BasicButton" value="Cancel" @((!Model.AllowCancel) ? "disabled=\"disabled\"" : String.Empty) />
+            
+        </td>
+
+    </tr></table>
+    
+    </div>
+
+</div>

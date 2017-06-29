@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[ZipCode] AS SELECT * FROM dbo.ZipCode

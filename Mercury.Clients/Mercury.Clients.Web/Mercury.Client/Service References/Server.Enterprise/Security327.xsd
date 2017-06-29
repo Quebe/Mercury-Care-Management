@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="EntityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Member" />
+      <xs:enumeration value="Provider" />
+      <xs:enumeration value="Sponsor" />
+      <xs:enumeration value="Insurer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EntityType" nillable="true" type="tns:EntityType" />
+  <xs:simpleType name="EntityAddressType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="PhysicalAddress" />
+      <xs:enumeration value="MailingAddress">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ServiceLocation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AlternatePhysicalAddress">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CorrectedPhysicalAddress">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">201</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AlternateMailingAddress">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">131</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CorrectedMailingAddress">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">231</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EntityAddressType" nillable="true" type="tns:EntityAddressType" />
+  <xs:simpleType name="DateQualifier">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Days" />
+      <xs:enumeration value="Months" />
+      <xs:enumeration value="Years" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DateQualifier" nillable="true" type="tns:DateQualifier" />
+  <xs:simpleType name="Gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Both" />
+      <xs:enumeration value="Female" />
+      <xs:enumeration value="Male" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Gender" nillable="true" type="tns:Gender" />
+  <xs:simpleType name="ContactOutcome">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="NoAnswer" />
+      <xs:enumeration value="LeftMessage" />
+      <xs:enumeration value="Busy" />
+      <xs:enumeration value="WrongNumber" />
+      <xs:enumeration value="Disconnected" />
+      <xs:enumeration value="Refused" />
+      <xs:enumeration value="Rescheduled" />
+      <xs:enumeration value="NotAvailable" />
+      <xs:enumeration value="LanguageBarrier" />
+      <xs:enumeration value="Deceased" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContactOutcome" nillable="true" type="tns:ContactOutcome" />
+  <xs:simpleType name="EntityContactType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Telephone" />
+      <xs:enumeration value="Facsimile" />
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="InPerson" />
+      <xs:enumeration value="ByMail" />
+      <xs:enumeration value="EmergencyPhone" />
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="Pager" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EntityContactType" nillable="true" type="tns:EntityContactType" />
+  <xs:simpleType name="ContactDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Outbound" />
+      <xs:enumeration value="Inbound" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContactDirection" nillable="true" type="tns:ContactDirection" />
+  <xs:simpleType name="NoteImportance">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Informational" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Critical" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NoteImportance" nillable="true" type="tns:NoteImportance" />
+</xs:schema>

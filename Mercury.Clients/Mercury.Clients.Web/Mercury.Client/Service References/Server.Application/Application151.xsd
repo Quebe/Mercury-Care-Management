@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ServiceClassification">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Medical" />
+      <xs:enumeration value="Medication" />
+      <xs:enumeration value="Lab" />
+      <xs:enumeration value="Immunization" />
+      <xs:enumeration value="Diagnosis" />
+      <xs:enumeration value="Exclusion" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceClassification" nillable="true" type="tns:ServiceClassification" />
+  <xs:simpleType name="MedicalServiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Singleton" />
+      <xs:enumeration value="Set" />
+      <xs:enumeration value="Sequence" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MedicalServiceType" nillable="true" type="tns:MedicalServiceType" />
+  <xs:simpleType name="ServiceSetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Intersection" />
+      <xs:enumeration value="Union" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceSetType" nillable="true" type="tns:ServiceSetType" />
+  <xs:simpleType name="ServiceDataSourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Custom" />
+      <xs:enumeration value="AllMedical" />
+      <xs:enumeration value="Professional" />
+      <xs:enumeration value="Institutional" />
+      <xs:enumeration value="Pharmacy" />
+      <xs:enumeration value="Lab" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceDataSourceType" nillable="true" type="tns:ServiceDataSourceType" />
+  <xs:simpleType name="EventDateOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ClaimFromDate" />
+      <xs:enumeration value="ClaimThruDate" />
+      <xs:enumeration value="ServiceClaimFromDate" />
+      <xs:enumeration value="ServiceClaimThruDate" />
+      <xs:enumeration value="AdmissionClaimFromDate" />
+      <xs:enumeration value="DischargeClaimThruDate" />
+      <xs:enumeration value="ServiceAdmissionClaimFromDate" />
+      <xs:enumeration value="ServiceDischargeClaimThrueDate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EventDateOrder" nillable="true" type="tns:EventDateOrder" />
+</xs:schema>

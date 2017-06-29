@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3e2baad8-d8db-48c8-b92a-c33cc4d0e37f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:10080/Enterprise/Security.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Security.xsd" MetadataType="Schema" ID="53671d40-1dd5-46a4-9f7d-d05d30e15c9a" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd19" />
+    <MetadataFile FileName="Security1.xsd" MetadataType="Schema" ID="d6b384cc-625f-4941-9f59-14fd7b6b6cbb" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd33" />
+    <MetadataFile FileName="Security2.xsd" MetadataType="Schema" ID="d24906cf-2e69-42b9-abc6-126d98b0929d" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd12" />
+    <MetadataFile FileName="Security3.xsd" MetadataType="Schema" ID="1a9c77d4-a55f-4b64-b9e8-0bb050dde8e8" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd43" />
+    <MetadataFile FileName="Security4.xsd" MetadataType="Schema" ID="6f61a936-4813-4aca-9389-d9135e6b01ec" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd22" />
+    <MetadataFile FileName="Security5.xsd" MetadataType="Schema" ID="ddfcb6ad-917a-4b4b-8377-ec5b5ba920c8" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd3" />
+    <MetadataFile FileName="Security6.xsd" MetadataType="Schema" ID="e868cc07-e4d4-4129-ba9e-b0d97c9ba0df" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd29" />
+    <MetadataFile FileName="Security7.xsd" MetadataType="Schema" ID="f1729561-bab1-4d8c-9d97-264c3dff0d9f" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd39" />
+    <MetadataFile FileName="Security8.xsd" MetadataType="Schema" ID="ac731ea6-3659-4b4e-b217-8e4606182b83" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" />
+    <MetadataFile FileName="Security9.xsd" MetadataType="Schema" ID="4468bc65-496e-4b55-b639-37ccc3b71178" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd20" />
+    <MetadataFile FileName="Security10.xsd" MetadataType="Schema" ID="f8b6d01e-e1bf-4805-8051-f5a3e0e57254" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd11" />
+    <MetadataFile FileName="Security11.xsd" MetadataType="Schema" ID="e3996ad7-26bd-427a-83ed-b1a146a08212" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd30" />
+    <MetadataFile FileName="Security12.xsd" MetadataType="Schema" ID="55f0507a-4bab-4a9d-a1f9-cda6d3d4136b" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd13" />
+    <MetadataFile FileName="Security13.xsd" MetadataType="Schema" ID="372eedfc-2a02-4eff-b815-fea523032af4" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd40" />
+    <MetadataFile FileName="Security14.xsd" MetadataType="Schema" ID="85489ed2-e93c-4823-87d3-e3e0be6dc4e1" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd23" />
+    <MetadataFile FileName="Security15.xsd" MetadataType="Schema" ID="b47f42f1-615a-4b5b-b41d-525fb4cd8168" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd42" />
+    <MetadataFile FileName="Security16.xsd" MetadataType="Schema" ID="3dca6c75-7179-43a0-9faa-a1a9f17f5dc6" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd16" />
+    <MetadataFile FileName="Security17.xsd" MetadataType="Schema" ID="6f13b513-6555-4889-9da2-cb7a3e991f5a" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd26" />
+    <MetadataFile FileName="Security.disco" MetadataType="Disco" ID="efdbbfc5-3fde-46d3-9a75-7fc944554471" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?disco" />
+    <MetadataFile FileName="Security18.xsd" MetadataType="Schema" ID="febae760-7fb1-4efe-bd9e-07be582119fe" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd36" />
+    <MetadataFile FileName="Security19.xsd" MetadataType="Schema" ID="71bd7149-8a99-4fa4-afc6-752080867568" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd21" />
+    <MetadataFile FileName="Security20.xsd" MetadataType="Schema" ID="a39dbf11-a4f0-44e6-93d1-fcff7be00440" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd18" />
+    <MetadataFile FileName="Security21.xsd" MetadataType="Schema" ID="ac217240-6f80-405d-9be1-602a2b8202af" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd31" />
+    <MetadataFile FileName="Security22.xsd" MetadataType="Schema" ID="0f99200c-101f-4894-8f48-75083bcde1e9" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd10" />
+    <MetadataFile FileName="Security23.xsd" MetadataType="Schema" ID="d87594c4-b6a2-4d9a-a7cd-87d1718832b3" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd4" />
+    <MetadataFile FileName="Security24.xsd" MetadataType="Schema" ID="c89e957d-9d28-4a70-97fb-22a100c72d4e" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd5" />
+    <MetadataFile FileName="Security25.xsd" MetadataType="Schema" ID="cac9fc51-2bf5-4741-ab4e-37526c96b0b9" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd17" />
+    <MetadataFile FileName="Security26.xsd" MetadataType="Schema" ID="6533a12b-aeae-4311-b477-c00a54c92aa1" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd6" />
+    <MetadataFile FileName="Security27.xsd" MetadataType="Schema" ID="96974974-a311-4730-8d2c-6b260c023f92" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd27" />
+    <MetadataFile FileName="Security28.xsd" MetadataType="Schema" ID="b828032d-4d21-4a20-8c27-1a56a1c6fc1a" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd7" />
+    <MetadataFile FileName="Security29.xsd" MetadataType="Schema" ID="978d4640-4b77-43a8-9e6f-2d5de68aade7" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd37" />
+    <MetadataFile FileName="Security30.xsd" MetadataType="Schema" ID="f46fc286-c765-4016-95c9-6d0e1dd0f015" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd0" />
+    <MetadataFile FileName="Security31.xsd" MetadataType="Schema" ID="91b372a7-48b9-4aa7-9eb9-dad3ff9ef5cc" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd1" />
+    <MetadataFile FileName="Security32.xsd" MetadataType="Schema" ID="58300798-3b3f-4108-b4c1-0ff1b91a8ca4" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd2" />
+    <MetadataFile FileName="Security33.xsd" MetadataType="Schema" ID="9f32b273-6c13-40ca-b5f1-4cbc3eeb3a3f" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd35" />
+    <MetadataFile FileName="Security34.xsd" MetadataType="Schema" ID="14c3bf5c-486c-4c81-8a4f-2c3768ed9b21" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd14" />
+    <MetadataFile FileName="Security35.xsd" MetadataType="Schema" ID="d0ea98d6-6acc-490e-9fcd-41706e03cc43" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd24" />
+    <MetadataFile FileName="Security36.xsd" MetadataType="Schema" ID="ffc0b8df-9140-4bbe-ad9c-a2a873048a5a" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd34" />
+    <MetadataFile FileName="Security37.xsd" MetadataType="Schema" ID="d1c8e66d-7018-4a70-b598-2308dcef5d84" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd32" />
+    <MetadataFile FileName="Security38.xsd" MetadataType="Schema" ID="5ffffbd9-a679-4795-a1d0-8f9f8dfb1166" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd15" />
+    <MetadataFile FileName="Security39.xsd" MetadataType="Schema" ID="2135be11-fd59-46b6-88bd-66aae320c85f" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd41" />
+    <MetadataFile FileName="Security40.xsd" MetadataType="Schema" ID="860d8767-0c70-4e42-8124-8bde7da322f3" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd25" />
+    <MetadataFile FileName="Security.wsdl" MetadataType="Wsdl" ID="f8059899-540f-4eb1-9258-09b6343bb46d" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?wsdl" />
+    <MetadataFile FileName="Security41.xsd" MetadataType="Schema" ID="dd0098b4-5ebb-42c7-8242-d716f0af72da" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd28" />
+    <MetadataFile FileName="Security42.xsd" MetadataType="Schema" ID="2d8500f0-f3fc-49d2-9976-d83f88c7417a" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd9" />
+    <MetadataFile FileName="Security43.xsd" MetadataType="Schema" ID="b610d014-f9ef-44c1-8f5e-9ef04ba81abc" SourceId="1" SourceUrl="http://localhost:10080/Enterprise/Security.svc?xsd=xsd38" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

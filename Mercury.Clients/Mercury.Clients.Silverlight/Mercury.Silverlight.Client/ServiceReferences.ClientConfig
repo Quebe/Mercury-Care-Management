@@ -1,0 +1,24 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ISecurity" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IApplication" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:10080/Enterprise/Security.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ISecurity"
+                contract="Server.Enterprise.ISecurity" name="BasicHttpBinding_ISecurity" />
+            <endpoint address="http://localhost:10080/Core/Application.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IApplication"
+                contract="Server.Application.IApplication" name="BasicHttpBinding_IApplication" />
+        </client>
+    </system.serviceModel>
+</configuration>

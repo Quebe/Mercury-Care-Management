@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd37" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Activity" />
+  <xs:complexType name="CarePlan">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarePlanGoals" nillable="true" type="tns:ArrayOfCarePlanGoal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CarePlan" nillable="true" type="tns:CarePlan" />
+  <xs:complexType name="ArrayOfCarePlanGoal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarePlanGoal" nillable="true" type="tns:CarePlanGoal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarePlanGoal" nillable="true" type="tns:ArrayOfCarePlanGoal" />
+  <xs:complexType name="CarePlanGoal">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q2:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Activities" nillable="true" type="tns:ArrayOfCarePlanGoalActivity" />
+          <xs:element minOccurs="0" name="CarePlanId" type="xs:long" />
+          <xs:element minOccurs="0" name="ClinicalNarrative" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommonNarrative" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" minOccurs="0" name="GoalTimeframe" type="q3:CarePlanGoalTimeframe" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="ScheduleQualifier" type="q4:DateQualifier" />
+          <xs:element minOccurs="0" name="ScheduleValue" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CarePlanGoal" nillable="true" type="tns:CarePlanGoal" />
+  <xs:complexType name="ArrayOfCarePlanGoalActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarePlanGoalActivity" nillable="true" type="tns:CarePlanGoalActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarePlanGoalActivity" nillable="true" type="tns:ArrayOfCarePlanGoalActivity" />
+  <xs:complexType name="CarePlanGoalActivity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Activity" base="q5:Activity">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" minOccurs="0" name="CarePlanGoalActivityType" type="q6:CarePlanGoalActivityType" />
+          <xs:element minOccurs="0" name="CarePlanGoalId" type="xs:long" />
+          <xs:element minOccurs="0" name="ClinicalNarrative" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommonNarrative" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CarePlanGoalActivity" nillable="true" type="tns:CarePlanGoalActivity" />
+  <xs:complexType name="CareLevelActivity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Activity" base="q7:Activity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CareLevelId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CareLevelActivity" nillable="true" type="tns:CareLevelActivity" />
+  <xs:complexType name="CareLevel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q8:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Activities" nillable="true" type="tns:ArrayOfCareLevelActivity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CareLevel" nillable="true" type="tns:CareLevel" />
+  <xs:complexType name="ArrayOfCareLevelActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CareLevelActivity" nillable="true" type="tns:CareLevelActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCareLevelActivity" nillable="true" type="tns:ArrayOfCareLevelActivity" />
+  <xs:complexType name="ProblemStatement">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q9:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultCarePlanId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProblemCategoryId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProblemCategoryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProblemDomainId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProblemDomainName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProblemSubcategoryId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProblemSubcategoryName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProblemStatement" nillable="true" type="tns:ProblemStatement" />
+  <xs:complexType name="ArrayOfCareOutcome">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CareOutcome" nillable="true" type="tns:CareOutcome" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCareOutcome" nillable="true" type="tns:ArrayOfCareOutcome" />
+  <xs:complexType name="CareOutcome">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q10:CoreConfigurationObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CareOutcome" nillable="true" type="tns:CareOutcome" />
+  <xs:complexType name="ArrayOfCareLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CareLevel" nillable="true" type="tns:CareLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCareLevel" nillable="true" type="tns:ArrayOfCareLevel" />
+  <xs:complexType name="ArrayOfCarePlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarePlan" nillable="true" type="tns:CarePlan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarePlan" nillable="true" type="tns:ArrayOfCarePlan" />
+  <xs:complexType name="ArrayOfProblemStatement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProblemStatement" nillable="true" type="tns:ProblemStatement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProblemStatement" nillable="true" type="tns:ArrayOfProblemStatement" />
+</xs:schema>

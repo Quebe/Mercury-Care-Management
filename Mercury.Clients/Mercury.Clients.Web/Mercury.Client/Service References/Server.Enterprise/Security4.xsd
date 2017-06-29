@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Public.Interfaces.Security.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Public.Interfaces.Security.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="AuthenticationError">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoError" />
+      <xs:enumeration value="InvalidUserOrPassword" />
+      <xs:enumeration value="MustChangePassword" />
+      <xs:enumeration value="CannotChangePassword" />
+      <xs:enumeration value="PasswordExpired" />
+      <xs:enumeration value="AccountLockedDisabledExpired" />
+      <xs:enumeration value="PasswordRestriction" />
+      <xs:enumeration value="MustSelectEnvironment" />
+      <xs:enumeration value="SecurityAuthorityError" />
+      <xs:enumeration value="UnableToCreateSession" />
+      <xs:enumeration value="OtherUndefinedError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuthenticationError" nillable="true" type="tns:AuthenticationError" />
+</xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd73" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition.ConditionCriteria" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd15" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfConditionClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionClass" nillable="true" type="tns:ConditionClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConditionClass" nillable="true" type="tns:ArrayOfConditionClass" />
+  <xs:complexType name="ConditionClass">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConditionDomainId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConditionClass" nillable="true" type="tns:ConditionClass" />
+  <xs:complexType name="ArrayOfCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Condition" nillable="true" type="tns:Condition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCondition" nillable="true" type="tns:ArrayOfCondition" />
+  <xs:complexType name="Condition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q2:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConditionClassId" type="xs:long" />
+          <xs:element minOccurs="0" name="ConditionClassName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition.ConditionCriteria" minOccurs="0" name="DemographicCriteria" nillable="true" type="q3:ArrayOfConditionCriteriaDemographic" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition.ConditionCriteria" minOccurs="0" name="EventCriteria" nillable="true" type="q4:ArrayOfConditionCriteriaEvent" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Events" nillable="true" type="q5:ArrayOfKeyValueOfstringActionh0OH4eih" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Condition" nillable="true" type="tns:Condition" />
+</xs:schema>

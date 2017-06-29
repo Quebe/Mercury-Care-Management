@@ -1,0 +1,166 @@
+﻿.ui-toolbar {
+
+    font-family: Segoe UI, Arial, Sans-Serif;
+    
+    font-size: 12px;
+    
+    font-weight: normal;
+    
+    line-height: 12px;
+
+    margin: 0px; padding: 0px;
+    
+    display: inline-block;   
+    
+    white-space: nowrap;
+
+    vertical-align: middle;
+
+}
+
+.ui-toolbar-border {
+    
+    padding: 1px; 
+    
+    border: 1px solid white;
+    
+    background-color: transparent;
+        
+}
+ 
+.ui-toolbar-items-list {   
+ 
+    margin: 0px; padding: 0px 2px 0px 2px;
+
+    display: inline-block;
+    
+    white-space: nowrap;
+    
+    list-style-type: none;
+            
+}
+
+.ui-toolbar-item { 
+
+    min-height: 16px;
+
+    margin: 1px 0px 1px 0px;
+    
+    border: 1px solid transparent;
+    
+    display: inline-block;
+    
+    white-space: nowrap;
+      
+}
+
+.ui-toolbar-item-icon {
+
+    margin: 0px; padding: 0px;
+    
+    border: 0px;
+
+    vertical-align: middle;
+    
+    display: inline-block;
+    
+}
+
+.ui-toolbar-item-separator {
+    
+    width: 0px;
+
+    margin-left: 3px; margin-right: 3px; padding: 0px 1px 0px 0px;
+
+    border-left: 1px solid black; border-right: 0px;
+    
+    background-color: White;
+
+}
+
+.ui-toolbar-item-splitbutton-separator-show {
+    
+    border-left: 1px solid black !important;
+    
+    background-color: #EEEEEE !important;
+
+}
+
+.ui-toolbar-item-splitbutton-separator {
+    
+    width: 0px;
+
+    padding: 0px 1px 0px 0px;
+
+    border-left: 1px solid transparent; border-right: 0px;
+    
+    background-color: transparent;
+
+}
+
+.ui-toolbar-item-button {
+    
+    min-width: 24px; min-height: 16px;
+    
+    padding: 4px;
+
+    cursor: pointer;
+
+}
+       
+.ui-toolbar-item-anchor {
+    
+    padding: 0px;
+    
+    text-decoration: none;    
+        
+}
+        
+.ui-toolbar-item-checkradio {
+    
+    min-width: 24px; min-height: 16px;
+    
+    margin-left: -1px; margin-right: -2px;
+    
+    padding: 4px 0px 4px 0px;
+        
+    text-align: center; vertical-align: middle;
+
+    text-decoration: none;    
+    
+    cursor: pointer;        
+        
+}
+        
+.ui-toolbar-item-title-span {
+    
+    padding-left: 4px; padding-right: 4px;
+    
+    min-height: 16px;
+   
+    font-weight: normal;
+    
+}
+
+.ui-toolbar-item-template {
+    
+    min-width: 24px; min-height: 16px;
+    
+    margin: 0px; padding: 0px;
+    
+    display: inline-block;
+    
+}
+    
+.ui-toolbar-item-dropdown-content {
+
+    color: Black;
+
+    position: absolute;
+    
+    white-space: normal;
+    
+    z-index: 9001;
+    
+}
+

@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[MaritalStatus] AS SELECT * FROM dbo.MaritalStatus

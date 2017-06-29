@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Mercury.Database.Enterprise", "Mercury.Database.Enterprise\Mercury.Database.Enterprise.sqlproj", "{0CEE585C-0A5B-440B-BB2C-7FF90238B619}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Mercury.Database.Environment", "Mercury.Database.Environment\Mercury.Database.Environment.sqlproj", "{DCADE68B-6A71-47A2-B1A7-77A23B9B0CE2}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Mercury.Database.Environment.Dal", "Mercury.Database.Environment.Dal\Mercury.Database.Environment.Dal.sqlproj", "{D5B2BDD7-BB20-4155-832B-6C272650B366}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CEE585C-0A5B-440B-BB2C-7FF90238B619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CEE585C-0A5B-440B-BB2C-7FF90238B619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CEE585C-0A5B-440B-BB2C-7FF90238B619}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0CEE585C-0A5B-440B-BB2C-7FF90238B619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CEE585C-0A5B-440B-BB2C-7FF90238B619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CEE585C-0A5B-440B-BB2C-7FF90238B619}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DCADE68B-6A71-47A2-B1A7-77A23B9B0CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCADE68B-6A71-47A2-B1A7-77A23B9B0CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCADE68B-6A71-47A2-B1A7-77A23B9B0CE2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DCADE68B-6A71-47A2-B1A7-77A23B9B0CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCADE68B-6A71-47A2-B1A7-77A23B9B0CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCADE68B-6A71-47A2-B1A7-77A23B9B0CE2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D5B2BDD7-BB20-4155-832B-6C272650B366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5B2BDD7-BB20-4155-832B-6C272650B366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5B2BDD7-BB20-4155-832B-6C272650B366}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D5B2BDD7-BB20-4155-832B-6C272650B366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5B2BDD7-BB20-4155-832B-6C272650B366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5B2BDD7-BB20-4155-832B-6C272650B366}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = 
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Mercury.Database.Enterprise\\Mercury.Database.Enterprise.dbproj
+		SccProjectName1 = Mercury.Database.Enterprise
+		SccLocalPath1 = Mercury.Database.Enterprise
+		SccProjectUniqueName2 = Mercury.Database.Environment.Dal\\Mercury.Database.Environment.Dal.dbproj
+		SccProjectName2 = Mercury.Database.Environment.Dal
+		SccLocalPath2 = Mercury.Database.Environment.Dal
+		SccProjectUniqueName3 = Mercury.Database.Environment\\Mercury.Database.Environment.dbproj
+		SccProjectName3 = Mercury.Database.Environment
+		SccLocalPath3 = Mercury.Database.Environment
+	EndGlobalSection
+EndGlobal

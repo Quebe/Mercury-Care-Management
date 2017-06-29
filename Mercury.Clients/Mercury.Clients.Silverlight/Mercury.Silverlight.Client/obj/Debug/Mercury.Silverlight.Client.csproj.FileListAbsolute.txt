@@ -1,0 +1,5 @@
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Silverlight\Mercury.Silverlight.Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Silverlight\Mercury.Silverlight.Client\Bin\Debug\Mercury.Silverlight.Client.dll
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Silverlight\Mercury.Silverlight.Client\Bin\Debug\Mercury.Silverlight.Client.pdb
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Silverlight\Mercury.Silverlight.Client\obj\Debug\Mercury.Silverlight.Client.dll
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Silverlight\Mercury.Silverlight.Client\obj\Debug\Mercury.Silverlight.Client.pdb

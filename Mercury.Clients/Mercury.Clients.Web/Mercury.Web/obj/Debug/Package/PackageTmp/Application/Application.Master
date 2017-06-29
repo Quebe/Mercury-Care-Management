@@ -1,0 +1,359 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Application.master.cs" Inherits="Mercury.Web.Application.Application" %>
+
+<%@ Register TagPrefix="Telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+
+    <title>Mercury Care Management</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <link rel="Stylesheet" href="/Styles/Global.css" type="text/css" />
+    
+    <style type="text/css">
+    
+        html { overflow: hidden; }
+    
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body style="margin: 0px;" class="TextNormal BackgroundColorLight">
+
+<form id="ApplicationForm" runat="server">
+
+
+<div style="display: none"><asp:TextBox ID="PageInstanceId" Text="" runat="server" /></div> 
+
+<div id="AjaxManagerDiv" style="display: none">
+
+    <asp:ScriptManager ID="AjaxScriptManager" ScriptMode="Release" runat="Server">
+
+        <Scripts>
+        
+            <asp:ScriptReference Path="~/Application/Application.Master.js" />
+        
+        </Scripts>
+    
+    </asp:ScriptManager>
+
+    <Telerik:RadAjaxManager ID="TelerikAjaxManager" runat="server">
+    
+        <AjaxSettings>
+            
+            <Telerik:AjaxSetting AjaxControlID="GlobalSearchButton">
+            
+                <UpdatedControls>
+
+                    <Telerik:AjaxUpdatedControl ControlID="GlobalSearchButton" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="GlobalSearchText" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="SearchResultsGrid" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="ApplicationContent" LoadingPanelID="AjaxLoadingPanel" />
+                    
+                </UpdatedControls>
+            
+            </Telerik:AjaxSetting>
+
+            <Telerik:AjaxSetting AjaxControlID="TourStart">
+            
+                <UpdatedControls>
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourStart" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+                    
+                    <Telerik:AjaxUpdatedControl ControlID="TourPreviousContainer" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourNextContainer" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourContentPanel" />
+
+                </UpdatedControls>
+
+            </Telerik:AjaxSetting>
+            
+            <Telerik:AjaxSetting AjaxControlID="TourPrevious">
+            
+                <UpdatedControls>
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourNext" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+                    
+                    <Telerik:AjaxUpdatedControl ControlID="TourPreviousContainer" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourNextContainer" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourContentPanel" />
+
+                </UpdatedControls>
+
+            </Telerik:AjaxSetting>
+            
+            <Telerik:AjaxSetting AjaxControlID="TourNext">
+            
+                <UpdatedControls>
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourNext" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+                    
+                    <Telerik:AjaxUpdatedControl ControlID="TourPreviousContainer" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourNextContainer" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourContentPanel"/>
+
+                </UpdatedControls>
+
+            </Telerik:AjaxSetting>
+            
+            <Telerik:AjaxSetting AjaxControlID="TourContentPanel">
+            
+                <UpdatedControls>
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourNext" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+                    
+                    <Telerik:AjaxUpdatedControl ControlID="TourPreviousContainer" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourNextContainer" LoadingPanelID="AjaxLoadingPanelWhiteout" />
+
+                    <Telerik:AjaxUpdatedControl ControlID="TourContentPanel"/>
+
+                </UpdatedControls>
+
+            </Telerik:AjaxSetting>
+
+        </AjaxSettings>
+    
+    </Telerik:RadAjaxManager>
+
+    <Telerik:RadAjaxLoadingPanel ID="AjaxLoadingPanel" runat="server"></Telerik:RadAjaxLoadingPanel>
+    
+    <Telerik:RadAjaxLoadingPanel ID="AjaxLoadingPanelWhiteout" Transparency="75" InitialDelayTime="100" MinDisplayTime="0" Skin="" EnableAjaxSkinRendering="false" runat="server">
+    
+        <div style="background-color: white; min-height: 100%; height: 100%; opacity: 0.25; filter: alpha(opacity=25); z-index: 10">
+    
+        </div>
+            
+    </Telerik:RadAjaxLoadingPanel>
+
+</div>
+
+
+<div id="ApplicationTitleBar">
+
+    <table width="100%" cellpadding="0" cellspacing="0">
+    
+        <tr class="BackgroundColorDark" style="height: 36px;">
+
+            <td style="width: 100%; color: White; font-weight: bold; padding-left: .125in; white-space: nowrap">
+
+                <a id="ApplicationTitle" class="NoDecoration HoverTextWhiteBold" href="/UserSessionInformation.aspx" target="_blank" style="color: White; font-weight: bold; white-space: nowrap" runat="server"></a>
+                
+            </td>
+
+            <td style="padding-left: .125in; padding-right: .25in"><a id="ApplicationTitleBarHomeLink" class="NoDecoration ColorLight HoverTextWhiteBold" href="/Application/Workspace/Workspace.aspx" style="white-space: nowrap; font-weight: bold; text-align: center;">Home</a></td>
+
+            <td id="ApplicationTitleBarNavigationLink" style="padding-left: .125in; padding-right: .25in" runat="server">
+            
+                <a id="NavigationLink" class="NoDecoration ColorLight HoverTextWhiteBold" href="javascript:NavigationToggle ();" style="white-space: nowrap; font-weight: bold; text-align: center;">Navigate</a>
+
+            </td>
+
+            <td style="padding-left: .125in; padding-right: .25in"><a class="NoDecoration ColorLight HoverTextWhiteBold" href="javascript:Tour();" style="white-space: nowrap; font-weight: bold; text-align: center;">Tour</a></td>
+
+            <td style="padding-left: .125in; padding-right: .25in"><a id="ApplicationTitleBarLogoutLink" class="NoDecoration ColorLight HoverTextWhiteBold" href="/LogOff.aspx" style="white-space: nowrap; font-weight: bold; text-align: center;">Logout</a></td>
+    
+            <td id="ApplicationTitleBarGlobalSearch" style="padding-right: .125in;">
+            
+                <table cellpadding="0" cellspacing="0" class="BackgroundColorLight BorderColorNormal"><tr>
+
+                    <td style="height: 20px; padding-left: 4px; padding-right: 4px;"><img src="/Images/Common16/Search.png" alt="Global Search" /></td>  
+                    
+                    <td style="padding-right: 0px;"><Telerik:RadTextBox ID="GlobalSearchText" EmptyMessage="(last, first name or ID)" runat="server"></Telerik:RadTextBox></td>              
+                
+                    <td style="height: 20px; padding-left: 4px; padding-right: 4px;"><asp:ImageButton ID="GlobalSearchButton" ImageUrl="~/Images/Common16/ArrowGreenRight.png" AlternateText="Search" OnClick="GlobalSearchButton_OnClick" runat="server" /></td>  
+
+                </tr></table>
+
+            </td>
+
+        </tr>
+     
+        <tr><td colspan="6" style="width: 100%; height: 1px;" class="BackgroundColorComplementLight"></td></tr>   
+        
+     </table>
+
+</div>
+
+<div id="NavigationBar" class="BackgroundColorComplementLight" style="display: none;">
+
+    <table width="100%" cellpadding="0" cellspacing="0" style=""><tr style="height: 24px;">
+
+        <td style="width: .125in">&nbsp</td>
+
+        <td id="NavigationLinkEnterprise"    style="width: 125px; text-align: center;" runat="server"><a class="NoDecoration ColorComplementDarker HoverTextBlack" href="/Application/Enterprise/Management.aspx" style="white-space: nowrap; padding-right: .125in; font-weight: normal">Enterprise Management</a> </td>
+
+        <td id="NavigationLinkConfiguraiton" style="width: 125px; text-align: center;" runat="server"><a class="NoDecoration ColorComplementDarker HoverTextBlack" href="/Application/Configuration/Management.aspx" style="white-space: nowrap; padding-right: .125in; font-weight: normal">Configuration</a></td>
+
+        <td id="NavigationLinkFormDesigner"  style="width: 125px; text-align: center;" runat="server"><a class="NoDecoration ColorComplementDarker HoverTextBlack" href="/Application/Forms/FormDesigner/FormDesigner.aspx" style="white-space: nowrap; padding-right: .125in; font-weight: normal">Form Designer</a></td>
+        
+        <td id="NavigationLinkAutomation"    style="width: 125px; text-align: center;" runat="server"><a class="NoDecoration ColorComplementDarker HoverTextBlack" href="/Application/Automation/Automation.aspx" style="white-space: nowrap; padding-right: .125in; font-weight: normal">Automation</a></td>
+
+        <td id="NavigationLinkDataExplorer"  style="width: 125px; text-align: center;" runat="server"><a class="NoDecoration ColorComplementDarker HoverTextBlack" href="/Application/DataExplorer/DataExplorer.aspx" style="white-space: nowrap; padding-right: .125in; font-weight: normal">Data Explorer</a></td>
+
+        <td style="">&nbsp</td>
+
+    </tr>
+                
+    <tr class="BackgroundColorComplementDark" style="height: 1px;"><td colspan="7"></td></tr>
+
+    </table>
+
+</div>
+
+<div id="ApplicationContent"  style="overflow: auto;" runat="server">
+
+    <asp:ContentPlaceHolder ID="ApplicationContentControl" runat="server"></asp:ContentPlaceHolder>
+
+</div>
+
+<Telerik:RadWindowManager ID="ApplicationWindowManager" runat="server">
+
+    <Windows>
+            
+        <Telerik:RadWindow ID="GlobalSearchResultsWindow" Behaviors="Default" Modal="true" Width="700" Height="420" VisibleStatusbar="false"  Title="Global Search Results" runat="server">
+
+            <ContentTemplate>
+                
+                <div id="GlobalSearchResultsWindowContent">
+
+                    <div style="margin: .125in" >
+
+                        <Telerik:RadGrid ID="SearchResultsGrid" Width="100%" Height="320" AutoGenerateColumns="false" runat="server">
+            
+                            <MasterTableView TableLayout="Auto" runat="server">
+                
+                                <Columns>
+                    
+                                    <Telerik:GridBoundColumn DataField="ObjectType" HeaderText="Object" />
+                        
+                                    <Telerik:GridBoundColumn DataField="Id" HeaderText="Id" />
+                        
+                                    <Telerik:GridBoundColumn DataField="Name" HeaderText="Name"  />
+                        
+                                    <Telerik:GridBoundColumn DataField="Details" HeaderText="Details" />
+                        
+                                    <Telerik:GridBoundColumn DataField="EffectiveDate" HeaderText="Effective" />
+                        
+                                    <Telerik:GridBoundColumn DataField="TerminationDate" HeaderText="Termination" />
+                    
+                                </Columns>                
+                                                     
+                            </MasterTableView>            
+                
+                            <ClientSettings>
+                
+                                <Scrolling AllowScroll="true" UseStaticHeaders="false" SaveScrollPosition="false" />
+                
+                            </ClientSettings>
+            
+                        </Telerik:RadGrid>            
+            
+                                
+                        <div class="BackgroundColorComplementNormal" style="margin-top: 5px; margin-bottom: 5px; padding-left: 5px; padding-left: 5px; height: 1px; width: 95%"></div>
+
+                        <div style="height: 20px; padding: 0px 10px 0px 10px;">
+   
+                            <table cellpadding="0" cellspacing="0" border="0"><tr>
+
+                                <td style="width: 100%;">&nbsp</td>
+                                    
+                                <td style="width: 80px; padding-right: 10px;"><asp:Button ID="ButtonCloseGlobalSearchResults" Text="Close" Width="73px" Font-Names="segoe ui, arial"  Font-Size="11px" Height="24" runat="Server" /></td> 
+
+                            </tr></table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </ContentTemplate>
+
+        </Telerik:RadWindow>
+            
+    </Windows>
+
+</Telerik:RadWindowManager>
+
+<Telerik:RadToolTip runat="server" ID="TourToolTip" Position="BottomLeft" HideEvent="ManualClose" ShowEvent="FromCode" Skin="Simple" RelativeTo="Element">
+
+    <div style="display: none;">
+
+        <asp:Button ID="TourStart" OnClick="TourStart_OnClick" runat="server" />
+
+    </div>
+    
+    <div id="TourContentPanel" runat="server"></div>
+
+    <hr />
+
+    <table width="100%" style="height: 24px;"><tr>
+    
+        <td style="padding-left: .125in;"><div id="TourPreviousContainer" runat="server">
+        
+            <asp:LinkButton ID="TourPrevious" CssClass="NoDecoration ColorComplementDarker HoverTextBlack" OnClick="TourPrevious_OnClick" runat="server"><span style="white-space: nowrap;">&laquo; Previous</span></asp:LinkButton>
+                        
+        </div></td>
+
+        <td style="width:100%"></td>
+        
+        <td style="padding-right: .125in;"><div id="TourNextContainer" runat="server">
+        
+            <asp:LinkButton ID="TourNext" CssClass="NoDecoration ColorComplementDarker HoverTextBlack" OnClick="TourNext_OnClick" runat="server"><span style="white-space: nowrap;">Next &raquo;</span></asp:LinkButton>
+                        
+        </div></td>
+    
+    </tr></table>
+
+
+</Telerik:RadToolTip>
+
+<Telerik:RadCodeBlock ID="TourCodeBlock" runat="server">
+
+<script type="text/javascript">
+
+    function Tour() {
+
+        var tourToolTip = $find("<%= TourToolTip.ClientID %>");
+
+        if (tourToolTip != null) {
+
+            tourStartButton = document.getElementById("<%= TourStart.ClientID %>");
+
+            tourStartButton.click();
+
+            tourToolTip.set_targetControlID("ApplicationTitle");
+
+        }
+           
+        return;
+
+    }
+
+</script>
+
+</Telerik:RadCodeBlock>
+
+</form>
+
+</body>
+
+</html>

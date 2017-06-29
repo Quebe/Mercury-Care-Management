@@ -1,0 +1,404 @@
+﻿<WindowManager:Window x:Class="Mercury.Silverlight.Workspace.SessionInformation"
+    xmlns:WindowManager="clr-namespace:Mercury.Silverlight.WindowManager"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+    xmlns:TelerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"     
+    >
+
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="24"></RowDefinition>
+
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <!-- WIDNOW TITLE -->
+        
+        <Border x:Name="WindowBarBorder" Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="0 0 0 1" Background="#666666">
+
+            <Grid x:Name="WindowBarGrid">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Width="112"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="36">
+
+
+                </Border>
+
+                <Border Grid.Column="0" Grid.Row="0">
+
+                    <TextBlock x:Name="WindowTitle" FontFamily="Calibri, Segoe UI" FontSize="13.333" Foreground="White" VerticalAlignment="Center" Padding="8,0,0,0" Text="" />
+
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Telerik:RadButton x:Name="WindowMinimize" Width="64" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ToolTipService.ToolTip="Minimize" Click="WindowMinimize_Click">
+
+                            <Telerik:RadButton.Content>
+
+                                <TextBlock Text="minimize" FontFamily="Calibri, Segoe UI" FontSize="13.333" Foreground="White" TextDecorations="underline"></TextBlock>
+
+                            </Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+
+                        <Telerik:RadButton x:Name="WindowClose" Width="48" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ToolTipService.ToolTip="Close" Click="WindowClose_Click" >
+
+                            <Telerik:RadButton.Content>
+
+                                <TextBlock Text="close" FontFamily="Calibri, Segoe UI" FontSize="13.333" Foreground="White" TextDecorations="underline"></TextBlock>
+
+                            </Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+
+                    </StackPanel>
+
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+        
+        <!-- WINDOW CONTENT -->
+        
+        <Border x:Name="WindowContent" Grid.Column="0" Grid.Row="1">
+
+            <ScrollViewer x:Name="SessionInformationScrollViewer" Background="White" MouseWheel="SessionInformationScrollViewer_MouseWheel">
+           
+                <StackPanel Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8 8 8 8">
+                    
+                    
+                    <!-- USER ACCOUNT INFORMATION -->
+
+                    <Border Margin="8" BorderBrush="Black" BorderThickness="1">
+
+                        <Border.Background>
+
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                                <GradientStop Color="#FF999999" Offset="0" />
+
+                                <GradientStop Color="#FF666666" Offset=".50" />
+
+                                <GradientStop Color="#FF000000" Offset="1" />
+
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+
+                        <TextBlock Text="Session Connection Information" Foreground="White" Margin="4"></TextBlock>
+
+                    </Border>
+
+                    <Grid Margin="14, 4, 14, 4">
+
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+
+                            <ColumnDefinition Width="10"></ColumnDefinition>
+                            
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+
+                            <ColumnDefinition Width="10"></ColumnDefinition>
+
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="30"></RowDefinition>
+
+                            <RowDefinition Height="30"></RowDefinition>
+
+                            <RowDefinition Height="30"></RowDefinition>
+
+                            <RowDefinition Height="10"></RowDefinition>
+
+                        </Grid.RowDefinitions>
+
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Security Authority Name:" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="SecurityAuthorityName" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+
+                        <TextBlock Grid.Column="3" Grid.Row="0" Text="Security Authority Id:" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="SecurityAuthorityId" Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+
+                        <TextBlock Grid.Column="6" Grid.Row="0" Text="Security Authority Type:" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="SecurityAuthorityType" Grid.Column="7" Grid.Row="0" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+                        
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="User Account Name:" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="UserAccountName" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+
+                        <TextBlock Grid.Column="3" Grid.Row="1" Text="User Account Id:" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="UserAccountId" Grid.Column="4" Grid.Row="1" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+
+                        <TextBlock Grid.Column="6" Grid.Row="1" Text="User Display Name:" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="UserDisplayName" Grid.Column="7" Grid.Row="1" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+
+
+                        <TextBlock Grid.Column="0" Grid.Row="2" Text="Environment Name:" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="EnvironmentName" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+                        
+                        <TextBlock Grid.Column="3" Grid.Row="2" Text="Server Version:" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="ServerVersion" Grid.Column="4" Grid.Row="2" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+
+                        <TextBlock Grid.Column="6" Grid.Row="2" Text="Client Version:" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="ClientVersion" Grid.Column="7" Grid.Row="2" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+
+                    </Grid>
+                    
+                    
+                    <!-- ENTERPRISE PERMISSIONS -->
+
+                    <Border Margin="8" BorderBrush="Black" BorderThickness="1">
+
+                        <Border.Background>
+
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                                <GradientStop Color="#FF999999" Offset="0" />
+
+                                <GradientStop Color="#FF666666" Offset=".50" />
+
+                                <GradientStop Color="#FF000000" Offset="1" />
+
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+
+                        <TextBlock Text="Enterprise Permissions" Foreground="White" Margin="4"></TextBlock>
+
+                    </Border>
+
+                    <TelerikGridView:RadGridView x:Name="EnterprisePermissionsGrid" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed" IsFilteringAllowed="False" IsReadOnly="True" ShowGroupPanel="False" CanUserFreezeColumns="False" Margin="14, 4, 14, 4">
+                                                    
+                        <TelerikGridView:RadGridView.Columns>
+                            
+                            <TelerikGridView:GridViewDataColumn Header="Name" DataMemberBinding="{Binding Value}" />                                
+                            
+                        </TelerikGridView:RadGridView.Columns>
+                                                            
+                    </TelerikGridView:RadGridView>
+                    
+                                        
+                    <!-- ENVIRONMENT PERMISSIONS -->
+
+                    <Border Margin="8" BorderBrush="Black" BorderThickness="1">
+
+                        <Border.Background>
+
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                                <GradientStop Color="#FF999999" Offset="0" />
+
+                                <GradientStop Color="#FF666666" Offset=".50" />
+
+                                <GradientStop Color="#FF000000" Offset="1" />
+
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+
+                        <TextBlock Text="Environment Permissions" Foreground="White" Margin="4"></TextBlock>
+
+                    </Border>
+                    
+                    <TelerikGridView:RadGridView x:Name="EnvironmentPermissionsGrid" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed" IsFilteringAllowed="False" IsReadOnly="True" ShowGroupPanel="False" CanUserFreezeColumns="False" Margin="14, 4, 14, 4">
+
+                        <TelerikGridView:RadGridView.Columns>
+
+                            <TelerikGridView:GridViewDataColumn Header="Name" DataMemberBinding="{Binding Value}" />
+
+                        </TelerikGridView:RadGridView.Columns>
+
+                    </TelerikGridView:RadGridView>
+
+
+                    <!-- WORK TEAM MEMBERSHIP -->
+
+                    <Border Margin="8" BorderBrush="Black" BorderThickness="1">
+
+                        <Border.Background>
+
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                                <GradientStop Color="#FF999999" Offset="0" />
+
+                                <GradientStop Color="#FF666666" Offset=".50" />
+
+                                <GradientStop Color="#FF000000" Offset="1" />
+
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+
+                        <TextBlock Text="Work Team Membership" Foreground="White" Margin="4"></TextBlock>
+
+                    </Border>
+            
+                    <TelerikGridView:RadGridView x:Name="WorkTeamsGrid" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed" IsFilteringAllowed="False" IsReadOnly="True" ShowGroupPanel="False" CanUserFreezeColumns="False" Margin="14, 4, 14, 4">
+
+                        <TelerikGridView:RadGridView.Columns>
+                            
+                            <TelerikGridView:GridViewDataColumn Header="Name" DataMemberBinding="{Binding WorkTeamName}" />
+
+
+                        </TelerikGridView:RadGridView.Columns>
+
+                    </TelerikGridView:RadGridView>
+
+
+                    <!-- WORK QUEUES -->
+
+                    <Border Margin="8" BorderBrush="Black" BorderThickness="1">
+
+                        <Border.Background>
+
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                                <GradientStop Color="#FF999999" Offset="0" />
+
+                                <GradientStop Color="#FF666666" Offset=".50" />
+
+                                <GradientStop Color="#FF000000" Offset="1" />
+
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+
+                        <TextBlock Text="Work Queues" Foreground="White" Margin="4"></TextBlock>
+
+                    </Border>
+
+                    <TelerikGridView:RadGridView x:Name="WorkQueuesGrid" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed" IsFilteringAllowed="False" IsReadOnly="True" ShowGroupPanel="False" CanUserFreezeColumns="False" Margin="14, 4, 14, 4">
+
+                        <TelerikGridView:RadGridView.Columns>
+
+                            <TelerikGridView:GridViewDataColumn Header="Name" DataMemberBinding="{Binding WorkQueueName}" Width="Auto" />
+
+                            <TelerikGridView:GridViewDataColumn Header="Permission" DataMemberBinding="{Binding SessionPermission}" Width="Auto" />
+ 
+                        </TelerikGridView:RadGridView.Columns>
+
+                    </TelerikGridView:RadGridView>
+
+
+                    <!-- ROLE MEMBERSHIP -->
+
+                    <Border Margin="8" BorderBrush="Black" BorderThickness="1">
+
+                        <Border.Background>
+
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                                <GradientStop Color="#FF999999" Offset="0" />
+
+                                <GradientStop Color="#FF666666" Offset=".50" />
+
+                                <GradientStop Color="#FF000000" Offset="1" />
+
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+
+                        <TextBlock Text="Role Membership" Foreground="White" Margin="4"></TextBlock>
+
+                    </Border>
+
+                    <TelerikGridView:RadGridView x:Name="RoleMembershipGrid" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed" IsFilteringAllowed="False" IsReadOnly="True" ShowGroupPanel="False" CanUserFreezeColumns="False" Margin="14, 4, 14, 4">
+
+                        <TelerikGridView:RadGridView.Columns>
+                            
+                            <TelerikGridView:GridViewDataColumn Header="Name" DataMemberBinding="{Binding}" />
+
+                        </TelerikGridView:RadGridView.Columns>
+
+                    </TelerikGridView:RadGridView>
+
+                    
+                    <!-- SECURITY GROUP MEMBERSHIP -->
+
+                    <Border Margin="8" BorderBrush="Black" BorderThickness="1">
+
+                        <Border.Background>
+
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                                <GradientStop Color="#FF999999" Offset="0" />
+
+                                <GradientStop Color="#FF666666" Offset=".50" />
+
+                                <GradientStop Color="#FF000000" Offset="1" />
+
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+
+                        <TextBlock Text="Security Group Membership" Foreground="White" Margin="4"></TextBlock>
+
+                    </Border>
+
+                    <TelerikGridView:RadGridView x:Name="SecurityGroupMembershipGrid" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed" IsFilteringAllowed="False" IsReadOnly="True" ShowGroupPanel="False" CanUserFreezeColumns="False" Margin="14, 4, 14, 4">
+
+                        <TelerikGridView:RadGridView.Columns>
+
+                            <TelerikGridView:GridViewDataColumn Header="Name" DataMemberBinding="{Binding}" Width="Auto" />
+
+                        </TelerikGridView:RadGridView.Columns>
+
+                    </TelerikGridView:RadGridView>
+                  
+                </StackPanel>
+                
+            </ScrollViewer>
+
+        </Border>
+
+    </Grid>
+
+</WindowManager:Window>

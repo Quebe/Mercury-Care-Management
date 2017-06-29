@@ -1,0 +1,41 @@
+﻿<Activity mc:Ignorable="sap" x:Class="Mercury.Server.Workflows.Activities.RequireForm.RequireForm" local5:RequireForm.WorkQueueItemId="0" local5:RequireForm.Entity="[Nothing]" local5:RequireForm.FormName="[String.Empty]" local5:RequireForm.AllowSaveAsDraft="False" local5:RequireForm.AllowCancel="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:local="clr-namespace:Mercury.Server.Workflows" xmlns:local1="clr-namespace:Mercury.Server.Core.Entity" xmlns:local2="clr-namespace:Mercury.Server.Core.Forms" xmlns:local3="clr-namespace:Mercury.Server.Workflows.UserInteractions.Request" xmlns:local4="clr-namespace:Mercury.Server.Workflows.UserInteractions.Response" xmlns:local5="clr-namespace:Mercury.Server.Workflows.Activities.RequireForm" xmlns:local6="clr-namespace:Mercury.Server.Workflows.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:msc="clr-namespace:Mercury.Server.Core" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="WorkflowManager" Type="InOutArgument(local:WorkflowManager4)" />
+    <x:Property Name="WorkQueueItemId" Type="InArgument(x:Int64)" />
+    <x:Property Name="WorkflowSteps" Type="InOutArgument(scg:List(local:WorkflowStep))" />
+    <x:Property Name="Entity" Type="InArgument(local1:Entity)" />
+    <x:Property Name="Form" Type="InOutArgument(local2:Form)" />
+    <x:Property Name="FormName" Type="InArgument(x:String)" />
+    <x:Property Name="AllowSaveAsDraft" Type="InArgument(x:Boolean)" />
+    <x:Property Name="AllowCancel" Type="InArgument(x:Boolean)" />
+    <x:Property Name="ActivityCanceled" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="SaveAsDraft" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>526,550</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence DisplayName="Require Form Sequence" sad:XamlDebuggerXmlReader.FileName="C:\Mercury.Development\Mercury.Server\Mercury.Server\Workflows\Activities\RequireForm\RequireForm.xaml" sap:VirtualizedContainerService.HintSize="486,510">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="ActivityCompleted" />
+      <Variable x:TypeArguments="local3:RequireFormRequest" Default="[Nothing]" Name="UserInteractionRequest" />
+      <Variable x:TypeArguments="local4:ResponseBase" Default="[Nothing]" Name="UserInteractionResponse" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="FormReceived" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <local5:RequireFormInitialize AllowCancel="[AllowCancel]" AllowSaveAsDraft="[AllowSaveAsDraft]" DisplayName="Initialize Activity" Entity="[Entity]" Form="[Form]" FormName="[FormName]" sap:VirtualizedContainerService.HintSize="464,22" UserInteractionRequest="[UserInteractionRequest]" WorkQueueItemId="[WorkQueueItemId]" WorkflowManager="[WorkflowManager]" WorkflowSteps="[WorkflowSteps]" />
+    <While sap:VirtualizedContainerService.HintSize="464,324" Condition="[ActivityCompleted = False]">
+      <Sequence sap:VirtualizedContainerService.HintSize="438,208">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <local6:UserInteractionRequestResponse sap:VirtualizedContainerService.HintSize="200,22" Request="[UserInteractionRequest]" Response="[UserInteractionResponse]" WorkQueueItemId="[WorkQueueItemId]" WorkflowManager="[WorkflowManager]" WorkflowSteps="[WorkflowSteps]" />
+        <local5:RequireFormProcessResponse ActivityCanceled="[ActivityCanceled]" ActivityCompleted="[ActivityCompleted]" AllowCancel="[AllowCancel]" AllowSaveAsDraft="[AllowSaveAsDraft]" Form="[Form]" FormReceived="[FormReceived]" sap:VirtualizedContainerService.HintSize="200,22" SaveAsDraft="[SaveAsDraft]" UserInteractionResponse="[UserInteractionResponse]" WorkQueueItemId="[WorkQueueItemId]" WorkflowManager="[WorkflowManager]" WorkflowSteps="[WorkflowSteps]" />
+      </Sequence>
+    </While>
+  </Sequence>
+</Activity>

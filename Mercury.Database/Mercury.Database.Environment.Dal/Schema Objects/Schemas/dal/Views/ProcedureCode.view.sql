@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[ProcedureCode] AS SELECT * FROM dbo.ProcedureCode

@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[MemberEnrollmentPcp] AS SELECT * FROM dbo.MemberEnrollmentPcp

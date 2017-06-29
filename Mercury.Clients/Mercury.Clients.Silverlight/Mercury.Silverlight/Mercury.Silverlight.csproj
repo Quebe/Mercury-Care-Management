@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8F69639-56F9-4120-B4F0-353BD7BFD01A}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mercury.Silverlight</RootNamespace>
+    <AssemblyName>Mercury.Silverlight</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Mercury.Silverlight.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Mercury.Silverlight.App</SilverlightAppEntry>
+    <TestPageFileName>Mercury.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>..\Mercury.Silverlight.Web\Mercury.Silverlight.Web.csproj</LinkedServerProject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.DomainServices.Client, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Client.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.Web.Extensions, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.RibbonBar, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Themes.Office_Blue, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Themes.Office_Silver, Version=2010.2.924.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EntityAddressHistory.xaml.cs">
+      <DependentUpon>EntityAddressHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EntityContact.xaml.cs">
+      <DependentUpon>EntityContact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EntityContactInformationHistory.xaml.cs">
+      <DependentUpon>EntityContactInformationHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EntityInformationMember.xaml.cs">
+      <DependentUpon>EntityInformationMember.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EntitySendCorrespondence.xaml.cs">
+      <DependentUpon>EntitySendCorrespondence.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MemberDemographics.xaml.cs">
+      <DependentUpon>MemberDemographics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MemberEnrollmentHistory.xaml.cs">
+      <DependentUpon>MemberEnrollmentHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditor\FormEditor.xaml.cs">
+      <DependentUpon>FormEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRenderEngine.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Member\MemberProfile.xaml.cs">
+      <DependentUpon>MemberProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowManager\Window.cs" />
+    <Compile Include="WindowManager\WindowOld.xaml.cs">
+      <DependentUpon>WindowOld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowManager\WindowManager.cs" />
+    <Compile Include="Workflow\UserInteractions\PromptUser.xaml.cs">
+      <DependentUpon>PromptUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\UserInteractions\RequireForm.xaml.cs">
+      <DependentUpon>RequireForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Workflow.xaml.cs">
+      <DependentUpon>Workflow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\WorkflowControls\WorkflowSummary.xaml.cs">
+      <DependentUpon>WorkflowSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Authentication.xaml.cs">
+      <DependentUpon>Authentication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\GlobalSearch.xaml.cs">
+      <DependentUpon>GlobalSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\SessionInformation.xaml.cs">
+      <DependentUpon>SessionInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\SwitchWindowPreview.xaml.cs">
+      <DependentUpon>SwitchWindowPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Work.xaml.cs">
+      <DependentUpon>Work.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Workspace.xaml.cs">
+      <DependentUpon>Workspace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Work\WorkQueueItemDetail.xaml.cs">
+      <DependentUpon>WorkQueueItemDetail.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Controls\EntityAddressHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EntityContact.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EntityContactInformationHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EntityInformationMember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EntitySendCorrespondence.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MemberDemographics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MemberEnrollmentHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\FormEditor\FormEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Member\MemberProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowManager\WindowOld.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workflow\UserInteractions\PromptUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workflow\UserInteractions\RequireForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workflow\Workflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workflow\WorkflowControls\WorkflowSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workspace\Authentication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\GlobalSearch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workspace\SessionInformation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workspace\SwitchWindowPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workspace\Work.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\Workspace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Work\WorkQueueItemDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Common16\Accessibility.png" />
+    <Resource Include="Images\Common16\Add.png" />
+    <Resource Include="Images\Common16\Address.png" />
+    <Resource Include="Images\Common16\AddSmall.png" />
+    <Resource Include="Images\Common16\ArrowBlueDown.png" />
+    <Resource Include="Images\Common16\ArrowBlueUp.png" />
+    <Resource Include="Images\Common16\ArrowGreenDown.png" />
+    <Resource Include="Images\Common16\ArrowGreenLeft.png" />
+    <Resource Include="Images\Common16\ArrowGreenRight.png" />
+    <Resource Include="Images\Common16\ArrowGreenUp.png" />
+    <Resource Include="Images\Common16\AuthorizedService.png" />
+    <Resource Include="Images\Common16\AutomationCompleted.png" />
+    <Resource Include="Images\Common16\AutomationCritical.png" />
+    <Resource Include="Images\Common16\AutomationNotSpecified.png" />
+    <Resource Include="Images\Common16\AutomationOpen.png" />
+    <Resource Include="Images\Common16\AutomationWarning.png" />
+    <Resource Include="Images\Common16\BooleanOff.png" />
+    <Resource Include="Images\Common16\BooleanOff2.png" />
+    <Resource Include="Images\Common16\BooleanOn.png" />
+    <Resource Include="Images\Common16\BooleanOn2.png" />
+    <Resource Include="Images\Common16\Briefcase.png" />
+    <Resource Include="Images\Common16\BulletedList.png" />
+    <Resource Include="Images\Common16\Bullets.png" />
+    <Resource Include="Images\Common16\Button.png" />
+    <Resource Include="Images\Common16\ButtonRoundArrowRight.png" />
+    <Resource Include="Images\Common16\Calendar.png" />
+    <Resource Include="Images\Common16\CareLevel.png" />
+    <Resource Include="Images\Common16\CareOutcome.png" />
+    <Resource Include="Images\Common16\CarePlan.png" />
+    <Resource Include="Images\Common16\Case.png" />
+    <Resource Include="Images\Common16\CaseAdd.png" />
+    <Resource Include="Images\Common16\CaseOutcome.png" />
+    <Resource Include="Images\Common16\CellPhone.png" />
+    <Resource Include="Images\Common16\Check.png" />
+    <Resource Include="Images\Common16\CheckBox.png" />
+    <Resource Include="Images\Common16\ClearFormatting.png" />
+    <Resource Include="Images\Common16\Close.png" />
+    <Resource Include="Images\Common16\Collection.png" />
+    <Resource Include="Images\Common16\Columns1.png" />
+    <Resource Include="Images\Common16\Columns2.png" />
+    <Resource Include="Images\Common16\Columns3.png" />
+    <Resource Include="Images\Common16\ColumnsLeft.png" />
+    <Resource Include="Images\Common16\ColumnsRight.png" />
+    <Resource Include="Images\Common16\Compile.png" />
+    <Resource Include="Images\Common16\Completed.png" />
+    <Resource Include="Images\Common16\ConfigurationApplication.png" />
+    <Resource Include="Images\Common16\ConfigurationManagement.png" />
+    <Resource Include="Images\Common16\Configure.png" />
+    <Resource Include="Images\Common16\Copy.png" />
+    <Resource Include="Images\Common16\Correspondence.png" />
+    <Resource Include="Images\Common16\CorrespondenceReceived.png" />
+    <Resource Include="Images\Common16\CorrespondenceSend.png" />
+    <Resource Include="Images\Common16\Critical.png" />
+    <Resource Include="Images\Common16\Cut.png" />
+    <Resource Include="Images\Common16\Database.png" />
+    <Resource Include="Images\Common16\DatabaseTable.png" />
+    <Resource Include="Images\Common16\DataExplorerEvaluation.png" />
+    <Resource Include="Images\Common16\DateInput.png" />
+    <Resource Include="Images\Common16\DateTime.png" />
+    <Resource Include="Images\Common16\Delete.png" />
+    <Resource Include="Images\Common16\Desktop.png" />
+    <Resource Include="Images\Common16\DirectoryService.png" />
+    <Resource Include="Images\Common16\Disallow.png" />
+    <Resource Include="Images\Common16\Document.png" />
+    <Resource Include="Images\Common16\Document2.png" />
+    <Resource Include="Images\Common16\DocumentCollection.png" />
+    <Resource Include="Images\Common16\DocumentIn.png" />
+    <Resource Include="Images\Common16\DocumentOut.png" />
+    <Resource Include="Images\Common16\DocumentProperties.png" />
+    <Resource Include="Images\Common16\DocumentRestrict.png" />
+    <Resource Include="Images\Common16\DocumentReview.png" />
+    <Resource Include="Images\Common16\DocumentSecure.png" />
+    <Resource Include="Images\Common16\DocumentStamp.png" />
+    <Resource Include="Images\Common16\DropDownList.png" />
+    <Resource Include="Images\Common16\Email.png" />
+    <Resource Include="Images\Common16\Entity.png" />
+    <Resource Include="Images\Common16\EpisodicCareManagement.png" />
+    <Resource Include="Images\Common16\ErrorList.png" />
+    <Resource Include="Images\Common16\EventLog.png" />
+    <Resource Include="Images\Common16\Excel.png" />
+    <Resource Include="Images\Common16\Fax.png" />
+    <Resource Include="Images\Common16\FaxServer.png" />
+    <Resource Include="Images\Common16\FolderClosed.png" />
+    <Resource Include="Images\Common16\FolderClosedAccounts.png" />
+    <Resource Include="Images\Common16\FolderClosedSecurityShieldOk.png" />
+    <Resource Include="Images\Common16\FolderDocument.png" />
+    <Resource Include="Images\Common16\FolderExplorer.png" />
+    <Resource Include="Images\Common16\FolderNetwork.png" />
+    <Resource Include="Images\Common16\FolderNew.png" />
+    <Resource Include="Images\Common16\FolderOpen.png" />
+    <Resource Include="Images\Common16\FolderOpenedAccounts.png" />
+    <Resource Include="Images\Common16\FolderOpenedSecurityShieldOk.png" />
+    <Resource Include="Images\Common16\FolderOpenTabs.png" />
+    <Resource Include="Images\Common16\Form.png" />
+    <Resource Include="Images\Common16\FormDesigner.png" />
+    <Resource Include="Images\Common16\Gear.png" />
+    <Resource Include="Images\Common16\GearOk.png" />
+    <Resource Include="Images\Common16\GearStop.png" />
+    <Resource Include="Images\Common16\GearWarn.png" />
+    <Resource Include="Images\Common16\GrabBarBlueHorizontal.png" />
+    <Resource Include="Images\Common16\GrabBarBlueVertical.png" />
+    <Resource Include="Images\Common16\Help.png" />
+    <Resource Include="Images\Common16\Image.png" />
+    <Resource Include="Images\Common16\IndividualCareManagement.png" />
+    <Resource Include="Images\Common16\Information.png" />
+    <Resource Include="Images\Common16\Informational.png" />
+    <Resource Include="Images\Common16\Informational2.png" />
+    <Resource Include="Images\Common16\InformationCircle.png" />
+    <Resource Include="Images\Common16\Input.png" />
+    <Resource Include="Images\Common16\Journal.png" />
+    <Resource Include="Images\Common16\Keys.png" />
+    <Resource Include="Images\Common16\Label.png" />
+    <Resource Include="Images\Common16\Letter.png" />
+    <Resource Include="Images\Common16\Lightning.png" />
+    <Resource Include="Images\Common16\LineHeight.png" />
+    <Resource Include="Images\Common16\ListBox.png" />
+    <Resource Include="Images\Common16\LockKey.png" />
+    <Resource Include="Images\Common16\Mercury.png" />
+    <Resource Include="Images\Common16\Metric.png" />
+    <Resource Include="Images\Common16\MetricAdd.png" />
+    <Resource Include="Images\Common16\New.png" />
+    <Resource Include="Images\Common16\Note.png" />
+    <Resource Include="Images\Common16\Numbering.png" />
+    <Resource Include="Images\Common16\Numeric.png" />
+    <Resource Include="Images\Common16\Ok.png" />
+    <Resource Include="Images\Common16\Open.png" />
+    <Resource Include="Images\Common16\Options.png" />
+    <Resource Include="Images\Common16\PasteSpecial.png" />
+    <Resource Include="Images\Common16\PeopleLock.png" />
+    <Resource Include="Images\Common16\PermissionView.png" />
+    <Resource Include="Images\Common16\Phone.png" />
+    <Resource Include="Images\Common16\PopulationCareManagement.png" />
+    <Resource Include="Images\Common16\PopulationType.png" />
+    <Resource Include="Images\Common16\Print.png" />
+    <Resource Include="Images\Common16\Printer.png" />
+    <Resource Include="Images\Common16\PrintPreview.png" />
+    <Resource Include="Images\Common16\ProblemStatement.png" />
+    <Resource Include="Images\Common16\Properties.png" />
+    <Resource Include="Images\Common16\Question2.png" />
+    <Resource Include="Images\Common16\QuickPrint.png" />
+    <Resource Include="Images\Common16\RadioButton.png" />
+    <Resource Include="Images\Common16\Redo.png" />
+    <Resource Include="Images\Common16\Redo2.png" />
+    <Resource Include="Images\Common16\Repeat.png" />
+    <Resource Include="Images\Common16\ReportingConfiguration.png" />
+    <Resource Include="Images\Common16\ReportingServer.png" />
+    <Resource Include="Images\Common16\RoleClientProfile.png" />
+    <Resource Include="Images\Common16\RoutingRule.png" />
+    <Resource Include="Images\Common16\RowInsertAfter.png" />
+    <Resource Include="Images\Common16\RowInsertBefore.png" />
+    <Resource Include="Images\Common16\Save.png" />
+    <Resource Include="Images\Common16\SaveAs.png" />
+    <Resource Include="Images\Common16\Search.png" />
+    <Resource Include="Images\Common16\SearchMember.png" />
+    <Resource Include="Images\Common16\Section.png" />
+    <Resource Include="Images\Common16\SectionColumn.png" />
+    <Resource Include="Images\Common16\SecurityAuthority.png" />
+    <Resource Include="Images\Common16\SecurityGroup.png" />
+    <Resource Include="Images\Common16\SecurityServer.png" />
+    <Resource Include="Images\Common16\SecurityShieldOk.png" />
+    <Resource Include="Images\Common16\Selection.png" />
+    <Resource Include="Images\Common16\Servers.png" />
+    <Resource Include="Images\Common16\Service.png" />
+    <Resource Include="Images\Common16\ServiceAdd.png" />
+    <Resource Include="Images\Common16\ServiceImport.png" />
+    <Resource Include="Images\Common16\ServiceSequence.png" />
+    <Resource Include="Images\Common16\ServiceSet.png" />
+    <Resource Include="Images\Common16\Set.png" />
+    <Resource Include="Images\Common16\Set2.png" />
+    <Resource Include="Images\Common16\Set2Intersection.png" />
+    <Resource Include="Images\Common16\Set2Union.png" />
+    <Resource Include="Images\Common16\Shading.png" />
+    <Resource Include="Images\Common16\SortAscending.png" />
+    <Resource Include="Images\Common16\SortDescending.png" />
+    <Resource Include="Images\Common16\SpellCheck.png" />
+    <Resource Include="Images\Common16\Spelling.png" />
+    <Resource Include="Images\Common16\StatusCompleted.png" />
+    <Resource Include="Images\Common16\StatusCritical.png" />
+    <Resource Include="Images\Common16\StatusOk.png" />
+    <Resource Include="Images\Common16\StatusWarning.png" />
+    <Resource Include="Images\Common16\Stop.png" />
+    <Resource Include="Images\Common16\Stop2.png" />
+    <Resource Include="Images\Common16\Suspend.png" />
+    <Resource Include="Images\Common16\Table.png" />
+    <Resource Include="Images\Common16\TableColumn.png" />
+    <Resource Include="Images\Common16\TableRow.png" />
+    <Resource Include="Images\Common16\Text.png" />
+    <Resource Include="Images\Common16\TextBox.png" />
+    <Resource Include="Images\Common16\TreeViewChildrenCollapsed.png" />
+    <Resource Include="Images\Common16\TreeViewChildrenExpanded.png" />
+    <Resource Include="Images\Common16\Undefined.png" />
+    <Resource Include="Images\Common16\Undo.png" />
+    <Resource Include="Images\Common16\UserAccount.png" />
+    <Resource Include="Images\Common16\UserAccounts.png" />
+    <Resource Include="Images\Common16\UserProfile.png" />
+    <Resource Include="Images\Common16\Variable.png" />
+    <Resource Include="Images\Common16\VerticalAlignBottom.png" />
+    <Resource Include="Images\Common16\VerticalAlignMiddle.png" />
+    <Resource Include="Images\Common16\VerticalAlignTop.png" />
+    <Resource Include="Images\Common16\Warn.png" />
+    <Resource Include="Images\Common16\Warn2.png" />
+    <Resource Include="Images\Common16\Warning.png" />
+    <Resource Include="Images\Common16\Widget.png" />
+    <Resource Include="Images\Common16\Workflow.png" />
+    <Resource Include="Images\Common16\WorkOutcome.png" />
+    <Resource Include="Images\Common16\WorkQueue.png" />
+    <Resource Include="Images\Common16\WorkQueueItemAdd.png" />
+    <Resource Include="Images\Common16\WorkQueueView.png" />
+    <Resource Include="Images\Common16\Workspace.png" />
+    <Resource Include="Images\Common16\WorkspacePage.png" />
+    <Resource Include="Images\Common16\WorkTeam.png" />
+    <Resource Include="Images\Common16\Zoom.png" />
+    <Resource Include="Images\Common16\ZoomIn.png" />
+    <Resource Include="Images\Common16\ZoomOut.png" />
+    <Resource Include="Images\Common24\Accessibility.png" />
+    <Resource Include="Images\Common24\Add.png" />
+    <Resource Include="Images\Common24\Case.png" />
+    <Resource Include="Images\Common24\CaseAdd.png" />
+    <Resource Include="Images\Common24\Columns.png" />
+    <Resource Include="Images\Common24\Columns1.png" />
+    <Resource Include="Images\Common24\Columns2.png" />
+    <Resource Include="Images\Common24\Columns3.png" />
+    <Resource Include="Images\Common24\ColumnsLeft.png" />
+    <Resource Include="Images\Common24\ColumnsRight.png" />
+    <Resource Include="Images\Common24\ConfigurationManagement.png" />
+    <Resource Include="Images\Common24\Delete.png" />
+    <Resource Include="Images\Common24\Desktop.png" />
+    <Resource Include="Images\Common24\Doctor.png" />
+    <Resource Include="Images\Common24\Document2.png" />
+    <Resource Include="Images\Common24\FaxServer.png" />
+    <Resource Include="Images\Common24\FolderColorTabbed.gif" />
+    <Resource Include="Images\Common24\FolderColorTabbedAdd.Gif" />
+    <Resource Include="Images\Common24\FolderColorTabbedBlocked.gif" />
+    <Resource Include="Images\Common24\FolderColorTabbedDelete.gif" />
+    <Resource Include="Images\Common24\FolderColorTabbedLock.gif" />
+    <Resource Include="Images\Common24\FormDesigner.png" />
+    <Resource Include="Images\Common24\Gears.png" />
+    <Resource Include="Images\Common24\MyAssignedCases.png" />
+    <Resource Include="Images\Common24\MyAssignedWork.png" />
+    <Resource Include="Images\Common24\MyTeamCases.png" />
+    <Resource Include="Images\Common24\NoteCritical.png" />
+    <Resource Include="Images\Common24\NoteWarning.png" />
+    <Resource Include="Images\Common24\Person.png" />
+    <Resource Include="Images\Common24\RoleClientProfile.png" />
+    <Resource Include="Images\Common24\Search.png" />
+    <Resource Include="Images\Common24\Stop2.png" />
+    <Resource Include="Images\Common24\Widget.png" />
+    <Resource Include="Images\Common24\WorkQueue.png" />
+    <Resource Include="Images\Common24\WorkQueueItem.png" />
+    <Resource Include="Images\Common24\Workspace.png" />
+    <Resource Include="Images\Common24\WorkspacePage.png" />
+    <Resource Include="Images\Common24\WorkspacePageColumn.png" />
+    <Resource Include="Images\Common24\WorkspaceReturnTo.png" />
+    <Resource Include="Images\Common32\Accessibility.png" />
+    <Resource Include="Images\Common32\ActiveDirectory.png" />
+    <Resource Include="Images\Common32\ActiveDirectoryPencil.png" />
+    <Resource Include="Images\Common32\Add.png" />
+    <Resource Include="Images\Common32\Address.png" />
+    <Resource Include="Images\Common32\Alarm.png" />
+    <Resource Include="Images\Common32\AuditEventLog.png" />
+    <Resource Include="Images\Common32\AuthorizedService.png" />
+    <Resource Include="Images\Common32\Briefcase.png" />
+    <Resource Include="Images\Common32\Button.png" />
+    <Resource Include="Images\Common32\Calendar.png" />
+    <Resource Include="Images\Common32\CalendarClock.png" />
+    <Resource Include="Images\Common32\CareLevel.png" />
+    <Resource Include="Images\Common32\CareOutcome.png" />
+    <Resource Include="Images\Common32\CarePlan.png" />
+    <Resource Include="Images\Common32\Case.png" />
+    <Resource Include="Images\Common32\CellPhone.png" />
+    <Resource Include="Images\Common32\Certificate.png" />
+    <Resource Include="Images\Common32\CertificateStop.png" />
+    <Resource Include="Images\Common32\CertificateWarn.png" />
+    <Resource Include="Images\Common32\ClipboardPaste.png" />
+    <Resource Include="Images\Common32\Collection.png" />
+    <Resource Include="Images\Common32\Columns1.png" />
+    <Resource Include="Images\Common32\Columns2.png" />
+    <Resource Include="Images\Common32\Columns3.png" />
+    <Resource Include="Images\Common32\ColumnsLeft.png" />
+    <Resource Include="Images\Common32\ColumnsRight.png" />
+    <Resource Include="Images\Common32\Compass.png" />
+    <Resource Include="Images\Common32\Compile.png" />
+    <Resource Include="Images\Common32\ConfigurationApplication.png" />
+    <Resource Include="Images\Common32\ConfigurationManagement.png" />
+    <Resource Include="Images\Common32\ConfigurationServer.png" />
+    <Resource Include="Images\Common32\Configure.png" />
+    <Resource Include="Images\Common32\ConfigureOptions.png" />
+    <Resource Include="Images\Common32\Correspondence.png" />
+    <Resource Include="Images\Common32\CorrespondenceExtendedProperties.png" />
+    <Resource Include="Images\Common32\DatabaseConfiguration.png" />
+    <Resource Include="Images\Common32\Delete.png" />
+    <Resource Include="Images\Common32\Desktop.png" />
+    <Resource Include="Images\Common32\DirectorySearch.png" />
+    <Resource Include="Images\Common32\Document.png" />
+    <Resource Include="Images\Common32\Document2.png" />
+    <Resource Include="Images\Common32\Document2DatabaseTable.png" />
+    <Resource Include="Images\Common32\Document2Preview.png" />
+    <Resource Include="Images\Common32\DocumentCollection.png" />
+    <Resource Include="Images\Common32\DocumentDesigner.png" />
+    <Resource Include="Images\Common32\DocumentExport.png" />
+    <Resource Include="Images\Common32\DocumentImport.png" />
+    <Resource Include="Images\Common32\DocumentSet.png" />
+    <Resource Include="Images\Common32\DocumentSetStop.png" />
+    <Resource Include="Images\Common32\DocumentSetWarn.png" />
+    <Resource Include="Images\Common32\Domain.png" />
+    <Resource Include="Images\Common32\DropZone.png" />
+    <Resource Include="Images\Common32\EnterpriseManagement.png" />
+    <Resource Include="Images\Common32\Entity.png" />
+    <Resource Include="Images\Common32\Envelope.png" />
+    <Resource Include="Images\Common32\EpisodicCareManagement.png" />
+    <Resource Include="Images\Common32\EventLog.png" />
+    <Resource Include="Images\Common32\Exception.png" />
+    <Resource Include="Images\Common32\FaxServer.png" />
+    <Resource Include="Images\Common32\FileCabinet.png" />
+    <Resource Include="Images\Common32\Filter.png" />
+    <Resource Include="Images\Common32\FolderClose.png" />
+    <Resource Include="Images\Common32\FolderDirectory.png" />
+    <Resource Include="Images\Common32\FolderMove.png" />
+    <Resource Include="Images\Common32\FolderOpen.png" />
+    <Resource Include="Images\Common32\FolderOpenTabs.png" />
+    <Resource Include="Images\Common32\Form.png" />
+    <Resource Include="Images\Common32\FormDesigner.png" />
+    <Resource Include="Images\Common32\Gears.png" />
+    <Resource Include="Images\Common32\Help.png" />
+    <Resource Include="Images\Common32\ImportNcqaNdc.png" />
+    <Resource Include="Images\Common32\IndividualCareManagement.png" />
+    <Resource Include="Images\Common32\Information.png" />
+    <Resource Include="Images\Common32\Information3.png" />
+    <Resource Include="Images\Common32\Informational.png" />
+    <Resource Include="Images\Common32\Informational2.png" />
+    <Resource Include="Images\Common32\Input.png" />
+    <Resource Include="Images\Common32\Insurer.png" />
+    <Resource Include="Images\Common32\InsurerConfiguration.png" />
+    <Resource Include="Images\Common32\Journal.png" />
+    <Resource Include="Images\Common32\Keys.png" />
+    <Resource Include="Images\Common32\Label.png" />
+    <Resource Include="Images\Common32\Letter.png" />
+    <Resource Include="Images\Common32\Mercury.png" />
+    <Resource Include="Images\Common32\Metric.png" />
+    <Resource Include="Images\Common32\MicrosoftWord.gif" />
+    <Resource Include="Images\Common32\MyAssignedCases.png" />
+    <Resource Include="Images\Common32\MyAssignedWork.png" />
+    <Resource Include="Images\Common32\MyTeamCases.png" />
+    <Resource Include="Images\Common32\Note.png" />
+    <Resource Include="Images\Common32\Notepad.gif" />
+    <Resource Include="Images\Common32\NotepadPen.gif" />
+    <Resource Include="Images\Common32\Ok.png" />
+    <Resource Include="Images\Common32\People.png" />
+    <Resource Include="Images\Common32\PeopleLock.png" />
+    <Resource Include="Images\Common32\PermissionDenied.png" />
+    <Resource Include="Images\Common32\Person.png" />
+    <Resource Include="Images\Common32\Phone.png" />
+    <Resource Include="Images\Common32\PointerDown.png" />
+    <Resource Include="Images\Common32\PointerRight.png" />
+    <Resource Include="Images\Common32\Policy.png" />
+    <Resource Include="Images\Common32\PolicyApplication.png" />
+    <Resource Include="Images\Common32\PolicyConfigure.png" />
+    <Resource Include="Images\Common32\PolicyServer.png" />
+    <Resource Include="Images\Common32\PolicyStop.png" />
+    <Resource Include="Images\Common32\PolicyWarn.png" />
+    <Resource Include="Images\Common32\PopulationCareManagement.png" />
+    <Resource Include="Images\Common32\PopulationCareManagementActivityEvent.png" />
+    <Resource Include="Images\Common32\PopulationCareManagementCriteria.png" />
+    <Resource Include="Images\Common32\PopulationCareManagementEvent.png" />
+    <Resource Include="Images\Common32\PopulationCareManagementExtendedProperties.png" />
+    <Resource Include="Images\Common32\PopulationCareManagementPreview.png" />
+    <Resource Include="Images\Common32\PopulationCareManagementServiceEvent.png" />
+    <Resource Include="Images\Common32\PopulationCareManagementTriggerEvent.png" />
+    <Resource Include="Images\Common32\PopulationType.png" />
+    <Resource Include="Images\Common32\Printer.png" />
+    <Resource Include="Images\Common32\PrintPreview.png" />
+    <Resource Include="Images\Common32\ProblemStatement.png" />
+    <Resource Include="Images\Common32\Question.png" />
+    <Resource Include="Images\Common32\Question2.png" />
+    <Resource Include="Images\Common32\Redo.png" />
+    <Resource Include="Images\Common32\Refresh.png" />
+    <Resource Include="Images\Common32\ReportingConfiguration.png" />
+    <Resource Include="Images\Common32\ReportingServer.png" />
+    <Resource Include="Images\Common32\RoleClientProfile.png" />
+    <Resource Include="Images\Common32\RoutingRule.png" />
+    <Resource Include="Images\Common32\RoutingRuleChecked.png" />
+    <Resource Include="Images\Common32\Save.png" />
+    <Resource Include="Images\Common32\SaveAs.png" />
+    <Resource Include="Images\Common32\Schedule.png" />
+    <Resource Include="Images\Common32\Scheduling.png" />
+    <Resource Include="Images\Common32\Search.png" />
+    <Resource Include="Images\Common32\SearchMember.png" />
+    <Resource Include="Images\Common32\SearchWarning.png" />
+    <Resource Include="Images\Common32\Section.png" />
+    <Resource Include="Images\Common32\SectionBreakContinuous.png" />
+    <Resource Include="Images\Common32\SectionColumn.png" />
+    <Resource Include="Images\Common32\SecurityServer.png" />
+    <Resource Include="Images\Common32\SecurityShieldOk.png" />
+    <Resource Include="Images\Common32\SecurityShieldWarn.png" />
+    <Resource Include="Images\Common32\Selection.png" />
+    <Resource Include="Images\Common32\SelectionControls.png" />
+    <Resource Include="Images\Common32\Server.png" />
+    <Resource Include="Images\Common32\ServerConfiguration.png" />
+    <Resource Include="Images\Common32\ServerEnvironment.png" />
+    <Resource Include="Images\Common32\ServerEnvironmentAdd.png" />
+    <Resource Include="Images\Common32\ServerEnvironmentRemove.png" />
+    <Resource Include="Images\Common32\ServerPolicy.png" />
+    <Resource Include="Images\Common32\Servers.png" />
+    <Resource Include="Images\Common32\ServersNetwork.png" />
+    <Resource Include="Images\Common32\Service.png" />
+    <Resource Include="Images\Common32\ServiceSequence.png" />
+    <Resource Include="Images\Common32\Set2.png" />
+    <Resource Include="Images\Common32\Signature.png" />
+    <Resource Include="Images\Common32\SignatureStop.png" />
+    <Resource Include="Images\Common32\SignatureWarn.png" />
+    <Resource Include="Images\Common32\SignatureWithHand.png" />
+    <Resource Include="Images\Common32\Stop.png" />
+    <Resource Include="Images\Common32\Stop2.png" />
+    <Resource Include="Images\Common32\StopWatch.png" />
+    <Resource Include="Images\Common32\Suspend.png" />
+    <Resource Include="Images\Common32\Table.png" />
+    <Resource Include="Images\Common32\TableColumn.png" />
+    <Resource Include="Images\Common32\TableRow.png" />
+    <Resource Include="Images\Common32\Tabs.png" />
+    <Resource Include="Images\Common32\Telephone.png" />
+    <Resource Include="Images\Common32\Text.png" />
+    <Resource Include="Images\Common32\TextBox.png" />
+    <Resource Include="Images\Common32\User.png" />
+    <Resource Include="Images\Common32\UserProfile.png" />
+    <Resource Include="Images\Common32\UserProfiles.png" />
+    <Resource Include="Images\Common32\UserProfilesFolder.png" />
+    <Resource Include="Images\Common32\Users.png" />
+    <Resource Include="Images\Common32\Warn2.png" />
+    <Resource Include="Images\Common32\Widget.png" />
+    <Resource Include="Images\Common32\WidgetAdd.png" />
+    <Resource Include="Images\Common32\WidgetConfigure.png" />
+    <Resource Include="Images\Common32\WidgetRemove.png" />
+    <Resource Include="Images\Common32\Windows.png" />
+    <Resource Include="Images\Common32\Workflow.png" />
+    <Resource Include="Images\Common32\WorkflowAssembly.png" />
+    <Resource Include="Images\Common32\WorkflowExtendedProperties.png" />
+    <Resource Include="Images\Common32\WorkflowParameters.png" />
+    <Resource Include="Images\Common32\WorkflowPermissions.png" />
+    <Resource Include="Images\Common32\WorkOutcome.png" />
+    <Resource Include="Images\Common32\WorkQueue.png" />
+    <Resource Include="Images\Common32\WorkQueueExtendedProperties.png" />
+    <Resource Include="Images\Common32\WorkQueueTeams.png" />
+    <Resource Include="Images\Common32\WorkQueueView.png" />
+    <Resource Include="Images\Common32\Workspace.png" />
+    <Resource Include="Images\Common32\WorkspacePage.png" />
+    <Resource Include="Images\Common32\WorkspaceReturnTo.png" />
+    <Resource Include="Images\Common32\WorkTeam.png" />
+    <Resource Include="Images\SkinOffice2007\BackgroundBar1.png" />
+    <Resource Include="Images\SkinOffice2007\BackgroundBar2.png" />
+    <Resource Include="Images\SkinOffice2007\BackgroundBar3.png" />
+    <Resource Include="Images\SkinOffice2007\BackgroundBar4.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonEmpty.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonEmptyHover.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonFirst.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonFirstHover.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonLast.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonLastHover.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonNext.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonNextHover.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonPrevious.png" />
+    <Resource Include="Images\SkinOffice2007\ButtonPreviousHover.png" />
+    <Content Include="ServiceReferences.ClientConfig" />
+    <EmbeddedResource Include="Assets\Fonts\calibri.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\segoeui.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\GIGI.TTF" />
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mercury.Silverlight.Client\Mercury.Silverlight.Client.csproj">
+      <Project>{7710CD08-A13A-457C-8B2B-F5CB639382E4}</Project>
+      <Name>Mercury.Silverlight.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition.ConditionCriteria" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition.ConditionCriteria" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd74" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition.Enumerations" />
+  <xs:complexType name="ArrayOfConditionCriteriaDemographic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionCriteriaDemographic" nillable="true" type="tns:ConditionCriteriaDemographic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConditionCriteriaDemographic" nillable="true" type="tns:ArrayOfConditionCriteriaDemographic" />
+  <xs:complexType name="ConditionCriteriaDemographic">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgeMaximum" type="xs:int" />
+          <xs:element minOccurs="0" name="AgeMinimum" type="xs:int" />
+          <xs:element minOccurs="0" name="ConditionId" type="xs:long" />
+          <xs:element minOccurs="0" name="EthnicityId" type="xs:long" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="Gender" type="q2:Gender" />
+          <xs:element minOccurs="0" name="UseAgeCriteria" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConditionCriteriaDemographic" nillable="true" type="tns:ConditionCriteriaDemographic" />
+  <xs:complexType name="ArrayOfConditionCriteriaEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionCriteriaEvent" nillable="true" type="tns:ConditionCriteriaEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConditionCriteriaEvent" nillable="true" type="tns:ArrayOfConditionCriteriaEvent" />
+  <xs:complexType name="ConditionCriteriaEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConditionId" type="xs:long" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition.Enumerations" minOccurs="0" name="EventType" type="q4:ConditionCriteriaEventType" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConditionCriteriaEvent" nillable="true" type="tns:ConditionCriteriaEvent" />
+</xs:schema>

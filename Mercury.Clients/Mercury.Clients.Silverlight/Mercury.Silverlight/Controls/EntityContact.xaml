@@ -1,0 +1,201 @@
+﻿<UserControl x:Class="Mercury.Silverlight.Controls.EntityContact"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+    xmlns:TelerikNavigation="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation"
+    xmlns:TelerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+    xmlns:TelerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"  
+    xmlns:MercuryValueConverters="clr-namespace:Mercury.Client.ValueConverters;assembly=Mercury.Silverlight.Client"
+    >
+    
+    <UserControl.Resources>
+        
+        <MercuryValueConverters:PhoneNumberFormatter x:Name="PhoneNumberFormatterConverter"></MercuryValueConverters:PhoneNumberFormatter>
+        
+        <MercuryValueConverters:EnumerationFormatter x:Name="EnumerationFormatterConverter"></MercuryValueConverters:EnumerationFormatter>
+        
+    </UserControl.Resources>
+    
+    <Grid Background="White">
+        
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="Auto"></RowDefinition>
+
+            <RowDefinition Height="Auto"></RowDefinition>
+            
+            <RowDefinition Height="*"></RowDefinition>
+
+            <RowDefinition Height="Auto"></RowDefinition>
+            
+            <RowDefinition Height="Auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        
+        
+        <Border x:Name="ValidationMessagePanel" Grid.Row="0" HorizontalAlignment="Stretch" BorderBrush="Black" BorderThickness="1" Background="#FFDDDD" MinHeight="24" Visibility="Collapsed" >
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+
+                <Image Source="../Images/Common16/Warn.png" Margin="8 0 8 0"></Image>
+
+                <TextBlock x:Name="ValidationMessage" TextWrapping="Wrap"></TextBlock>
+
+            </StackPanel>
+            
+        </Border>
+
+        <Border Grid.Row="1" Height="29" Background="#215485" BorderBrush="#FFE0B3" BorderThickness="0 1 0 0" Margin="0" Padding="8 4 0 4">
+
+            <TextBlock FontFamily="Calibri, Arial" FontSize="13" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left">Step 1: Select a Contact Method</TextBlock>
+
+        </Border>
+
+        <Border Grid.Row="2" Margin="12">
+
+            <TelerikGridView:RadGridView x:Name="EntityContactInformationGrid" Grid.Column="0" Grid.Row="0" VerticalAlignment="Stretch" AutoGenerateColumns="False" ShowGroupPanel="False" IsReadOnly="True" ColumnWidth="*"                                         
+                                                                                 
+                RowIndicatorVisibility="Collapsed"                                                                                                  
+
+                >
+
+                    <TelerikGridView:RadGridView.Columns>
+                        
+                        <TelerikGridView:GridViewSelectColumn UniqueName="Selection" Header="Select" Width="60" TextAlignment="Center"></TelerikGridView:GridViewSelectColumn>
+                        
+                        <TelerikGridView:GridViewDataColumn UniqueName="Type" Header="Type" DataMemberBinding="{Binding ContactType, Converter={StaticResource EnumerationFormatterConverter} }" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn UniqueName="Number" Header="Number" DataMemberBinding="{Binding Number, Converter={StaticResource PhoneNumberFormatterConverter} }" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn UniqueName="Extension" Header="Extension" DataMemberBinding="{Binding NumberExtension}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn UniqueName="Email" Header="Email" DataMemberBinding="{Binding Email}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+                    
+                    </TelerikGridView:RadGridView.Columns>
+                    
+                </TelerikGridView:RadGridView>
+
+        </Border>
+
+        <Border Grid.Row="3" Height="29" Background="#215485" BorderBrush="#FFE0B3" BorderThickness="0 1 0 0" Margin="0" Padding="8 4 0 4">
+
+            <TextBlock FontFamily="Calibri, Arial" FontSize="13" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left">Step 2: Record Contact Results</TextBlock>
+
+        </Border>
+
+        <Border Grid.Row="4" Margin="12">
+     
+            <Grid>
+                    
+                <Grid.ColumnDefinitions>
+                        
+                    <ColumnDefinition Width=".15*" MinWidth="110"></ColumnDefinition>
+                        
+                    <ColumnDefinition Width=".25*"></ColumnDefinition>
+
+                    <ColumnDefinition Width=".30*"></ColumnDefinition>
+
+                    <ColumnDefinition Width=".35*"></ColumnDefinition>
+                    
+                </Grid.ColumnDefinitions>
+                    
+                <Grid.RowDefinitions>
+                        
+                    <RowDefinition MinHeight="32"></RowDefinition>
+
+                    <RowDefinition MinHeight="32"></RowDefinition>
+
+                    <RowDefinition MinHeight="32"></RowDefinition>
+
+                    <RowDefinition MinHeight="32"></RowDefinition>
+
+                    <RowDefinition MinHeight="32"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+
+                    
+                <TextBlock Text="Contact Direction:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"></TextBlock>
+                    
+                <TelerikInput:RadComboBox x:Name="ContactDirectionSelection" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+                        
+                    <TelerikInput:RadComboBoxItem Content="Outbound" Tag="1" IsSelected="True"></TelerikInput:RadComboBoxItem>
+                        
+                    <TelerikInput:RadComboBoxItem Content="Inbound"  Tag="2" IsSelected="False"></TelerikInput:RadComboBoxItem>
+                        
+                </TelerikInput:RadComboBox>
+                    
+                <TextBlock x:Name="ContactDateTimeLabel" Text="Contact Date/Time:" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 8 0" Visibility="Collapsed"></TextBlock>
+                    
+                <StackPanel x:Name="ContactDateTimePanel" Orientation="Horizontal" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Visibility="Collapsed">
+
+                    <TelerikInput:RadDatePicker x:Name="ContactDate" Width="100" IsEnabled="False"></TelerikInput:RadDatePicker>
+                        
+                    <TelerikInput:RadTimePicker x:Name="ContactTime" Width="100" IsEnabled="False"></TelerikInput:RadTimePicker>
+                        
+                </StackPanel>
+
+
+                <TextBlock Text="Regarding:" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
+
+                <TelerikInput:RadComboBox x:Name="ContactRegardingSelection" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" IsEditable="True" VerticalAlignment="Center"></TelerikInput:RadComboBox>
+                    
+
+                <TextBlock Text="Introduction Script:" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>
+
+                <TextBlock x:Name="ContactIntroductionScript" Text="" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center"></TextBlock>
+
+
+                <TextBlock Text="Remarks:" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Margin="0 4 0 0"></TextBlock>
+                    
+                <TextBox x:Name="ContactRemarks" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" Height="60" AcceptsReturn="True"></TextBox>
+
+
+                <TextBlock Text="Contact Outcome:" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"></TextBlock>
+
+                <TelerikInput:RadComboBox x:Name="ContactOutcomeSelection" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center">
+
+                    <TelerikInput:RadComboBoxItem Content="Successful"   Tag="1" IsSelected="True" />
+
+                    <TelerikInput:RadComboBoxItem Content="No Answer"    Tag="2" IsSelected="False" />
+
+                    <TelerikInput:RadComboBoxItem Content="Left Message" Tag="3" IsSelected="False" />
+
+                    <TelerikInput:RadComboBoxItem Content="Busy"         Tag="4" IsSelected="False" />
+
+                    <TelerikInput:RadComboBoxItem Content="Wrong Number" Tag="5" IsSelected="False" />
+
+                    <TelerikInput:RadComboBoxItem Content="Disconnected" Tag="6" IsSelected="False" />
+
+                    <TelerikInput:RadComboBoxItem Content="Refused Call" Tag="7" IsSelected="False" />
+
+                    <TelerikInput:RadComboBoxItem Content="Rescheduled Call" Tag="8" IsSelected="False" />
+
+                    <TelerikInput:RadComboBoxItem Content="Not Available" Tag="9" IsSelected="False" />
+
+                    <TelerikInput:RadComboBoxItem Content="Language Barrier" Tag="10" IsSelected="False" />
+
+                    <TelerikInput:RadComboBoxItem Content="Deceased" Tag="11" IsSelected="False" />
+                    
+                </TelerikInput:RadComboBox>
+
+                <StackPanel  Grid.Column="4" Grid.Row="4" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+
+                    <Telerik:RadButton x:Name="ButtonOk" Width="73" Height="24" Content="OK" IsEnabled="False" Margin="10 0 10 0" Click="ButtonOk_Click" ></Telerik:RadButton>
+
+                    <Telerik:RadButton x:Name="ButtonCancel" Width="73" Height="24" Content="Cancel" IsEnabled="False" Margin="10 0 10 0" Click="ButtonCancel_Click" ></Telerik:RadButton>
+
+                </StackPanel>
+                    
+            </Grid>
+
+        </Border>
+
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Search" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Search" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" />
+  <xs:complexType name="ArrayOfSearchResultGlobal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchResultGlobal" nillable="true" type="tns:SearchResultGlobal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchResultGlobal" nillable="true" type="tns:ArrayOfSearchResultGlobal" />
+  <xs:complexType name="SearchResultGlobal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detail1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Detail2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResultGlobal" nillable="true" type="tns:SearchResultGlobal" />
+  <xs:complexType name="ArrayOfSearchResultMember">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchResultMember" nillable="true" type="tns:SearchResultMember" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchResultMember" nillable="true" type="tns:ArrayOfSearchResultMember" />
+  <xs:complexType name="SearchResultMember">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentAge" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentlyEnrolled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResultMember" nillable="true" type="tns:SearchResultMember" />
+  <xs:complexType name="ArrayOfSearchResultProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchResultProvider" nillable="true" type="tns:SearchResultProvider" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchResultProvider" nillable="true" type="tns:ArrayOfSearchResultProvider" />
+  <xs:complexType name="SearchResultProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+      <xs:element minOccurs="0" name="ExternalProviderId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FederalTaxId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalProviderId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimarySpecialtyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResultProvider" nillable="true" type="tns:SearchResultProvider" />
+  <xs:complexType name="ArrayOfSearchResultPopulationHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchResultPopulationHeader" nillable="true" type="tns:SearchResultPopulationHeader" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchResultPopulationHeader" nillable="true" type="tns:ArrayOfSearchResultPopulationHeader" />
+  <xs:complexType name="SearchResultPopulationHeader">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="CreateAccountInfo" nillable="true" type="q1:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="ModifiedAccountInfo" nillable="true" type="q2:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Visible" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResultPopulationHeader" nillable="true" type="tns:SearchResultPopulationHeader" />
+  <xs:complexType name="ArrayOfSearchResultMedicalServiceHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchResultMedicalServiceHeader" nillable="true" type="tns:SearchResultMedicalServiceHeader" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchResultMedicalServiceHeader" nillable="true" type="tns:ArrayOfSearchResultMedicalServiceHeader" />
+  <xs:complexType name="SearchResultMedicalServiceHeader">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="CreateAccountInfo" nillable="true" type="q3:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="LastPaidDate" type="xs:dateTime" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="ModifiedAccountInfo" nillable="true" type="q4:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" minOccurs="0" name="ServiceType" type="q5:MedicalServiceType" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" minOccurs="0" name="SetType" type="q6:ServiceSetType" />
+      <xs:element minOccurs="0" name="Visible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WithinDays" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResultMedicalServiceHeader" nillable="true" type="tns:SearchResultMedicalServiceHeader" />
+  <xs:complexType name="ArrayOfSearchResultFormHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchResultFormHeader" nillable="true" type="tns:SearchResultFormHeader" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchResultFormHeader" nillable="true" type="tns:ArrayOfSearchResultFormHeader" />
+  <xs:complexType name="SearchResultFormHeader">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="CreateAccountInfo" nillable="true" type="q7:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FormInstanceId" type="ser:guid" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="FormType" type="q8:FormType" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="ModifiedAccountInfo" nillable="true" type="q9:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Visible" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResultFormHeader" nillable="true" type="tns:SearchResultFormHeader" />
+</xs:schema>

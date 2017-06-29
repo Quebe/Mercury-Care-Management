@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="UserInteractionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Exception" />
+      <xs:enumeration value="Prompt" />
+      <xs:enumeration value="UserInterfaceUpdate" />
+      <xs:enumeration value="RequireEntity" />
+      <xs:enumeration value="RequireForm" />
+      <xs:enumeration value="ContactEntity" />
+      <xs:enumeration value="SendCorrespondence" />
+      <xs:enumeration value="CreateMemberCarePlan" />
+      <xs:enumeration value="CreateModifyMemberCase" />
+      <xs:enumeration value="OpenImage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserInteractionType" nillable="true" type="tns:UserInteractionType" />
+  <xs:simpleType name="UserInterfaceUpdateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Message" />
+      <xs:enumeration value="InputParameters" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserInterfaceUpdateType" nillable="true" type="tns:UserInterfaceUpdateType" />
+  <xs:simpleType name="UserPromptImage">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoImage" />
+      <xs:enumeration value="Question" />
+      <xs:enumeration value="Information" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Stop" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserPromptImage" nillable="true" type="tns:UserPromptImage" />
+  <xs:simpleType name="UserPromptType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ConfirmationOkCancel" />
+      <xs:enumeration value="ConfirmationYesNo" />
+      <xs:enumeration value="Input" />
+      <xs:enumeration value="DateInput" />
+      <xs:enumeration value="Selection" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserPromptType" nillable="true" type="tns:UserPromptType" />
+  <xs:simpleType name="UserPromptButtonClicked">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Ok" />
+      <xs:enumeration value="Cancel" />
+      <xs:enumeration value="Yes" />
+      <xs:enumeration value="No" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserPromptButtonClicked" nillable="true" type="tns:UserPromptButtonClicked" />
+</xs:schema>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Claims" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Claims" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd68" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Claims.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:complexType name="ArrayOfClaim">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Claim" nillable="true" type="tns:Claim" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClaim" nillable="true" type="tns:ArrayOfClaim" />
+  <xs:complexType name="Claim">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdmissionDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BillType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BilledAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ClaimFromDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ClaimNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClaimThruDate" type="xs:dateTime" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Claims.Enumerations" minOccurs="0" name="ClaimType" type="q2:ClaimType" />
+          <xs:element minOccurs="0" name="DenialReason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="PaidAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PaidDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PayToProviderAffiliationId" type="xs:long" />
+          <xs:element minOccurs="0" name="PayToProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="PrimaryDiagnosisCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryDiagnosisDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Claim" nillable="true" type="tns:Claim" />
+  <xs:complexType name="ArrayOfClaimLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClaimLine" nillable="true" type="tns:ClaimLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClaimLine" nillable="true" type="tns:ArrayOfClaimLine" />
+  <xs:complexType name="ClaimLine">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BilledAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ClaimId" type="xs:long" />
+          <xs:element minOccurs="0" name="DenialReason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DiagnosisCode1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DiagnosisDescription1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LineNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModifierCode1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaidAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RevenueCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RevenueDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceDateFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ServiceDateThru" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ServiceDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Units" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClaimLine" nillable="true" type="tns:ClaimLine" />
+  <xs:complexType name="ArrayOfPharmacyClaim">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PharmacyClaim" nillable="true" type="tns:PharmacyClaim" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPharmacyClaim" nillable="true" type="tns:ArrayOfPharmacyClaim" />
+  <xs:complexType name="PharmacyClaim">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BilledAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClaimDateFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClaimDateThru" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClaimId" type="xs:long" />
+      <xs:element minOccurs="0" name="ClaimType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DaysSupply" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeaClassification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dosage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DrugName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalClaimId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalMemberId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+      <xs:element minOccurs="0" name="NdcCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaidAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaidDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PharmacyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrescribedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Refills" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceProviderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceProviderSpecialtyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TherapeuticClassification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Units" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PharmacyClaim" nillable="true" type="tns:PharmacyClaim" />
+</xs:schema>

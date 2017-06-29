@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.DataExplorer.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.DataExplorer.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DataExplorerNodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Set" />
+      <xs:enumeration value="Evaluation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataExplorerNodeType" nillable="true" type="tns:DataExplorerNodeType" />
+  <xs:simpleType name="DataExplorerSetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Union" />
+      <xs:enumeration value="Intersection" />
+      <xs:enumeration value="Complement" />
+      <xs:enumeration value="SymmetricDifference" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataExplorerSetType" nillable="true" type="tns:DataExplorerSetType" />
+  <xs:simpleType name="DataExplorerEvaluationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="PopulationMembership" />
+      <xs:enumeration value="MemberDemographic" />
+      <xs:enumeration value="MemberEnrollment" />
+      <xs:enumeration value="MemberService" />
+      <xs:enumeration value="MemberMetric" />
+      <xs:enumeration value="MemberEnrollmentContinuousFromBirthDate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataExplorerEvaluationType" nillable="true" type="tns:DataExplorerEvaluationType" />
+  <xs:simpleType name="DataExplorerEvaluationDateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AsOfDateAbsolute" />
+      <xs:enumeration value="AsOfDateRelative" />
+      <xs:enumeration value="BetweenDatesAbsolute" />
+      <xs:enumeration value="BetweenDatesRelative" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataExplorerEvaluationDateType" nillable="true" type="tns:DataExplorerEvaluationDateType" />
+  <xs:simpleType name="DataExplorerVariableType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Numeric" />
+      <xs:enumeration value="Date" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataExplorerVariableType" nillable="true" type="tns:DataExplorerVariableType" />
+  <xs:simpleType name="DataExplorerNodeResultDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Member" />
+      <xs:enumeration value="PopulationMembership" />
+      <xs:enumeration value="MemberService" />
+      <xs:enumeration value="MemberMetric" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataExplorerNodeResultDataType" nillable="true" type="tns:DataExplorerNodeResultDataType" />
+</xs:schema>

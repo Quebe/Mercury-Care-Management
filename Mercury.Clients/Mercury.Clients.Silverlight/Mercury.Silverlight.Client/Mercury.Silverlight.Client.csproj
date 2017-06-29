@@ -1,0 +1,1050 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7710CD08-A13A-457C-8B2B-F5CB639382E4}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mercury</RootNamespace>
+    <AssemblyName>Mercury.Silverlight.Client</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Mercury.Server\Mercury.Server\EnterprisePermissions.cs">
+      <Link>Server\EnterprisePermissions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Mercury.Server\Mercury.Server\EnvironmentPermissions.cs">
+      <Link>Server\EnvironmentPermissions.cs</Link>
+    </Compile>
+    <Compile Include="Client\Application.cs" />
+    <Compile Include="Client\Caching\CacheDuration.cs" />
+    <Compile Include="Client\Caching\CacheDurationMultipler.cs" />
+    <Compile Include="Client\Caching\CacheManager.cs" />
+    <Compile Include="Client\Caching\CacheObject.cs" />
+    <Compile Include="Client\Converters\ServerCollectionToClient.cs" />
+    <Compile Include="Client\Core\Entity\Entity.cs" />
+    <Compile Include="Client\Core\Entity\EntityAddress.cs" />
+    <Compile Include="Client\Core\Entity\EntityContactInformation.cs" />
+    <Compile Include="Client\Core\Forms\Control.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Address.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Button.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Collection.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Entity.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Input.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Label.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Metric.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Section.cs" />
+    <Compile Include="Client\Core\Forms\Controls\SectionColumn.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Selection.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Service.cs" />
+    <Compile Include="Client\Core\Forms\Controls\Text.cs" />
+    <Compile Include="Client\Core\Forms\EventResult.cs" />
+    <Compile Include="Client\Core\Forms\Form.cs" />
+    <Compile Include="Client\Core\Forms\ServerProcessEventArgs.cs" />
+    <Compile Include="Client\Core\Forms\Structures\SelectionItem.cs" />
+    <Compile Include="Client\Core\Forms\Structures\Style.cs" />
+    <Compile Include="Client\Core\Insurer\Insurer.cs" />
+    <Compile Include="Client\Core\Insurer\Program.cs" />
+    <Compile Include="Client\Core\Member\Member.cs" />
+    <Compile Include="Client\Core\Member\MemberEnrollment.cs" />
+    <Compile Include="Client\Core\Member\MemberEnrollmentCoverage.cs" />
+    <Compile Include="Client\Core\Member\MemberEnrollmentPcp.cs" />
+    <Compile Include="Client\Core\Member\MemberRelationship.cs" />
+    <Compile Include="Client\Core\Provider\Provider.cs" />
+    <Compile Include="Client\Core\Provider\ProviderAffiliation.cs" />
+    <Compile Include="Client\Core\Sponsor\Sponsor.cs" />
+    <Compile Include="Client\Core\Work\WorkQueueItemSender.cs" />
+    <Compile Include="Server\CommonFunctions.cs" />
+    <Compile Include="Client\Core\CoreConfigurationObject.cs" />
+    <Compile Include="Client\Core\CoreExtensibleObject.cs" />
+    <Compile Include="Client\Core\CoreObject.cs" />
+    <Compile Include="Client\Core\Work\Workflow.cs" />
+    <Compile Include="Client\Core\Work\WorkOutcome.cs" />
+    <Compile Include="Client\Core\Work\WorkQueue.cs" />
+    <Compile Include="Client\Core\Work\WorkQueueItem.cs" />
+    <Compile Include="Client\Enumerations\ServiceBindingType.cs" />
+    <Compile Include="Client\Session.cs" />
+    <Compile Include="Client\ValueConverters\BooleanToVisibility.cs" />
+    <Compile Include="Client\ValueConverters\BooleanToVisibilityInverse.cs" />
+    <Compile Include="Client\ValueConverters\DateToAgeInMonthsString.cs" />
+    <Compile Include="Client\ValueConverters\DateToAgeInYearsMonthsString.cs" />
+    <Compile Include="Client\ValueConverters\DateToAgeInYearsString.cs" />
+    <Compile Include="Client\ValueConverters\DateToStringFormatter.cs" />
+    <Compile Include="Client\ValueConverters\EnumerationFormatter.cs" />
+    <Compile Include="Client\ValueConverters\ExtendedPropertyValue.cs" />
+    <Compile Include="Client\ValueConverters\GenderDescriptionFormatter.cs" />
+    <Compile Include="Client\ValueConverters\PhoneNumberFormatter.cs" />
+    <Compile Include="Client\ValueConverters\TerminationDateToString.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Data\DataTypeConstants.cs" />
+    <Compile Include="Service References\Server.Application\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Server.Enterprise\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Server.Application\Application71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application711.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application712.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ActionCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.AuditAuthenticationCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.AuthorizationCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.AuthorizationLineCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.AuthorizationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.AuthorizationTypeCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.AuthorizedService.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.AuthorizedServiceCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.BenefitPlan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.BenefitPlanCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.BooleanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CareLevel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CareLevelCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CareOutcome.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CareOutcomeCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CarePlan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CarePlanCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CityStateZipCodeView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CityStateZipCodeViewCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ClaimCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ClaimLineCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ContactRegarding.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ContactRegardingCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Contract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ContractCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Correspondence.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CorrespondenceCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CorrespondenceContent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CoverageLevel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CoverageLevelCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CoverageType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.CoverageTypeCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.DictionaryKeyCountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.DictionaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.DictionaryStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.DirectoryEntryCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Entity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityAddressCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityContact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityContactCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityContactInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityContactInformationCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityCorrespondence.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityDocumentCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityNote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityNoteCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EntityNoteContentCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Environment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EnvironmentAccessCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EnvironmentCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.EnvironmentRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.FaxServer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.FaxServerCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Form.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.FormCompileMessageCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.FormControlRaiseEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.FormControlValueChangedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.FormSubmitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.GetWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ImportExportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.InsuranceType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.InsuranceTypeCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Insurer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.InsurerCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MedicalServiceDetailSetCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MedicalServiceDetailSingletonCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Member.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberAuthorizedServiceCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberAuthorizedServiceDetailCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberCase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberCaseCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberDemographicsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberEnrollment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberEnrollmentCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberEnrollmentCoverage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberEnrollmentCoverageCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberEnrollmentPcp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberEnrollmentPcpCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberEnrollmentTplCob.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberEnrollmentTplCobCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberMetricCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberRelationship.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberRelationshipCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberService.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberServiceCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberServiceDetailSetCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MemberServiceDetailSingletonCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Metric.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.MetricCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.NoteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.NoteTypeCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ObjectSaveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PermissionCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PharmacyClaimCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Population.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationHeadersCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationMembership.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationMembershipCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationMembershipEntryStatusDataViewCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationMembershipServiceEvent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationMembershipServiceEventCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationMembershipServiceEventDataViewCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationMembershipSummaryCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationMembershipTriggerEventDataViewCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationServiceEvent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PopulationTypeCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Printer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PrinterCapabilities.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.PrinterCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProblemStatement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProblemStatementCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Program.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProgramCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Provider.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProviderAffiliation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProviderAffiliationCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProviderContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProviderContractCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProviderEnrollment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProviderEnrollmentCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ProviderServiceLocationCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ReportingServer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ReportingServerCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.RoleCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.RoleMembershipCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.RolePermissionCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.RoutingRule.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.RoutingRuleCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SearchResultFormHeaderCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SearchResultMedicalServiceHeaderCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SearchResultsGlobalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SearchResultsMemberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SearchResultsProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SecurityAuthority.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SecurityAuthorityCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SecurityGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SecurityGroupCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.SecurityGroupPermissionCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Service.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ServiceSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.ServiceSingleton.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Session.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Sponsor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.StringListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.StringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.Workflow.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkflowCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkflowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkOutcome.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkOutcomeCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueueCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueueItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueueItemAssignmentHistoryCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueueItemCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueueItemSenderCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueueItemWorkflowStepCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueueSummaryCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueueView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkQueueViewCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkTeam.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Mercury.Server.Application.WorkTeamCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Application\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Server.Application\configuration.svcinfo" />
+    <None Include="Service References\Server.Application\configuration91.svcinfo" />
+    <None Include="Service References\Server.Application\Application.disco" />
+    <None Include="Service References\Server.Application\Application.wsdl" />
+    <None Include="Service References\Server.Application\Application.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application40.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application44.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application45.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application46.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application47.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application48.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application49.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application50.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application59.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application60.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application66.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application67.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application68.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application69.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application70.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Application\Application9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Mercury.Server.Enterprise.AuthenticationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Enterprise\Mercury.Server.Enterprise.BooleanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Enterprise\Mercury.Server.Enterprise.DictionaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security.wsdl" />
+    <None Include="Service References\Server.Enterprise\Security.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security40.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Server.Enterprise\Security9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Server.Application\" />
+    <WCFMetadataStorage Include="Service References\Server.Enterprise\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Server.Enterprise\Security.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Server.Enterprise\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Server.Enterprise\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Server.Enterprise\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

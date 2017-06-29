@@ -1,0 +1,108 @@
+﻿.DesignerToolbarItem {
+	 cursor: pointer;
+	 
+}
+
+.DesignerToolbarItemTable { 
+	width: 100%; 
+	border: solid 1px #d3dfee; 
+	background-color: #fafafa; 
+	font-family: Calibri, Arial; 
+	font-size: 10pt; 
+	color: #003366;
+	
+}	
+
+.DesignerToolbarItemTableCellImage { 
+	width: 32px; 
+	padding: 4px; 
+	background-color: #a7bfde;
+	
+}	
+
+.DesignerToolbarItemTableCellText {
+	padding-left: 8px;	
+}	
+
+.DesignerToolbarItemTableCellArrow {
+	width: 6px; 
+	padding-left: 2px; 
+	background-color: #a7bfde
+	
+}
+
+.DropZone {
+	border: dashed 1px #666666;
+	background-color: White;
+	margin: 4px; 
+	padding: 4px;
+	font-family: Calibri, Arial; 
+	font-size: 10pt; 
+	color: #666666;
+	display: none;
+	 min-width: 8px; min-height: 24px; 
+}
+
+.ColumnDropZoneCell {}
+
+.DropZoneAllow {
+	border: solid 1px #ffff00;
+	background-color: #ffffcc;
+	margin: 4px; 
+	padding: 4px;
+	font-family: Calibri, Arial; 
+	font-size: 10pt; 
+	color: #666666;
+	cursor: pointer;
+}
+
+.FormControl {
+/*	border: dashed 1px #666666; */
+/*	border: solid 1px #4f81bd; */
+/*	background-color: White; */
+/* 	font-family: Calibri, Arial; */
+/*	font-size: 10pt; */
+/*	color: Black; */
+}
+
+.FormControl_TitleBar { 
+	background-color: #b9d2f3;
+	cursor: pointer;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#ddecfe', EndColorStr='#95b8e9');
+
+}
+
+.FormControl_TitleBarText { 
+	font-family: Calibri, Arial; 
+	font-size: 10pt;
+	cursor: pointer;
+}
+
+.FormControl_TitleBarExpander 
+{
+	font-family: Calibri, Arial; 
+	padding-top: 5px; 
+	margin: 0 auto; 
+	border: solid 1px #4f81bd; 
+	text-align: center; 
+	display: none;
+}
+
+.SelectionItemMoveUp {
+	src: url(/Images/Common16/DocumentIn.png);
+}
+
+
+.ToolbarBackground {
+    
+    background: #dde7f5; /* Old browsers */
+    background: -moz-linear-gradient(top, #dde7f5 0%, #dde7f5 40%, #c7d8ed 40%, #d6e6f4 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dde7f5), color-stop(40%,#dde7f5), color-stop(40%,#c7d8ed), color-stop(100%,#d6e6f4)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #dde7f5 0%,#dde7f5 40%,#c7d8ed 40%,#d6e6f4 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #dde7f5 0%,#dde7f5 40%,#c7d8ed 40%,#d6e6f4 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #dde7f5 0%,#dde7f5 40%,#c7d8ed 40%,#d6e6f4 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dde7f5', endColorstr='#d6e6f4',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #dde7f5 0%,#dde7f5 40%,#c7d8ed 40%,#d6e6f4 100%); /* W3C */   
+    
+}
+

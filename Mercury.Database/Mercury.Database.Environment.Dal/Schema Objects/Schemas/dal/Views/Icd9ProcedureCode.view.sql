@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[Icd9ProcedureCode] AS SELECT * FROM dbo.Icd9ProcedureCode

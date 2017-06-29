@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:complexType name="Correspondence">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FormId" type="xs:long" />
+          <xs:element minOccurs="0" name="Version" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Correspondence" nillable="true" type="tns:Correspondence" />
+  <xs:complexType name="NoteType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q2:CoreConfigurationObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NoteType" nillable="true" type="tns:NoteType" />
+  <xs:complexType name="ContactRegarding">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreConfigurationObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContactRegarding" nillable="true" type="tns:ContactRegarding" />
+</xs:schema>

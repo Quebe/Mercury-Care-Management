@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Mercury.Silverlight.Forms.FormEditor.FormEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+    <Border>
+
+        <Border.Background>
+
+            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                <GradientStop Color="#FF333333" Offset="0" />
+
+                <GradientStop Color="#FF999999" Offset=".75" />
+
+                <GradientStop Color="#FF999999" Offset="1" />
+
+            </LinearGradientBrush>
+
+        </Border.Background>
+
+        <Border x:Name="FormContent" Margin="24, 24, 24, 24" Padding="24" BorderBrush="Black" BorderThickness="1" Background="White" Width="816" />
+        
+    </Border>
+
+</UserControl>

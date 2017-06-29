@@ -1,0 +1,91 @@
+﻿.DesignerToolbarItem {
+	 width: 88%;
+	 cursor: pointer;
+	 
+}
+
+.DesignerToolbarItemTable { 
+	width: 100%; 
+	border: solid 1px #d3dfee; 
+	background-color: #fafafa; 
+	font-family: Calibri, Arial; 
+	font-size: 10pt; 
+	color: #003366;
+	
+}	
+
+.DesignerToolbarItemTableCellImage { 
+	width: 32px; 
+	padding: 4px; 
+	background-color: #a7bfde;
+	
+}	
+
+.DesignerToolbarItemTableCellText {
+	padding-left: 8px;	
+}	
+
+.DesignerToolbarItemTableCellArrow {
+	width: 6px; 
+	padding-left: 2px; 
+	background-color: #a7bfde
+	
+}
+
+.DropZone {
+	border: dashed 1px #666666;
+	background-color: White;
+	margin: 4px; 
+	padding: 4px;
+	font-family: Calibri, Arial; 
+	font-size: 10pt; 
+	color: #666666;
+	display: none;
+}
+
+.DropZoneAllow {
+	border: solid 1px #ffff00;
+	background-color: #ffffcc;
+	margin: 4px; 
+	padding: 4px;
+	font-family: Calibri, Arial; 
+	font-size: 10pt; 
+	color: #666666;
+	cursor: pointer;
+}
+
+.FormControl {
+/*	border: dashed 1px #666666; */
+/*	border: solid 1px #4f81bd; */
+/*	background-color: White; */
+/* 	font-family: Calibri, Arial; */
+/*	font-size: 10pt; */
+/*	color: Black; */
+}
+
+.FormControl_TitleBar { 
+	background-color: #b9d2f3;
+	cursor: pointer;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#ddecfe', EndColorStr='#95b8e9');
+
+}
+
+.FormControl_TitleBarText { 
+	font-family: Calibri, Arial; 
+	font-size: 10pt;
+	cursor: pointer;
+}
+
+.FormControl_TitleBarExpander 
+{
+	font-family: Calibri, Arial; 
+	padding-top: 5px; 
+	margin: 0 auto; 
+	border: solid 1px #4f81bd; 
+	text-align: center; 
+	display: none;
+}
+
+.SelectionItemMoveUp {
+	src: url(/Images/Common16/DocumentIn.png);
+}

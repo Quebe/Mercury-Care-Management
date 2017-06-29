@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="FormControlType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Form" />
+      <xs:enumeration value="Section" />
+      <xs:enumeration value="SectionColumn" />
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Label" />
+      <xs:enumeration value="Input" />
+      <xs:enumeration value="Selection" />
+      <xs:enumeration value="Entity" />
+      <xs:enumeration value="Collection" />
+      <xs:enumeration value="Table" />
+      <xs:enumeration value="TableRow" />
+      <xs:enumeration value="TableColumn" />
+      <xs:enumeration value="Service" />
+      <xs:enumeration value="Metric" />
+      <xs:enumeration value="Address" />
+      <xs:enumeration value="Button" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlType" nillable="true" type="tns:FormControlType" />
+  <xs:simpleType name="FormControlDataBindingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Control" />
+      <xs:enumeration value="FixedValue" />
+      <xs:enumeration value="Function" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlDataBindingType" nillable="true" type="tns:FormControlDataBindingType" />
+  <xs:simpleType name="FormControlCollectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="MemberEnrollment" />
+      <xs:enumeration value="MemberEnrollmentCoverage" />
+      <xs:enumeration value="MemberEnrollmentPcp" />
+      <xs:enumeration value="EntityAddress" />
+      <xs:enumeration value="EntityContactInformation" />
+      <xs:enumeration value="PopulationMembership" />
+      <xs:enumeration value="PopulationMembershipServiceEvent" />
+      <xs:enumeration value="MemberService" />
+      <xs:enumeration value="ProviderContract" />
+      <xs:enumeration value="MemberRelationship" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlCollectionType" nillable="true" type="tns:FormControlCollectionType" />
+  <xs:simpleType name="FormType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Template" />
+      <xs:enumeration value="Instance" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormType" nillable="true" type="tns:FormType" />
+  <xs:simpleType name="FormControlOrientation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Portrait" />
+      <xs:enumeration value="Landscape" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlOrientation" nillable="true" type="tns:FormControlOrientation" />
+  <xs:simpleType name="FormControlPaperSize">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Letter" />
+      <xs:enumeration value="Legal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlPaperSize" nillable="true" type="tns:FormControlPaperSize" />
+  <xs:simpleType name="FormControlSpinnerButtonPosition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlSpinnerButtonPosition" nillable="true" type="tns:FormControlSpinnerButtonPosition" />
+  <xs:simpleType name="FormControlInputType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Numeric" />
+      <xs:enumeration value="DateTime" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlInputType" nillable="true" type="tns:FormControlInputType" />
+  <xs:simpleType name="FormControlNumericType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Integer" />
+      <xs:enumeration value="Number" />
+      <xs:enumeration value="Percent" />
+      <xs:enumeration value="Currency" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlNumericType" nillable="true" type="tns:FormControlNumericType" />
+  <xs:simpleType name="FormControlSelectionOnFocus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="CaretToBeginning" />
+      <xs:enumeration value="CaretToEnd" />
+      <xs:enumeration value="SelectAll" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlSelectionOnFocus" nillable="true" type="tns:FormControlSelectionOnFocus" />
+  <xs:simpleType name="FormControlTextMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SingleLine" />
+      <xs:enumeration value="MultiLine" />
+      <xs:enumeration value="Password" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlTextMode" nillable="true" type="tns:FormControlTextMode" />
+  <xs:simpleType name="FormControlDataSource">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ItemList" />
+      <xs:enumeration value="Reference" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlDataSource" nillable="true" type="tns:FormControlDataSource" />
+  <xs:simpleType name="FormControlSelectionDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Horizontal" />
+      <xs:enumeration value="Vertical" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlSelectionDirection" nillable="true" type="tns:FormControlSelectionDirection" />
+  <xs:simpleType name="FormControlSelectionReferenceSource">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Program" />
+      <xs:enumeration value="BenefitPlan" />
+      <xs:enumeration value="Ethnicity" />
+      <xs:enumeration value="Language" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlSelectionReferenceSource" nillable="true" type="tns:FormControlSelectionReferenceSource" />
+  <xs:simpleType name="FormControlSelectionMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Single" />
+      <xs:enumeration value="Multiple" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlSelectionMode" nillable="true" type="tns:FormControlSelectionMode" />
+  <xs:simpleType name="FormControlSelectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DropDownList" />
+      <xs:enumeration value="ListBox" />
+      <xs:enumeration value="CheckBox" />
+      <xs:enumeration value="RadioButton" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlSelectionType" nillable="true" type="tns:FormControlSelectionType" />
+  <xs:simpleType name="FormControlEntityDisplayAgeFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InYears" />
+      <xs:enumeration value="InMonths" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlEntityDisplayAgeFormat" nillable="true" type="tns:FormControlEntityDisplayAgeFormat" />
+  <xs:simpleType name="FormControlEntityDisplayStyle">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NormalExpanded" />
+      <xs:enumeration value="NameOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlEntityDisplayStyle" nillable="true" type="tns:FormControlEntityDisplayStyle" />
+  <xs:simpleType name="FormControlPosition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="Top" />
+      <xs:enumeration value="Bottom" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormControlPosition" nillable="true" type="tns:FormControlPosition" />
+</xs:schema>

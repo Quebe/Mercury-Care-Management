@@ -1,0 +1,587 @@
+﻿<WindowManager:Window x:Class="Mercury.Silverlight.Member.MemberProfile"
+    xmlns:WindowManager="clr-namespace:Mercury.Silverlight.WindowManager"                     
+                      
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"                                           
+    mc:Ignorable="d"
+
+    xmlns:Telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+    xmlns:TelerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"     
+    xmlns:TelerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"                      
+    xmlns:TelerikNavigation="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation"
+    xmlns:TelerikData="clr-namespace:Telerik.Windows.Data;assembly=Telerik.Windows.Data"                      
+
+    xmlns:MercuryValueConverters ="clr-namespace:Mercury.Client.ValueConverters;assembly=Mercury.Silverlight.Client"         
+    xmlns:MercuryControls="clr-namespace:Mercury.Silverlight.Controls"                      
+                      
+                      
+    d:DesignHeight="600" d:DesignWidth="800">
+
+    <WindowManager:Window.Resources>
+
+        <MercuryValueConverters:DateToStringFormatter x:Key="DateToStringFormatter"></MercuryValueConverters:DateToStringFormatter>
+
+        <MercuryValueConverters:TerminationDateToStringFormatter x:Key="TerminationDateToStringFormatter"></MercuryValueConverters:TerminationDateToStringFormatter>
+
+    </WindowManager:Window.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="#A6C6E6">
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="24"></RowDefinition>
+
+            <RowDefinition Height="Auto"></RowDefinition>
+
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <!-- WINDOW TITLE -->
+
+        <Border x:Name="WindowBarBorder" Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="0 0 0 1" Background="#666666">
+
+            <Grid x:Name="WindowBarGrid">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Width="Auto"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="36">
+
+
+                </Border>
+
+                <Border Grid.Column="0" Grid.Row="0">
+
+                    <TextBlock x:Name="WindowTitle" FontFamily="Calibri, Arial" FontSize="13" Foreground="White" VerticalAlignment="Center" Padding="8,0,0,0" Text="" />
+
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Telerik:RadButton x:Name="WindowRefresh" Width="64" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ToolTipService.ToolTip="Refresh" Click="WindowRefresh_Click">
+
+                            <Telerik:RadButton.Content>
+
+                                <TextBlock Text="refresh" FontFamily="Calibri, Arial" FontSize="13" Foreground="White" TextDecorations="underline"></TextBlock>
+
+                            </Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+
+                        <Telerik:RadButton x:Name="WindowMinimize" Width="64" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ToolTipService.ToolTip="Minimize" Click="WindowMinimize_Click">
+
+                            <Telerik:RadButton.Content>
+
+                                <TextBlock Text="minimize" FontFamily="Calibri, Arial" FontSize="13" Foreground="White" TextDecorations="underline"></TextBlock>
+
+                            </Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+
+                        <Telerik:RadButton x:Name="WindowClose" Width="48" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ToolTipService.ToolTip="Close" Click="WindowClose_Click" >
+
+                            <Telerik:RadButton.Content>
+
+                                <TextBlock Text="close" FontFamily="Calibri, Arial" FontSize="13" Foreground="White" TextDecorations="underline"></TextBlock>
+
+                            </Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+
+                    </StackPanel>
+
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+        <!-- EXCEPTION -->
+
+        <Border x:Name="ExceptionContainer" Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="0 0 0 1" Background="#FFDDDD" MinHeight="24" Visibility="Collapsed">
+
+            <TextBlock x:Name="ExceptionMessage" FontFamily="Calibri, Arial" FontSize="13" VerticalAlignment="Center" Padding="8,4,0,0" Text="" TextWrapping="Wrap" />
+
+        </Border>
+
+        <!-- WINDOW CONTENT -->
+
+        <Border x:Name="WindowContent" Grid.Column="0" Grid.Row="2">
+
+            <Border.Background>
+
+                <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                    <GradientStop Color="#FFA6C6E6" Offset="0" />
+
+                    <GradientStop Color="#FF215485" Offset=".50" />
+
+                    <GradientStop Color="#FF215485" Offset="1" />
+
+                </LinearGradientBrush>
+
+            </Border.Background>
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <!-- TOOLBAR ROW -->
+
+                    <RowDefinition Height="*"></RowDefinition>
+                    <!-- TILEVIEW ROW -->
+
+                </Grid.RowDefinitions>
+
+                <!-- MEMBER PROFILE TOOLBAR -->
+
+                <TelerikNavigation:RadToolBar x:Name="MemberProfileToolbar" HorizontalAlignment="Stretch">
+
+                    <Button x:Name="MemberProfileToolbar_Action" Margin="4,2,4,2">
+
+                        <StackPanel>
+
+                            <Image Width="16" Height="16" Source="../Images/Common16/Gear.png" Margin="4,2,4,2"></Image>
+
+                            <TextBlock Text="Action"></TextBlock>
+
+                        </StackPanel>
+
+                    </Button>
+
+                    <TelerikNavigation:RadToolBarSeparator Margin="4,2,4,2" Height="24" />
+
+                    <Button x:Name="MemberProfileToolbar_Contact" Margin="4,2,4,2">
+
+                        <StackPanel>
+
+                            <Image Width="16" Height="16" Source="../Images/Common16/Phone.png" Margin="4,2,4,2"></Image>
+
+                            <TextBlock Text="Contact"></TextBlock>
+
+                        </StackPanel>
+
+                    </Button>
+
+                    <Button x:Name="MemberProfileToolbar_SendCorrespondence" Margin="4,2,4,2">
+
+                        <StackPanel>
+
+                            <Image Width="16" Height="16" Source="../Images/Common16/Address.png" Margin="4,2,4,2"></Image>
+
+                            <TextBlock Text="Send"></TextBlock>
+
+                        </StackPanel>
+
+                    </Button>
+
+                    <Button x:Name="MemberProfileToolbar_Note" Margin="4,2,4,2">
+
+                        <StackPanel>
+
+                            <Image Width="16" Height="16" Source="../Images/Common16/Note.png" Margin="4,2,4,2"></Image>
+
+                            <TextBlock Text="Note"></TextBlock>
+
+                        </StackPanel>
+
+                    </Button>
+
+                    <Button x:Name="MemberProfileToolbar_Address" Margin="4,2,4,2">
+
+                        <StackPanel>
+
+                            <Image Width="16" Height="16" Source="../Images/Common16/Address.png" Margin="4,2,4,2"></Image>
+
+                            <TextBlock Text="Send"></TextBlock>
+
+                        </StackPanel>
+
+                    </Button>
+
+                </TelerikNavigation:RadToolBar>
+
+                <!-- MEMBER PROFILE TILEVIEW -->
+
+                <TelerikNavigation:RadTileView x:Name="MemberProfileTileView" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinimizedColumnWidth="125" MaxColumns="1" MaximizeMode="ZeroOrOne" MinimizedItemsPosition="Bottom">
+
+                    <TelerikNavigation:RadTileViewItem x:Name="MemberInformationView" TileState="Restored" Header="Member Information">
+
+                        <TelerikNavigation:RadTileViewItem.Content>
+
+                            <TelerikNavigation:RadTabControl x:Name="MemberInformationTabControl" DropDownDisplayMode="Visible" Background="White" SelectionChanged="MemberInformationTabControl_SelectionChanged">
+
+                                <!-- DEMOGRAPHICS -->
+
+                                <TelerikNavigation:RadTabItem x:Name="MemberInformationDemographics" DropDownContent="Demographics">
+
+                                    <TelerikNavigation:RadTabItem.Header>
+
+                                        <TextBlock Text="Demographics" Margin="12, 4, 12, 4"></TextBlock>
+
+                                    </TelerikNavigation:RadTabItem.Header>
+
+                                    <TelerikNavigation:RadTabItem.Content>
+
+                                        <ScrollViewer MouseWheel="RadTabItemScrollViewer_MouseWheel" Margin="0" Padding="0">
+
+                                            <MercuryControls:MemberDemographics x:Name="MemberDemographics"></MercuryControls:MemberDemographics>
+
+                                        </ScrollViewer>
+
+                                    </TelerikNavigation:RadTabItem.Content>
+
+                                </TelerikNavigation:RadTabItem>
+
+
+                                <!-- ENROLLMENT -->
+
+                                <TelerikNavigation:RadTabItem x:Name="MemberInformationEnrollment" DropDownContent="Enrollment">
+
+                                    <TelerikNavigation:RadTabItem.Header>
+
+                                        <TextBlock Text="Enrollment" Margin="12, 4, 12, 4"></TextBlock>
+
+                                    </TelerikNavigation:RadTabItem.Header>
+
+                                    <TelerikNavigation:RadTabItem.Content>
+
+                                        <!-- SUB-TAB CONTROL -->
+
+                                        <Grid>
+
+                                            <Border>
+
+                                                <Border.Background>
+
+                                                    <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                                                        <GradientStop Color="#FFdae5f3" Offset="0" />
+
+                                                        <GradientStop Color="#FFc9d8ed" Offset=".50" />
+
+                                                        <GradientStop Color="#FFc9d8ed" Offset="1" />
+
+                                                    </LinearGradientBrush>
+
+                                                </Border.Background>
+
+                                            </Border>
+
+                                            <TelerikNavigation:RadTabControl x:Name="MemberInformationEnrollmentTabControl" DropDownDisplayMode="Collapsed" Background="White" BackgroundVisibility="Collapsed">
+
+                                                <!-- ENROLLMENT SUB-TAB -->
+
+                                                <TelerikNavigation:RadTabItem>
+
+                                                    <TelerikNavigation:RadTabItem.Header>
+
+                                                        <TextBlock Text="Enrollment" Margin="12, 4, 12, 4"></TextBlock>
+
+                                                    </TelerikNavigation:RadTabItem.Header>
+
+                                                    <TelerikNavigation:RadTabItem.Content>
+
+                                                        <Grid Margin="2 0 2 4">
+
+                                                            <Grid.ColumnDefinitions>
+
+                                                                <ColumnDefinition></ColumnDefinition>
+
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <Grid.RowDefinitions>
+
+                                                                <RowDefinition Height="*"></RowDefinition>
+
+                                                            </Grid.RowDefinitions>
+
+
+                                                            <ScrollViewer MouseWheel="RadTabItemScrollViewer_MouseWheel" Margin="0" Padding="0">
+
+                                                                <MercuryControls:MemberEnrollmentHistory x:Name="MemberEnrollmentHistoryControl"></MercuryControls:MemberEnrollmentHistory>
+
+                                                            </ScrollViewer>
+
+                                                            <!-- MEMBER ENROLLMENT GRID -->
+
+                                                        </Grid>
+
+                                                    </TelerikNavigation:RadTabItem.Content>
+
+                                                </TelerikNavigation:RadTabItem>
+
+                                                <!-- TPL/COB SUB-TAB -->
+
+                                                <TelerikNavigation:RadTabItem>
+
+                                                    <TelerikNavigation:RadTabItem.Header>
+
+                                                        <TextBlock Text="TPL/COB" Margin="12, 4, 12, 4"></TextBlock>
+
+                                                    </TelerikNavigation:RadTabItem.Header>
+
+                                                    <TelerikNavigation:RadTabItem.Content>
+
+                                                        <Grid Margin="2 0 2 4">
+
+                                                            <Grid.ColumnDefinitions>
+
+                                                                <ColumnDefinition></ColumnDefinition>
+
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <Grid.RowDefinitions>
+
+                                                                <RowDefinition Height="*"></RowDefinition>
+
+                                                            </Grid.RowDefinitions>
+
+
+                                                            <!-- MEMBER ENROLLMENT TPL/COB GRID -->
+
+                                                            <TelerikGridView:RadGridView x:Name="MemberEnrollmentTplCobGrid" Grid.Column="0" Grid.Row="0" VerticalAlignment="Stretch" AutoGenerateColumns="False" ShowGroupPanel="True" IsReadOnly="True"
+                                                                                             
+                                                                    SelectionMode="Single"                                     
+                                                                                             
+                                                                    ColumnWidth="*"
+                                                                                             
+                                                                    >
+
+                                                                <TelerikGridView:RadGridView.Columns>
+
+                                                                    <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Insurer.Entity.Name}" Header="Insurer" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                                                                    <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Program.Name}" Header="Program" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                                                                    <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Sponsor.Entity.Name}" Header="Sponsor" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                                                                    <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Subscriber.Entity.Name}" Header="Subscriber" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                                                                    <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=ProgramMemberId}" Header="Member Id" MaxWidth="100"></TelerikGridView:GridViewDataColumn>
+
+                                                                    <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=EffectiveDate, Converter={StaticResource DateToStringFormatter}}" Header="Effective" Width="80" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                                                                    <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=TerminationDate, Converter={StaticResource TerminationDateToStringFormatter}}" Header="Termination" Width="80" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                                                                </TelerikGridView:RadGridView.Columns>
+
+                                                            </TelerikGridView:RadGridView>
+
+                                                        </Grid>
+
+                                                    </TelerikNavigation:RadTabItem.Content>
+
+                                                </TelerikNavigation:RadTabItem>
+
+                                            </TelerikNavigation:RadTabControl>
+
+                                        </Grid>
+
+                                    </TelerikNavigation:RadTabItem.Content>
+
+                                </TelerikNavigation:RadTabItem>
+
+
+                                <!-- SERVICES -->
+
+                                <TelerikNavigation:RadTabItem x:Name="MemberInformationServices" DropDownContent="Services">
+
+                                    <TelerikNavigation:RadTabItem.Header>
+
+                                        <TextBlock Text="Services" Margin="12, 4, 12, 4"></TextBlock>
+
+                                    </TelerikNavigation:RadTabItem.Header>
+
+                                    <TelerikNavigation:RadTabItem.Content>
+
+                                        <!-- SUB-TAB CONTROL -->
+
+                                        <Grid>
+
+                                            <Border>
+
+                                                <Border.Background>
+
+                                                    <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                                                        <GradientStop Color="#FFdae5f3" Offset="0" />
+
+                                                        <GradientStop Color="#FFc9d8ed" Offset=".50" />
+
+                                                        <GradientStop Color="#FFc9d8ed" Offset="1" />
+
+                                                    </LinearGradientBrush>
+
+                                                </Border.Background>
+
+                                            </Border>
+
+                                            <TelerikNavigation:RadTabControl x:Name="MemberInformationServicesTabControl" DropDownDisplayMode="Collapsed" Background="White" BackgroundVisibility="Collapsed">
+
+                                                <!-- SERVICES SUB-TAB -->
+
+                                                <TelerikNavigation:RadTabItem>
+
+                                                    <TelerikNavigation:RadTabItem.Header>
+
+                                                        <TextBlock Text="Services" Margin="12, 4, 12, 4"></TextBlock>
+
+                                                    </TelerikNavigation:RadTabItem.Header>
+
+                                                    <TelerikNavigation:RadTabItem.Content>
+
+                                                        
+
+                                                    </TelerikNavigation:RadTabItem.Content>
+
+                                                </TelerikNavigation:RadTabItem>
+
+                                                <!-- METRICS SUB-TAB -->
+
+
+                                                <!-- AUTHORIZED SERVICES SUB-TAB -->
+
+
+                                            </TelerikNavigation:RadTabControl>
+
+                                        </Grid>
+
+                                    </TelerikNavigation:RadTabItem.Content>
+
+                                </TelerikNavigation:RadTabItem>
+
+
+                                <!-- CONTACTS -->
+
+                                <TelerikNavigation:RadTabItem x:Name="MemberInformationContacts" DropDownContent="Contacts">
+
+                                    <TelerikNavigation:RadTabItem.Header>
+
+                                        <TextBlock Text="Contacts" Margin="12, 4, 12, 4"></TextBlock>
+
+                                    </TelerikNavigation:RadTabItem.Header>
+
+                                    <TelerikNavigation:RadTabItem.Content>
+
+                                        
+
+                                    </TelerikNavigation:RadTabItem.Content>
+
+                                </TelerikNavigation:RadTabItem>
+
+
+                                <!-- DOCUMENTS -->
+
+                                <TelerikNavigation:RadTabItem x:Name="MemberInformationDocuments" DropDownContent="Documents">
+
+                                    <TelerikNavigation:RadTabItem.Header>
+
+                                        <TextBlock Text="Documents" Margin="12, 4, 12, 4"></TextBlock>
+
+                                    </TelerikNavigation:RadTabItem.Header>
+
+                                </TelerikNavigation:RadTabItem>
+
+
+                                <!-- NOTES -->
+
+                                <TelerikNavigation:RadTabItem x:Name="MemberInformationNotes" DropDownContent="Notes">
+
+                                    <TelerikNavigation:RadTabItem.Header>
+
+                                        <TextBlock Text="Notes" Margin="12, 4, 12, 4"></TextBlock>
+
+                                    </TelerikNavigation:RadTabItem.Header>
+
+                                </TelerikNavigation:RadTabItem>
+
+
+                                <!-- WORK HISTORY -->
+
+                                <TelerikNavigation:RadTabItem x:Name="MemberInformationWorkHistory" DropDownContent="Work History">
+
+                                    <TelerikNavigation:RadTabItem.Header>
+
+                                        <TextBlock Text="Work History" Margin="12, 4, 12, 4"></TextBlock>
+
+                                    </TelerikNavigation:RadTabItem.Header>
+
+                                </TelerikNavigation:RadTabItem>
+
+
+                                <!-- CLAIMS -->
+
+                                <TelerikNavigation:RadTabItem x:Name="MemberInformationClaims" DropDownContent="Claims">
+
+                                    <TelerikNavigation:RadTabItem.Header>
+
+                                        <TextBlock Text="Claims" Margin="12, 4, 12, 4"></TextBlock>
+
+                                    </TelerikNavigation:RadTabItem.Header>
+
+                                </TelerikNavigation:RadTabItem>
+
+
+                                <!-- AUTHORIZATIONS -->
+
+                                <TelerikNavigation:RadTabItem x:Name="MemberInformationAuthorizations" DropDownContent="Authorizations">
+
+                                    <TelerikNavigation:RadTabItem.Header>
+
+                                        <TextBlock Text="Authorizations" Margin="12, 4, 12, 4"></TextBlock>
+
+                                    </TelerikNavigation:RadTabItem.Header>
+
+                                </TelerikNavigation:RadTabItem>
+
+
+                            </TelerikNavigation:RadTabControl>
+
+                        </TelerikNavigation:RadTileViewItem.Content>
+
+                    </TelerikNavigation:RadTileViewItem>
+
+                    <TelerikNavigation:RadTileViewItem x:Name="MemberCareManagement" TileState="Minimized" Header="Care Management" Visibility="Collapsed">
+
+
+                    </TelerikNavigation:RadTileViewItem>
+
+                </TelerikNavigation:RadTileView>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+
+</WindowManager:Window>

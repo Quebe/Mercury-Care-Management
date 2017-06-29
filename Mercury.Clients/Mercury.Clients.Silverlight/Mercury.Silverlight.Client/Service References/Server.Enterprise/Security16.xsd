@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Controls" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:complexType name="FormControl">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" minOccurs="0" name="Capabilities" nillable="true" type="q2:FormControlCapabilities" />
+          <xs:element minOccurs="0" name="ControlId" type="ser:guid" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="ControlType" type="q3:FormControlType" />
+          <xs:element minOccurs="0" name="Controls" nillable="true" type="tns:ArrayOfFormControl" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" minOccurs="0" name="DataBindings" nillable="true" type="q4:ArrayOfFormControlDataBinding" />
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" minOccurs="0" name="EventHandlers" nillable="true" type="q5:ArrayOfFormControlEventHandler" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Controls" minOccurs="0" name="Label" nillable="true" type="q6:FormControlLabel" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="Position" type="q7:FormControlPosition" />
+          <xs:element minOccurs="0" name="ReadOnly" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Required" type="xs:boolean" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" minOccurs="0" name="Style" nillable="true" type="q8:FormControlStyle" />
+          <xs:element minOccurs="0" name="TabIndex" type="xs:short" />
+          <xs:element minOccurs="0" name="Visible" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormControl" nillable="true" type="tns:FormControl" />
+  <xs:complexType name="ArrayOfFormControl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormControl" nillable="true" type="tns:FormControl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormControl" nillable="true" type="tns:ArrayOfFormControl" />
+  <xs:complexType name="Form">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FormControl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowPrecompileEvents" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EntityFormId" type="xs:long" />
+          <xs:element minOccurs="0" name="EntityObjectId" type="xs:long" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="EntityType" type="q9:EntityType" />
+          <xs:element minOccurs="0" name="EventResults" nillable="true" type="tns:ArrayOfFormControlEventResult" />
+          <xs:element minOccurs="0" name="FormId" type="xs:long" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="FormType" type="q10:FormType" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="Orientation" type="q11:FormControlOrientation" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="PaperSize" type="q12:FormControlPaperSize" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Form" nillable="true" type="tns:Form" />
+  <xs:complexType name="ArrayOfFormControlEventResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormControlEventResult" nillable="true" type="tns:FormControlEventResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormControlEventResult" nillable="true" type="tns:ArrayOfFormControlEventResult" />
+  <xs:complexType name="FormControlEventResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ControlId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EventName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasException" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListenerOutput" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormControlEventResult" nillable="true" type="tns:FormControlEventResult" />
+</xs:schema>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="FormControlCapabilities">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanDataBind" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasMultipleDataBindingPoints" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDataSource" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormControlCapabilities" nillable="true" type="tns:FormControlCapabilities" />
+  <xs:complexType name="ArrayOfFormControlDataBinding">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormControlDataBinding" nillable="true" type="tns:FormControlDataBinding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormControlDataBinding" nillable="true" type="tns:ArrayOfFormControlDataBinding" />
+  <xs:complexType name="FormControlDataBinding">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BindingContext" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BoundProperty" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" minOccurs="0" name="DataBindingType" type="q1:FormControlDataBindingType" />
+      <xs:element minOccurs="0" name="DataSourceControlId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormControlDataBinding" nillable="true" type="tns:FormControlDataBinding" />
+  <xs:complexType name="ArrayOfFormControlEventHandler">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormControlEventHandler" nillable="true" type="tns:FormControlEventHandler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormControlEventHandler" nillable="true" type="tns:ArrayOfFormControlEventHandler" />
+  <xs:complexType name="FormControlEventHandler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExecuteClientSide" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MethodSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmartEvent" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormControlEventHandler" nillable="true" type="tns:FormControlEventHandler" />
+  <xs:complexType name="ArrayOfFormControlSelectionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormControlSelectionItem" nillable="true" type="tns:FormControlSelectionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormControlSelectionItem" nillable="true" type="tns:ArrayOfFormControlSelectionItem" />
+  <xs:complexType name="FormControlSelectionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormControlSelectionItem" nillable="true" type="tns:FormControlSelectionItem" />
+  <xs:complexType name="FormControlStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BackgroundColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderBottomColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderBottomStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderBottomWidth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderBottomWidthUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderLeftColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderLeftStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderLeftWidth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderLeftWidthUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderRightColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderRightStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderRightWidth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderRightWidthUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderTopColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderTopStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderTopWidth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BorderTopWidthUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontFamily" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontSizeUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontVariant" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontWeight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeightUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsBorderSame" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMarginSame" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPaddingSame" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LetterSpacing" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LetterSpacingUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineHeight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineHeightUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Margin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarginBottom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarginBottomUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarginLeft" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarginLeftUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarginRight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarginRightUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarginTop" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarginTopUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Overflow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Padding" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaddingBottom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaddingBottomUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaddingLeft" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaddingLeftUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaddingRight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaddingRightUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaddingTop" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaddingTopUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextAlign" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextDecoration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextIndent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextIndentUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextTransform" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VerticalAlign" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhiteSpace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WidthUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WordSpacing" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WordSpacingUnit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormControlStyle" nillable="true" type="tns:FormControlStyle" />
+</xs:schema>

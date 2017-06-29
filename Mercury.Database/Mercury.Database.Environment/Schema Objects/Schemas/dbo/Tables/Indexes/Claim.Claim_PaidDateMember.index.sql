@@ -1,0 +1,1 @@
+﻿CREATE INDEX Claim_PaidDateMember ON dbo.Claim (PaidDate, MemberId) INCLUDE (ClaimId, ClaimStatus)

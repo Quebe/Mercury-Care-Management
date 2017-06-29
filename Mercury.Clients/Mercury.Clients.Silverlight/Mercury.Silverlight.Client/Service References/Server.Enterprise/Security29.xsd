@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Provider" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Provider" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:complexType name="Provider">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CitizenshipId" type="xs:long" />
+          <xs:element minOccurs="0" name="DeathDate" nillable="true" type="xs:dateTime" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="Entity" nillable="true" type="q2:Entity" />
+          <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+          <xs:element minOccurs="0" name="EthnicityId" type="xs:long" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPerson" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NationalProviderId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Provider" nillable="true" type="tns:Provider" />
+  <xs:complexType name="ProviderAffiliation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AffiliateProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProviderAffiliation" nillable="true" type="tns:ProviderAffiliation" />
+  <xs:complexType name="ProviderContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q4:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContractId" type="xs:long" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsCapitated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsContracted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsParticipating" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ProgramId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProviderAffiliationId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProviderContract" nillable="true" type="tns:ProviderContract" />
+  <xs:complexType name="ProviderEnrollment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q5:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProgramId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProgramProviderId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProviderEnrollment" nillable="true" type="tns:ProviderEnrollment" />
+  <xs:complexType name="ProviderServiceLocation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q6:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgeMaximum" type="xs:int" />
+          <xs:element minOccurs="0" name="AgeMinimum" type="xs:int" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EntityAddressId" type="xs:long" />
+          <xs:element minOccurs="0" name="HasHandicapAccess" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsAcceptingNewPatients" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPcp" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OfficeHoursFriday" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficeHoursMonday" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficeHoursSaturday" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficeHoursSunday" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficeHoursThursday" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficeHoursTuesday" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficeHoursWednesday" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PanelSizeMaximum" type="xs:int" />
+          <xs:element minOccurs="0" name="ProviderAffiliationId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProviderEnrollmentId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="ServiceLocationNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProviderServiceLocation" nillable="true" type="tns:ProviderServiceLocation" />
+</xs:schema>

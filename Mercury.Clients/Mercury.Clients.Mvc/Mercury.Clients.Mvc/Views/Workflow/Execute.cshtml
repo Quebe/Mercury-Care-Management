@@ -1,0 +1,314 @@
+﻿@model Mercury.Clients.Mvc.Models.Workflow.WorkflowModel
+
+@{ Layout = null; }
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Mercury Care Management</title>
+
+    <link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <link rel="Stylesheet" href="@Url.Content("~/Content/themes/redmond/jquery-ui-1.8.14.custom.css")" type="text/css" media="screen" />
+
+    <link rel="Stylesheet" href="@Url.Content("~/ClientSideControls/jqGrid/ui.jqgrid.css")" type="text/css" />
+
+    <link rel="Stylesheet" href="@Url.Content("~/Content/Global.css")" type="text/css" />
+
+    <link rel="Stylesheet" href="@Url.Content("~/Content/ApplicationMaster.css")" type="text/css" />
+        
+    <script src="@Url.Content("~/Scripts.Standard/jquery-1.6.2.min.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts.Standard/jquery-ui-1.8.11.min.js")" type="text/javascript"></script>
+    
+    <script src="@Url.Content("~/ClientSideControls/jqGrid/grid.locale-en.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/ClientSideControls/jqGrid/jquery.jqGrid.min.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/_Shared.debug.js")" type="text/javascript"></script>  
+    
+    <script src="@Url.Content("~/Scripts/Workflow.debug.js")" type="text/javascript"></script>
+
+</head>
+
+<body style="margin: 0px;" class="TextNormal BackgroundColorLight"><form id="WorkflowForm" action="" onsubmit="return false;"><div id="WorkflowFormContent">
+
+<div style="display: none">
+
+    @Html.TextBoxFor(model => Model.PageInstanceId)
+
+    <input id="EventTarget" name="EventTarget" type="hidden" />
+
+    <input id="EventArguments" name="EventArguments" type="hidden" />
+    
+</div> 
+
+@if (!Model.StoreModelStateInMemory) {
+    
+<!-- STATE DATA (BEGIN) -->
+    
+<div id="WorkflowModelStateData" style="display: none;">
+        
+    @Html.TextBoxFor(model => Model.ExceptionMessage)
+
+    @Html.TextBoxFor(model => Model.InformationMessage)
+
+        
+    @Html.TextBoxFor(model => Model.UrlReferrer)
+
+    @Html.TextBoxFor(model => Model.UrlOriginal)
+
+    @Html.TextBoxFor(model => Model.WorkflowId)
+
+    @Html.TextBoxFor(model => Model.WorkflowInstanceId)
+        
+    @Html.TextBoxFor(model => Model.WorkQueueItemId)
+
+    @Html.TextBoxFor(model => Model.WorkflowControl)
+
+
+    @Html.TextBoxFor(model => Model.WorkflowTitle)
+       
+    @Html.TextBoxFor(model => Model.WorkflowActionMessage)
+      
+    @Html.TextBoxFor(model => Model.LastWorkflowMessage)
+
+
+    @Html.TextBoxFor(model => Model.Entity.Id);
+     
+</div>
+    
+<!-- STATE DATA ( END ) -->
+
+} 
+
+<!-- TITLE BAR (BEGIN) -->
+
+<div id="WorkflowTitleBar" runat="server">
+
+    <table width="100%" cellpadding="0" cellspacing="0">
+    
+        <tr class="BackgroundColorDark" style="height: 36px;">
+
+            <td style="width: 100%; color: White; font-weight: bold; padding-left: .125in; white-space: nowrap">
+
+                <label id="WorkflowTitleLabel">@Model.WorkflowTitle</label>
+                
+            </td>
+            
+            <td style="padding-left: .125in; padding-right: .25in">
+            
+                <div id="WorkflowCancelContainer" style="display: @((Model.HasException) ? "none" : "block");">
+                
+                    <a class="NoDecoration ColorLight HoverTextWhiteBold" href="javascript:Workflow_Close ();" style="white-space: nowrap; font-weight: bold; text-align: center;">Cancel</a>
+
+                </div>
+                
+            </td>
+
+            <td style="padding-left: .125in; padding-right: .25in">
+            
+                <div id="WorkflowExitContainer" style="display: @((Model.HasException) ? "block" : "none");">
+
+                    <a id="WorkflowCloseLink" href="@Model.UrlReferrer" class="NoDecoration ColorLight HoverTextWhiteBold" style="white-space: nowrap; font-weight: bold; text-align: center;">Close</a>
+
+                </div>
+                
+            </td>
+
+            <td style="padding-right: .125in;">
+
+                <div id="WorkflowNextItemContainer" style="display: none;" runat="server">
+            
+                    <table cellpadding="0" cellspacing="0"><tr>
+
+                        <td style="padding-left: .125in; padding-right: .0625in"><asp:LinkButton ID="WorkflowNextItemLink" class="NoDecoration ColorLight HoverTextWhiteBold" style="white-space: nowrap; font-weight: bold; text-align: center;" OnClick="WorkflowNextItemButton_OnClick"  Text="Next Item" runat="server" /></td>
+                
+                        <td style="height: 20px; padding-left: 4px; padding-right: 4px;"><asp:ImageButton ID="WorkflowNextItemButton" ImageUrl="~/Images/Common16/ArrowGreenRight.png" AlternateText="Next Work Queue Item" OnClick="WorkflowNextItemButton_OnClick" runat="server" /></td>  
+
+                    </tr></table>
+
+                </div>
+
+            </td>
+
+        </tr>
+     
+        <tr><td colspan="5" style="width: 100%; height: 1px;" class="BackgroundColorComplementLight"></td></tr>   
+        
+     </table>
+
+</div>
+
+<!-- TITLE BAR ( END ) -->
+
+
+<!-- WORKFLOW HEADER (BEGIN) -->
+
+<div id="WorkflowHeaderSection" style="padding: .125in; padding-top: .0625in; padding-bottom: .0625in;">
+
+    <!-- WORKFLOW INFORMATION (BEGIN) -->
+    
+    <div class="BackgroundColorComplementNormal BorderColorDark" style="background-color: White; padding: .125in">
+
+        <!-- WORK QUEUE ITEM INFORMATION (BEGIN) -->
+
+        <div id="WorkQueueItemInformation"></div>
+
+        <div id="WorkQueueItemInformationProvider" style="display: none;" runat="server">
+
+            <table width="100%" cellpadding="0" cellspacing="0">
+    
+                <tr class="" style="height: 36px;">
+
+                    <td style="max-width: 24px; padding-right: 4px;"><img id="UserInteractionEntityInformationProviderNoteWarning"  src="/Images/Common24/NoteWarning.png" alt="Warning from Note" style="display: none;" runat="server" /></td>   
+        
+                    <td style="max-width: 24px; padding-right: 4px;"><img id="UserInteractionEntityInformationProviderNoteCritical" src="/Images/Common24/NoteCritical.png" alt="Critical from Note" style="display: none;" runat="server" /></td>   
+
+        
+                    <td style="text-align: left"><b>Provider Name:</b> <asp:Label id="UserInteractionEntityInformationProviderName" Text="** No Provider Selected" runat="server" /></td>
+                        
+                    <td style="text-align: left"><b>NPI:</b> <asp:Label id="UserInteractionEntityInformationProviderNpi" Text="" runat="server" /></td>
+
+                    <td style="text-align: left"><b>Program:</b> <asp:Label id="UserInteractionEntityInformationProviderProgram" Text="" runat="server" /></td>
+                                                
+                    <td style="text-align: left"><b>Id:</b> <asp:Label id="UserInteractionEntityInformationProviderProgramProviderId" Text="" runat="server" /></td>
+
+                </tr>
+        
+            </table>
+
+        </div>
+         
+        <!-- WORK QUEUE ITEM INFORMATION ( END ) -->
+
+
+        <!-- WORKFLOW ACTION (BEGIN) -->
+
+        <div style="display: block;" runat="server">
+        
+            <table cellpadding="0" cellspacing="0" width="100%" style="height: 36px;"><tr>
+                        
+                <td style="width: 20px;"><img id="WorkflowIcon" src="/Images/Common16/Gear.png" style="padding-right: 8px;" alt="Workflow Action" runat="server" /></td>
+                
+                <td style="width: 100px; font-weight: bold;">Workflow Action:</td>
+                
+                <td style="text-align: left;"><label id="WorkflowActionMessageLabel">@Model.WorkflowActionMessage</label></td>
+
+            </tr></table>
+
+        </div>
+
+        <!-- WORKFLOW ACTION ( END ) -->
+        
+        <!-- WORKFLOW LAST MESSAGE (BEGIN) -->
+
+        <div id="WorkflowLastMessageContainer" style="display: @((!String.IsNullOrWhiteSpace (Model.LastWorkflowMessage)) ? "block" : "none");" runat="server">
+        
+            <table cellpadding="0" cellspacing="0" width="100%" style="height: 36px;"><tr>
+                        
+                <td style="width: 20px;"><img id="WorkflowLastMessageIcon" src="/Images/Common16/Gear.png" style="padding-right: 8px;" alt="Last Message" runat="server" /></td>
+                
+                <td style="width: 100px; font-weight: bold;">Last Message:</td>
+                
+                <td style="text-align: left;"><label id="LastWorkflowMessageLabel">@Model.LastWorkflowMessage</label></td>
+
+            </tr></table>
+
+        </div>
+
+        <!-- WORKFLOW LAST MESSAGE ( END ) -->
+            
+        <div id="WorkflowExceptionMessageRow" style="display: @((Model.HasException) ? "block" : "none");" runat="server">
+        
+            <table cellpadding="0" cellspacing="0" width="100%"><tr style="height: 36px;">
+                        
+                <td style="width: 20px;"><img src="/Images/Common16/Stop.png" style="padding-right: 8px;" alt="Exception Indicator" /></td>
+                
+                <td style="width: 125px; font-weight: bold; color: #A60000">Exception Occurred:</td>
+                
+                <td style="text-align: left;"><label id="ExceptionMessageLabel">@Model.ExceptionMessage</label></td>
+
+                <td><a class="NoDecoration HoverTextBlack" href="#" ID="WorkflowExceptionExit" onclick="javascript:window.location='/Workspace';" runat="server">(close)</a></td>
+
+            </tr></table>
+            
+        </div>
+           
+        <div id="WorkflowInformationalMessageRow" style="display: @((Model.HasInformationMessage) ? "block" : "none");" runat="server">
+        
+            <table cellpadding="0" cellspacing="0" width="100%"><tr style="height: 36px;">
+                        
+                <td style="width: 20px;"><img src="/Images/Common16/Informational.png" style="padding-right: 8px;" alt="Informational Indicator" /></td>
+                               
+                <td class="ColorDark" style="text-align: left;"><label id="InformationalMessageLabel">@Model.InformationMessage</label></td>
+
+            </tr></table>
+            
+        </div>
+            
+    </div>
+
+    <!-- WORKFLOW INFORMATION ( END ) -->
+
+    <!-- WORKFLOW FLOW CONTROL (BEGIN) -->
+
+        <div id="WorkflowFlowControl" style="border-bottom: solid 1px black; display: block; height: 0px; width: 0px; overflow: hidden;">
+    
+            <button id="WorkflowStart" onclick="WorkflowStart_OnClick ()">Start</button>
+
+            <button id="WorkflowContinue" onclick="WorkflowContinue_OnClick ()">Continue</button>
+
+            <asp:Button ID="WorkflowResume" Text="Resume" OnClick="WorkflowResume_OnClick" runat="server" />
+        
+            <asp:Button ID="WorkflowCancel" Text="Cancel" runat="server" />
+
+        </div>               
+
+    <!-- WORKFLOW FLOW CONTROL ( END ) -->
+
+</div>
+
+<!-- WORKFLOW HEADER ( END ) -->
+
+<div id="WorkflowContentSection" style="padding-left: .125in; padding-bottom: .125in; padding-right: .125in; padding-bottom: .0625in;">
+
+    <div id="WorkflowContentContainer" class="BackgroundColorComplementNormal BorderColorDark" style="background-color: White;">
+
+        <div id="WorkflowContentContainer_LoadingOverlay" class="ui-widget-overlay jqgrid-overlay"></div>
+
+        <div id="WorkflowContentContainer_LoadingMessage" class="loading ui-state-default ui-state-active" style="display: none;">Loading...</div>
+
+        <div id="LoadingPanel" style="width: 100%; height: 100%; display: none;">
+
+            <table class="Transparency50" width="100%" style="height: 100%; position: absolute; left: 0; top:0;"><tr><td align="center">
+
+            </td></tr></table>
+
+
+            <table width="100%" style="height: 100%; position: absolute; left: 0; top:0; "><tr><td align="center">
+
+            <img src="@Url.Content("~/images/ajaxloading64red.gif")" alt="Loading" />
+
+            </td></tr></table>
+
+        </div>
+
+        <div id="WorkflowContentPanel" style="overflow: auto;">
+
+            @if (!String.IsNullOrWhiteSpace (Model.WorkflowControl)) { Html.RenderPartial (Model.WorkflowControl, Model); }
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@Html.Raw(Model.ResponseScript)
+
+</div></form></body>
+
+</html>

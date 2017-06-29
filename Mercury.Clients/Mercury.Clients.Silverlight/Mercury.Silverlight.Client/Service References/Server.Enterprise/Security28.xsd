@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd32" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd36" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Calendar" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="WorkTeamMembership">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SecurityAuthorityId" type="xs:long" />
+          <xs:element minOccurs="0" name="SecurityAuthorityName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserAccountId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserDisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkTeamId" type="xs:long" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" minOccurs="0" name="WorkTeamRole" type="q2:WorkTeamRole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkTeamMembership" nillable="true" type="tns:WorkTeamMembership" />
+  <xs:complexType name="WorkOutcome">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreConfigurationObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkOutcome" nillable="true" type="tns:WorkOutcome" />
+  <xs:complexType name="RoutingRule">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q4:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultWorkQueueId" type="xs:long" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Rules" nillable="true" type="q5:ArrayOfKeyValueOfintRoutingRuleDefinition3sHlbfEv" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RoutingRule" nillable="true" type="tns:RoutingRule" />
+  <xs:complexType name="RoutingRuleDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q6:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgeMaximum" type="xs:int" />
+          <xs:element minOccurs="0" name="AgeMinimum" type="xs:int" />
+          <xs:element minOccurs="0" name="BenefitPlanId" type="xs:long" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EthnicityId" type="xs:long" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="Gender" type="q7:Gender" />
+          <xs:element minOccurs="0" name="InsurerId" type="xs:long" />
+          <xs:element minOccurs="0" name="IsAgeInMonths" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LanguageId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProgramId" type="xs:long" />
+          <xs:element minOccurs="0" name="RoutingRuleId" type="xs:long" />
+          <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UseAgeCriteria" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WorkQueueId" type="xs:long" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RoutingRuleDefinition" nillable="true" type="tns:RoutingRuleDefinition" />
+  <xs:complexType name="Workflow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q8:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionVerb" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssemblyClassName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssemblyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssemblyPath" nillable="true" type="xs:string" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="EntityType" type="q9:EntityType" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" minOccurs="0" name="Framework" type="q10:WorkflowFramework" />
+          <xs:element minOccurs="0" name="Permissions" nillable="true" type="tns:ArrayOfWorkflowPermission" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WorkflowParameters" nillable="true" type="q11:ArrayOfKeyValueOfstringActionParameterh0OH4eih" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Workflow" nillable="true" type="tns:Workflow" />
+  <xs:complexType name="ArrayOfWorkflowPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkflowPermission" nillable="true" type="tns:WorkflowPermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkflowPermission" nillable="true" type="tns:ArrayOfWorkflowPermission" />
+  <xs:complexType name="WorkflowPermission">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q12:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsDenied" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGranted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WorkTeamId" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowPermission" nillable="true" type="tns:WorkflowPermission" />
+  <xs:complexType name="WorkQueue">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q13:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetWorkUseGrouping" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GetWorkViewId" type="xs:long" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="InitialConstraintQualifier" type="q14:DateQualifier" />
+          <xs:element minOccurs="0" name="InitialConstraintValue" type="xs:int" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="InitialMilestoneQualifier" type="q15:DateQualifier" />
+          <xs:element minOccurs="0" name="InitialMilestoneValue" type="xs:int" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="ScheduleQualifier" type="q16:DateQualifier" />
+          <xs:element minOccurs="0" name="ScheduleValue" type="xs:int" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="ThresholdQualifier" type="q17:DateQualifier" />
+          <xs:element minOccurs="0" name="ThresholdValue" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkTeams" nillable="true" type="tns:ArrayOfWorkQueueTeam" />
+          <xs:element minOccurs="0" name="WorkflowId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkQueue" nillable="true" type="tns:WorkQueue" />
+  <xs:complexType name="ArrayOfWorkQueueTeam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkQueueTeam" nillable="true" type="tns:WorkQueueTeam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkQueueTeam" nillable="true" type="tns:ArrayOfWorkQueueTeam" />
+  <xs:complexType name="WorkQueueTeam">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q18:CoreObject">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" minOccurs="0" name="Permission" type="q19:WorkQueueTeamPermission" />
+          <xs:element minOccurs="0" name="WorkQueueId" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkTeamId" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkTeamName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkQueueTeam" nillable="true" type="tns:WorkQueueTeam" />
+  <xs:complexType name="WorkQueueView">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q20:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldDefinitions" nillable="true" type="tns:ArrayOfWorkQueueViewFieldDefinition" />
+          <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SortDefinitions" nillable="true" type="q21:ArrayOfKeyValueOfintWorkQueueViewSortDefinition3sHlbfEv" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkQueueView" nillable="true" type="tns:WorkQueueView" />
+  <xs:complexType name="ArrayOfWorkQueueViewFieldDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkQueueViewFieldDefinition" nillable="true" type="tns:WorkQueueViewFieldDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkQueueViewFieldDefinition" nillable="true" type="tns:ArrayOfWorkQueueViewFieldDefinition" />
+  <xs:complexType name="WorkQueueViewFieldDefinition">
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="DataType" type="q22:SqlDbType" />
+      <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropertyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkQueueViewId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkQueueViewFieldDefinition" nillable="true" type="tns:WorkQueueViewFieldDefinition" />
+  <xs:complexType name="WorkQueueViewSortDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" minOccurs="0" name="SortDirection" type="q23:DataSortDirection" />
+      <xs:element minOccurs="0" name="WorkQueueViewId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkQueueViewSortDefinition" nillable="true" type="tns:WorkQueueViewSortDefinition" />
+  <xs:complexType name="WorkTeam">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q24:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Membership" nillable="true" type="tns:ArrayOfWorkTeamMembership" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" minOccurs="0" name="WorkTeamType" type="q25:WorkTeamType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkTeam" nillable="true" type="tns:WorkTeam" />
+  <xs:complexType name="ArrayOfWorkTeamMembership">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkTeamMembership" nillable="true" type="tns:WorkTeamMembership" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkTeamMembership" nillable="true" type="tns:ArrayOfWorkTeamMembership" />
+  <xs:complexType name="WorkQueueItem">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q26:CoreExtensibleObject_x0020_">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AssignedToDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AssignedToSecurityAuthorityId" type="xs:long" />
+          <xs:element minOccurs="0" name="AssignedToUserAccountId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToUserAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToUserDisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompletionDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ConstraintDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ItemGroupKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItemObjectId" type="xs:long" />
+          <xs:element minOccurs="0" name="ItemObjectType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastWorkedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MilestoneDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Priority" type="xs:int" />
+          <xs:element minOccurs="0" name="ThresholdDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="WorkOutcomeId" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkQueueId" type="xs:long" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Mercury.Server.Calendar" minOccurs="0" name="WorkTimeRestrictions" nillable="true" type="q27:CalendarDayOfWeekTimes" />
+          <xs:element minOccurs="0" name="WorkflowInstanceId" type="ser:guid" />
+          <xs:element minOccurs="0" name="WorkflowLastStep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkflowNextStep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkflowStatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkQueueItem" nillable="true" type="tns:WorkQueueItem" />
+  <xs:complexType name="WorkQueueItemAssignmentHistory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q28:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssignedFromWorkQueueId" type="xs:long" />
+          <xs:element minOccurs="0" name="AssignedToDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AssignedToSecurityAuthorityId" type="xs:long" />
+          <xs:element minOccurs="0" name="AssignedToUserAccountId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToUserAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToUserDisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToWorkQueueId" type="xs:long" />
+          <xs:element minOccurs="0" name="AssignmentSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkQueueItemId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkQueueItemAssignmentHistory" nillable="true" type="tns:WorkQueueItemAssignmentHistory" />
+  <xs:complexType name="WorkQueueItemSender">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q29:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EventDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EventInstanceId" type="xs:long" />
+          <xs:element minOccurs="0" name="EventObjectId" type="xs:long" />
+          <xs:element minOccurs="0" name="EventObjectType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Priority" type="xs:int" />
+          <xs:element minOccurs="0" name="SenderObjectId" type="xs:long" />
+          <xs:element minOccurs="0" name="SenderObjectType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkQueueItemId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkQueueItemSender" nillable="true" type="tns:WorkQueueItemSender" />
+</xs:schema>

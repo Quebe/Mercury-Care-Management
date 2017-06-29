@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Insurer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Insurer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:complexType name="InsuranceType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsuranceType" nillable="true" type="tns:InsuranceType" />
+  <xs:complexType name="BenefitPlan">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q2:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProgramId" type="xs:long" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BenefitPlan" nillable="true" type="tns:BenefitPlan" />
+  <xs:complexType name="Contract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Contract" nillable="true" type="tns:Contract" />
+  <xs:complexType name="Program">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q4:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BankAccountId" type="xs:long" />
+          <xs:element minOccurs="0" name="InsuranceTypeId" type="xs:long" />
+          <xs:element minOccurs="0" name="InsurerId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Program" nillable="true" type="tns:Program" />
+</xs:schema>

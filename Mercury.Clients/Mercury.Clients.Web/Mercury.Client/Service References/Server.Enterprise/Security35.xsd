@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CoreObject">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="CreateAccountInfo" nillable="true" type="q1:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="ModifiedAccountInfo" nillable="true" type="q2:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoreObject" nillable="true" type="tns:CoreObject" />
+  <xs:complexType name="CoreConfigurationObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CoreExtensibleObject_x0020_">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Visible" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CoreConfigurationObject" nillable="true" type="tns:CoreConfigurationObject" />
+  <xs:complexType name="CoreExtensibleObject_x0020_">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CoreObject">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtendedProperties" nillable="true" type="q3:ArrayOfKeyValueOfstringstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CoreExtensibleObject_x0020_" nillable="true" type="tns:CoreExtensibleObject_x0020_" />
+</xs:schema>

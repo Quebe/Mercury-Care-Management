@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B06C88C5-A685-43DE-B62D-B04D174A230B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mercury.Server</RootNamespace>
+    <AssemblyName>Mercury.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PdfSharp-WPF, Version=1.31.1789.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\PdfSharp-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.DurableInstancing" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.WorkflowServices" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="Audit\Authentication.cs" />
+    <Compile Include="Automation\Enumerations\AutomationStatus.cs" />
+    <Compile Include="Caching\CacheDuration.cs" />
+    <Compile Include="Caching\CacheDurationMultiplerType.cs" />
+    <Compile Include="Caching\CacheManager.cs" />
+    <Compile Include="Caching\CacheObject.cs" />
+    <Compile Include="Calendar\DayOfWeekTimes.cs" />
+    <Compile Include="Calendar\TimeSegment.cs" />
+    <Compile Include="CommonFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Action\ActionParameter.cs" />
+    <Compile Include="Core\Action\Enumerations\ActionParameterDataType.cs" />
+    <Compile Include="Core\Action\Enumerations\ActionParameterValueType.cs" />
+    <Compile Include="Core\Action\Enumerations\ActionThresholdStatus.cs" />
+    <Compile Include="Core\Action\Enumerations\ActionThresholdType.cs" />
+    <Compile Include="Core\Action\Enumerations\StandardActions.cs" />
+    <Compile Include="Core\Action\EventArguments\EventArguments.cs" />
+    <Compile Include="Core\Action\EventArguments\PopulationEventArguments.cs" />
+    <Compile Include="Core\Action\ActionThreshold.cs" />
+    <Compile Include="Core\Activity\Activity.cs" />
+    <Compile Include="Core\Activity\ActivityThreshold.cs" />
+    <Compile Include="Core\Activity\Enumerations\ActivityAnchorDate.cs" />
+    <Compile Include="Core\Activity\Enumerations\ActivityPerformActionDate.cs" />
+    <Compile Include="Core\Activity\Enumerations\ActivityScheduleType.cs" />
+    <Compile Include="Core\Activity\Enumerations\ActivityStatus.cs" />
+    <Compile Include="Core\Activity\Enumerations\ActivityType.cs" />
+    <Compile Include="Core\Authorizations\Authorization.cs" />
+    <Compile Include="Core\Authorizations\AuthorizationLine.cs" />
+    <Compile Include="Core\Authorizations\AuthorizationType.cs" />
+    <Compile Include="Core\AuthorizedServices\AuthorizedService.cs" />
+    <Compile Include="Core\AuthorizedServices\AuthorizedServiceDefinition.cs" />
+    <Compile Include="Core\AuthorizedServices\MemberAuthorizedService.cs" />
+    <Compile Include="Core\AuthorizedServices\MemberAuthorizedServiceDetail.cs" />
+    <Compile Include="Core\Claims\Claim.cs" />
+    <Compile Include="Core\Claims\ClaimLine.cs" />
+    <Compile Include="Core\Claims\Enumerations\ClaimStatus.cs" />
+    <Compile Include="Core\Claims\Enumerations\ClaimType.cs" />
+    <Compile Include="Core\Claims\LabResult.cs" />
+    <Compile Include="Core\Claims\PharmacyClaim.cs" />
+    <Compile Include="Core\Condition\Condition.cs" />
+    <Compile Include="Core\Condition\ConditionClass.cs" />
+    <Compile Include="Core\Condition\ConditionCriteria\ConditionCriteriaDemographic.cs" />
+    <Compile Include="Core\Condition\ConditionCriteria\ConditionCriteriaEvent.cs" />
+    <Compile Include="Core\Condition\Enumerations\ConditionCriteriaEventType.cs" />
+    <Compile Include="Core\CoreConfigurationObject.cs" />
+    <Compile Include="Core\CoreExtensibleObject.cs" />
+    <Compile Include="Core\DataExplorer\DataExplorer.cs" />
+    <Compile Include="Core\DataExplorer\DataExplorerNode.cs" />
+    <Compile Include="Core\DataExplorer\DataExplorerNodeEvaluation.cs" />
+    <Compile Include="Core\DataExplorer\DataExplorerNodeSet.cs" />
+    <Compile Include="Core\DataExplorer\DataExplorerVariable.cs" />
+    <Compile Include="Core\DataExplorer\Enumerations\DataExplorerEvaluationDateType.cs" />
+    <Compile Include="Core\DataExplorer\Enumerations\DataExplorerEvaluationType.cs" />
+    <Compile Include="Core\DataExplorer\Enumerations\DataExplorerNodeType.cs" />
+    <Compile Include="Core\DataExplorer\Enumerations\DataExplorerSetType.cs" />
+    <Compile Include="Core\DataExplorer\Enumerations\DataExplorerVariableType.cs" />
+    <Compile Include="Core\DataExplorer\Evaluations\DataExplorerNodeEvaluationAge.cs" />
+    <Compile Include="Core\DataExplorer\Evaluations\DataExplorerNodeEvaluationDate.cs" />
+    <Compile Include="Core\DataExplorer\Evaluations\DataExplorerNodeEvaluationMemberDemographic.cs" />
+    <Compile Include="Core\DataExplorer\Evaluations\DataExplorerNodeEvaluationMemberEnrollment.cs" />
+    <Compile Include="Core\DataExplorer\Evaluations\DataExplorerNodeEvaluationMemberEnrollmentContinuousFromBirthDate.cs" />
+    <Compile Include="Core\DataExplorer\Evaluations\DataExplorerNodeEvaluationMemberMetric.cs" />
+    <Compile Include="Core\DataExplorer\Evaluations\DataExplorerNodeEvaluationMemberService.cs" />
+    <Compile Include="Core\DataExplorer\Evaluations\DataExplorerNodeEvaluationPopulationMembership.cs" />
+    <Compile Include="Core\DataExplorer\Evaluations\Enumerations\DataExplorerNodeEvaluationPopulationType.cs" />
+    <Compile Include="Core\DataExplorer\Enumerations\DataExplorerNodeResultDataType.cs" />
+    <Compile Include="Core\Entity\Views\EntityDocument.cs" />
+    <Compile Include="Core\Forms\CompileMessage.cs" />
+    <Compile Include="Core\Forms\Controls\Address.cs" />
+    <Compile Include="Core\Forms\Controls\Button.cs" />
+    <Compile Include="Core\Forms\Controls\Collection.cs" />
+    <Compile Include="Core\Forms\Controls\Entity.cs" />
+    <Compile Include="Core\Forms\Controls\Input.cs" />
+    <Compile Include="Core\Forms\Controls\Label.cs" />
+    <Compile Include="Core\Forms\Controls\Metric.cs" />
+    <Compile Include="Core\Forms\Controls\Section.cs" />
+    <Compile Include="Core\Forms\Controls\SectionColumn.cs" />
+    <Compile Include="Core\Forms\Controls\Selection.cs" />
+    <Compile Include="Core\Forms\Controls\Service.cs" />
+    <Compile Include="Core\Forms\Controls\Text.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormCompileMessageType.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlCollectionType.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlDataBindingType.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlDataSource.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlEntityDisplayAgeFormat.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlEntityDisplayStyle.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlInputType.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlNumericType.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlOrientation.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlPaperSize.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlPosition.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlSelectionDirection.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlSelectionMode.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlSelectionOnFocus.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlSelectionReferenceSource.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlSelectionType.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlSpinnerButtonPosition.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlTextMode.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormControlType.cs" />
+    <Compile Include="Core\Forms\Enumerations\FormType.cs" />
+    <Compile Include="Core\Forms\Enumerations\Orientation.cs" />
+    <Compile Include="Core\Forms\EventResult.cs" />
+    <Compile Include="Core\Forms\Form.cs" />
+    <Compile Include="Core\Forms\Control.cs" />
+    <Compile Include="Core\Forms\Structures\Capabilities.cs" />
+    <Compile Include="Core\Forms\Structures\DataBinding.cs" />
+    <Compile Include="Core\Forms\Structures\EventHandler.cs" />
+    <Compile Include="Core\Forms\Structures\Margins.cs" />
+    <Compile Include="Core\Forms\Structures\SelectionItem.cs" />
+    <Compile Include="Core\Forms\Structures\Style.cs" />
+    <Compile Include="Core\Individual\CareIntervention.cs" />
+    <Compile Include="Core\Individual\CareInterventionActivity.cs" />
+    <Compile Include="Core\Individual\CareLevel.cs" />
+    <Compile Include="Core\Individual\CareLevelActivity.cs" />
+    <Compile Include="Core\Individual\CareMeasure.cs" />
+    <Compile Include="Core\Individual\CareMeasureClass.cs" />
+    <Compile Include="Core\Individual\CareMeasureComponent.cs" />
+    <Compile Include="Core\Individual\CareMeasureDomain.cs" />
+    <Compile Include="Core\Individual\CareMeasureScale.cs" />
+    <Compile Include="Core\Individual\CareOutcome.cs" />
+    <Compile Include="Core\Individual\CarePlan.cs" />
+    <Compile Include="Core\Individual\CarePlanGoal.cs" />
+    <Compile Include="Core\Individual\CarePlanActivity.cs" />
+    <Compile Include="Core\Individual\CarePlanIntervention.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseAudit.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseCareIntervention.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseCareInterventionActivity.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseCarePlanAssessment.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseCarePlanAssessmentCareMeasure.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseCarePlanAssessmentCareMeasureComponent.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseCarePlanAssessmentCareMeasureGoal.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseCarePlanGoalIntervention.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseProblemCarePlan.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseProblemClass.cs" />
+    <Compile Include="Core\Individual\Case\Views\MemberCaseCarePlanSummary.cs" />
+    <Compile Include="Core\Individual\Case\Views\MemberCaseLoadSummary.cs" />
+    <Compile Include="Core\Individual\Case\Views\MemberCaseSummary.cs" />
+    <Compile Include="Core\Individual\Enumerations\CareInterventionActivityType.cs" />
+    <Compile Include="Core\Individual\Enumerations\CarePlanItemInclusion.cs" />
+    <Compile Include="Core\Individual\Enumerations\MemberCaseActionOutcome.cs" />
+    <Compile Include="Core\Individual\Enumerations\CarePlanActivityType.cs" />
+    <Compile Include="Core\Individual\Enumerations\CaseItemStatus.cs" />
+    <Compile Include="Core\Individual\Case\MemberCase.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseCarePlan.cs" />
+    <Compile Include="Core\Individual\Case\MemberCaseCarePlanGoal.cs" />
+    <Compile Include="Core\Individual\Enumerations\CarePlanGoalTimeframe.cs" />
+    <Compile Include="Core\Individual\MemberProblemStatementIdentified.cs" />
+    <Compile Include="Core\Individual\ProblemCategory.cs" />
+    <Compile Include="Core\Individual\ProblemClass.cs" />
+    <Compile Include="Core\Individual\ProblemDomain.cs" />
+    <Compile Include="Core\Individual\ProblemStatement.cs" />
+    <Compile Include="Core\Individual\ProblemSubcategory.cs" />
+    <Compile Include="Core\Insurer\CoverageLevel.cs" />
+    <Compile Include="Core\Insurer\CoverageType.cs" />
+    <Compile Include="Core\Insurer\InsuranceType.cs" />
+    <Compile Include="Core\MedicalServices\Definitions\ServiceSetDefinition.cs" />
+    <Compile Include="Core\MedicalServices\Definitions\ServiceSingletonDefinition.cs" />
+    <Compile Include="Core\MedicalServices\Enumerations\EventDateOrder.cs" />
+    <Compile Include="Core\MedicalServices\Enumerations\ServiceClassification.cs" />
+    <Compile Include="Core\MedicalServices\Enumerations\ServiceDataSourceType.cs" />
+    <Compile Include="Core\MedicalServices\Enumerations\ServiceSetType.cs" />
+    <Compile Include="Core\MedicalServices\Enumerations\ServiceType.cs" />
+    <Compile Include="Core\MedicalServices\MemberService.cs" />
+    <Compile Include="Core\MedicalServices\MemberServiceDetailSet.cs" />
+    <Compile Include="Core\MedicalServices\MemberServiceDetailSingleton.cs" />
+    <Compile Include="Core\MedicalServices\Service.cs" />
+    <Compile Include="Core\MedicalServices\ServiceSet.cs" />
+    <Compile Include="Core\MedicalServices\ServiceSingleton.cs" />
+    <Compile Include="Core\Metrics\Enumerations\MetricCostClaimDateType.cs" />
+    <Compile Include="Core\Metrics\Enumerations\MetricCostDataSource.cs" />
+    <Compile Include="Core\Metrics\Enumerations\MetricCostReportingPeriod.cs" />
+    <Compile Include="Core\Metrics\Enumerations\MetricCostWatermarkPeriod.cs" />
+    <Compile Include="Core\Metrics\Enumerations\MetricDataType.cs" />
+    <Compile Include="Core\Metrics\Enumerations\MetricType.cs" />
+    <Compile Include="Core\Metrics\MemberMetric.cs" />
+    <Compile Include="Core\Metrics\Metric.cs" />
+    <Compile Include="Core\Population\Enumerations\PopulationActivityPerformActionDateType.cs" />
+    <Compile Include="Core\Population\Enumerations\PopulationActivityScheduleType.cs" />
+    <Compile Include="Core\Population\Enumerations\PopulationCriteriaEventType.cs" />
+    <Compile Include="Core\Population\Enumerations\PopulationActivityEventAnchorDate.cs" />
+    <Compile Include="Core\Population\Enumerations\PopulationInitialAnchorDate.cs" />
+    <Compile Include="Core\Population\Enumerations\PopulationServiceEventAnchorDate.cs" />
+    <Compile Include="Core\Population\Enumerations\PopulationServiceEventStatus.cs" />
+    <Compile Include="Core\Population\Enumerations\PopulationTriggerEventType.cs" />
+    <Compile Include="Core\Population\Population.cs" />
+    <Compile Include="Core\Population\PopulationCriteria\PopulationCriteriaDemographic.cs" />
+    <Compile Include="Core\Population\PopulationCriteria\PopulationCriteriaEnrollment.cs" />
+    <Compile Include="Core\Population\PopulationCriteria\PopulationCriteriaEvent.cs" />
+    <Compile Include="Core\Population\PopulationCriteria\PopulationCriteriaGeographic.cs" />
+    <Compile Include="Core\Population\PopulationEvents\PopulationActivityEvent.cs" />
+    <Compile Include="Core\Population\PopulationEvents\PopulationMembershipServiceEvent.cs" />
+    <Compile Include="Core\Population\PopulationEvents\PopulationMembershipTriggerEvent.cs" />
+    <Compile Include="Core\Population\PopulationEvents\PopulationServiceEvent.cs" />
+    <Compile Include="Core\Population\PopulationEvents\PopulationServiceEventThreshold.cs" />
+    <Compile Include="Core\Population\PopulationEvents\PopulationTriggerEvent.cs" />
+    <Compile Include="Core\Population\PopulationMembership.cs" />
+    <Compile Include="Core\Population\PopulationType.cs" />
+    <Compile Include="Core\Population\Views\PopulationMembershipEntry.cs" />
+    <Compile Include="Core\Population\Views\PopulationMembershipEntryStatus.cs" />
+    <Compile Include="Core\Population\Views\PopulationMembershipServiceEvent.cs" />
+    <Compile Include="Core\Population\Views\PopulationMembershipSummary.cs" />
+    <Compile Include="Core\Population\Views\PopulationMembershipTriggerEvent.cs" />
+    <Compile Include="Core\Provider\Provider.cs" />
+    <Compile Include="Core\Reference\ContactRegarding.cs" />
+    <Compile Include="Core\CoreObject.cs" />
+    <Compile Include="Core\Reference\Correspondence.cs" />
+    <Compile Include="Core\Action\Action.cs" />
+    <Compile Include="Core\Entity\Entity.cs" />
+    <Compile Include="Core\Entity\EntityAddress.cs" />
+    <Compile Include="Core\Entity\EntityContact.cs" />
+    <Compile Include="Core\Entity\EntityContactInformation.cs" />
+    <Compile Include="Core\Entity\EntityCorrespondence.cs" />
+    <Compile Include="Core\Entity\EntityNote.cs" />
+    <Compile Include="Core\Entity\EntityNoteContent.cs" />
+    <Compile Include="Core\Enumerations\ContactDirection.cs" />
+    <Compile Include="Core\Enumerations\ContactOutcome.cs" />
+    <Compile Include="Core\Enumerations\DateQualifier.cs" />
+    <Compile Include="Core\Enumerations\EntityAddressType.cs" />
+    <Compile Include="Core\Enumerations\EntityContactType.cs" />
+    <Compile Include="Core\Enumerations\EntityNoteType.cs" />
+    <Compile Include="Core\Enumerations\EntityType.cs" />
+    <Compile Include="Core\Enumerations\Gender.cs" />
+    <Compile Include="Core\Enumerations\InsuranceType.cs" />
+    <Compile Include="Core\Enumerations\NoteImportance.cs" />
+    <Compile Include="Core\Insurer\BenefitPlan.cs" />
+    <Compile Include="Core\Insurer\Contract.cs" />
+    <Compile Include="Core\Insurer\Insurer.cs" />
+    <Compile Include="Core\Insurer\Program.cs" />
+    <Compile Include="Core\Member\MemberEnrollment.cs" />
+    <Compile Include="Core\Member\MemberEnrollmentCoverage.cs" />
+    <Compile Include="Core\Member\MemberEnrollmentTplCob.cs" />
+    <Compile Include="Core\Member\Member.cs" />
+    <Compile Include="Core\Member\MemberRelationship.cs" />
+    <Compile Include="Core\Member\MemberEnrollmentPcp.cs" />
+    <Compile Include="Core\Reference\CorrespondenceContent.cs" />
+    <Compile Include="Core\Reference\Enumerations\CorrespondenceContentType.cs" />
+    <Compile Include="Core\Reference\NoteType.cs" />
+    <Compile Include="Core\Provider\ProviderAffiliation.cs" />
+    <Compile Include="Core\Provider\ProviderContract.cs" />
+    <Compile Include="Core\Provider\ProviderEnrollment.cs" />
+    <Compile Include="Core\Provider\ProviderServiceLocation.cs" />
+    <Compile Include="Core\Reference\Views\CityStateZipCodeView.cs" />
+    <Compile Include="Core\Search\SearchResultCareLevelHeader.cs" />
+    <Compile Include="Core\Search\SearchResultCarePlanHeader.cs" />
+    <Compile Include="Core\Search\SearchResultFormHeader.cs" />
+    <Compile Include="Core\Search\SearchResultGlobal.cs" />
+    <Compile Include="Core\Search\SearchResultMedicalServiceHeader.cs" />
+    <Compile Include="Core\Search\SearchResultMember.cs" />
+    <Compile Include="Core\Search\SearchResultPopulationHeader.cs" />
+    <Compile Include="Core\Search\SearchResultProvider.cs" />
+    <Compile Include="Core\Sponsor\Sponsor.cs" />
+    <Compile Include="Core\Work\DataViews\WorkQueuePermission.cs" />
+    <Compile Include="Core\Work\DataViews\WorkQueueSummary.cs" />
+    <Compile Include="Core\Work\Enumerations\WorkflowFramework.cs" />
+    <Compile Include="Core\Work\Enumerations\WorkQueueItemStatus.cs" />
+    <Compile Include="Core\Work\Enumerations\WorkQueueTeamPermission.cs" />
+    <Compile Include="Core\Work\Enumerations\WorkTeamRole.cs" />
+    <Compile Include="Core\Work\Enumerations\WorkTeamType.cs" />
+    <Compile Include="Core\Work\RoutingRule.cs" />
+    <Compile Include="Core\Work\RoutingRuleDefinition.cs" />
+    <Compile Include="Core\Work\Workflow.cs" />
+    <Compile Include="Core\Work\WorkflowPermission.cs" />
+    <Compile Include="Core\Work\WorkOutcome.cs" />
+    <Compile Include="Core\Work\WorkQueue.cs" />
+    <Compile Include="Core\Work\WorkQueueItem.cs" />
+    <Compile Include="Core\Work\WorkQueueItemAssignmentHistory.cs" />
+    <Compile Include="Core\Work\WorkQueueItemSender.cs" />
+    <Compile Include="Core\Work\WorkQueueTeam.cs" />
+    <Compile Include="Core\Work\WorkQueueGetWorkUserView.cs" />
+    <Compile Include="Core\Work\WorkQueueView.cs" />
+    <Compile Include="Core\Work\WorkQueueViewFieldDefinition.cs" />
+    <Compile Include="Core\Work\WorkQueueViewFilterDefinition.cs" />
+    <Compile Include="Core\Work\WorkQueueViewSortDefinition.cs" />
+    <Compile Include="Core\Work\WorkTeam.cs" />
+    <Compile Include="Core\Work\WorkTeamMembership.cs" />
+    <Compile Include="Data\AuthorityAccountStamp.cs" />
+    <Compile Include="Data\DatabaseConfiguration.cs" />
+    <Compile Include="Data\DataTypeConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Enumerations\FilterDescriptorLogicalOperator.cs" />
+    <Compile Include="Data\Enumerations\FilterOperator.cs" />
+    <Compile Include="Data\Enumerations\SortDirection.cs" />
+    <Compile Include="Data\FilterDescriptor.cs" />
+    <Compile Include="Data\IDatabase.cs" />
+    <Compile Include="Data\Parameter.cs" />
+    <Compile Include="Data\SortDescriptor.cs" />
+    <Compile Include="Data\SqlConfiguration.cs" />
+    <Compile Include="Data\SqlDatabase.cs" />
+    <Compile Include="Engine\LogWriter.cs" />
+    <Compile Include="Engine\Monitor.cs" />
+    <Compile Include="Engine\Processor.cs" />
+    <Compile Include="Engine\Schedule.cs" />
+    <Compile Include="EnterprisePermissions.cs" />
+    <Compile Include="EnvironmentPermissions.cs" />
+    <Compile Include="Environment\Environment.cs" />
+    <Compile Include="Environment\EnvironmentType.cs" />
+    <Compile Include="Environment\Role.cs" />
+    <Compile Include="Environment\RoleMembership.cs" />
+    <Compile Include="Environment\RolePermission.cs" />
+    <Compile Include="Faxing\FaxServer.cs" />
+    <Compile Include="ImportExport\Result.cs" />
+    <Compile Include="Printing\Printer.cs" />
+    <Compile Include="Printing\PrinterCapabilities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\ReportingServer.cs" />
+    <Compile Include="Security\AuthenticationResponse.cs" />
+    <Compile Include="Security\Enumerations\SecurityAuthorityType.cs" />
+    <Compile Include="Security\EnvironmentAccess.cs" />
+    <Compile Include="Security\Permission.cs" />
+    <Compile Include="Security\Providers\ActiveDirectory\Provider.cs" />
+    <Compile Include="Security\Providers\ActiveDirectory\ApiLogonUser.cs" />
+    <Compile Include="Security\Providers\ActiveDirectory\ApiNetUserChangePassword.cs" />
+    <Compile Include="Security\Providers\WindowsIntegrated\Provider.cs" />
+    <Compile Include="Security\Security.cs" />
+    <Compile Include="Security\SecurityAuthority.cs" />
+    <Compile Include="Security\SecurityGroupPermission.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="Workflows\Activities\CommonFunctions.cs" />
+    <Compile Include="Workflows\Activities\ContactEntity\ContactEntityInitialize.cs" />
+    <Compile Include="Workflows\Activities\ContactEntity\ContactEntityProcessResponse.cs" />
+    <Compile Include="Workflows\Activities\PromptUser\PromptUserInitialize.cs" />
+    <Compile Include="Workflows\Activities\PromptUser\PromptUserProcessResponse.cs" />
+    <Compile Include="Workflows\Activities\RequireForm\RequireFormInitialize.cs" />
+    <Compile Include="Workflows\Activities\RequireForm\RequireFormProcessResponse.cs" />
+    <Compile Include="Workflows\Activities\SendCorrespondence\SendCorrespondenceInitialize.cs" />
+    <Compile Include="Workflows\Activities\SendCorrespondence\SendCorrespondenceProcessResponse.cs" />
+    <Compile Include="Workflows\Activities\UserInteractionRequestResponse.cs" />
+    <Compile Include="Workflows\Activities\WorkflowStepsAppend.cs" />
+    <Compile Include="Workflows\Activities\WorkQueueItem\WorkQueueItemClose.cs" />
+    <Compile Include="Workflows\Activities\WorkQueueItem\WorkQueueItemSuspend.cs" />
+    <Compile Include="Workflows\Enumerations\WorkflowStepStatus.cs" />
+    <Compile Include="Workflows\EventArguments\UserDataReceivedEventArgs.cs" />
+    <Compile Include="Workflows\IWorkflowService.cs" />
+    <Compile Include="Workflows\UserInteractions\Enumerations\UserInteractionType.cs" />
+    <Compile Include="Workflows\UserInteractions\Enumerations\UserInterfaceUpdateType.cs" />
+    <Compile Include="Workflows\UserInteractions\Enumerations\UserPromptButtonClicked.cs" />
+    <Compile Include="Workflows\UserInteractions\Enumerations\UserPromptImage.cs" />
+    <Compile Include="Workflows\UserInteractions\Enumerations\UserPromptType.cs" />
+    <Compile Include="Workflows\UserInteractions\Request\ContactEntityRequest.cs" />
+    <Compile Include="Workflows\UserInteractions\Request\OpenImageRequest.cs" />
+    <Compile Include="Workflows\UserInteractions\Request\PromptUserRequest.cs" />
+    <Compile Include="Workflows\UserInteractions\Request\RequestBase.cs" />
+    <Compile Include="Workflows\UserInteractions\Request\RequestEventArgs.cs" />
+    <Compile Include="Workflows\UserInteractions\Request\RequireEntityRequest.cs" />
+    <Compile Include="Workflows\UserInteractions\Request\RequireFormRequest.cs" />
+    <Compile Include="Workflows\UserInteractions\Request\SendCorrespondenceRequest.cs" />
+    <Compile Include="Workflows\UserInteractions\Request\UserInterfaceUpdateRequest.cs" />
+    <Compile Include="Workflows\UserInteractions\Response\ContactEntityResponse.cs" />
+    <Compile Include="Workflows\UserInteractions\Response\OpenImageResponse.cs" />
+    <Compile Include="Workflows\UserInteractions\Response\PromptUserResponse.cs" />
+    <Compile Include="Workflows\UserInteractions\Response\RequireEntityResponse.cs" />
+    <Compile Include="Workflows\UserInteractions\Response\RequireFormResponse.cs" />
+    <Compile Include="Workflows\UserInteractions\Response\ResponseBase.cs" />
+    <Compile Include="Workflows\UserInteractions\Response\ResponseEventArgs.cs" />
+    <Compile Include="Workflows\UserInteractions\Response\SendCorrespondenceResponse.cs" />
+    <Compile Include="Workflows\UserInteractions\Structures\PromptSelectionItem.cs" />
+    <Compile Include="Workflows\WorkflowManager.cs" />
+    <Compile Include="Workflows\WorkflowManager4.cs" />
+    <Compile Include="Workflows\WorkflowResponse.cs" />
+    <Compile Include="Workflows\WorkflowService.cs" />
+    <Compile Include="Workflows\WorkflowStartRequest.cs" />
+    <Compile Include="Workflows\WorkflowStatus.cs" />
+    <Compile Include="Workflows\WorkflowStep.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Authorizations\View\" />
+    <Folder Include="Core\Claims\View\" />
+    <Folder Include="Core\Episodic\" />
+    <Folder Include="Core\MedicalServices\Views\" />
+    <Folder Include="Enumerations\" />
+    <Folder Include="Workflows\Activities\OpenImage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mercury.Server.Public\Mercury.Server.Public.csproj">
+      <Project>{13299D49-4667-4FDA-A6CA-BDF7FEA344D7}</Project>
+      <Name>Mercury.Server.Public</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assemblies\PdfSharp-WPF.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppdef Include="Workflows\Activities\ContactEntity\ContactEntity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppdef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppdef Include="Workflows\Activities\RequireForm\RequireForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppdef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppdef Include="Workflows\Activities\SendCorrespondence\SendCorrespondence.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppdef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppdef Include="Workflows\Activities\PromptUser\PromptUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppdef>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

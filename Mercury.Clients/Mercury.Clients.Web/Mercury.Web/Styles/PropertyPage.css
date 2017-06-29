@@ -1,0 +1,49 @@
+﻿
+*.PropertyPageSectionTitle { 
+
+	font-family: Calibri, Arial, Helvetica, Sans-Serif;
+	
+	font-size: 10pt; 
+	
+	line-height: 150%;
+	
+	font-weight: bold;
+	
+	color: White;
+	
+	background-color: #215485;
+	
+	border-top: 1px solid #FFE0B3; 
+	
+	clear: both; 
+	
+	margin-top: .125in;
+	
+	padding-left: 8px; padding-top: 4px; padding-bottom: 4px; padding-right: 4px;
+	
+}
+
+
+*.PropertyPageSectionTitleComplement { 
+
+	font-family: Calibri, Arial, Helvetica, Sans-Serif;
+	
+	font-size: 10pt; 
+	
+	line-height: 150%;
+	
+	font-weight: bold;
+	
+	color: black;
+	
+	border-bottom: 1px solid #A67226;
+	
+	background-color: #FFE0B3;
+	
+	clear: both; 
+	
+	margin-top: .125in;
+	
+	padding-left: 8px; padding-top: 4px; padding-bottom: 4px; padding-right: 4px;
+	
+}

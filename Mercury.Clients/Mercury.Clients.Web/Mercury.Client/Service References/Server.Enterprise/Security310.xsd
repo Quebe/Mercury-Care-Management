@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="MemberMetric">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddedManually" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EventDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="Metric" nillable="true" type="tns:Metric" />
+          <xs:element minOccurs="0" name="MetricId" type="xs:long" />
+          <xs:element minOccurs="0" name="MetricValue" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberMetric" nillable="true" type="tns:MemberMetric" />
+  <xs:complexType name="Metric">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q2:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics.Enumerations" minOccurs="0" name="CostDataSource" type="q3:MetricCostDataSource" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics.Enumerations" minOccurs="0" name="CostReportingPeriod" type="q4:MetricCostReportingPeriod" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="CostReportingPeriodDateQualifier" type="q5:DateQualifier" />
+          <xs:element minOccurs="0" name="CostReportingPeriodValue" type="xs:int" />
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CostServices" nillable="true" type="q6:ArrayOfKeyValueOflongstring" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics.Enumerations" minOccurs="0" name="DataType" type="q7:MetricDataType" />
+          <xs:element minOccurs="0" name="MaximumValue" type="xs:decimal" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics.Enumerations" minOccurs="0" name="MetricType" type="q8:MetricType" />
+          <xs:element minOccurs="0" name="MinimumValue" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Metric" nillable="true" type="tns:Metric" />
+</xs:schema>

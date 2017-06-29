@@ -1,0 +1,17 @@
+﻿
+*.GlobalSearchTextBoxWatermark {
+    
+    color: #CCCCCC;
+    
+    font-style: italic;
+    
+    vertical-align: middle;
+    
+}
+
+*.GlobalSearchButton {
+   
+    background: url(/images/common16/arrowgreenright.png) no-repeat;
+
+}
+

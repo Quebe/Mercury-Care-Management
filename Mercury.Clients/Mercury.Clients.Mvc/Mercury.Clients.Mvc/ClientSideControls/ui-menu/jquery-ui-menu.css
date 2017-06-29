@@ -1,0 +1,42 @@
+﻿
+.ui-menu-control {
+    
+    empty-cells: show;
+    
+    position: absolute;
+
+}
+
+.ui-menu-control-items-list {
+
+}
+
+.ui-menu-control-item { 
+    
+    white-space: nowrap;
+    
+    vertical-align: middle;
+    
+    cursor: pointer;
+    
+}
+
+.ui-menu-control-item-icon {
+    
+    min-width: 16px; min-height: 16px;
+    
+    padding-left: 8px; padding-right: 4px;
+    
+    border-right: 1px solid #CCCCCC;
+    
+}
+
+.ui-menu-control-item-text {
+    
+    padding-left: 4px; padding-right: 8px;  
+    
+    border: 0px;    
+    
+    font-weight: normal;
+    
+}

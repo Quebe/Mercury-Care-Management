@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference.Enumerations" />
+  <xs:complexType name="Correspondence">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Content" nillable="true" type="q2:ArrayOfKeyValueOfintCorrespondenceContentlQvyrqSE" />
+          <xs:element minOccurs="0" name="FormId" type="xs:long" />
+          <xs:element minOccurs="0" name="StoreImage" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Version" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Correspondence" nillable="true" type="tns:Correspondence" />
+  <xs:complexType name="CorrespondenceContent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttachmentBase64" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttachmentXpsBase64" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContentSequence" type="xs:int" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference.Enumerations" minOccurs="0" name="ContentType" type="q4:CorrespondenceContentType" />
+          <xs:element minOccurs="0" name="CorrespondenceContentPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CorrespondenceId" type="xs:long" />
+          <xs:element minOccurs="0" name="IsAttachmentCompressed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ReportingServerId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CorrespondenceContent" nillable="true" type="tns:CorrespondenceContent" />
+  <xs:complexType name="ContactRegarding">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q5:CoreConfigurationObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContactRegarding" nillable="true" type="tns:ContactRegarding" />
+  <xs:complexType name="NoteType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q6:CoreConfigurationObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NoteType" nillable="true" type="tns:NoteType" />
+  <xs:complexType name="ArrayOfCorrespondence">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Correspondence" nillable="true" type="tns:Correspondence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCorrespondence" nillable="true" type="tns:ArrayOfCorrespondence" />
+  <xs:complexType name="ArrayOfNoteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NoteType" nillable="true" type="tns:NoteType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNoteType" nillable="true" type="tns:ArrayOfNoteType" />
+  <xs:complexType name="ArrayOfContactRegarding">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactRegarding" nillable="true" type="tns:ContactRegarding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactRegarding" nillable="true" type="tns:ArrayOfContactRegarding" />
+</xs:schema>

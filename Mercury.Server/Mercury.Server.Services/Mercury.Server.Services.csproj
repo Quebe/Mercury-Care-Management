@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{638B26B5-1467-457E-9168-B101A9C8A500}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mercury.Server.Services</RootNamespace>
+    <AssemblyName>Mercury.Server.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DeployIisAppPath>Mercury.Server.Services_deploy</DeployIisAppPath>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientAccessPolicy.xml" />
+    <Content Include="Core\Application.svc" />
+    <Content Include="Enterprise\Security.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CacheManager.cs" />
+    <Compile Include="Core\Application.svc.cs">
+      <DependentUpon>Application.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Core\IApplication.cs" />
+    <Compile Include="Enterprise\ISecurity.cs" />
+    <Compile Include="Enterprise\Security.svc.cs">
+      <DependentUpon>Security.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Responses\AuthenticationResponse.cs" />
+    <Compile Include="Responses\BooleanResponse.cs" />
+    <Compile Include="Responses\DataExplorerNodeExecutionResponse.cs" />
+    <Compile Include="Responses\DictionaryKeyCountResponse.cs" />
+    <Compile Include="Responses\DictionaryResponse.cs" />
+    <Compile Include="Responses\DictionaryStringResponse.cs" />
+    <Compile Include="Responses\FormControlRaiseEventResponse.cs" />
+    <Compile Include="Responses\FormControlValueChangedResponse.cs" />
+    <Compile Include="Responses\FormSubmitResponse.cs" />
+    <Compile Include="Responses\GetWorkResponse.cs" />
+    <Compile Include="Responses\ImageResponse.cs" />
+    <Compile Include="Responses\ImportExportResponse.cs" />
+    <Compile Include="Responses\MemberCaseCreateResponse.cs" />
+    <Compile Include="Responses\MemberCaseModificationResponse.cs" />
+    <Compile Include="Responses\MemberDemographicsResponse.cs" />
+    <Compile Include="Responses\ObjectSaveResponse.cs" />
+    <Compile Include="Responses\Objects\ImportExportResult.cs" />
+    <Compile Include="Responses\Objects\WorkQueueItemResponse.cs" />
+    <Compile Include="Responses\ResponseBase.cs" />
+    <Compile Include="Responses\SearchResults\SearchResultsGlobalResponse.cs" />
+    <Compile Include="Responses\SearchResults\SearchResultsMemberResponse.cs" />
+    <Compile Include="Responses\SearchResults\SearchResultsProviderResponse.cs" />
+    <Compile Include="Responses\ServiceException.cs" />
+    <Compile Include="Responses\StringListResponse.cs" />
+    <Compile Include="Responses\StringResponse.cs" />
+    <Compile Include="Responses\SuccessFailureResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ActionCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\AuditAuthenticationCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\AuthorizationCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\AuthorizationLineCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\AuthorizedServiceCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\AuthroizationTypeCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\BenefitPlanCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CareInterventionCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CareLevelCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CareMeasureClassCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CareMeasureCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CareMeasureDomainCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CareMeasureScaleCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CareOutcomeCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CarePlanCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CityStateZipCodeViewCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ClaimCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ClaimLineCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ConditionClassCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ConditionCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ContactRegardingCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ContractCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CorrespondenceCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CoverageLevelCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\CoverageTypeCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\DataExplorerCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\DirectoryEntryCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\EntityAddressCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\EntityContactCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\EntityContactInformationCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\EntityDocumentCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\EntityNoteCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\EntityNoteContentCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\EnvironmentAccessCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\EnvironmentCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\FaxServerCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\FormCompileMessageCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\InsuranceTypeCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\InsurerCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\Int64CollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\LabResultCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MedicalServiceDetailSetCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MedicalServiceDetailSingletonCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberAuthorizedServiceCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberAuthorizedServiceDetailCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberCaseAuditCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberCaseCarePlanSummaryCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberCaseLoadSummaryCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberCaseSummaryCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberMetricCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberProblemStatementIdentifiedCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberRelationshipCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MetricCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PermissionCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PharmacyClaimCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PopulationHeaderCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PopulationMembershipCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PopulationMembershipEntryDataViewCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PopulationMembershipEntryStatusDataViewCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PopulationMembershipServiceEventCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PopulationMembershipServiceEventDataViewCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PopulationMembershipSummaryCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PopulationMembershipTriggerEventDataViewCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PopulationTypeCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\PrinterCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ProblemClassCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ProblemDomainCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ProblemStatementCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ProgramCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ProviderAffiliationCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ProviderContractCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ProviderEnrollmentCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ProviderServiceLocationCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\ReportingServerCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\RoleMembershipCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\RolePermissionCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\RolesCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\RoutingRuleCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\SearchResultMedicalServiceHeaderCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberEnrollmentCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberEnrollmentCoverageCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberEnrollmentPcpCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberEnrollmentTplCobCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberServiceCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberServiceDetailSetCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\MemberServiceDetailSingletonCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\NoteTypeCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\SearchResultFormHeaderCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\SecurityAuthorityCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\SecurityGroupCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\SecurityGroupPermissionCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkflowCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkOutcomeCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkQueueCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkQueueItemAssignmentHistoryCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkQueueItemCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkQueueItemSenderCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkQueueItemWorkflowStepCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkQueueSummaryCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkQueueViewCollectionResponse.cs" />
+    <Compile Include="Responses\TypedCollections\WorkTeamCollectionResponse.cs" />
+    <Compile Include="Responses\WorkflowResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mercury.Server.Public\Mercury.Server.Public.csproj">
+      <Project>{13299D49-4667-4FDA-A6CA-BDF7FEA344D7}</Project>
+      <Name>Mercury.Server.Public</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mercury.Server\Mercury.Server.csproj">
+      <Project>{B06C88C5-A685-43DE-B62D-B04D174A230B}</Project>
+      <Name>Mercury.Server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>10080</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:10080</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:10080</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost:10080</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <EnableWcfTestClientForSVCDefaultValue>True</EnableWcfTestClientForSVCDefaultValue>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

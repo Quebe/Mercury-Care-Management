@@ -1,0 +1,277 @@
+﻿<UserControl xmlns:my="clr-namespace:Mercury.Silverlight.Workspace"  x:Class="Mercury.Silverlight.Workspace.Workspace"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+    xmlns:Telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+    xmlns:TelerikNavigation="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation"
+    xmlns:TelerikRibbonBar="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.RibbonBar"    
+
+    xmlns:MercuryWorkspace="clr-namespace:Mercury.Silverlight.Workspace"             
+
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="800">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition></ColumnDefinition>
+                                   
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="37" />
+
+            <RowDefinition Height="*" />
+
+            <RowDefinition Height="*" />
+
+            <RowDefinition Height="24" />
+
+        </Grid.RowDefinitions>
+        
+        <!-- APPLICATION BAR (BEGIN) -->
+
+        <Border x:Name="ApplicationTitleBarBorder" Grid.Column="0" Grid.Row="0" BorderBrush="#FFE0B3" BorderThickness="0 0 0 1">
+
+            <Border.Background>
+
+                <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+
+                    <GradientStop Color="#FF6699CC" Offset="0" />
+
+                    <GradientStop Color="#FF215485" Offset=".50" />
+
+                    <GradientStop Color="#FF215485" Offset="1" />
+
+                </LinearGradientBrush>
+
+            </Border.Background>
+            
+            <Grid x:Name="ApplicationTitleBar">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="Auto" />
+
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition />
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="36" Visibility="Collapsed">
+
+                    <TelerikNavigation:RadMenu x:Name="ApplicationMenu" VerticalAlignment="Top" HorizontalAlignment="Left" ClickToOpen="True" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ItemClick="ApplicationMenu_ItemClick" >
+
+                        <TelerikNavigation:RadMenuItem Height="32" Width="32">
+
+                            <TelerikNavigation:RadMenuItem.Icon>
+
+                                <Image x:Name="ApplicationButtonImage" Width="24" Height="24" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                                    <Image.Effect>
+
+                                        <DropShadowEffect BlurRadius="8" Color="Black" Direction="-45" Opacity="0.5" ShadowDepth="5" />
+
+                                    </Image.Effect>
+
+                                </Image>
+
+                            </TelerikNavigation:RadMenuItem.Icon>
+
+                            <TelerikNavigation:RadMenuItem Header="Global Search Query (Ctrl+Q)">
+
+                                <TelerikNavigation:RadMenuItem.Icon>
+
+                                    <Image Source="../Images/Common16/Search.png" />
+
+                                </TelerikNavigation:RadMenuItem.Icon>
+
+                            </TelerikNavigation:RadMenuItem>
+
+
+                            <TelerikNavigation:RadSeparator />
+
+                            <TelerikNavigation:RadMenuItem Header="About">
+
+                            </TelerikNavigation:RadMenuItem>
+
+                            <TelerikNavigation:RadMenuItem Header="Session Information">
+
+                                <TelerikNavigation:RadMenuItem.Icon>
+
+                                    <Image Source="../Images/Common16/UserAccount.png" />
+
+                                </TelerikNavigation:RadMenuItem.Icon>
+
+                            </TelerikNavigation:RadMenuItem>
+
+                            <TelerikNavigation:RadSeparator />
+
+                            <TelerikNavigation:RadMenuItem Header="Log Off">
+
+                                <TelerikNavigation:RadMenuItem.Icon>
+
+                                    <Image Source="../Images/Common16/LockKey.png" />
+
+                                </TelerikNavigation:RadMenuItem.Icon>
+
+                            </TelerikNavigation:RadMenuItem>
+
+                        </TelerikNavigation:RadMenuItem>
+
+                    </TelerikNavigation:RadMenu>
+
+                </Border>
+                
+                <Border Grid.Column="1" Grid.Row="0">
+
+                    <HyperlinkButton x:Name="ApplicationTitle" TabIndex="0" FontFamily="Calibri" FontSize="13.333" Foreground="White" Padding="8 0 8 0" Content="Mercury Application" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ApplicationTitle_Click"></HyperlinkButton>
+
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+
+                    <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight">
+
+                        <Telerik:RadButton x:Name="ApplicationLinkHome" Foreground="#A6C6E6" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Margin="8 0 8 0" Click="ApplicationLinkHome_Click" ToolTipService.ToolTip="Home">
+
+                            <Telerik:RadButton.Content>Home</Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+
+                        <Telerik:RadButton x:Name="ApplicationLinkSearch" Foreground="#A6C6E6" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Margin="8 0 8 0" Click="ApplicationLinkSearch_Click" ToolTipService.ToolTip="Search">
+
+                            <Telerik:RadButton.Content>Search</Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+                        
+                        <Telerik:RadButton x:Name="ApplicationLinkLogOff" Foreground="#A6C6E6" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Margin="8 0 16 0" ToolTipService.ToolTip="Logout">
+
+                            <Telerik:RadButton.Content>Logout</Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+
+                        <TelerikRibbonBar:RadRibbonSplitButton x:Name="ApplicationSwitchWindows" Foreground="#A6C6E6" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ToolTipService.ToolTip="Switch between windows" Click="ApplicationSwitchWindows_Click" DropDownOpened="ApplicationSwitchWindows_DropDownOpened">
+
+                            <TelerikRibbonBar:RadRibbonSplitButton.Content>
+
+                                <TextBlock Foreground="#A6C6E6">Windows</TextBlock>
+                                
+                            </TelerikRibbonBar:RadRibbonSplitButton.Content>
+
+                            <TelerikRibbonBar:RadRibbonSplitButton.DropDownContent>
+
+                                <TelerikNavigation:RadContextMenu x:Name="ApplicationSwitchWindowsContextMenu" ItemClick="ApplicationSwitchWindowsContextMenu_ItemClick">
+
+                                    <TelerikNavigation:RadMenuItem Header="Return to Workspace">
+
+                                        <TelerikNavigation:RadMenuItem.Icon>
+
+                                            <Image Source="../Images/Common16/Workspace.png"></Image>
+
+                                        </TelerikNavigation:RadMenuItem.Icon>
+
+                                    </TelerikNavigation:RadMenuItem>
+
+                                    <TelerikNavigation:RadMenuItem Header="Global Search Query (Ctrl+Q)">
+
+                                        <TelerikNavigation:RadMenuItem.Icon>
+
+                                            <Image Source="../Images/Common16/Search.png" />
+
+                                        </TelerikNavigation:RadMenuItem.Icon>
+
+                                    </TelerikNavigation:RadMenuItem>
+
+                                    <TelerikNavigation:RadMenuItem x:Name="ApplicationSwitchWindowsContextMenuWorkspaceSeparator" IsSeparator="True" Visibility="Collapsed"></TelerikNavigation:RadMenuItem>
+
+                                </TelerikNavigation:RadContextMenu>
+
+                            </TelerikRibbonBar:RadRibbonSplitButton.DropDownContent>
+
+                        </TelerikRibbonBar:RadRibbonSplitButton>
+                        
+                    </StackPanel>
+
+                </Border>
+
+                
+            </Grid>
+
+        </Border>
+
+        <!-- APPLICATION BAR ( END ) -->
+        
+        
+        <!-- WORKSPACE CONTENT (BEGIN) -->
+
+        <MercuryWorkspace:Work x:Name="Work" Grid.Column="0" Grid.Row="1"></MercuryWorkspace:Work>
+        
+        <!-- WORKSPACE CONTENT ( END ) -->
+        
+        
+        <!-- ACTIVE WINDOW CONTENT (BEGIN) -->
+
+        <Border x:Name="ActiveWindowContent" Grid.Column="0" Grid.Row="2" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+        </Border>
+
+        <!-- ACTIVE WINDOW CONTENT ( END ) -->
+
+        
+        <!-- STATUS BAR CONTENT (BEGIN) -->
+
+        <Border x:Name="StatusBarContent" Grid.Column="0" Grid.Row="3" Background="#D8E5F2" BorderBrush="Black" BorderThickness="0 1 0 0">
+
+            <Grid x:Name="ApplicationStatusBarGrid">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="*" />
+
+                    <ColumnDefinition Width="96" />
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" Grid.Row="0">
+
+                    <TextBlock x:Name="ApplicationStatusText" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBlock>
+
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch">
+
+                    <!-- Foreground="#89EC6A" -->
+
+                    <Telerik:RadProgressBar x:Name="ApplicationStatusProgressBar" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="16" IsIndeterminate="True"  Margin="8,0,8,0" Foreground="#FF0000"  Visibility="Collapsed"></Telerik:RadProgressBar>
+
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+        <!-- STATUS BAR CONTENT ( END ) -->
+
+        <MercuryWorkspace:SwitchWindowPreview x:Name="WindowPreview" Grid.Row="0" Grid.RowSpan="4" Visibility="Collapsed" Background="Transparent"></MercuryWorkspace:SwitchWindowPreview>
+        
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,203 @@
+﻿<UserControl x:Class="Mercury.Silverlight.Controls.EntitySendCorrespondence"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+    xmlns:TelerikNavigation="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation"
+    xmlns:TelerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+    xmlns:TelerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"  
+    xmlns:MercuryValueConverters="clr-namespace:Mercury.Client.ValueConverters;assembly=Mercury.Silverlight.Client"
+    >
+
+    <UserControl.Resources>
+
+        <MercuryValueConverters:PhoneNumberFormatter x:Name="PhoneNumberFormatterConverter"></MercuryValueConverters:PhoneNumberFormatter>
+
+        <MercuryValueConverters:EnumerationFormatter x:Name="EnumerationFormatterConverter"></MercuryValueConverters:EnumerationFormatter>
+
+    </UserControl.Resources>
+
+    <StackPanel x:Name="LayoutRoot" Background="White">
+
+        <Border x:Name="ValidationMessagePanel" HorizontalAlignment="Stretch" BorderBrush="Black" BorderThickness="1" Background="#FFDDDD" MinHeight="24" Visibility="Collapsed" >
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+
+                <Image Source="../Images/Common16/Warn.png" Margin="8 0 8 0"></Image>
+
+                <TextBlock x:Name="ValidationMessage" TextWrapping="Wrap"></TextBlock>
+
+            </StackPanel>
+
+        </Border>
+
+        <StackPanel Orientation="Horizontal">
+
+            <TextBlock x:Name="EntityName" Text="Waiting for Entity Assignment (initialization)" Margin="10"></TextBlock>
+
+        </StackPanel>
+
+        <Border Padding="10" BorderBrush="#BBD7FA" BorderThickness="1" Margin="5">
+
+            <StackPanel>
+
+                <TextBlock Text="Step 1: Select an  Address" Margin="0 0 0 5"></TextBlock>
+
+                <TelerikGridView:RadGridView x:Name="EntityAddressGrid" Grid.Column="0" Grid.Row="0" VerticalAlignment="Stretch" AutoGenerateColumns="False" ShowGroupPanel="False" IsReadOnly="True"
+                                                                                 
+                RowIndicatorVisibility="Collapsed"                                                                                                  
+
+                >
+
+                    <TelerikGridView:RadGridView.Columns>
+
+                        <TelerikGridView:GridViewSelectColumn UniqueName="Selection" Header="Select" Width="60" TextAlignment="Center"></TelerikGridView:GridViewSelectColumn>
+
+                        <TelerikGridView:GridViewDataColumn UniqueName="Type" Header="Type" DataMemberBinding="{Binding AddressTypeDescription}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn UniqueName="Line1" Header="Line 1" DataMemberBinding="{Binding Line1}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+                        
+                        <TelerikGridView:GridViewDataColumn UniqueName="Line2" Header="Line 2" DataMemberBinding="{Binding Line2}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn UniqueName="CityStateZipCode" Header="City, State Zip Code" DataMemberBinding="{Binding CityStateZipCode}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                    </TelerikGridView:RadGridView.Columns>
+
+                </TelerikGridView:RadGridView>
+
+            </StackPanel>
+
+        </Border>
+
+        <Border Padding="10" BorderBrush="#BBD7FA" BorderThickness="1" Margin="5">
+
+            <StackPanel>
+
+                <TextBlock Text="Step 2: Select Correspondence and Edit Attention Line" Margin="0 0 0 10"></TextBlock>
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width=".15*" MinWidth="110"></ColumnDefinition>
+
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+
+                        <ColumnDefinition Width=".30*"></ColumnDefinition>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition MinHeight="32"></RowDefinition>
+
+                        <RowDefinition MinHeight="32"></RowDefinition>
+
+                        <RowDefinition MinHeight="32"></RowDefinition>
+
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+
+                    <TextBlock Text="Correspondence:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"></TextBlock>
+
+                    <TelerikInput:RadComboBox x:Name="CorrespondenceSelection" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+
+                    </TelerikInput:RadComboBox>
+
+                    <TextBlock x:Name="CorrespondenceSendDateLabel" Text="Send Date:" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 8 0" Visibility="Visible"></TextBlock>
+
+                    <StackPanel x:Name="CorrespondenceSendDatePanel" Orientation="Horizontal" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Visibility="Visible">
+
+                        <TelerikInput:RadDatePicker x:Name="CorrespondenceSendDate" Width="100" IsEnabled="False"></TelerikInput:RadDatePicker>
+
+                    </StackPanel>
+
+
+                    <TextBlock Text="Attention:" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
+
+                    <TextBox x:Name="CorrespondenceAttention" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" VerticalAlignment="Center"></TextBox>
+
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" >
+
+                        <CheckBox x:Name="CorrespondenceUseAlternativeAddress" Checked="CorrespondenceUseAlternativeAddress_Toggle" Unchecked="CorrespondenceUseAlternativeAddress_Toggle"></CheckBox>
+
+                        <TextBlock x:Name="CorrespondenceUseAlternativeAddressLabel" Text="Use Alternate Address" MouseLeftButtonUp="CorrespondenceUseAlternativeAddressLabel_MouseLeftButtonUp"></TextBlock>
+
+                    </StackPanel>
+
+                    <StackPanel  Grid.Column="4" Grid.Row="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+
+                        <Telerik:RadButton x:Name="ButtonOk" Width="73" Height="24" Content="OK" IsEnabled="False" Margin="10 0 10 0" Click="ButtonOk_Click" ></Telerik:RadButton>
+
+                        <Telerik:RadButton x:Name="ButtonCancel" Width="73" Height="24" Content="Cancel" IsEnabled="False" Margin="10 0 10 0" Click="ButtonCancel_Click" ></Telerik:RadButton>
+
+                    </StackPanel>
+                    
+                    
+                    <!-- ALTERNATE ADDRESS -->
+
+                    <Grid x:Name="CorrespondenceAlternateAddressDetail" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Visibility="Collapsed">
+                        
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+
+                            <ColumnDefinition Width=".50*"></ColumnDefinition>
+
+                            <ColumnDefinition Width="80"></ColumnDefinition>
+
+                            <ColumnDefinition Width=".25*"></ColumnDefinition>
+
+                            <ColumnDefinition Width="80"></ColumnDefinition>
+
+                            <ColumnDefinition Width=".25*"></ColumnDefinition>
+                        
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition MinHeight="32"></RowDefinition>
+
+                            <RowDefinition MinHeight="32"></RowDefinition>
+
+                            <RowDefinition MinHeight="32"></RowDefinition>
+
+                        </Grid.RowDefinitions>
+
+                        
+                        <TextBlock Text="Address Line 1:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="CorrespondenceAlternateAddressLine1" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="5" VerticalAlignment="Center"></TextBox>
+
+                        <TextBlock Text="Address Line 2:" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="CorrespondenceAlternateAddressLine2" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" VerticalAlignment="Center"></TextBox>
+
+                        <TextBlock Text="City:" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="CorrespondenceAlternateAddressCity" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"></TextBox>
+
+                        <TextBlock Text="State:" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+                        <TelerikInput:RadComboBox x:Name="CorrespondenceAlternateAddressState" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center"></TelerikInput:RadComboBox>
+
+                        <TextBlock Text="Zip Code:" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+                        <TextBox x:Name="CorrespondenceAlternateAddressZipCode" Grid.Column="5" Grid.Row="2"  VerticalAlignment="Center"></TextBox>
+
+                        
+                    </Grid>
+                    
+                </Grid>
+
+            </StackPanel>
+
+        </Border>
+
+    </StackPanel>
+
+</UserControl>

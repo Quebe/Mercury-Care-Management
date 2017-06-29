@@ -1,0 +1,1 @@
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Silverlight\Mercury.Silverlight.Client\Mercury.Silverlight.Client.csproj,634256706047232424,

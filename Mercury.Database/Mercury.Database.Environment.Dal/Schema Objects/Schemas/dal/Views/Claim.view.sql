@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[Claim] AS SELECT * FROM dbo.Claim

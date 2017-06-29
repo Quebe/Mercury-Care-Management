@@ -1,0 +1,99 @@
+﻿@model Mercury.Clients.Mvc.Models.Workspace.WorkspaceModel
+
+
+    <!-- MY WORK QUEUES (BEGIN) -->
+
+    <div id="MyWorkQueuesContainer" class="BackgroundColorComplementNormal BorderColorDark" style="background-color: White; padding: .125in;">
+    
+        <table width="100%" cellpadding="0" cellspacing="0">
+        
+            <tr style="height: 32px;">
+
+                <td style="width: 110px; white-space: nowrap">My Work Queues: </td>
+                
+                <td >
+
+                    @Html.DropDownListFor(model => Model.SelectedWorkQueueId, new SelectList (Model.WorkQueuesAvailable, "Id", "Name"), new { style = "width: 100%;" })
+                
+                </td>
+            
+                <td style="width: 100px; white-space: nowrap; text-align: right">Available/Open: </td>
+
+                <td style="width: 100px; padding-left: .125in; text-align: center">
+
+                    @Model.SelectedWorkQueueAvailableCount / @Model.SelectedWorkQueueTotalCount
+                
+                </td>
+
+            </tr>
+            
+            <tr style="height: 32px;">
+
+                <td style="font-weight: normal">Get Work: </td>
+            
+                <td style="font-weight: bold">
+                
+                    <!-- GET WORK HYPERLINK ACTION -->
+
+                    <a id="GetWorkLink" href="/Workspace/GetWork?WorkQueueId=@Model.SelectedWorkQueueId.ToString()">@Model.SelectedWorkQueueWorkflowName</a>
+
+                </td>
+
+                <td colspan="1" style="text-align: center"><a id="WorkQueueMonitorLink" class="NoDecoration ColorComplementDarker HoverTextBlack" href="../PermissionDenied.aspx" style="white-space: nowrap; display: none;">(Monitor)</a></td>
+
+                <td colspan="1" style="text-align: center"><a id="WorkQueueManageLink" class="NoDecoration ColorComplementDarker HoverTextBlack" href="../PermissionDenied.aspx" style="white-space: nowrap; display: none;">(Manage Work Queue)</a></td>
+
+            </tr>
+
+            <tr><td colspan="4">
+            
+                <div id="GetWorkExceptionMessageRow" style="display: @((Model.HasException) ? "block" : "none");">
+                
+                    <table cellpadding="0" cellspacing="0" width="100%"><tr>
+                        
+                        <td><img src="/Images/Common16/Stop.png" style="padding-right: 8px;" alt="Exception Indicator" /></td>
+                
+                        <td style="color: #A60000">Exception Occurred: 
+                
+                            @Model.ExceptionMessage
+                            
+                        </td>
+
+                    </tr></table>
+                    
+                </div></td></tr>
+
+            <tr><td colspan="4">
+            
+                <div id="GetWorkInformationalMessageRow" style="display: @((Model.HasInformationMessage) ? "block" : "none");"><table cellpadding="0" cellspacing="0" width="100%" style=""><tr>
+                        
+                <td style="width: 20px;"><img src="/Images/Common16/Informational.png" style="padding-right: 8px;" alt="Informational Indicator" /></td>
+                
+                <td class="ColorDark">
+                
+                    @Model.InformationMessage
+                
+                </td>
+
+            </tr></table></div></td></tr>
+            
+        </table>
+        
+    </div>
+
+<script type="text/javascript">
+
+    $("document").ready(function () {
+
+        $("#SelectedWorkQueueId").change(SelectedWorkQueueId_OnChange);
+
+        $("#GetWorkLink").click(GetWorkLink_OnClick);
+
+        @Html.Raw(Model.ResponseScript)
+
+    });
+
+</script>
+    
+ <!-- MY WORK QUEUES ( END ) -->
+    

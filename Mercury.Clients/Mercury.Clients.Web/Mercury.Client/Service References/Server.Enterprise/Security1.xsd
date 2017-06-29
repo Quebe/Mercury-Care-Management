@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="WorkQueueTeamPermission">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Denied" />
+      <xs:enumeration value="View" />
+      <xs:enumeration value="Work" />
+      <xs:enumeration value="SelfAssign" />
+      <xs:enumeration value="Manage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkQueueTeamPermission" nillable="true" type="tns:WorkQueueTeamPermission" />
+  <xs:simpleType name="WorkflowFramework">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DotNet35" />
+      <xs:enumeration value="DotNet40" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkflowFramework" nillable="true" type="tns:WorkflowFramework" />
+  <xs:simpleType name="WorkTeamType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WorkTeam" />
+      <xs:enumeration value="CareTeam" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkTeamType" nillable="true" type="tns:WorkTeamType" />
+  <xs:simpleType name="WorkTeamRole">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Member" />
+      <xs:enumeration value="Manager" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkTeamRole" nillable="true" type="tns:WorkTeamRole" />
+</xs:schema>

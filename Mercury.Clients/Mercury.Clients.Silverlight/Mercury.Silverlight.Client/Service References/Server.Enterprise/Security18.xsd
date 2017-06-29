@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Calendar" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Calendar" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CalendarDayOfWeekTimes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FridayTimes" nillable="true" type="tns:ArrayOfCalendarTimeSegment" />
+      <xs:element minOccurs="0" name="MondayTimes" nillable="true" type="tns:ArrayOfCalendarTimeSegment" />
+      <xs:element minOccurs="0" name="SaturdayTimes" nillable="true" type="tns:ArrayOfCalendarTimeSegment" />
+      <xs:element minOccurs="0" name="SundayTimes" nillable="true" type="tns:ArrayOfCalendarTimeSegment" />
+      <xs:element minOccurs="0" name="ThursdayTimes" nillable="true" type="tns:ArrayOfCalendarTimeSegment" />
+      <xs:element minOccurs="0" name="TuesdayTimes" nillable="true" type="tns:ArrayOfCalendarTimeSegment" />
+      <xs:element minOccurs="0" name="WednesdayTimes" nillable="true" type="tns:ArrayOfCalendarTimeSegment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalendarDayOfWeekTimes" nillable="true" type="tns:CalendarDayOfWeekTimes" />
+  <xs:complexType name="ArrayOfCalendarTimeSegment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalendarTimeSegment" nillable="true" type="tns:CalendarTimeSegment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalendarTimeSegment" nillable="true" type="tns:ArrayOfCalendarTimeSegment" />
+  <xs:complexType name="CalendarTimeSegment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="StartTime" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalendarTimeSegment" nillable="true" type="tns:CalendarTimeSegment" />
+</xs:schema>

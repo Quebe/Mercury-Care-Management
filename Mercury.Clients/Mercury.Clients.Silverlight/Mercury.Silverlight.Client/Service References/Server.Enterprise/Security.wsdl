@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Security" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:ProtectionToken>
+              <wsp:Policy>
+                <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireDerivedKeys />
+                    <sp:BootstrapPolicy>
+                      <wsp:Policy>
+                        <sp:SignedParts>
+                          <sp:Body />
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                        </sp:SignedParts>
+                        <sp:EncryptedParts>
+                          <sp:Body />
+                        </sp:EncryptedParts>
+                        <sp:SymmetricBinding>
+                          <wsp:Policy>
+                            <sp:ProtectionToken>
+                              <wsp:Policy>
+                                <sp:SpnegoContextToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                                  <wsp:Policy>
+                                    <sp:RequireDerivedKeys />
+                                  </wsp:Policy>
+                                </sp:SpnegoContextToken>
+                              </wsp:Policy>
+                            </sp:ProtectionToken>
+                            <sp:AlgorithmSuite>
+                              <wsp:Policy>
+                                <sp:Basic256 />
+                              </wsp:Policy>
+                            </sp:AlgorithmSuite>
+                            <sp:Layout>
+                              <wsp:Policy>
+                                <sp:Strict />
+                              </wsp:Policy>
+                            </sp:Layout>
+                            <sp:IncludeTimestamp />
+                            <sp:EncryptSignature />
+                            <sp:OnlySignEntireHeadersAndBody />
+                          </wsp:Policy>
+                        </sp:SymmetricBinding>
+                        <sp:Wss11>
+                          <wsp:Policy />
+                        </sp:Wss11>
+                        <sp:Trust10>
+                          <wsp:Policy>
+                            <sp:MustSupportIssuedTokens />
+                            <sp:RequireClientEntropy />
+                            <sp:RequireServerEntropy />
+                          </wsp:Policy>
+                        </sp:Trust10>
+                      </wsp:Policy>
+                    </sp:BootstrapPolicy>
+                  </wsp:Policy>
+                </sp:SecureConversationToken>
+              </wsp:Policy>
+            </sp:ProtectionToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+            <sp:EncryptSignature />
+            <sp:OnlySignEntireHeadersAndBody />
+          </wsp:Policy>
+        </sp:SymmetricBinding>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_SecurityAuthorityDictionary_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_SecurityAuthorityDictionary_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_Authenticate_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_Authenticate_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_AuthenticateWindows_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_AuthenticateWindows_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_AuthenticateToken_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_AuthenticateToken_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_LogOff_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecurity_LogOff_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Services.Responses" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Public.Interfaces.Security.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Security.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.PopulationEvents" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Structures" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms.Controls" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Insurer" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Definitions" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd28" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Member" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd30" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Automation.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd32" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd33" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.PopulationCriteria" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd34" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Authorizations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd35" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.AuthorizedServices" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd36" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Calendar" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd37" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Provider" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd38" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Sponsor" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd39" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Security" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd40" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Environment" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd41" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Activity" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd42" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Activity.Enumerations" />
+      <xsd:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd43" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecurity_SecurityAuthorityDictionary_InputMessage">
+    <wsdl:part name="parameters" element="tns:SecurityAuthorityDictionary" />
+  </wsdl:message>
+  <wsdl:message name="ISecurity_SecurityAuthorityDictionary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SecurityAuthorityDictionaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurity_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="ISecurity_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurity_AuthenticateWindows_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateWindows" />
+  </wsdl:message>
+  <wsdl:message name="ISecurity_AuthenticateWindows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateWindowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurity_AuthenticateToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateToken" />
+  </wsdl:message>
+  <wsdl:message name="ISecurity_AuthenticateToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurity_LogOff_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogOff" />
+  </wsdl:message>
+  <wsdl:message name="ISecurity_LogOff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogOffResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISecurity">
+    <wsdl:operation name="SecurityAuthorityDictionary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurity/SecurityAuthorityDictionary" message="tns:ISecurity_SecurityAuthorityDictionary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurity/SecurityAuthorityDictionaryResponse" message="tns:ISecurity_SecurityAuthorityDictionary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurity/Authenticate" message="tns:ISecurity_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurity/AuthenticateResponse" message="tns:ISecurity_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateWindows">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurity/AuthenticateWindows" message="tns:ISecurity_AuthenticateWindows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurity/AuthenticateWindowsResponse" message="tns:ISecurity_AuthenticateWindows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurity/AuthenticateToken" message="tns:ISecurity_AuthenticateToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurity/AuthenticateTokenResponse" message="tns:ISecurity_AuthenticateToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogOff">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurity/LogOff" message="tns:ISecurity_LogOff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurity/LogOffResponse" message="tns:ISecurity_LogOff_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISecurity" type="tns:ISecurity">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SecurityAuthorityDictionary">
+      <soap:operation soapAction="http://tempuri.org/ISecurity/SecurityAuthorityDictionary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/ISecurity/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateWindows">
+      <soap:operation soapAction="http://tempuri.org/ISecurity/AuthenticateWindows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateToken">
+      <soap:operation soapAction="http://tempuri.org/ISecurity/AuthenticateToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOff">
+      <soap:operation soapAction="http://tempuri.org/ISecurity/LogOff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_ISecurity" type="tns:ISecurity">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SecurityAuthorityDictionary">
+      <soap12:operation soapAction="http://tempuri.org/ISecurity/SecurityAuthorityDictionary" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_SecurityAuthorityDictionary_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_SecurityAuthorityDictionary_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://tempuri.org/ISecurity/Authenticate" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_Authenticate_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_Authenticate_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateWindows">
+      <soap12:operation soapAction="http://tempuri.org/ISecurity/AuthenticateWindows" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_AuthenticateWindows_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_AuthenticateWindows_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateToken">
+      <soap12:operation soapAction="http://tempuri.org/ISecurity/AuthenticateToken" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_AuthenticateToken_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_AuthenticateToken_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOff">
+      <soap12:operation soapAction="http://tempuri.org/ISecurity/LogOff" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_LogOff_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ISecurity_LogOff_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Security">
+    <wsdl:port name="BasicHttpBinding_ISecurity" binding="tns:BasicHttpBinding_ISecurity">
+      <soap:address location="http://localhost:10080/Enterprise/Security.svc" />
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_ISecurity" binding="tns:WSHttpBinding_ISecurity">
+      <soap12:address location="http://localhost:10080/Enterprise/Security.svc/ws" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:10080/Enterprise/Security.svc/ws</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Dennis Quebe@quebesystems.network</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

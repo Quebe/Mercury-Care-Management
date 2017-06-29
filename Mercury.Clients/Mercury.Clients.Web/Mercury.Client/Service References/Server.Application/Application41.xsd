@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Condition.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ConditionCriteriaEventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Identifying" />
+      <xs:enumeration value="Exclusion" />
+      <xs:enumeration value="Terminating" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConditionCriteriaEventType" nillable="true" type="tns:ConditionCriteriaEventType" />
+</xs:schema>

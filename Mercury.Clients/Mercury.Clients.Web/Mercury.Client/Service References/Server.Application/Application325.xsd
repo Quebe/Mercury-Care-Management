@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Activity.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Activity.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ActivityStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Critical" />
+      <xs:enumeration value="Completed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityStatus" nillable="true" type="tns:ActivityStatus" />
+  <xs:simpleType name="ActivityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Manual" />
+      <xs:enumeration value="Automated" />
+      <xs:enumeration value="Workflow" />
+      <xs:enumeration value="Monitor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityType" nillable="true" type="tns:ActivityType" />
+  <xs:simpleType name="ActivityAnchorDate">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OwnerObjectEffectiveDate" />
+      <xs:enumeration value="OwnerObjectAnchorDate" />
+      <xs:enumeration value="PreviousActivityDate" />
+      <xs:enumeration value="ActivityCreateDate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityAnchorDate" nillable="true" type="tns:ActivityAnchorDate" />
+  <xs:simpleType name="ActivityPerformActionDate">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Immediately" />
+      <xs:enumeration value="FirstDayOfMonth" />
+      <xs:enumeration value="MiddleOfMonth" />
+      <xs:enumeration value="LastDayOfMonth" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityPerformActionDate" nillable="true" type="tns:ActivityPerformActionDate" />
+  <xs:simpleType name="ActivityScheduleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ByFrequency" />
+      <xs:enumeration value="Monthly" />
+      <xs:enumeration value="Quarterly" />
+      <xs:enumeration value="Yearly" />
+      <xs:enumeration value="BirthMonth" />
+      <xs:enumeration value="CalendarMonth" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityScheduleType" nillable="true" type="tns:ActivityScheduleType" />
+</xs:schema>

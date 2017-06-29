@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Environment" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Environment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" />
+  <xs:complexType name="EnvironmentType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreConfigurationObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnvironmentType" nillable="true" type="tns:EnvironmentType" />
+  <xs:complexType name="Environment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q2:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfidentialityStatement" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnvironmentTag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnvironmentTypeId" type="xs:long" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="SqlConfiguration" nillable="true" type="q3:SqlConfiguration" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Environment" nillable="true" type="tns:Environment" />
+  <xs:complexType name="ArrayOfEnvironment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Environment" nillable="true" type="tns:Environment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnvironment" nillable="true" type="tns:ArrayOfEnvironment" />
+  <xs:complexType name="ArrayOfEnvironmentRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnvironmentRole" nillable="true" type="tns:EnvironmentRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnvironmentRole" nillable="true" type="tns:ArrayOfEnvironmentRole" />
+  <xs:complexType name="EnvironmentRole">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="CreateAccountInfo" nillable="true" type="q4:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Membership" nillable="true" type="tns:ArrayOfEnvironmentRoleMembership" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="ModifiedAccountInfo" nillable="true" type="q5:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Permissions" nillable="true" type="tns:ArrayOfEnvironmentRolePermission" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnvironmentRole" nillable="true" type="tns:EnvironmentRole" />
+  <xs:complexType name="ArrayOfEnvironmentRoleMembership">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnvironmentRoleMembership" nillable="true" type="tns:EnvironmentRoleMembership" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnvironmentRoleMembership" nillable="true" type="tns:ArrayOfEnvironmentRoleMembership" />
+  <xs:complexType name="EnvironmentRoleMembership">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="CreateAccountInfo" nillable="true" type="q6:AuthorityAccountStamp" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="ModifiedAccountInfo" nillable="true" type="q7:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="SecurityAuthorityId" type="xs:long" />
+      <xs:element minOccurs="0" name="SecurityAuthorityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityGroupId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityGroupName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnvironmentRoleMembership" nillable="true" type="tns:EnvironmentRoleMembership" />
+  <xs:complexType name="ArrayOfEnvironmentRolePermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnvironmentRolePermission" nillable="true" type="tns:EnvironmentRolePermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnvironmentRolePermission" nillable="true" type="tns:ArrayOfEnvironmentRolePermission" />
+  <xs:complexType name="EnvironmentRolePermission">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="CreateAccountInfo" nillable="true" type="q8:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="IsDenied" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGranted" type="xs:boolean" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="ModifiedAccountInfo" nillable="true" type="q9:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="PermissionId" type="xs:long" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnvironmentRolePermission" nillable="true" type="tns:EnvironmentRolePermission" />
+</xs:schema>

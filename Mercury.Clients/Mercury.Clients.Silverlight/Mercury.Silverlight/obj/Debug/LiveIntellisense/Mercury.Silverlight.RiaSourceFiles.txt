@@ -1,0 +1,1 @@
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Silverlight\Mercury.Silverlight.Web\Mercury.Silverlight.Web.csproj,634170455964870032,Default.aspx.cs,Default.aspx.designer.cs,OpenApplication.aspx.cs,OpenApplication.aspx.designer.cs,PageBranding\NoBranding.Master.cs,PageBranding\NoBranding.Master.designer.cs,Properties\AssemblyInfo.cs,

@@ -1,0 +1,52 @@
+﻿<Activity mc:Ignorable="sap" x:Class="Mercury.Server.Workflows.Activities.SendCorrespondence.SendCorrespondence" local4:SendCorrespondence.Entity="[Nothing]" local4:SendCorrespondence.CorrespondenceName="[String.Empty]" local4:SendCorrespondence.AllowUserSelection="False" local4:SendCorrespondence.AllowAlternateAddress="False" local4:SendCorrespondence.AlternateAddress="[Nothing]" local4:SendCorrespondence.AllowSendByFacsimile="False" local4:SendCorrespondence.AlternateFaxNumber="[String.Empty]" local4:SendCorrespondence.AllowSendByEmail="False" local4:SendCorrespondence.AlternateEmail="[String.Empty]" local4:SendCorrespondence.AllowSendByInPerson="False" local4:SendCorrespondence.AllowCancel="False" local4:SendCorrespondence.AllowHistoricalSendDate="False" local4:SendCorrespondence.AllowFutureSendDate="False" local4:SendCorrespondence.SendDate="[System.DateTime.Now]" local4:SendCorrespondence.CorrespondenceMessage="[String.Empty]" local4:SendCorrespondence.AutoSaveCorrespondence="False" local4:SendCorrespondence.WorkQueueItemId="0" local4:SendCorrespondence.Attention="[String.Empty]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:local="clr-namespace:Mercury.Server.Workflows" xmlns:local1="clr-namespace:Mercury.Server.Core.Entity" xmlns:local2="clr-namespace:Mercury.Server.Workflows.UserInteractions.Request" xmlns:local3="clr-namespace:Mercury.Server.Workflows.UserInteractions.Response" xmlns:local4="clr-namespace:Mercury.Server.Workflows.Activities.SendCorrespondence" xmlns:local5="clr-namespace:Mercury.Server.Workflows.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:msc="clr-namespace:Mercury.Server.Core" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="WorkflowManager" Type="InOutArgument(local:WorkflowManager4)" />
+    <x:Property Name="WorkflowSteps" Type="InOutArgument(scg:List(local:WorkflowStep))" />
+    <x:Property Name="Entity" Type="InArgument(local1:Entity)" />
+    <x:Property Name="CorrespondenceName" Type="InArgument(x:String)" />
+    <x:Property Name="AllowUserSelection" Type="InArgument(x:Boolean)" />
+    <x:Property Name="AllowAlternateAddress" Type="InArgument(x:Boolean)" />
+    <x:Property Name="AlternateAddress" Type="InArgument(local1:EntityAddress)" />
+    <x:Property Name="AllowSendByFacsimile" Type="InArgument(x:Boolean)" />
+    <x:Property Name="AlternateFaxNumber" Type="InArgument(x:String)" />
+    <x:Property Name="AllowSendByEmail" Type="InArgument(x:Boolean)" />
+    <x:Property Name="AlternateEmail" Type="InArgument(x:String)" />
+    <x:Property Name="AllowSendByInPerson" Type="InArgument(x:Boolean)" />
+    <x:Property Name="AllowCancel" Type="InArgument(x:Boolean)" />
+    <x:Property Name="AllowHistoricalSendDate" Type="InArgument(x:Boolean)" />
+    <x:Property Name="AllowFutureSendDate" Type="InArgument(x:Boolean)" />
+    <x:Property Name="SendDate" Type="InArgument(s:DateTime)" />
+    <x:Property Name="CorrespondenceMessage" Type="InArgument(x:String)" />
+    <x:Property Name="AutoSaveCorrespondence" Type="InArgument(x:Boolean)" />
+    <x:Property Name="EntityCorrespondence" Type="OutArgument(local1:EntityCorrespondence)" />
+    <x:Property Name="ActivityCanceled" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="WorkQueueItemId" Type="InArgument(x:Int64)" />
+    <x:Property Name="Attention" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>526,550</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence sad:XamlDebuggerXmlReader.FileName="C:\Mercury.Development\Mercury.Server\Mercury.Server\Workflows\Activities\SendCorrespondence\SendCorrespondence.xaml" sap:VirtualizedContainerService.HintSize="486,510">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="local2:SendCorrespondenceRequest" Default="[Nothing]" Name="UserInteractionRequest" />
+      <Variable x:TypeArguments="local3:ResponseBase" Default="[Nothing]" Name="UserInteractionResponse" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="ActivityCompleted" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <local4:SendCorrespondenceInitialize AllowAlternateAddress="[AllowAlternateAddress]" AllowCancel="[AllowCancel]" AllowFutureSendDate="[AllowFutureSendDate]" AllowHistoricalSendDate="[AllowHistoricalSendDate]" AllowSendByEmail="[AllowSendByEmail]" AllowSendByFacsimile="[AllowSendByFacsimile]" AllowSendByInPerson="[AllowSendByInPerson]" AllowUserSelection="[AllowUserSelection]" AlternateAddress="[AlternateAddress]" AlternateEmail="[AlternateEmail]" AlternateFaxNumber="[AlternateFaxNumber]" Attention="[Attention]" CorrespondenceName="[CorrespondenceName]" DisplayName="Initialize Request" Entity="[Entity]" sap:VirtualizedContainerService.HintSize="464,22" SendDate="[SendDate]" UserInteractionRequest="[UserInteractionRequest]" WorkflowManager="[WorkflowManager]" />
+    <While sap:VirtualizedContainerService.HintSize="464,324" Condition="[ActivityCompleted = False]">
+      <Sequence sap:VirtualizedContainerService.HintSize="438,208">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <local5:UserInteractionRequestResponse sap:VirtualizedContainerService.HintSize="200,22" Request="[UserInteractionRequest]" Response="[UserInteractionResponse]" WorkQueueItemId="[WorkQueueItemId]" WorkflowManager="[WorkflowManager]" WorkflowSteps="[WorkflowSteps]" />
+        <local4:SendCorrespondenceProcessResponse ActivityCanceled="[ActivityCanceled]" ActivityCompleted="[ActivityCompleted]" AllowCancel="[AllowCancel]" AutoSaveCorrespondence="[AutoSaveCorrespondence]" DisplayName="Process Response" EntityCorrespondence="[EntityCorrespondence]" sap:VirtualizedContainerService.HintSize="200,22" UserInteractionResponse="[UserInteractionResponse]" WorkQueueItemId="[WorkQueueItemId]" WorkflowManager="[WorkflowManager]" WorkflowSteps="[WorkflowSteps]" />
+      </Sequence>
+    </While>
+  </Sequence>
+</Activity>

@@ -1,0 +1,10 @@
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\bin\Mercury.Web.dll
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\bin\Mercury.Web.pdb
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\bin\Mercury.Client.dll
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\bin\System.Web.DataVisualization.dll
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\bin\Telerik.Web.UI.dll
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\bin\Mercury.Client.pdb
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\bin\Telerik.Web.UI.xml
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\obj\Release\ResolveAssemblyReference.cache
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\obj\Release\Mercury.Web.dll
+C:\Mercury.Development\Mercury.Clients\Mercury.Clients.Web\Mercury.Web\obj\Release\Mercury.Web.pdb

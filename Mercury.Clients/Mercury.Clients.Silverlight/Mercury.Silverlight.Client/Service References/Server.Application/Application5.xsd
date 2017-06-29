@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Case" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Case" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd37" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:complexType name="MemberCaseCarePlanGoalActivity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual" base="q1:CarePlanGoalActivity">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberCaseCarePlanGoalActivity" nillable="true" type="tns:MemberCaseCarePlanGoalActivity" />
+  <xs:complexType name="MemberCaseCarePlanGoal">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual" base="q2:CarePlanGoal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Activities" nillable="true" type="tns:ArrayOfMemberCaseCarePlanGoalActivity" />
+          <xs:element minOccurs="0" name="CarePlanGoalId" type="xs:long" />
+          <xs:element minOccurs="0" name="MemberCaseCarePlanId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberCaseCarePlanGoal" nillable="true" type="tns:MemberCaseCarePlanGoal" />
+  <xs:complexType name="ArrayOfMemberCaseCarePlanGoalActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemberCaseCarePlanGoalActivity" nillable="true" type="tns:MemberCaseCarePlanGoalActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemberCaseCarePlanGoalActivity" nillable="true" type="tns:ArrayOfMemberCaseCarePlanGoalActivity" />
+  <xs:complexType name="MemberCaseCarePlan">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual" base="q3:CarePlan">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AssignedToDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AssignedToSecurityAuthorityId" type="xs:long" />
+          <xs:element minOccurs="0" name="AssignedToUserAccountId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToUserAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToUserDisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CareOutcomeId" type="xs:long" />
+          <xs:element minOccurs="0" name="CarePlanGoals" nillable="true" type="tns:ArrayOfMemberCaseCarePlanGoal" />
+          <xs:element minOccurs="0" name="CarePlanId" type="xs:long" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MemberCaseId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProblemStatementId" type="xs:long" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" minOccurs="0" name="Status" type="q4:CarePlanStatus" />
+          <xs:element minOccurs="0" name="TerminationDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberCaseCarePlan" nillable="true" type="tns:MemberCaseCarePlan" />
+  <xs:complexType name="ArrayOfMemberCaseCarePlanGoal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemberCaseCarePlanGoal" nillable="true" type="tns:MemberCaseCarePlanGoal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemberCaseCarePlanGoal" nillable="true" type="tns:ArrayOfMemberCaseCarePlanGoal" />
+  <xs:complexType name="MemberCase">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q5:CoreExtensibleObject_x0020_">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssignedToDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AssignedToSecurityAuthorityId" type="xs:long" />
+          <xs:element minOccurs="0" name="AssignedToUserAccountId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToUserAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToUserDisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedToWorkTeamDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AssignedToWorkTeamId" type="xs:long" />
+          <xs:element minOccurs="0" name="CarePlans" nillable="true" type="tns:ArrayOfMemberCaseCarePlan" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LockedByDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LockedBySecurityAuthorityId" type="xs:long" />
+          <xs:element minOccurs="0" name="LockedByUserAccountId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LockedByUserAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LockedByUserDisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" minOccurs="0" name="Status" type="q6:CaseStatus" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberCase" nillable="true" type="tns:MemberCase" />
+  <xs:complexType name="ArrayOfMemberCaseCarePlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemberCaseCarePlan" nillable="true" type="tns:MemberCaseCarePlan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemberCaseCarePlan" nillable="true" type="tns:ArrayOfMemberCaseCarePlan" />
+</xs:schema>

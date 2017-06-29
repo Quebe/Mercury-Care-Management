@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Services.Responses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Services.Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Public.Interfaces.Security.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Security.Enumerations" />
+  <xs:complexType name="DictionaryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Dictionary" nillable="true" type="q1:ArrayOfKeyValueOflongstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DictionaryResponse" nillable="true" type="tns:DictionaryResponse" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="tns:ServiceException" />
+      <xs:element minOccurs="0" name="HasException" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="ServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InnerException" nillable="true" type="tns:ServiceException" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetSite" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceException" nillable="true" type="tns:ServiceException" />
+  <xs:complexType name="AuthenticationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Public.Interfaces.Security.Enumerations" minOccurs="0" name="AuthenticationError" type="q2:AuthenticationError" />
+          <xs:element minOccurs="0" name="ConfidentialityStatement" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EnterprisePermissionSet" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element minOccurs="0" name="EnvironmentId" type="xs:long" />
+          <xs:element minOccurs="0" name="EnvironmentName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EnvironmentPermissionSet" nillable="true" type="q4:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Environments" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GroupMembership" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element minOccurs="0" name="IsAuthenticated" type="xs:boolean" />
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RoleMembership" nillable="true" type="q6:ArrayOfstring" />
+          <xs:element minOccurs="0" name="SecurityAuthorityId" type="xs:long" />
+          <xs:element minOccurs="0" name="SecurityAuthorityName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Security.Enumerations" minOccurs="0" name="SecurityAuthorityType" type="q7:SecurityAuthorityType" />
+          <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserAccountId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserDisplayName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WorkQueuePermissions" nillable="true" type="q8:ArrayOfKeyValueOflongWorkQueueTeamPermission0Fl5uS8W" />
+          <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WorkTeamMembership" nillable="true" type="q9:ArrayOfKeyValueOflongWorkTeamMembership3sHlbfEv" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthenticationResponse" nillable="true" type="tns:AuthenticationResponse" />
+  <xs:complexType name="BooleanResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BooleanResponse" nillable="true" type="tns:BooleanResponse" />
+</xs:schema>

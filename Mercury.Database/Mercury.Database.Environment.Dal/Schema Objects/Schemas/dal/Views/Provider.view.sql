@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[Provider] AS SELECT * FROM dbo.Provider

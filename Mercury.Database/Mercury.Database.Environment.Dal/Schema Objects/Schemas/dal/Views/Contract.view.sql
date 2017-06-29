@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[Contract] AS SELECT * FROM dbo.Contract

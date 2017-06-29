@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="PopulationServiceEventStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CompliantOrNoChange" />
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="OpenInformational" />
+      <xs:enumeration value="OpenWarning" />
+      <xs:enumeration value="OpenCritical" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PopulationServiceEventStatus" nillable="true" type="tns:PopulationServiceEventStatus" />
+  <xs:simpleType name="PopulationServiceEventAnchorDate">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PopulationAnchorDate" />
+      <xs:enumeration value="PreviousServiceDate" />
+      <xs:enumeration value="PreviousServiceEvent" />
+      <xs:enumeration value="AgeByYears" />
+      <xs:enumeration value="AgeByMonths" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PopulationServiceEventAnchorDate" nillable="true" type="tns:PopulationServiceEventAnchorDate" />
+  <xs:simpleType name="PopulationTriggerEventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Service" />
+      <xs:enumeration value="Metric" />
+      <xs:enumeration value="AuthorizedService" />
+      <xs:enumeration value="Composite" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PopulationTriggerEventType" nillable="true" type="tns:PopulationTriggerEventType" />
+  <xs:simpleType name="PopulationCriteriaEventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Identifying" />
+      <xs:enumeration value="Exclusion" />
+      <xs:enumeration value="Terminating" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PopulationCriteriaEventType" nillable="true" type="tns:PopulationCriteriaEventType" />
+  <xs:simpleType name="PopulationInitialAnchorDate">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ProcessDate" />
+      <xs:enumeration value="MemberBirthDate" />
+      <xs:enumeration value="MemberEnrollmentDate" />
+      <xs:enumeration value="IdentifyingServiceDate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PopulationInitialAnchorDate" nillable="true" type="tns:PopulationInitialAnchorDate" />
+  <xs:simpleType name="PopulationActivityEventAnchorDate">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PopulationEffectiveDate" />
+      <xs:enumeration value="PopulationAnchorDate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PopulationActivityEventAnchorDate" nillable="true" type="tns:PopulationActivityEventAnchorDate" />
+  <xs:simpleType name="PopulationActivityPerformActionDateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Immediately" />
+      <xs:enumeration value="FirstDayOfMonth" />
+      <xs:enumeration value="MiddleOfMonth" />
+      <xs:enumeration value="LastDayOfMonth" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PopulationActivityPerformActionDateType" nillable="true" type="tns:PopulationActivityPerformActionDateType" />
+  <xs:simpleType name="PopulationActivityScheduleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ByFrequency" />
+      <xs:enumeration value="Monthly" />
+      <xs:enumeration value="Quarterly" />
+      <xs:enumeration value="Yearly" />
+      <xs:enumeration value="BirthMonth" />
+      <xs:enumeration value="CalendarMonth" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PopulationActivityScheduleType" nillable="true" type="tns:PopulationActivityScheduleType" />
+</xs:schema>

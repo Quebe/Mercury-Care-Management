@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[Program] AS SELECT * FROM dbo.Program

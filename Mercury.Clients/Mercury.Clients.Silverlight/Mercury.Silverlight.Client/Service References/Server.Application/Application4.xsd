@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Definitions" />
+  <xs:complexType name="MemberService">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddedManually" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EventDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="Service" nillable="true" type="tns:Service" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberService" nillable="true" type="tns:MemberService" />
+  <xs:complexType name="Service">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q2:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LastPaidDate" type="xs:dateTime" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" minOccurs="0" name="ServiceClassification" type="q3:ServiceClassification" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" minOccurs="0" name="ServiceType" type="q4:MedicalServiceType" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" minOccurs="0" name="SetType" type="q5:ServiceSetType" />
+          <xs:element minOccurs="0" name="WithinDays" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Service" nillable="true" type="tns:Service" />
+  <xs:complexType name="ServiceSet">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Service">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Definitions" minOccurs="0" name="Definitions" nillable="true" type="q6:ArrayOfServiceSetDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceSet" nillable="true" type="tns:ServiceSet" />
+  <xs:complexType name="ServiceSingleton">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Service">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Definitions" minOccurs="0" name="Definitions" nillable="true" type="q7:ArrayOfServiceSingletonDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceSingleton" nillable="true" type="tns:ServiceSingleton" />
+  <xs:complexType name="ArrayOfMemberServiceDetailSingleton">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemberServiceDetailSingleton" nillable="true" type="tns:MemberServiceDetailSingleton" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemberServiceDetailSingleton" nillable="true" type="tns:ArrayOfMemberServiceDetailSingleton" />
+  <xs:complexType name="MemberServiceDetailSingleton">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdmissionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BillType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimDateFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClaimDateThru" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClaimId" type="xs:long" />
+      <xs:element minOccurs="0" name="ClaimLine" type="xs:int" />
+      <xs:element minOccurs="0" name="ClaimStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeaClassification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiagnosisCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DischargeDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExternalClaimId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Icd9ProcedureCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPcpClaim" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LabLoincCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LabName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LabValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+      <xs:element minOccurs="0" name="MemberServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="ModifierCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NdcCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaidDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PrincipalDiagnosisCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcedureCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderId" type="xs:long" />
+      <xs:element minOccurs="0" name="ReceivedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RevenueCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceDateFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ServiceDateThru" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SingletonDefinitionId" type="xs:long" />
+      <xs:element minOccurs="0" name="SpecialtyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TherapeuticClassification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Units" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MemberServiceDetailSingleton" nillable="true" type="tns:MemberServiceDetailSingleton" />
+  <xs:complexType name="ArrayOfMemberServiceDetailSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemberServiceDetailSet" nillable="true" type="tns:MemberServiceDetailSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemberServiceDetailSet" nillable="true" type="tns:ArrayOfMemberServiceDetailSet" />
+  <xs:complexType name="MemberServiceDetailSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DetailMemberServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="EventDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+      <xs:element minOccurs="0" name="MemberServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="ParentServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="ServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" minOccurs="0" name="ServiceType" type="q8:MedicalServiceType" />
+      <xs:element minOccurs="0" name="SetDefinitionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MemberServiceDetailSet" nillable="true" type="tns:MemberServiceDetailSet" />
+  <xs:complexType name="ArrayOfMemberService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemberService" nillable="true" type="tns:MemberService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemberService" nillable="true" type="tns:ArrayOfMemberService" />
+</xs:schema>

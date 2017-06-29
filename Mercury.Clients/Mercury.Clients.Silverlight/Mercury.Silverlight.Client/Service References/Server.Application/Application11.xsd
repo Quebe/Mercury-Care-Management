@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Metrics.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="MetricCostClaimDateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PaidDate" />
+      <xs:enumeration value="ServiceDate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MetricCostClaimDateType" nillable="true" type="tns:MetricCostClaimDateType" />
+  <xs:simpleType name="MetricCostDataSource">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AllClaims" />
+      <xs:enumeration value="AllMedical" />
+      <xs:enumeration value="AllPharmacy" />
+      <xs:enumeration value="ByService" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MetricCostDataSource" nillable="true" type="tns:MetricCostDataSource" />
+  <xs:simpleType name="MetricCostReportingPeriod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CalenderYear" />
+      <xs:enumeration value="YearByMonth" />
+      <xs:enumeration value="RollingPeriod" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MetricCostReportingPeriod" nillable="true" type="tns:MetricCostReportingPeriod" />
+  <xs:simpleType name="MetricCostWatermarkPeriod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CalenderYear" />
+      <xs:enumeration value="YearByMonth" />
+      <xs:enumeration value="Month" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MetricCostWatermarkPeriod" nillable="true" type="tns:MetricCostWatermarkPeriod" />
+  <xs:simpleType name="MetricDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Decimal" />
+      <xs:enumeration value="Integer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MetricDataType" nillable="true" type="tns:MetricDataType" />
+  <xs:simpleType name="MetricType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Health" />
+      <xs:enumeration value="Cost" />
+      <xs:enumeration value="Utilization" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MetricType" nillable="true" type="tns:MetricType" />
+</xs:schema>

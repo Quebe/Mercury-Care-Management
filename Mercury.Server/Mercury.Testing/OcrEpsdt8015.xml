@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Ocr>
+
+  <JobDefinition>
+
+    <Source FilePath="C:\Mercury" FileCriteria="EPSDT8015.tif" Multidocument="true" DocumentSeparater="PageCount" PageCount="1"></Source>
+
+    <Destination CorrespondenceName="EPSDT 8015" StoreImage="true" EtlDefinitionFile="Epsdt8015.etl" ></Destination>
+        
+  </JobDefinition>
+
+  <DocumentDefinition>
+
+    <Pages>
+
+      <Page DataRegionScale="1" Orientation="Portrait">
+
+        <DataRegions>
+
+          <DataRegion Name="ScreenDate" Type="Date" Format="MMddyy" Left="36" Top="103" Width="150" Height="22"></DataRegion>
+
+          <DataRegion Name="ScreeningAge" Type="Selection" Format="Radio">
+
+            <Items>
+
+              <ItemRegion Name="AgeDays14"   Left="186" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeDays30"   Left="212" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+              
+              <ItemRegion Name="AgeMonths2"  Left="238" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeMonths4"  Left="264" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeMonths6"  Left="290" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeMonths9"  Left="317" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeMonths12" Left="343" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeMonths15" Left="369" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeMonths18" Left="396" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears2" Left="424" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears3" Left="451" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears4" Left="480" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears5" Left="507" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears6" Left="535" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears8" Left="563" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears10" Left="591" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears12" Left="619" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears14" Left="647" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears16" Left="675" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears18" Left="703" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="AgeYears20" Left="731" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+            </Items>
+                        
+          </DataRegion>
+
+          <DataRegion Name="MemberGender" Type="Selection" Format="Radio">
+
+            <Items>
+
+              <ItemRegion Name="Male" Left="760" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="Female" Left="785" Top="128" Width="24" Height="21" Threshold="5"></ItemRegion>
+
+            </Items>
+
+          </DataRegion>
+
+          <DataRegion Name="MemberName" Type="Text" Left="36" Top="167" Width="385" Height="29"></DataRegion>
+
+          <DataRegion Name="MemberId" Type="Number" Format="9999999" Left="494" Top="167" Width="163" Height="29"></DataRegion>
+
+          <DataRegion Name="MemberBirthDate" Type="Date" Format="MMddyy" Left="659" Top="167" Width="150" Height="29"></DataRegion>
+
+
+          <DataRegion Name="BloodPressureSystolic" Type="Number" Format="099" Left="36" Top="233" Width="80" Height="25"></DataRegion>
+
+          <DataRegion Name="BloodPressureDiastolic" Type="Number" Format="099" Left="139" Top="233" Width="67" Height="25"></DataRegion>
+
+          <DataRegion Name="Height" Type="Number" Format="099" Left="209" Top="233" Width="84" Height="25"></DataRegion>
+
+          <DataRegion Name="Weight" Type="Number" Format="009.0" Left="296" Top="233" Width="125" Height="25"></DataRegion>
+          
+          <DataRegion Name="BMI" Type="Number" Format="09" Left="424" Top="233" Width="60" Height="25"></DataRegion>
+
+          <DataRegion Name="BMIPercent" Type="Number" Format="009" Left="485" Top="233" Width="98" Height="25"></DataRegion>
+
+
+          <DataRegion Name="Immunizations" Type="Selection" Format="Checkbox">
+
+            <Items>
+
+              <ItemRegion Name="HepB"   Left="97" Top="280" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="PCV"   Left="197" Top="280" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="MMR"  Left="284" Top="280" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="Tdap"  Left="397" Top="280" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              
+              <ItemRegion Name="DTap"  Left="97" Top="305" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="Rotav"  Left="197" Top="305" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="Varicella" Left="284" Top="305" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="MCV4MPSV4" Left="397" Top="305" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              
+              <ItemRegion Name="IPV" Left="97" Top="330" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="Influenza" Left="197" Top="330" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="HepA" Left="284" Top="330" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="HPV" Left="397" Top="330" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              
+              <ItemRegion Name="Hib" Left="97" Top="354" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+              <ItemRegion Name="Other" Left="397" Top="354" Width="23" Height="23" Threshold="5"></ItemRegion>
+
+            </Items>
+
+          </DataRegion>
+
+          <DataRegion Name="ImmunizationsOtherText" Type="Text" Left="178" Top="354" Width="218" Height="24"></DataRegion>
+
+          <DataRegion Name="ImmunizationsComments" Type="Text" Left="95" Top="379" Width="324" Height="24"></DataRegion>
+          
+        </DataRegions>
+        
+      </Page>
+      
+    </Pages>
+    
+  </DocumentDefinition>
+  
+</Ocr>

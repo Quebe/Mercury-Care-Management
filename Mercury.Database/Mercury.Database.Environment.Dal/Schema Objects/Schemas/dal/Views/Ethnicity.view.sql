@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[Ethnicity] AS SELECT * FROM dbo.Ethnicity

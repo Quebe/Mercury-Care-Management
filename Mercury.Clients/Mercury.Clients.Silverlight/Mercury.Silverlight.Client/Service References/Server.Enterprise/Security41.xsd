@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Member" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Member" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:complexType name="Member">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CitizenshipId" type="xs:long" />
+          <xs:element minOccurs="0" name="DeathDate" nillable="true" type="xs:dateTime" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="Entity" nillable="true" type="q2:Entity" />
+          <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+          <xs:element minOccurs="0" name="EthnicityId" type="xs:long" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LanguageId" type="xs:long" />
+          <xs:element minOccurs="0" name="MaritalStatusId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Member" nillable="true" type="tns:Member" />
+  <xs:complexType name="MemberEnrollment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProgramId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProgramMemberId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SponsorId" type="xs:long" />
+          <xs:element minOccurs="0" name="SubscriberId" type="xs:long" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberEnrollment" nillable="true" type="tns:MemberEnrollment" />
+  <xs:complexType name="MemberEnrollmentCoverage">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q4:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BenefitPlanId" type="xs:long" />
+          <xs:element minOccurs="0" name="CoverageLevelId" type="xs:long" />
+          <xs:element minOccurs="0" name="CoverageTypeId" type="xs:long" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MemberEnrollmentId" type="xs:long" />
+          <xs:element minOccurs="0" name="RateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberEnrollmentCoverage" nillable="true" type="tns:MemberEnrollmentCoverage" />
+  <xs:complexType name="MemberEnrollmentPcp">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q5:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MemberEnrollmentId" type="xs:long" />
+          <xs:element minOccurs="0" name="PcpProviderId" type="xs:long" />
+          <xs:element minOccurs="0" name="PcpServiceLocationId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProviderAffiliationId" type="xs:long" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberEnrollmentPcp" nillable="true" type="tns:MemberEnrollmentPcp" />
+  <xs:complexType name="MemberEnrollmentTplCob">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q6:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BenefitPlanId" type="xs:long" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InsurerId" type="xs:long" />
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProgramId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProgramMemberId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SponsorId" type="xs:long" />
+          <xs:element minOccurs="0" name="SubscriberId" type="xs:long" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberEnrollmentTplCob" nillable="true" type="tns:MemberEnrollmentTplCob" />
+  <xs:complexType name="MemberRelationship">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q7:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FamilyId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelatedMemberBirthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RelatedMemberCurrentAgeText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelatedMemberGender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelatedMemberId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelatedMemberName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelationshipId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelationshipName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemberRelationship" nillable="true" type="tns:MemberRelationship" />
+</xs:schema>

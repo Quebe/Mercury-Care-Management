@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[Member] AS SELECT * FROM dbo.Member

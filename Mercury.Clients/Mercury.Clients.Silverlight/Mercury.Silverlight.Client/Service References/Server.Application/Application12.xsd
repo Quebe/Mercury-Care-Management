@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd62" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd63" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Structures" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" />
+  <xs:complexType name="WorkflowUserInteractionRequestBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowCancel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasException" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Enumerations" minOccurs="0" name="InteractionType" type="q1:UserInteractionType" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkflowUserInteractionRequestBase" nillable="true" type="tns:WorkflowUserInteractionRequestBase" />
+  <xs:complexType name="WorkflowUserInteractionRequestUserInterfaceUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkflowUserInteractionRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InputParameters" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Enumerations" minOccurs="0" name="UpdateType" type="q3:UserInterfaceUpdateType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowUserInteractionRequestUserInterfaceUpdate" nillable="true" type="tns:WorkflowUserInteractionRequestUserInterfaceUpdate" />
+  <xs:complexType name="WorkflowUserInteractionRequestPromptUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkflowUserInteractionRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Columns" type="xs:int" />
+          <xs:element minOccurs="0" name="DateFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayDateFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmptyMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mask" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxLength" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxValue" type="xs:double" />
+          <xs:element minOccurs="0" name="MinValue" type="xs:double" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Enumerations" minOccurs="0" name="PromptImage" type="q4:UserPromptImage" />
+          <xs:element minOccurs="0" name="PromptMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PromptTitle" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Enumerations" minOccurs="0" name="PromptType" type="q5:UserPromptType" />
+          <xs:element minOccurs="0" name="Rows" type="xs:int" />
+          <xs:element minOccurs="0" name="SelectedValue" nillable="true" type="xs:string" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Workflows.UserInteractions.Structures" minOccurs="0" name="SelectionItems" nillable="true" type="q6:ArrayOfWorkflowUserInteractionRequestPromptSelectionItem" />
+          <xs:element minOccurs="0" name="ShowSpinButtons" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Validation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Wrap" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowUserInteractionRequestPromptUser" nillable="true" type="tns:WorkflowUserInteractionRequestPromptUser" />
+  <xs:complexType name="WorkflowUserInteractionRequestRequireEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkflowUserInteractionRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowOpenProfile" type="xs:boolean" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="EntityType" type="q7:EntityType" />
+          <xs:element minOccurs="0" name="InitialEntityObjectId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowUserInteractionRequestRequireEntity" nillable="true" type="tns:WorkflowUserInteractionRequestRequireEntity" />
+  <xs:complexType name="WorkflowUserInteractionRequestContactEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkflowUserInteractionRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowEditContactDateTime" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowEditRegarding" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowEditRelatedEntity" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Attempt" type="xs:int" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="Entity" nillable="true" type="q8:Entity" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="EntityContactInformation" nillable="true" type="q9:ArrayOfEntityContactInformation" />
+          <xs:element minOccurs="0" name="IntroductionScript" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Regarding" nillable="true" type="xs:string" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="RelatedEntity" nillable="true" type="q10:Entity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowUserInteractionRequestContactEntity" nillable="true" type="tns:WorkflowUserInteractionRequestContactEntity" />
+  <xs:complexType name="WorkflowUserInteractionRequestSendCorrespondence">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkflowUserInteractionRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowAlternateAddress" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowEditRelatedEntity" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowFutureSendDate" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowHistoricalSendDate" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowSendByEmail" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowSendByFacsimile" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowSendByInPerson" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowUserSelection" type="xs:boolean" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="AlternateAddress" nillable="true" type="q11:EntityAddress" />
+          <xs:element minOccurs="0" name="AlternateEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AlternateFaxNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Attention" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CorrespondenceId" type="xs:long" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="Entity" nillable="true" type="q12:Entity" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" minOccurs="0" name="RelatedEntity" nillable="true" type="q13:Entity" />
+          <xs:element minOccurs="0" name="SendDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowUserInteractionRequestSendCorrespondence" nillable="true" type="tns:WorkflowUserInteractionRequestSendCorrespondence" />
+  <xs:complexType name="WorkflowUserInteractionRequestOpenImage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkflowUserInteractionRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ObjectId" type="xs:long" />
+          <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Render" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowUserInteractionRequestOpenImage" nillable="true" type="tns:WorkflowUserInteractionRequestOpenImage" />
+  <xs:complexType name="WorkflowUserInteractionRequestRequireForm">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkflowUserInteractionRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowSaveAsDraft" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EntityObjectId" type="xs:long" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="EntityType" type="q14:EntityType" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Forms" minOccurs="0" name="Form" nillable="true" type="q15:Form" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowUserInteractionRequestRequireForm" nillable="true" type="tns:WorkflowUserInteractionRequestRequireForm" />
+</xs:schema>

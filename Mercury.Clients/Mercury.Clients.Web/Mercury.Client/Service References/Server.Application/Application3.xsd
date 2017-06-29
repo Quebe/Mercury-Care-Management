@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.DataExplorer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.DataExplorer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd15" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd30" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.DataExplorer.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" />
+  <xs:complexType name="DataExplorer">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsPublic" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OwnerSecurityAuthorityId" type="xs:long" />
+          <xs:element minOccurs="0" name="OwnerUserAccountId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OwnerUserAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OwnerUserDisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RootNode" nillable="true" type="tns:DataExplorerNodeSet" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Variables" nillable="true" type="q2:ArrayOfKeyValueOfstringDataExplorerVariablefr2VvEKT" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataExplorer" nillable="true" type="tns:DataExplorer" />
+  <xs:complexType name="DataExplorerNode">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreExtensibleObject_x0020_">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Children" nillable="true" type="tns:ArrayOfDataExplorerNode" />
+          <xs:element minOccurs="0" name="NodeInstanceId" type="ser:guid" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.DataExplorer.Enumerations" minOccurs="0" name="NodeType" type="q4:DataExplorerNodeType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataExplorerNode" nillable="true" type="tns:DataExplorerNode" />
+  <xs:complexType name="ArrayOfDataExplorerNode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataExplorerNode" nillable="true" type="tns:DataExplorerNode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataExplorerNode" nillable="true" type="tns:ArrayOfDataExplorerNode" />
+  <xs:complexType name="DataExplorerNodeSet">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataExplorerNode">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.DataExplorer.Enumerations" minOccurs="0" name="SetType" type="q5:DataExplorerSetType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataExplorerNodeSet" nillable="true" type="tns:DataExplorerNodeSet" />
+  <xs:complexType name="DataExplorerNodeEvaluation_x0020_">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DataExplorerNode">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" minOccurs="0" name="Evaluation" type="q6:DataFilterOperator" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.DataExplorer.Enumerations" minOccurs="0" name="EvaluationType" type="q7:DataExplorerEvaluationType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataExplorerNodeEvaluation_x0020_" nillable="true" type="tns:DataExplorerNodeEvaluation_x0020_" />
+  <xs:complexType name="DataExplorerVariable">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q8:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateValue" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NumericValue" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TextValue" nillable="true" type="xs:string" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.DataExplorer.Enumerations" minOccurs="0" name="VariableType" type="q9:DataExplorerVariableType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataExplorerVariable" nillable="true" type="tns:DataExplorerVariable" />
+  <xs:complexType name="ArrayOfDataExplorer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataExplorer" nillable="true" type="tns:DataExplorer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataExplorer" nillable="true" type="tns:ArrayOfDataExplorer" />
+</xs:schema>

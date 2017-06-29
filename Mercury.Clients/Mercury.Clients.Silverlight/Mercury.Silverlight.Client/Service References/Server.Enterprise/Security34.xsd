@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ActionParameterDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="String" />
+      <xs:enumeration value="Workflow" />
+      <xs:enumeration value="WorkQueue" />
+      <xs:enumeration value="Correspondence" />
+      <xs:enumeration value="RoutingRule" />
+      <xs:enumeration value="Id" />
+      <xs:enumeration value="DateTime" />
+      <xs:enumeration value="Integer" />
+      <xs:enumeration value="Decimal" />
+      <xs:enumeration value="EntityId" />
+      <xs:enumeration value="MemberId" />
+      <xs:enumeration value="ProviderId" />
+      <xs:enumeration value="WorkOutcome" />
+      <xs:enumeration value="CareOutcome" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActionParameterDataType" nillable="true" type="tns:ActionParameterDataType" />
+  <xs:simpleType name="ActionParameterValueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FixedValue" />
+      <xs:enumeration value="DataMapping" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActionParameterValueType" nillable="true" type="tns:ActionParameterValueType" />
+  <xs:simpleType name="ActionThresholdStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CompliantOrNoChange" />
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="OpenInformational" />
+      <xs:enumeration value="OpenWarning" />
+      <xs:enumeration value="OpenCritical" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActionThresholdStatus" nillable="true" type="tns:ActionThresholdStatus" />
+  <xs:simpleType name="ActionThresholdType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="CarePlanGoalObjective" />
+      <xs:enumeration value="CarePlanGoalIntervention" />
+      <xs:enumeration value="MemberCarePlanGoalObjective" />
+      <xs:enumeration value="MemberCarePlanGoalIntervention" />
+      <xs:enumeration value="CareLevelActivity" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActionThresholdType" nillable="true" type="tns:ActionThresholdType" />
+</xs:schema>

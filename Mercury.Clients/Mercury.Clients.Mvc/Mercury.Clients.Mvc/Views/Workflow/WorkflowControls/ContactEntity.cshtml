@@ -1,0 +1,53 @@
+﻿@model Mercury.Clients.Mvc.Models.Workflow.WorkflowModel
+
+<div id="WorkflowControls_ContactEntity">
+
+    <script type="text/javascript">
+
+        // MAKE SURE THAT OUTER CONTAINER RESIZES BEFORE INNER CONTENT
+
+        $(window).resize(function () {
+
+            var controlContainer = $("#WorkflowControls_ContactEntity");
+
+            controlContainer.outerHeight(controlContainer.parent().height());
+
+        });
+
+    </script>
+    
+
+    @{ Html.RenderPartial ("~/Views/Controls/EntityContact.cshtml", Model.EntityContactModel); }
+
+    @{ Html.RenderPartial ("~/Views/Workflow/WorkflowControls/WorkflowUpdateInformation.cshtml", Model); }
+
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+    
+        $("#ButtonOk").click(function () {
+
+            $("#EventTarget").val("ButtonOk");
+
+            $("#EventArguments").val("");
+
+            $("#WorkflowContinue").click();
+
+        });
+
+        $("#ButtonCancel").click(function () {
+
+            $("#EventTarget").val("ButtonCancel");
+
+            $("#EventArguments").val("");
+
+            $("#WorkflowContinue").click();
+
+        });
+
+    });
+
+</script>

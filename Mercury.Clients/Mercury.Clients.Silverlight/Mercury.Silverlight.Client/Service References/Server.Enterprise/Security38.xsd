@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd30" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Automation.Enumerations" />
+  <xs:complexType name="EntityNote">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Contents" nillable="true" type="tns:ArrayOfEntityNoteContent" />
+          <xs:element minOccurs="0" name="DataSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="Importance" type="q2:NoteImportance" />
+          <xs:element minOccurs="0" name="NoteTypeId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelatedEntityId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelatedEntityObjectId" type="xs:long" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="RelatedEntityType" type="q3:EntityType" />
+          <xs:element minOccurs="0" name="RelatedObjectId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelatedObjectType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityNote" nillable="true" type="tns:EntityNote" />
+  <xs:complexType name="ArrayOfEntityNoteContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityNoteContent" nillable="true" type="tns:EntityNoteContent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntityNoteContent" nillable="true" type="tns:ArrayOfEntityNoteContent" />
+  <xs:complexType name="EntityNoteContent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q4:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityNoteId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityNoteContent" nillable="true" type="tns:EntityNoteContent" />
+  <xs:complexType name="Entity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q5:CoreObject">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="EntityType" type="q6:EntityType" />
+          <xs:element minOccurs="0" name="FederalTaxId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdCodeQualifier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NameFirst" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NameLast" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NameMiddle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NamePrefix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NameSuffix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UniqueId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Entity" nillable="true" type="tns:Entity" />
+  <xs:complexType name="EntityCorrespondence">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q7:CoreExtensibleObject_x0020_">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressCity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressLine1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressLine2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressPostalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressZipCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressZipPlus4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Attention" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AutomationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AutomationException" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AutomationId" type="ser:guid" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Automation.Enumerations" minOccurs="0" name="AutomationStatus" type="q8:AutomationStatus" />
+          <xs:element minOccurs="0" name="ContactEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactFaxNumber" nillable="true" type="xs:string" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="ContactType" type="q9:EntityContactType" />
+          <xs:element minOccurs="0" name="CorrespondenceId" type="xs:long" />
+          <xs:element minOccurs="0" name="CorrespondenceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CorrespondenceVersion" type="xs:double" />
+          <xs:element minOccurs="0" name="EntityAddressId" type="xs:long" />
+          <xs:element minOccurs="0" name="EntityContactInformationId" type="xs:long" />
+          <xs:element minOccurs="0" name="EntityFormId" type="xs:long" />
+          <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+          <xs:element minOccurs="0" name="HasImage" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ReadyToSendDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReceivedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RelatedEntityId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelatedObjectId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelatedObjectType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReturnedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SentDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityCorrespondence" nillable="true" type="tns:EntityCorrespondence" />
+  <xs:complexType name="EntityAddress">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q10:CoreObject">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="AddressType" type="q11:EntityAddressType" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipPlus4" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityAddress" nillable="true" type="tns:EntityAddress" />
+  <xs:complexType name="EntityContact">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q12:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContactDate" type="xs:dateTime" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="ContactOutcome" type="q13:ContactOutcome" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="ContactType" type="q14:EntityContactType" />
+          <xs:element minOccurs="0" name="ContactedByName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataSource" nillable="true" type="xs:string" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="Direction" type="q15:ContactDirection" />
+          <xs:element minOccurs="0" name="EntityContactInformationId" type="xs:long" />
+          <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+          <xs:element minOccurs="0" name="Regarding" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelatedEntityId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelatedObjectId" type="xs:long" />
+          <xs:element minOccurs="0" name="RelatedObjectType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScriptEntityFormId" type="xs:long" />
+          <xs:element minOccurs="0" name="Successful" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityContact" nillable="true" type="tns:EntityContact" />
+  <xs:complexType name="EntityContactInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q16:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContactSequence" type="xs:int" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="ContactType" type="q17:EntityContactType" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityId" type="xs:long" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumberExtension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityContactInformation" nillable="true" type="tns:EntityContactInformation" />
+</xs:schema>

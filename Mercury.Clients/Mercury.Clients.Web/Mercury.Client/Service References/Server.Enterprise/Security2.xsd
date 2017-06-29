@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" />
+  <xs:import schemaLocation="http://localhost:10080/Enterprise/Security.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action" />
+  <xs:complexType name="ArrayOfKeyValueOflongstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongstring">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongstring" nillable="true" type="tns:ArrayOfKeyValueOflongstring" />
+  <xs:complexType name="ArrayOfstring">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+  <xs:complexType name="ArrayOfKeyValueOflongWorkQueueTeamPermission0Fl5uS8W">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongWorkQueueTeamPermission0Fl5uS8W">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work.Enumerations" name="Value" type="q1:WorkQueueTeamPermission" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongWorkQueueTeamPermission0Fl5uS8W" nillable="true" type="tns:ArrayOfKeyValueOflongWorkQueueTeamPermission0Fl5uS8W" />
+  <xs:complexType name="ArrayOfKeyValueOflongWorkTeamMembership3sHlbfEv">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongWorkTeamMembership3sHlbfEv">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" name="Value" nillable="true" type="q2:WorkTeamMembership" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongWorkTeamMembership3sHlbfEv" nillable="true" type="tns:ArrayOfKeyValueOflongWorkTeamMembership3sHlbfEv" />
+  <xs:complexType name="ArrayOflong">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="long" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOflong" nillable="true" type="tns:ArrayOflong" />
+  <xs:complexType name="ArrayOfKeyValueOfstringstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringstring">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringstring" nillable="true" type="tns:ArrayOfKeyValueOfstringstring" />
+  <xs:complexType name="ArrayOfKeyValueOfstringActionParameterh0OH4eih">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringActionParameterh0OH4eih">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action" name="Value" nillable="true" type="q3:ActionParameter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringActionParameterh0OH4eih" nillable="true" type="tns:ArrayOfKeyValueOfstringActionParameterh0OH4eih" />
+  <xs:complexType name="ArrayOfKeyValueOfintRoutingRuleDefinition3sHlbfEv">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintRoutingRuleDefinition3sHlbfEv">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:int" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" name="Value" nillable="true" type="q4:RoutingRuleDefinition" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfintRoutingRuleDefinition3sHlbfEv" nillable="true" type="tns:ArrayOfKeyValueOfintRoutingRuleDefinition3sHlbfEv" />
+  <xs:complexType name="ArrayOfKeyValueOfintWorkQueueViewSortDefinition3sHlbfEv">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintWorkQueueViewSortDefinition3sHlbfEv">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:int" />
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Work" name="Value" nillable="true" type="q5:WorkQueueViewSortDefinition" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfintWorkQueueViewSortDefinition3sHlbfEv" nillable="true" type="tns:ArrayOfKeyValueOfintWorkQueueViewSortDefinition3sHlbfEv" />
+  <xs:complexType name="ArrayOfKeyValueOfstringActionh0OH4eih">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringActionh0OH4eih">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action" name="Value" nillable="true" type="q6:Action" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringActionh0OH4eih" nillable="true" type="tns:ArrayOfKeyValueOfstringActionh0OH4eih" />
+</xs:schema>

@@ -1,0 +1,51 @@
+﻿
+div.RadTabStripBasic .rtsLevel1 {
+       
+    background-color: #FFE0B3 !important;
+    
+    color: #A67226 !important;
+    
+    padding-top: 4px;
+    
+    padding-bottom: 4px;
+    
+}
+
+div.RadTabStripBasic .rtsLink {
+    
+      color: #A67226 !important;
+}
+
+div.RadTabStripBasic .RadTabStripBasicSelected {
+ 
+      color: Black !important;
+    
+      text-decoration: underline;
+    
+}
+
+
+div.RadTabStripBasicWhite .rtsLevel1 {
+       
+    background-color: White !important;
+    
+    color: #A67226 !important;
+    
+    padding-top: 4px;
+    
+    padding-bottom: 4px;
+    
+}
+
+div.RadTabStripBasicWhite .rtsLink {
+    
+      color: #A67226 !important;
+}
+
+div.RadTabStripBasicWhite .RadTabStripBasicSelected {
+ 
+      color: Black !important;
+    
+      text-decoration: underline;
+    
+}

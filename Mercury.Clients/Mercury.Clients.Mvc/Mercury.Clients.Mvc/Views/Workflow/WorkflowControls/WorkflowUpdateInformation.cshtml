@@ -1,0 +1,37 @@
+﻿@model Mercury.Clients.Mvc.Models.Workflow.WorkflowModel
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        // UPDATE WORKFLOW FORM FIELDS AND STATE
+
+        $("#WorkflowControl").val("@Model.WorkflowControl");
+        
+        $("#WorkflowTitleLabel").val("@Model.WorkflowTitle");
+       
+        $("#WorkflowActionMessage").val("@Model.WorkflowActionMessage");
+      
+        $("#LastWorkflowMessage").val("@Model.LastWorkflowMessage");
+        
+        $("#EntityId").val("@((Model.Entity != null) ? Model.Entity.Id : 0)");
+
+        $("#WorkflowIcon").attr ("src", "@Url.Content(Model.WorkflowIconUrl)");
+
+        
+        // UPDATE NON-STATE FIELDS
+       
+        $("#WorkflowActionMessageLabel").html("@Model.WorkflowActionMessage");
+      
+        SetLastWorkflowMessage ("@Model.LastWorkflowMessage");
+        
+        SetExceptionMessage ("@Model.ExceptionMessage");
+
+        SetInformationalMessage ("@Model.InformationMessage");
+         
+        @Html.Raw(Model.WorkflowControlResponseScript)
+
+        });
+
+</script>

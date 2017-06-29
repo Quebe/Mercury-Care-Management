@@ -1,0 +1,178 @@
+﻿
+
+*.BackgroundColorNormal { background-color: #6699CC; }
+
+*.BackgroundColorDark { background-color: #215485; }
+
+*.BackgroundColorLight { background-color: #A6C6E6; }
+
+
+*.BackgroundColorComplementNormal { background-color: #FFC775;}
+
+*.BackgroundColorComplementDark { background-color: #A67226; }
+
+*.BackgroundColorComplementNormalDark { background-color: #BFA072; }
+
+*.BackgroundColorComplementLight { background-color: #FFE0B3; }
+
+
+*.BorderColorNormal { border: 1px solid #6699CC; }
+
+*.BorderColorDark { border: 1px solid #215485; }
+
+*.BorderColorLight { border: 1px solid #A6C6E6; }
+
+
+*.BorderColorComplementNormal { border: 1px solid #FFC775;}
+
+*.BorderColorComplementDark { border: 1px solid #A67226; }
+
+*.BorderColorComplementLight { border: 1px solid #FFE0B3; }
+
+*.BorderColorComplementLightTopOnly { border-top: 1px solid #FFE0B3; }
+
+*.BorderColorComplementLightBottomOnly { border-bottom: 1px solid #FFE0B3; }
+
+
+*.ColorBlack { color: Black; }
+
+*.ColorNormal { color: #6699CC; }
+
+*.ColorDark { color: #215485; }
+
+*.ColorLight { color: #A6C6E6; }
+
+
+*.ColorComplementNormal { color: #FFC775;}
+
+*.ColorComplementDark { color: #A67226; }
+
+*.ColorComplementDarker { color: #6C450C; }
+
+*.ColorComplementLight { color: #FFE0B3; }
+
+
+*.TextNormal {
+		
+	font-family: Calibri, Arial, Helvetica, Sans-Serif;
+	
+	font-size: 10pt; 
+	
+	line-height: 150%;
+	
+}
+
+*.TextTitleWhiteBold {
+	
+	font-family: Calibri, Arial, Helvetica, Sans-Serif;
+	
+	font-size: 10pt; 
+	
+	line-height: 150%;
+	
+	font-weight: bold;
+	
+	color: White;
+	
+}
+
+*.SectionTitle { 
+
+	font-family: Calibri, Arial, Helvetica, Sans-Serif;
+	
+	font-size: 10pt; 
+	
+	line-height: 150%;
+	
+	font-weight: bold;
+	
+	color: White;
+	
+	background-color: #215485;
+	
+	border-top: 1px solid #FFE0B3; 
+	
+	clear: both; 
+	
+	margin-top: .125in;
+	
+	padding-left: 8px; padding-top: 4px; padding-bottom: 4px; padding-right: 4px;
+	
+}
+
+*.Transparency50 {
+
+	filter: alpha(opacity=50);
+	
+	-moz-opacity:0.5;
+	
+	-khtml-opacity:0.5;
+	
+	opacity:0.5;
+
+}
+
+*.Transparency60 {
+
+	filter: alpha(opacity=60);
+	
+	-moz-opacity:0.6;
+	
+	-khtml-opacity:0.6;
+	
+	opacity:0.6;
+
+}
+
+*.Transparency75 {
+
+	filter: alpha(opacity=75);
+	
+	-moz-opacity:0.75;
+	
+	-khtml-opacity:0.75;
+	
+	opacity:0.75;
+
+}
+
+*.Transparency80 {
+
+	filter: alpha(opacity=80);
+	
+	-moz-opacity:0.8;
+	
+	-khtml-opacity:0.8;
+	
+	opacity:0.8;
+
+}
+
+*.TransparencyNone {
+
+	filter: alpha(opacity=100);
+	
+	-moz-opacity:1;
+	
+	-khtml-opacity:1;
+	
+	opacity:1;
+
+}
+
+a.NoDecoration  {
+		
+	text-decoration: none;
+	
+}
+
+a.NoDecoration:hover { 
+	
+	text-decoration: underline;
+	
+}
+
+a.HoverTextBlack:hover { color: Black; }
+	
+a.HoverTextWhiteBold:hover { color: White; }
+		

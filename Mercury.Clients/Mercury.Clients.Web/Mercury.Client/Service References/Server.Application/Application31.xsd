@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Security" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Security" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd56" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Security.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" />
+  <xs:complexType name="SecurityAuthority">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AgentPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssociateContext" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConfigurationSection" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemberContext" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Protocol" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProviderAssemblyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProviderAssemblyPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProviderClassName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProviderContext" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProviderNamespace" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Security.Enumerations" minOccurs="0" name="SecurityAuthorityType" type="q2:SecurityAuthorityType" />
+          <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecurityAuthority" nillable="true" type="tns:SecurityAuthority" />
+  <xs:complexType name="ArrayOfPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Permission" nillable="true" type="tns:Permission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPermission" nillable="true" type="tns:ArrayOfPermission" />
+  <xs:complexType name="Permission">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q3:CoreObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Permission" nillable="true" type="tns:Permission" />
+  <xs:complexType name="ArrayOfSecurityGroupPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityGroupPermission" nillable="true" type="tns:SecurityGroupPermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecurityGroupPermission" nillable="true" type="tns:ArrayOfSecurityGroupPermission" />
+  <xs:complexType name="SecurityGroupPermission">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="CreateAccountInfo" nillable="true" type="q4:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="IsDenied" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGranted" type="xs:boolean" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" minOccurs="0" name="ModifiedAccountInfo" nillable="true" type="q5:AuthorityAccountStamp" />
+      <xs:element minOccurs="0" name="PermissionId" type="xs:long" />
+      <xs:element minOccurs="0" name="SecurityAuthorityId" type="xs:long" />
+      <xs:element minOccurs="0" name="SecurityGroupId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityGroupPermission" nillable="true" type="tns:SecurityGroupPermission" />
+  <xs:complexType name="ArrayOfSecurityAuthority">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityAuthority" nillable="true" type="tns:SecurityAuthority" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecurityAuthority" nillable="true" type="tns:ArrayOfSecurityAuthority" />
+  <xs:complexType name="ArrayOfEnvironmentAccess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnvironmentAccess" nillable="true" type="tns:EnvironmentAccess" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnvironmentAccess" nillable="true" type="tns:ArrayOfEnvironmentAccess" />
+  <xs:complexType name="EnvironmentAccess">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q6:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EnvironmentId" type="xs:long" />
+          <xs:element minOccurs="0" name="IsDenied" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGranted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SecurityAuthorityId" type="xs:long" />
+          <xs:element minOccurs="0" name="SecurityGroupId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecurityGroupName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnvironmentAccess" nillable="true" type="tns:EnvironmentAccess" />
+</xs:schema>

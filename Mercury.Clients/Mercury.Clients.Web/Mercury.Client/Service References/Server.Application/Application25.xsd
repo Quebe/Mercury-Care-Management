@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Reference.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="CorrespondenceContentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Report" />
+      <xs:enumeration value="Attachment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CorrespondenceContentType" nillable="true" type="tns:CorrespondenceContentType" />
+</xs:schema>

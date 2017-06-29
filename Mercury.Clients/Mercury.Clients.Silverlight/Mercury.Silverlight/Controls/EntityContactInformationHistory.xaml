@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Mercury.Silverlight.Controls.EntityContactInformationHistory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+             
+    xmlns:TelerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+             
+    d:DesignHeight="300" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <TelerikGridView:RadGridView x:Name="EntityContactInformationGrid" AutoGenerateColumns="False" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed" ColumnWidth="*">
+
+            <TelerikGridView:RadGridView.Columns>
+
+                <TelerikGridView:GridViewDataColumn UniqueName="EntityContactInformationId" Header="Id" DataMemberBinding="{Binding Id}" IsFilterable="False" IsVisible="False"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn UniqueName="EntityId" Header="EntityId" DataMemberBinding="{Binding EntityId}" IsFilterable="False" IsVisible="False"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn Width="160" UniqueName="ContactType" Header="Contact Type" DataMemberBinding="{Binding ContactTypeDescription}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn UniqueName="NumberFormatted" Header="Number" DataMemberBinding="{Binding NumberFormatted}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn UniqueName="NumberExtension" Header="Extension" DataMemberBinding="{Binding NumberExtension}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn UniqueName="Email" Header="Email" DataMemberBinding="{Binding Email}" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn MaxWidth="80" UniqueName="EffectiveDate" Header="Effective" DataMemberBinding="{Binding EffectiveDateDescription}" HeaderTextAlignment="Center" TextAlignment="Center" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn MaxWidth="80" UniqueName="TerminationDate" Header="Termination" DataMemberBinding="{Binding TerminationDateDescription}" HeaderTextAlignment="Center" TextAlignment="Center" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+                <TelerikGridView:GridViewDataColumn UniqueName="Action" Header="Action" IsFilterable="False"></TelerikGridView:GridViewDataColumn>
+
+            </TelerikGridView:RadGridView.Columns>
+
+        </TelerikGridView:RadGridView>
+
+    </Grid>
+    
+</UserControl>

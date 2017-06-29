@@ -1,0 +1,203 @@
+﻿<WindowManager:Window x:Class="Mercury.Silverlight.Workspace.GlobalSearch"
+    xmlns:WindowManager="clr-namespace:Mercury.Silverlight.WindowManager"                     
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+    xmlns:TelerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"     
+    xmlns:MercuryValueConverters="clr-namespace:Mercury.Client.ValueConverters;assembly=Mercury.Silverlight.Client"
+>
+                      
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="24"></RowDefinition>
+
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <!-- WIDNOW TITLE -->
+
+        <Border x:Name="WindowBarBorder" Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="0 0 0 1" Background="#666666">
+
+            <Grid x:Name="WindowBarGrid">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Width="112"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="36">
+
+
+                </Border>
+
+                <Border Grid.Column="0" Grid.Row="0">
+
+                    <TextBlock x:Name="WindowTitle" FontFamily="Calibri, Segoe UI" FontSize="13.333" Foreground="White" VerticalAlignment="Center" Padding="8,0,0,0" Text="" />
+
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Telerik:RadButton x:Name="WindowMinimize" Width="64" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ToolTipService.ToolTip="Minimize" Click="WindowMinimize_Click">
+
+                            <Telerik:RadButton.Content>
+
+                                <TextBlock Text="minimize" FontFamily="Calibri, Segoe UI" FontSize="13.333" Foreground="White" TextDecorations="underline"></TextBlock>
+
+                            </Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+
+                        <Telerik:RadButton x:Name="WindowClose" Width="48" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ToolTipService.ToolTip="Close" Click="WindowClose_Click" >
+
+                            <Telerik:RadButton.Content>
+
+                                <TextBlock Text="close" FontFamily="Calibri, Segoe UI" FontSize="13.333" Foreground="White" TextDecorations="underline"></TextBlock>
+
+                            </Telerik:RadButton.Content>
+
+                        </Telerik:RadButton>
+
+                    </StackPanel>
+
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+
+        <!-- WINDOW CONTENT -->
+
+        <Border x:Name="WindowContent" Grid.Column="0" Grid.Row="1" Padding="4">
+
+            
+            <Grid HorizontalAlignment="Stretch">
+                
+                <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    
+                    <RowDefinition Height="*"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+                
+                <!-- SEARCH CRITERIA -->
+
+                <Border Margin="4" Padding="4" BorderBrush="AliceBlue" BorderThickness="1">
+                
+                    <Grid>
+                        
+                        <Grid.ColumnDefinitions>
+                            
+                            <ColumnDefinition MaxWidth="100"></ColumnDefinition>
+                            
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            
+                        </Grid.ColumnDefinitions>
+                        
+                        
+                        <Grid.RowDefinitions>
+                            
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            
+                            <RowDefinition Height="Auto"></RowDefinition>
+
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            
+                        </Grid.RowDefinitions>
+
+
+                        <TextBlock Text="Search for:" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0"></TextBlock>
+
+                        <TextBox x:Name="SearchCriteria" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" KeyUp="SearchCriteria_KeyUp"></TextBox>
+
+                        <Telerik:RadButton x:Name="SearchButton" HorizontalAlignment="Right" Grid.Column="2" Content="Search" Margin="4" MinWidth="96" MinHeight="24" Click="SearchButton_Click"></Telerik:RadButton>
+                    
+                        
+                        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="4" VerticalAlignment="Center" Text="You may search by a unique identifier (Id Number) or by a partial name with at least 3 characters  (Last, First)." TextWrapping="Wrap"></TextBlock>
+
+                        
+                        <!-- EXCEPTION -->
+
+                        <Border x:Name="ExceptionContainer" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" BorderBrush="Black" BorderThickness="1" Background="#FFDDDD" MinHeight="24" Visibility="Collapsed">
+
+                            <TextBlock x:Name="ExceptionMessage" FontFamily="Calibri, Segoe UI" FontSize="13.333" VerticalAlignment="Center" Padding="8,4,0,0" Text="" TextWrapping="Wrap" />
+
+                        </Border>
+                        
+                    </Grid>
+                    
+                </Border>
+                    
+                <!-- SEARCH RESULTS GRID -->
+
+                <TelerikGridView:RadGridView x:Name="SearchResultsGrid" Grid.Column="0" Grid.Row="1" VerticalAlignment="Stretch" AutoGenerateColumns="False" ShowGroupPanel="True" IsReadOnly="True"
+                                                                                             
+                    SelectionMode="Single" 
+                                            
+                    >
+
+                    <TelerikGridView:RadGridView.Columns>
+
+                        <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=ObjectType}" Header="Type" Width="100" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=ObjectId}" Header="Id" Width="125" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Name}" Header="Name" TextWrapping="Wrap">
+                            
+                            <TelerikGridView:GridViewDataColumn.CellTemplate>
+                                
+                                <DataTemplate>
+
+                                    <HyperlinkButton x:Name="SearchResultName" Grid.Column="1" Grid.Row="1" Content="{Binding Name}" Tag="{Binding ObjectId}" TargetName="{Binding ObjectType}" VerticalAlignment="Center" Foreground="#0066CC" Click="SearchResultName_Click"></HyperlinkButton>
+
+                                </DataTemplate>
+                                
+                            </TelerikGridView:GridViewDataColumn.CellTemplate>
+                            
+                        </TelerikGridView:GridViewDataColumn>
+                        
+                        <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Detail1}" Header="Detail 1" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=Detail2}" Header="Detail 2" TextWrapping="Wrap"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=EffectiveDate}" Header="Effective" Width="90" IsFilterable="False" IsVisible="False"></TelerikGridView:GridViewDataColumn>
+
+                        <TelerikGridView:GridViewDataColumn DataMemberBinding="{Binding Path=TerminationDate}" Header="Termination" Width="90" IsFilterable="False" IsVisible="False"></TelerikGridView:GridViewDataColumn>
+
+                    </TelerikGridView:RadGridView.Columns>
+
+                </TelerikGridView:RadGridView>
+
+            </Grid>
+
+        </Border>               
+
+    </Grid>
+
+</WindowManager:Window>

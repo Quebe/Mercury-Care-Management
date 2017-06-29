@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Definitions" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Definitions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:complexType name="ArrayOfServiceSetDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceSetDefinition" nillable="true" type="tns:ServiceSetDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceSetDefinition" nillable="true" type="tns:ArrayOfServiceSetDefinition" />
+  <xs:complexType name="ServiceSetDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefinitionServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceSetDefinition" nillable="true" type="tns:ServiceSetDefinition" />
+  <xs:complexType name="ServiceSingletonDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q2:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BillTypeCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomCriteria" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" minOccurs="0" name="DataSourceType" type="q3:ServiceDataSourceType" />
+          <xs:element minOccurs="0" name="DeaClassificationCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DiagnosisCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DrgCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DrugNameCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.MedicalServices.Enumerations" minOccurs="0" name="EventDateOrder" type="q4:EventDateOrder" />
+          <xs:element minOccurs="0" name="Icd9ProcedureCodeCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPcpRequiredCriteria" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LabLoincCodeCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LabMetricId" type="xs:long" />
+          <xs:element minOccurs="0" name="LabNameCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LabValueExpressionCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationCodeCriteria" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="MemberAgeDateQualifier" type="q5:DateQualifier" />
+          <xs:element minOccurs="0" name="MemberAgeMaximum" type="xs:int" />
+          <xs:element minOccurs="0" name="MemberAgeMinimum" type="xs:int" />
+          <xs:element minOccurs="0" name="ModifierCodeCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NdcCodeCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrincipalDiagnosisCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProcedureCodeCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProviderSpecialtyCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RevenueCodeCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="TherapeuticClassificationCriteria" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UseMemberAgeCriteria" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceSingletonDefinition" nillable="true" type="tns:ServiceSingletonDefinition" />
+  <xs:complexType name="ArrayOfServiceSingletonDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceSingletonDefinition" nillable="true" type="tns:ServiceSingletonDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceSingletonDefinition" nillable="true" type="tns:ArrayOfServiceSingletonDefinition" />
+</xs:schema>

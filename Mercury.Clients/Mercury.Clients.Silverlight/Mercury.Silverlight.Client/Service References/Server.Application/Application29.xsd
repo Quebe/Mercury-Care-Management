@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.ServiceModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.ServiceModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="MessageCredentialType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Windows" />
+      <xs:enumeration value="UserName" />
+      <xs:enumeration value="Certificate" />
+      <xs:enumeration value="IssuedToken" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MessageCredentialType" nillable="true" type="tns:MessageCredentialType" />
+  <xs:simpleType name="BasicHttpSecurityMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Transport" />
+      <xs:enumeration value="Message" />
+      <xs:enumeration value="TransportWithMessageCredential" />
+      <xs:enumeration value="TransportCredentialOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BasicHttpSecurityMode" nillable="true" type="tns:BasicHttpSecurityMode" />
+  <xs:simpleType name="HttpClientCredentialType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Basic" />
+      <xs:enumeration value="Digest" />
+      <xs:enumeration value="Ntlm" />
+      <xs:enumeration value="Windows" />
+      <xs:enumeration value="Certificate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HttpClientCredentialType" nillable="true" type="tns:HttpClientCredentialType" />
+</xs:schema>

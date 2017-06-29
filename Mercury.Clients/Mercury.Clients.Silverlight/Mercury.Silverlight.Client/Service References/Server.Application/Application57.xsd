@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:complexType name="Action">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreObject">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ActionParameters" nillable="true" type="q2:ArrayOfKeyValueOfstringActionParameterh0OH4eih" />
+          <xs:element minOccurs="0" name="DescribingParameterName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Action" nillable="true" type="tns:Action" />
+  <xs:complexType name="ActionParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowFixedValue" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action.Enumerations" minOccurs="0" name="DataType" type="q3:ActionParameterDataType" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Required" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueDescription" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action.Enumerations" minOccurs="0" name="ValueType" type="q4:ActionParameterValueType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActionParameter" nillable="true" type="tns:ActionParameter" />
+  <xs:complexType name="ActionThreshold">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q5:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Action" nillable="true" type="tns:Action" />
+          <xs:element minOccurs="0" name="OwnerObjectId" type="xs:long" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="RelativeDateQualifier" type="q6:DateQualifier" />
+          <xs:element minOccurs="0" name="RelativeDateValue" type="xs:int" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action.Enumerations" minOccurs="0" name="Status" type="q7:ActionThresholdStatus" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Action.Enumerations" minOccurs="0" name="ThresholdType" type="q8:ActionThresholdType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActionThreshold" nillable="true" type="tns:ActionThreshold" />
+  <xs:complexType name="ArrayOfAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Action" nillable="true" type="tns:Action" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAction" nillable="true" type="tns:ArrayOfAction" />
+</xs:schema>

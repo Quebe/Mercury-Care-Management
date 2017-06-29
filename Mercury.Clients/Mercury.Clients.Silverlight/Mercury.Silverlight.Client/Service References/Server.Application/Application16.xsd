@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.DataViews" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.DataViews" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:complexType name="ArrayOfPopulationMembershipSummaryDataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PopulationMembershipSummaryDataView" nillable="true" type="tns:PopulationMembershipSummaryDataView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPopulationMembershipSummaryDataView" nillable="true" type="tns:ArrayOfPopulationMembershipSummaryDataView" />
+  <xs:complexType name="PopulationMembershipSummaryDataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnchorDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpectedEventDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifyingEventDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifyingEventMemberServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="IdentifyingEventServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="IdentifyingEventServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+      <xs:element minOccurs="0" name="NextThresholdDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PopulationEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PopulationId" type="xs:long" />
+      <xs:element minOccurs="0" name="PopulationMembershipId" type="xs:long" />
+      <xs:element minOccurs="0" name="PopulationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PopulationVisible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PreviousThresholdDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.Enumerations" minOccurs="0" name="Status" type="q1:PopulationServiceEventStatus" />
+      <xs:element minOccurs="0" name="StatusText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerminatingEventDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TerminatingEventMemberServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="TerminatingEventServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="TerminatingEventServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerminationDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PopulationMembershipSummaryDataView" nillable="true" type="tns:PopulationMembershipSummaryDataView" />
+  <xs:complexType name="ArrayOfPopulationMembershipServiceEventDataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PopulationMembershipServiceEventDataView" nillable="true" type="tns:PopulationMembershipServiceEventDataView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPopulationMembershipServiceEventDataView" nillable="true" type="tns:ArrayOfPopulationMembershipServiceEventDataView" />
+  <xs:complexType name="PopulationMembershipServiceEventDataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpectedEventDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NextThresholdDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PopulationMembershipId" type="xs:long" />
+      <xs:element minOccurs="0" name="PreviousThresholdDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Reoccurring" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Enumerations" minOccurs="0" name="ScheduleQualifier" type="q2:DateQualifier" />
+      <xs:element minOccurs="0" name="ScheduleValue" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceId" type="xs:long" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.Enumerations" minOccurs="0" name="Status" type="q3:PopulationServiceEventStatus" />
+      <xs:element minOccurs="0" name="StatusText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PopulationMembershipServiceEventDataView" nillable="true" type="tns:PopulationMembershipServiceEventDataView" />
+  <xs:complexType name="ArrayOfPopulationMembershipTriggerEventDataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PopulationMembershipTriggerEventDataView" nillable="true" type="tns:PopulationMembershipTriggerEventDataView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPopulationMembershipTriggerEventDataView" nillable="true" type="tns:ArrayOfPopulationMembershipTriggerEventDataView" />
+  <xs:complexType name="PopulationMembershipTriggerEventDataView">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q4:CoreObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthorizedServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="AuthorizedServiceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EventDate" type="xs:dateTime" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.Enumerations" minOccurs="0" name="EventType" type="q5:PopulationTriggerEventType" />
+          <xs:element minOccurs="0" name="IsTriggerDeleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MemberAuthorizedServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="MemberMetricId" type="xs:long" />
+          <xs:element minOccurs="0" name="MemberServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="MetricId" type="xs:long" />
+          <xs:element minOccurs="0" name="MetricName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PopulationMembershipId" type="xs:long" />
+          <xs:element minOccurs="0" name="PopulationMembershipTriggerEventId" type="xs:long" />
+          <xs:element minOccurs="0" name="PopulationTriggerEventId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProblemStatementId" type="xs:long" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:long" />
+          <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TriggerDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PopulationMembershipTriggerEventDataView" nillable="true" type="tns:PopulationMembershipTriggerEventDataView" />
+  <xs:complexType name="ArrayOfPopulationMembershipEntryStatusDataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PopulationMembershipEntryStatusDataView" nillable="true" type="tns:PopulationMembershipEntryStatusDataView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPopulationMembershipEntryStatusDataView" nillable="true" type="tns:ArrayOfPopulationMembershipEntryStatusDataView" />
+  <xs:complexType name="PopulationMembershipEntryStatusDataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MemberId" type="xs:long" />
+      <xs:element minOccurs="0" name="MemberName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PopulationId" type="xs:long" />
+      <xs:element minOccurs="0" name="PopulationMembershipId" type="xs:long" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Population.Enumerations" minOccurs="0" name="Status" type="q6:PopulationServiceEventStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PopulationMembershipEntryStatusDataView" nillable="true" type="tns:PopulationMembershipEntryStatusDataView" />
+</xs:schema>

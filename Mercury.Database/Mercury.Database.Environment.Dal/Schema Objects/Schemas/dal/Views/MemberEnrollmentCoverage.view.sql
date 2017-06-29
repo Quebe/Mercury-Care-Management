@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[MemberEnrollmentCoverage] AS SELECT * FROM dbo.MemberEnrollmentCoverage

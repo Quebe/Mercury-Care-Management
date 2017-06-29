@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Faxing" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Faxing" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd47" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Public.Faxing" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd48" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Public.WebService" />
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" />
+  <xs:complexType name="FaxServer">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Core" base="q1:CoreConfigurationObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssemblyClassName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssemblyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssemblyPath" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Public.Faxing" minOccurs="0" name="FaxServerConfiguration" nillable="true" type="q2:FaxServerConfiguration" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Mercury.Server.Public.WebService" minOccurs="0" name="WebServiceHostConfiguration" nillable="true" type="q3:WebServiceHostConfiguration" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FaxServer" nillable="true" type="tns:FaxServer" />
+  <xs:complexType name="ArrayOfFaxServer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FaxServer" nillable="true" type="tns:FaxServer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFaxServer" nillable="true" type="tns:ArrayOfFaxServer" />
+</xs:schema>

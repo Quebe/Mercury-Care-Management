@@ -1,0 +1,173 @@
+﻿<UserControl x:Class="Mercury.Silverlight.Controls.EntityInformationMember"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid>
+
+        <StackPanel>
+
+            <Grid HorizontalAlignment="Stretch">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="Auto" MinWidth="44"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="Auto" MinHeight="36"></RowDefinition>
+
+                </Grid.RowDefinitions>
+
+                <Image x:Name="EntityNoteWarning" Grid.Column="0" Source="../Images/Common24/NoteWarning.png" Width="24" Margin="4 0 4 0" Visibility="Collapsed"></Image>
+
+                <Image x:Name="EntityNoteCritical" Grid.Column="1" Source="../Images/Common24/NoteCritical.png" Width="24" Margin="4 0 4 0" Visibility="Collapsed"></Image>
+
+
+                <TextBlock x:Name="EntityNameLabelControl" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold" Text="Member:"></TextBlock>
+
+                <TextBlock x:Name="MemberName" Grid.Column="3" VerticalAlignment="Center" TextWrapping="Wrap">** No Member Selected</TextBlock>
+
+                <TextBlock Grid.Column="4" VerticalAlignment="Center" FontWeight="Bold" Margin="4 0 0 0">Birth Date:</TextBlock>
+
+                <TextBlock x:Name="MemberBirthDate" Grid.Column="5" VerticalAlignment="Center"></TextBlock>
+
+                <TextBlock Grid.Column="6" VerticalAlignment="Center" FontWeight="Bold" Margin="4 0 0 0">Age:</TextBlock>
+
+                <TextBlock x:Name="MemberAge" Grid.Column="7" VerticalAlignment="Center"></TextBlock>
+
+                <TextBlock Grid.Column="8" VerticalAlignment="Center" FontWeight="Bold" Margin="4 0 0 0">Gender:</TextBlock>
+
+                <TextBlock x:Name="MemberGender" Grid.Column="9" VerticalAlignment="Center"></TextBlock>
+
+                <TextBlock Grid.Column="10" VerticalAlignment="Center" FontWeight="Bold" Margin="4 0 0 0">Program:</TextBlock>
+
+                <TextBlock x:Name="MemberEnrollmentProgramName" Grid.Column="11" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>
+
+                <TextBlock Grid.Column="12" VerticalAlignment="Center" FontWeight="Bold" Margin="4 0 0 0">Id:</TextBlock>
+
+                <TextBlock x:Name="MemberEnrollmentProgramMemberId" Grid.Column="13" VerticalAlignment="Center"></TextBlock>
+
+                <HyperlinkButton x:Name="ToggleEntityInformationMoreLink" Grid.Column="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4 0 4 0" Click="ToggleEntityInformationMoreLink_Click">(more)</HyperlinkButton>
+                
+            </Grid>
+
+            <StackPanel x:Name="EntityInformationMore" Visibility="Collapsed">
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="Auto" MinHeight="36"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold">Benefit Plan:</TextBlock>
+
+                    <TextBlock x:Name="MemberEnrollmentBenefitPlan" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap">** Not Enrolled</TextBlock>
+
+                    <TextBlock Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold" Margin="4 0 0 0">Coverage Type:</TextBlock>
+
+                    <TextBlock x:Name="MemberEnrollmentCoverageType" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+
+                    <TextBlock Grid.Column="4" VerticalAlignment="Center" FontWeight="Bold" Margin="4 0 0 0">Coverage Level:</TextBlock>
+
+                    <TextBlock x:Name="MemberEnrollmentCoverageLevel" Grid.Column="5" VerticalAlignment="Center"></TextBlock>
+
+                    <TextBlock Grid.Column="6" VerticalAlignment="Center" FontWeight="Bold" Margin="4 0 0 0">Rate Code:</TextBlock>
+
+                    <TextBlock x:Name="MemberEnrollmentRateCode" Grid.Column="7" VerticalAlignment="Center"></TextBlock>
+
+                </Grid>
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        <ColumnDefinition Width=".5*"></ColumnDefinition>
+
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        <ColumnDefinition Width=".5*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="Auto" MinHeight="36"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold">PCP Name:</TextBlock>
+
+                    <TextBlock x:Name="MemberEnrollmentPcpName" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap">** No PCP Assigned</TextBlock>
+
+                    <TextBlock Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold" Margin="4 0 0 0">PCP Affiliate Name:</TextBlock>
+
+                    <TextBlock x:Name="MemberEnrollmentPcpAffiliateName" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+
+                </Grid>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+    
+</UserControl>

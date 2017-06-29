@@ -1,0 +1,61 @@
+﻿@model Mercury.Client.Core.Member.Member
+
+
+<table width="100%" cellpadding="0" cellspacing="0">
+    
+    <tr class="" style="height: 36px;">
+
+        <td style="max-width: 24px; padding-right: 4px;"><img id="UserInteractionEntityInformationMemberNoteWarning"  src="/Images/Common24/NoteWarning.png" alt="Warning from Note" style="display: none;" runat="server" /></td>   
+        
+        <td style="max-width: 24px; padding-right: 4px;"><img id="UserInteractionEntityInformationMemberNoteCritical" src="/Images/Common24/NoteCritical.png" alt="Critical from Note" style="display: none;" runat="server" /></td>   
+
+        
+        <td style="text-align: left"><b>Member Name:</b> @Model.Name</td>
+                        
+        <td style="text-align: left"><b>Birth Date:</b> @Model.BirthDateDescription</td>
+                        
+        <td style="text-align: left"><b>Age:</b> @Model.CurrentAgeDescription</td>
+                        
+        <td style="text-align: left"><b>Gender:</b> @Model.GenderDescription</td>
+                        
+        <td style="text-align: left"><b>Program:</b> @((Model.CurrentEnrollment != null) ? Model.CurrentEnrollment.ProgramName : "* Not Enrolled")</td>
+                                                
+        <td style="text-align: left"><b>Id:</b> @((Model.CurrentEnrollment != null) ? Model.CurrentEnrollment.ProgramMemberId : "")</td>
+
+        <td style="width: 50px; text-align: center;"><a id="MemberInformationCoverageToggle" href="#" onclick="javascript:$('#MemberInformationSummaryCoverage').toggle(); $('span', $(this)).toggle();$(window).resize();" title="Toggle Coverage Information"><span>(more)</span><span style="display: none;">(less)</span></a></td>
+
+    </tr>
+        
+</table>
+
+<div id="MemberInformationSummaryCoverage" style="display: none;" runat="server">
+            
+    <table width="100%" cellpadding="0" cellspacing="0">
+    
+        <tr class="" style="height: 36px;">
+
+            <td style="text-align: left"><b>Benefit Plan:</b> @((Model.CurrentEnrollmentCoverage != null) ? Model.CurrentEnrollmentCoverage.BenefitPlanName : "")</td>
+                        
+            <td style="text-align: left"><b>Coverage Type:</b> @((Model.CurrentEnrollmentCoverage != null) ? Model.CurrentEnrollmentCoverage.CoverageTypeName : "")</td>
+                        
+            <td style="text-align: left"><b>Coverage Level:</b> @((Model.CurrentEnrollmentCoverage != null) ? Model.CurrentEnrollmentCoverage.CoverageLevelName : "")</td>
+                        
+            <td style="text-align: left"><b>Rate Code:</b> @((Model.CurrentEnrollmentCoverage != null) ? Model.CurrentEnrollmentCoverage.RateCode : "")</td>
+
+        </tr>
+        
+    </table>
+            
+    <table width="100%" cellpadding="0" cellspacing="0">
+    
+        <tr class="" style="height: 36px;">
+
+            <td style="text-align: left"><b>PCP Name:</b> @((Model.CurrentEnrollmentPcp != null) ? Model.CurrentEnrollmentPcp.PcpProvider.Name : "* No PCP Assignment")</td>
+                        
+            <td style="text-align: left"><b>PCP Affiliate Name:</b> @((Model.CurrentEnrollmentPcp != null) ? Model.CurrentEnrollmentPcp.PcpAffiliateProvider.Name : "")</td>
+                        
+        </tr>
+        
+    </table>
+
+</div>

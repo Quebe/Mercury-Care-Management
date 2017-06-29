@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Mercury.Server.Services.Core.Application" CodeBehind="Application.svc.cs" %>

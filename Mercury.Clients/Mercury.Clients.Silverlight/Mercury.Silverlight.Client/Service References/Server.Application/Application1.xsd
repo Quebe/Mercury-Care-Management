@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10080/Core/Application.svc?xsd=xsd34" namespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" />
+  <xs:complexType name="AuthorityAccountStamp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SecurityAuthorityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserAccountId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserAccountName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthorityAccountStamp" nillable="true" type="tns:AuthorityAccountStamp" />
+  <xs:complexType name="DataFilterDescriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IgnoreValue" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="IsCaseSensitive" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" minOccurs="0" name="Operator" type="q1:DataFilterOperator" />
+      <xs:element minOccurs="0" name="Parameter" nillable="true" type="tns:DataContract" />
+      <xs:element minOccurs="0" name="PropertyPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataFilterDescriptor" nillable="true" type="tns:DataFilterDescriptor" />
+  <xs:complexType name="DataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataContract" nillable="true" type="tns:DataContract" />
+  <xs:complexType name="SqlConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomAttributes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatabaseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoolSizeMaximum" type="xs:int" />
+      <xs:element minOccurs="0" name="PoolSizeMinimum" type="xs:int" />
+      <xs:element minOccurs="0" name="PoolingEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SqlUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SqlUserPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseTrustedConnection" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SqlConfiguration" nillable="true" type="tns:SqlConfiguration" />
+  <xs:complexType name="ArrayOfDataFilterDescriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataFilterDescriptor" nillable="true" type="tns:DataFilterDescriptor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataFilterDescriptor" nillable="true" type="tns:ArrayOfDataFilterDescriptor" />
+  <xs:complexType name="ArrayOfDataSortDescriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataSortDescriptor" nillable="true" type="tns:DataSortDescriptor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataSortDescriptor" nillable="true" type="tns:ArrayOfDataSortDescriptor" />
+  <xs:complexType name="DataSortDescriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Mercury.Server.Data.Enumerations" minOccurs="0" name="SortDirection" type="q2:DataSortDirection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataSortDescriptor" nillable="true" type="tns:DataSortDescriptor" />
+</xs:schema>

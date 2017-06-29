@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[ServiceAnalysisLabResult] AS SELECT *, ReportedDate AS PaidDate FROM dbo.LabResult

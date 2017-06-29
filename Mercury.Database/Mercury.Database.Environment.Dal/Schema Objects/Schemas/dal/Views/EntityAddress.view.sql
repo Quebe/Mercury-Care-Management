@@ -1,0 +1,1 @@
+﻿CREATE VIEW [dal].[EntityAddress] AS SELECT * FROM dbo.EntityAddress

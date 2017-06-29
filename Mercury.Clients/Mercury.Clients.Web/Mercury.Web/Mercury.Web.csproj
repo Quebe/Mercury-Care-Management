@@ -1,0 +1,1912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ACE36123-EEF3-4EC1-A164-FF851D32101D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mercury.Web</RootNamespace>
+    <AssemblyName>Mercury.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <DeployIisAppPath>Mercury.Client.Web.Web_deploy</DeployIisAppPath>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Telerik.Web.UI, Version=2010.2.929.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for ASP.NET AJAX Q3 2010\Bin40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application\Actions\EntityAddress.aspx" />
+    <Content Include="Application\Actions\EntityContact.aspx" />
+    <Content Include="Application\Actions\EntityNote.aspx" />
+    <Content Include="Application\Actions\EntitySendCorrespondence.aspx" />
+    <Content Include="Application\Application.Master.js" />
+    <Content Include="Application\Common\Image.aspx" />
+    <Content Include="Application\Configuration\Management.aspx" />
+    <Content Include="Application\Configuration\Management.js" />
+    <Content Include="Application\Configuration\PropertyPages\AuthorizedService.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\CareIntervention.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\CareLevel.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\CareMeasure.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\CareMeasureScale.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\CareOutcome.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\CarePlan.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\Condition.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\ConfigurationExport.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\ConfigurationImport.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\ConfigurationImportNcqaNdc.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\ContactRegarding.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\Correspondence.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\FaxServer.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\MedicalServiceSet.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\MedicalServiceSingleton.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\Metric.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\NoteType.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\Population.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\PopulationType.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\Printer.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\ProblemStatement.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\ReportingServer.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\RoutingRule.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\ServiceSet.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\ServiceSingleton.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\WorkOutcome.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\WorkQueue.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\WorkQueueView.aspx" />
+    <Content Include="Application\Controls\EntityAddress.ascx" />
+    <Content Include="Application\Controls\EntityAddressHistory.ascx" />
+    <Content Include="Application\Controls\EntityContact.ascx" />
+    <Content Include="Application\Controls\EntityContactHistory.ascx" />
+    <Content Include="Application\Controls\EntityContactInformationHistory.ascx" />
+    <Content Include="Application\Controls\EntityDocumentHistory.ascx" />
+    <Content Include="Application\Controls\EntityInformationMember.ascx" />
+    <Content Include="Application\Controls\EntityNote.ascx" />
+    <Content Include="Application\Controls\EntityNoteHistory.ascx" />
+    <Content Include="Application\Controls\EntitySendCorrespondence.ascx" />
+    <Content Include="Application\Controls\MemberAuthorizationHistory.ascx" />
+    <Content Include="Application\Controls\MemberAuthorizedServices.ascx" />
+    <Content Include="Application\Controls\MemberCaseView.ascx" />
+    <Content Include="Application\Controls\MemberClaimHistory.ascx" />
+    <Content Include="Application\Controls\MemberDemographics.ascx" />
+    <Content Include="Application\Controls\MemberMetrics.ascx" />
+    <Content Include="Application\Controls\MemberServices.ascx" />
+    <Content Include="Application\Controls\MemberWorkHistory.ascx" />
+    <Content Include="Application\Controls\ProviderAffiliation.ascx" />
+    <Content Include="Application\Controls\ProviderContract.ascx" />
+    <Content Include="Application\Controls\ProviderDemographics.ascx" />
+    <Content Include="Application\Controls\ProviderScheduler.ascx" />
+    <Content Include="Application\Controls\ProviderServiceLocation.ascx" />
+    <Content Include="Application\DataExplorer\DataExplorer.aspx" />
+    <Content Include="Application\DataExplorer\DataExplorerOld.aspx" />
+    <Content Include="Application\DataExplorer\Exports\DataExplorerNodeResultExportMember.aspx" />
+    <Content Include="Application\DataExplorer\Windows\OpenDataExplorerDialog.aspx" />
+    <Content Include="Application\Enterprise\Management.aspx" />
+    <Content Include="Application\Enterprise\Management.js" />
+    <Content Include="Application\Enterprise\Windows\EnterprisePermissionManage.aspx" />
+    <Content Include="Application\Enterprise\Windows\EnvironmentAccessManage.aspx" />
+    <Content Include="Application\Enterprise\Windows\EnvironmentDelete.aspx" />
+    <Content Include="Application\Enterprise\Windows\EnvironmentProperties.aspx" />
+    <Content Include="Application\Enterprise\Windows\EnvironmentRoleProperties.aspx" />
+    <Content Include="Application\Enterprise\Windows\SecurityAuthorityDelete.aspx" />
+    <Content Include="Application\Enterprise\Windows\SecurityAuthorityProperties.aspx" />
+    <Content Include="Application\Enterprise\Windows\SecurityGroupProperties.aspx" />
+    <Content Include="Application\Forms\FormDesigner\Controls\OpenDialog.ascx" />
+    <Content Include="Application\Forms\FormDesigner\FormDesigner.aspx" />
+    <Content Include="Application\Forms\FormDesigner\FormDesigner.js" />
+    <Content Include="Application\Forms\FormDesigner\Scripts\interface.js" />
+    <Content Include="Application\Forms\FormDesigner\Scripts\jquery.js" />
+    <Content Include="Application\Forms\FormDesigner\Styles\EventHandlerEditorContentArea.css" />
+    <Content Include="Application\Forms\FormDesigner\Styles\FormDesigner.css" />
+    <Content Include="Application\Forms\FormDesigner\Windows\EventHandlerEditor.aspx" />
+    <Content Include="Application\Forms\FormDesigner\Windows\FormPreview.aspx" />
+    <Content Include="Application\Forms\FormEditor\DeveloperTools.aspx" />
+    <Content Include="Application\Forms\FormEditor\FormEditor.ascx" />
+    <Content Include="Application\Forms\FormViewer\FormViewer.aspx" />
+    <Content Include="Application\MemberCase\Actions\AddCarePlanGoalIntervention.aspx" />
+    <Content Include="Application\MemberCase\Actions\AddProblemStatement.aspx" />
+    <Content Include="Application\MemberCase\Actions\MemberCaseCarePlanAssessment.aspx" />
+    <Content Include="Application\MemberCase\MemberCase.js" />
+    <Content Include="Application\MemberCase\MemberCase.aspx" />
+    <Content Include="Application\MemberCase\MemberCaseAuditHistory.ascx" />
+    <Content Include="Application\MemberCase\MemberCaseCarePlan.ascx" />
+    <Content Include="Application\MemberCase\MemberCaseCarePlanGoal.ascx" />
+    <Content Include="Application\MemberCase\MemberCaseCarePlanIntervention.ascx" />
+    <Content Include="Application\MemberCase\MemberCaseCarePlanInterventionActivity.ascx" />
+    <Content Include="Application\MemberCase\MemberCaseCarePlanSelected.ascx" />
+    <Content Include="Application\Member\MemberProfile.aspx" />
+    <Content Include="Application\Provider\ProviderProfile.aspx" />
+    <Content Include="Application\Workflow\UserInteractions\ContactEntity.ascx" />
+    <Content Include="Application\Workflow\UserInteractions\OpenImage.ascx" />
+    <Content Include="Application\Workflow\UserInteractions\PromptUser.ascx" />
+    <Content Include="Application\Workflow\UserInteractions\RequireForm.ascx" />
+    <Content Include="Application\Workflow\UserInteractions\SendCorrespondence.ascx" />
+    <Content Include="Application\Workflow\Workflow.aspx" />
+    <Content Include="Application\Workflow\Workflow.js" />
+    <Content Include="Application\Workflow\WorkflowControls\WorkflowSummary.ascx" />
+    <Content Include="Application\Work\ManageWorkQueueGetWork.aspx" />
+    <Content Include="Application\Work\WorkQueueItemDetail.aspx" />
+    <Content Include="Application\Work\WorkQueueManagement.aspx" />
+    <Content Include="Application\Work\WorkQueueMonitor.aspx" />
+    <Content Include="Images\Common16\Accessibility.png" />
+    <Content Include="Images\Common16\Add.png" />
+    <Content Include="Images\Common16\Address.png" />
+    <Content Include="Images\Common16\AddSmall.png" />
+    <Content Include="Images\Common16\ArrowBlueDown.png" />
+    <Content Include="Images\Common16\ArrowBlueUp.png" />
+    <Content Include="Images\Common16\ArrowGreenDown.png" />
+    <Content Include="Images\Common16\ArrowGreenLeft.png" />
+    <Content Include="Images\Common16\ArrowGreenRight.png" />
+    <Content Include="Images\Common16\ArrowGreenUp.png" />
+    <Content Include="Images\Common16\AuthorizedService.png" />
+    <Content Include="Images\Common16\AutomationCompleted.png" />
+    <Content Include="Images\Common16\AutomationCritical.png" />
+    <Content Include="Images\Common16\AutomationNotSpecified.png" />
+    <Content Include="Images\Common16\AutomationOpen.png" />
+    <Content Include="Images\Common16\AutomationWarning.png" />
+    <Content Include="Images\Common16\BooleanOff.png" />
+    <Content Include="Images\Common16\BooleanOff2.png" />
+    <Content Include="Images\Common16\BooleanOn.png" />
+    <Content Include="Images\Common16\BooleanOn2.png" />
+    <Content Include="Images\Common16\Briefcase.png" />
+    <Content Include="Images\Common16\BulletedList.png" />
+    <Content Include="Images\Common16\Bullets.png" />
+    <Content Include="Images\Common16\Button.png" />
+    <Content Include="Images\Common16\ButtonRoundArrowRight.png" />
+    <Content Include="Images\Common16\Calendar.png" />
+    <Content Include="Images\Common16\CareIntervention.png" />
+    <Content Include="Images\Common16\CareLevel.png" />
+    <Content Include="Images\Common16\CareMeasure.png" />
+    <Content Include="Images\Common16\CareMeasurement.png" />
+    <Content Include="Images\Common16\CareMeasurementScale.png" />
+    <Content Include="Images\Common16\CareMeasureScale.png" />
+    <Content Include="Images\Common16\CareOutcome.png" />
+    <Content Include="Images\Common16\CarePlan.png" />
+    <Content Include="Images\Common16\Case.png" />
+    <Content Include="Images\Common16\CaseAdd.png" />
+    <Content Include="Images\Common16\CaseOutcome.png" />
+    <Content Include="Images\Common16\CellPhone.png" />
+    <Content Include="Images\Common16\Check.png" />
+    <Content Include="Images\Common16\CheckBox.png" />
+    <Content Include="Images\Common16\ClearFormatting.png" />
+    <Content Include="Images\Common16\Close.png" />
+    <Content Include="Images\Common16\Collection.png" />
+    <Content Include="Images\Common16\Columns1.png" />
+    <Content Include="Images\Common16\Columns2.png" />
+    <Content Include="Images\Common16\Columns3.png" />
+    <Content Include="Images\Common16\ColumnsLeft.png" />
+    <Content Include="Images\Common16\ColumnsRight.png" />
+    <Content Include="Images\Common16\Compile.png" />
+    <Content Include="Images\Common16\Completed.png" />
+    <Content Include="Images\Common16\Condition.png" />
+    <Content Include="Images\Common16\ConfigurationApplication.png" />
+    <Content Include="Images\Common16\ConfigurationManagement.png" />
+    <Content Include="Images\Common16\Configure.png" />
+    <Content Include="Images\Common16\Copy.png" />
+    <Content Include="Images\Common16\Correspondence.png" />
+    <Content Include="Images\Common16\CorrespondenceReceived.png" />
+    <Content Include="Images\Common16\CorrespondenceSend.png" />
+    <Content Include="Images\Common16\Critical.png" />
+    <Content Include="Images\Common16\Cut.png" />
+    <Content Include="Images\Common16\Database.png" />
+    <Content Include="Images\Common16\DatabaseTable.png" />
+    <Content Include="Images\Common16\DataExplorerEvaluation.png" />
+    <Content Include="Images\Common16\DataExplorerSetComplement.png" />
+    <Content Include="Images\Common16\DataExplorerSetIntersection.png" />
+    <Content Include="Images\Common16\DataExplorerSetNotSpecified.png" />
+    <Content Include="Images\Common16\DataExplorerSetSymmetricDifference.png" />
+    <Content Include="Images\Common16\DataExplorerSetUnion.png" />
+    <Content Include="Images\Common16\DateInput.png" />
+    <Content Include="Images\Common16\DateTime.png" />
+    <Content Include="Images\Common16\Delete.png" />
+    <Content Include="Images\Common16\Desktop.png" />
+    <Content Include="Images\Common16\DirectoryService.png" />
+    <Content Include="Images\Common16\Disallow.png" />
+    <Content Include="Images\Common16\Document.png" />
+    <Content Include="Images\Common16\Document2.png" />
+    <Content Include="Images\Common16\DocumentCollection.png" />
+    <Content Include="Images\Common16\DocumentIn.png" />
+    <Content Include="Images\Common16\DocumentOut.png" />
+    <Content Include="Images\Common16\DocumentProperties.png" />
+    <Content Include="Images\Common16\DocumentRestrict.png" />
+    <Content Include="Images\Common16\DocumentReview.png" />
+    <Content Include="Images\Common16\DocumentSecure.png" />
+    <Content Include="Images\Common16\DocumentStamp.png" />
+    <Content Include="Images\Common16\DropDownList.png" />
+    <Content Include="Images\Common16\Email.png" />
+    <Content Include="Images\Common16\Entity.png" />
+    <Content Include="Images\Common16\EpisodicCareManagement.png" />
+    <Content Include="Images\Common16\ErrorList.png" />
+    <Content Include="Images\Common16\EventLog.png" />
+    <Content Include="Images\Common16\Excel.png" />
+    <Content Include="Images\Common16\Fax.png" />
+    <Content Include="Images\Common16\FaxServer.png" />
+    <Content Include="Images\Common16\FolderClosed.png" />
+    <Content Include="Images\Common16\FolderClosedAccounts.png" />
+    <Content Include="Images\Common16\FolderClosedSecurityShieldOk.png" />
+    <Content Include="Images\Common16\FolderDocument.png" />
+    <Content Include="Images\Common16\FolderExplorer.png" />
+    <Content Include="Images\Common16\FolderNetwork.png" />
+    <Content Include="Images\Common16\FolderNew.png" />
+    <Content Include="Images\Common16\FolderOpen.png" />
+    <Content Include="Images\Common16\FolderOpenedAccounts.png" />
+    <Content Include="Images\Common16\FolderOpenedSecurityShieldOk.png" />
+    <Content Include="Images\Common16\FolderOpenTabs.png" />
+    <Content Include="Images\Common16\Form.png" />
+    <Content Include="Images\Common16\FormDesigner.png" />
+    <Content Include="Images\Common16\Gear.png" />
+    <Content Include="Images\Common16\GearOk.png" />
+    <Content Include="Images\Common16\GearStop.png" />
+    <Content Include="Images\Common16\GearWarn.png" />
+    <Content Include="Images\Common16\GrabBarBlueHorizontal.png" />
+    <Content Include="Images\Common16\GrabBarBlueVertical.png" />
+    <Content Include="Images\Common16\Help.png" />
+    <Content Include="Images\Common16\Image.png" />
+    <Content Include="Images\Common16\IndividualCareManagement.png" />
+    <Content Include="Images\Common16\Information.png" />
+    <Content Include="Images\Common16\Informational.png" />
+    <Content Include="Images\Common16\Informational2.png" />
+    <Content Include="Images\Common16\InformationCircle.png" />
+    <Content Include="Images\Common16\Input.png" />
+    <Content Include="Images\Common16\Journal.png" />
+    <Content Include="Images\Common16\Keys.png" />
+    <Content Include="Images\Common16\Label.png" />
+    <Content Include="Images\Common16\Letter.png" />
+    <Content Include="Images\Common16\Lightning.png" />
+    <Content Include="Images\Common16\LineHeight.png" />
+    <Content Include="Images\Common16\ListBox.png" />
+    <Content Include="Images\Common16\LockKey.png" />
+    <Content Include="Images\Common16\Mercury.png" />
+    <Content Include="Images\Common16\Metric.png" />
+    <Content Include="Images\Common16\MetricAdd.png" />
+    <Content Include="Images\Common16\New.png" />
+    <Content Include="Images\Common16\Note.png" />
+    <Content Include="Images\Common16\Numbering.png" />
+    <Content Include="Images\Common16\Numeric.png" />
+    <Content Include="Images\Common16\Ok.png" />
+    <Content Include="Images\Common16\Open.png" />
+    <Content Include="Images\Common16\Options.png" />
+    <Content Include="Images\Common16\PasteSpecial.png" />
+    <Content Include="Images\Common16\PeopleLock.png" />
+    <Content Include="Images\Common16\PermissionView.png" />
+    <Content Include="Images\Common16\Phone.png" />
+    <Content Include="Images\Common16\PopulationCareManagement.png" />
+    <Content Include="Images\Common16\PopulationType.png" />
+    <Content Include="Images\Common16\Print.png" />
+    <Content Include="Images\Common16\Printer.png" />
+    <Content Include="Images\Common16\PrintPreview.png" />
+    <Content Include="Images\Common16\ProblemStatement.png" />
+    <Content Include="Images\Common16\Properties.png" />
+    <Content Include="Images\Common16\Question2.png" />
+    <Content Include="Images\Common16\QuickPrint.png" />
+    <Content Include="Images\Common16\RadioButton.png" />
+    <Content Include="Images\Common16\Redo.png" />
+    <Content Include="Images\Common16\Redo2.png" />
+    <Content Include="Images\Common16\Refresh.png" />
+    <Content Include="Images\Common16\Repeat.png" />
+    <Content Include="Images\Common16\ReportingConfiguration.png" />
+    <Content Include="Images\Common16\ReportingServer.png" />
+    <Content Include="Images\Common16\RoleClientProfile.png" />
+    <Content Include="Images\Common16\RoutingRule.png" />
+    <Content Include="Images\Common16\RowInsertAfter.png" />
+    <Content Include="Images\Common16\RowInsertBefore.png" />
+    <Content Include="Images\Common16\Ruler.png" />
+    <Content Include="Images\Common16\Save.png" />
+    <Content Include="Images\Common16\SaveAs.png" />
+    <Content Include="Images\Common16\Search.png" />
+    <Content Include="Images\Common16\SearchMember.png" />
+    <Content Include="Images\Common16\Section.png" />
+    <Content Include="Images\Common16\SectionColumn.png" />
+    <Content Include="Images\Common16\SecurityAuthority.png" />
+    <Content Include="Images\Common16\SecurityGroup.png" />
+    <Content Include="Images\Common16\SecurityServer.png" />
+    <Content Include="Images\Common16\SecurityShieldOk.png" />
+    <Content Include="Images\Common16\Selection.png" />
+    <Content Include="Images\Common16\Servers.png" />
+    <Content Include="Images\Common16\Service.png" />
+    <Content Include="Images\Common16\ServiceAdd.png" />
+    <Content Include="Images\Common16\ServiceImport.png" />
+    <Content Include="Images\Common16\ServiceSequence.png" />
+    <Content Include="Images\Common16\ServiceSet.png" />
+    <Content Include="Images\Common16\Set.png" />
+    <Content Include="Images\Common16\Set2.png" />
+    <Content Include="Images\Common16\Set2Complement.png" />
+    <Content Include="Images\Common16\Set2Intersection.png" />
+    <Content Include="Images\Common16\Set2Symmetric.png" />
+    <Content Include="Images\Common16\Set2Union.png" />
+    <Content Include="Images\Common16\Shading.png" />
+    <Content Include="Images\Common16\SortAscending.png" />
+    <Content Include="Images\Common16\SortDescending.png" />
+    <Content Include="Images\Common16\SpellCheck.png" />
+    <Content Include="Images\Common16\Spelling.png" />
+    <Content Include="Images\Common16\StatusCompleted.png" />
+    <Content Include="Images\Common16\StatusCritical.png" />
+    <Content Include="Images\Common16\StatusOk.png" />
+    <Content Include="Images\Common16\StatusWarning.png" />
+    <Content Include="Images\Common16\Stethoscope.png" />
+    <Content Include="Images\Common16\Stop.png" />
+    <Content Include="Images\Common16\Stop2.png" />
+    <Content Include="Images\Common16\Suspend.png" />
+    <Content Include="Images\Common16\Table.png" />
+    <Content Include="Images\Common16\TableColumn.png" />
+    <Content Include="Images\Common16\TableRow.png" />
+    <Content Include="Images\Common16\Text.png" />
+    <Content Include="Images\Common16\TextBox.png" />
+    <Content Include="Images\Common16\TreeViewChildrenCollapsed.png" />
+    <Content Include="Images\Common16\TreeViewChildrenExpanded.png" />
+    <Content Include="Images\Common16\Undefined.png" />
+    <Content Include="Images\Common16\Undo.png" />
+    <Content Include="Images\Common16\UserAccount.png" />
+    <Content Include="Images\Common16\UserAccounts.png" />
+    <Content Include="Images\Common16\UserProfile.png" />
+    <Content Include="Images\Common16\Variable.png" />
+    <Content Include="Images\Common16\VariableDate.png" />
+    <Content Include="Images\Common16\VariableNumeric.png" />
+    <Content Include="Images\Common16\VariableText.png" />
+    <Content Include="Images\Common16\VerticalAlignBottom.png" />
+    <Content Include="Images\Common16\VerticalAlignMiddle.png" />
+    <Content Include="Images\Common16\VerticalAlignTop.png" />
+    <Content Include="Images\Common16\Warn.png" />
+    <Content Include="Images\Common16\Warn2.png" />
+    <Content Include="Images\Common16\Warning.png" />
+    <Content Include="Images\Common16\Widget.png" />
+    <Content Include="Images\Common16\Workflow.png" />
+    <Content Include="Images\Common16\WorkOutcome.png" />
+    <Content Include="Images\Common16\WorkQueue.png" />
+    <Content Include="Images\Common16\WorkQueueItemAdd.png" />
+    <Content Include="Images\Common16\WorkQueueView.png" />
+    <Content Include="Images\Common16\Workspace.png" />
+    <Content Include="Images\Common16\WorkspacePage.png" />
+    <Content Include="Images\Common16\WorkTeam.png" />
+    <Content Include="Images\Common16\Zoom.png" />
+    <Content Include="Images\Common16\ZoomIn.png" />
+    <Content Include="Images\Common16\ZoomOut.png" />
+    <Content Include="Images\Common20\ClearFormatting.png" />
+    <Content Include="Images\Common20\IndentDecrease.png" />
+    <Content Include="Images\Common20\IndentIncrease.png" />
+    <Content Include="Images\Common20\LineHeight.png" />
+    <Content Include="Images\Common20\ParagraphBorderBottom.png" />
+    <Content Include="Images\Common20\ParagraphBorderDashed.png" />
+    <Content Include="Images\Common20\ParagraphBorderDotted.png" />
+    <Content Include="Images\Common20\ParagraphBorderLeft.png" />
+    <Content Include="Images\Common20\ParagraphBorderNone.png" />
+    <Content Include="Images\Common20\ParagraphBorderOutside.png" />
+    <Content Include="Images\Common20\ParagraphBorderRight.png" />
+    <Content Include="Images\Common20\ParagraphBorderSolid.png" />
+    <Content Include="Images\Common20\ParagraphBorderTop.png" />
+    <Content Include="Images\Common20\Shading.png" />
+    <Content Include="Images\Common20\TextAlignCenter.png" />
+    <Content Include="Images\Common20\TextAlignJustify.png" />
+    <Content Include="Images\Common20\TextAlignLeft.png" />
+    <Content Include="Images\Common20\TextAlignRight.png" />
+    <Content Include="Images\Common20\TextBold.png" />
+    <Content Include="Images\Common20\TextItalic.png" />
+    <Content Include="Images\Common20\TextSmallCaps.png" />
+    <Content Include="Images\Common20\TextStrikethrough.png" />
+    <Content Include="Images\Common20\TextSubscript.png" />
+    <Content Include="Images\Common20\TextSubscript2.png" />
+    <Content Include="Images\Common20\TextSuperscript.png" />
+    <Content Include="Images\Common20\TextUnderline.png" />
+    <Content Include="Images\Common20\VerticalAlignBottom.png" />
+    <Content Include="Images\Common20\VerticalAlignMiddle.png" />
+    <Content Include="Images\Common20\VerticalAlignTop.png" />
+    <Content Include="Images\Common24\Accessibility.png" />
+    <Content Include="Images\Common24\Add.png" />
+    <Content Include="Images\Common24\Case.png" />
+    <Content Include="Images\Common24\CaseAdd.png" />
+    <Content Include="Images\Common24\Columns.png" />
+    <Content Include="Images\Common24\Columns1.png" />
+    <Content Include="Images\Common24\Columns2.png" />
+    <Content Include="Images\Common24\Columns3.png" />
+    <Content Include="Images\Common24\ColumnsLeft.png" />
+    <Content Include="Images\Common24\ColumnsRight.png" />
+    <Content Include="Images\Common24\ConfigurationManagement.png" />
+    <Content Include="Images\Common24\Delete.png" />
+    <Content Include="Images\Common24\Desktop.png" />
+    <Content Include="Images\Common24\Doctor.png" />
+    <Content Include="Images\Common24\Document2.png" />
+    <Content Include="Images\Common24\FaxServer.png" />
+    <Content Include="Images\Common24\FolderColorTabbed.gif" />
+    <Content Include="Images\Common24\FolderColorTabbedAdd.Gif" />
+    <Content Include="Images\Common24\FolderColorTabbedBlocked.gif" />
+    <Content Include="Images\Common24\FolderColorTabbedDelete.gif" />
+    <Content Include="Images\Common24\FolderColorTabbedLock.gif" />
+    <Content Include="Images\Common24\FormDesigner.png" />
+    <Content Include="Images\Common24\Gears.png" />
+    <Content Include="Images\Common24\MyAssignedCases.png" />
+    <Content Include="Images\Common24\MyAssignedWork.png" />
+    <Content Include="Images\Common24\MyTeamCases.png" />
+    <Content Include="Images\Common24\NoteCritical.png" />
+    <Content Include="Images\Common24\NoteWarning.png" />
+    <Content Include="Images\Common24\Person.png" />
+    <Content Include="Images\Common24\RoleClientProfile.png" />
+    <Content Include="Images\Common24\Search.png" />
+    <Content Include="Images\Common24\Stop2.png" />
+    <Content Include="Images\Common24\Widget.png" />
+    <Content Include="Images\Common24\WorkQueue.png" />
+    <Content Include="Images\Common24\WorkQueueItem.png" />
+    <Content Include="Images\Common24\Workspace.png" />
+    <Content Include="Images\Common24\WorkspacePage.png" />
+    <Content Include="Images\Common24\WorkspacePageColumn.png" />
+    <Content Include="Images\Common24\WorkspaceReturnTo.png" />
+    <Content Include="Images\Common32\AcceptCalibration.png" />
+    <Content Include="Images\Common32\AcceptQualityControl.png" />
+    <Content Include="Images\Common32\Accessibility.png" />
+    <Content Include="Images\Common32\ActiveDirectory.png" />
+    <Content Include="Images\Common32\ActiveDirectoryPencil.png" />
+    <Content Include="Images\Common32\Add.png" />
+    <Content Include="Images\Common32\Address.png" />
+    <Content Include="Images\Common32\Alarm.png" />
+    <Content Include="Images\Common32\Archive.png" />
+    <Content Include="Images\Common32\AuditEventLog.png" />
+    <Content Include="Images\Common32\AuthorizedService.png" />
+    <Content Include="Images\Common32\BandAid.png" />
+    <Content Include="Images\Common32\Briefcase.png" />
+    <Content Include="Images\Common32\Button.png" />
+    <Content Include="Images\Common32\Calendar %282%29.png" />
+    <Content Include="Images\Common32\Calendar.png" />
+    <Content Include="Images\Common32\CalendarClock.png" />
+    <Content Include="Images\Common32\CareIntervention.png" />
+    <Content Include="Images\Common32\CareLevel.png" />
+    <Content Include="Images\Common32\CareMeasure.png" />
+    <Content Include="Images\Common32\CareMeasurement.png" />
+    <Content Include="Images\Common32\CareMeasurementScale.png" />
+    <Content Include="Images\Common32\CareMeasureScale.png" />
+    <Content Include="Images\Common32\CareOutcome.png" />
+    <Content Include="Images\Common32\CarePlan.png" />
+    <Content Include="Images\Common32\Case.png" />
+    <Content Include="Images\Common32\CellPhone.png" />
+    <Content Include="Images\Common32\Certificate.png" />
+    <Content Include="Images\Common32\CertificateStop.png" />
+    <Content Include="Images\Common32\CertificateWarn.png" />
+    <Content Include="Images\Common32\ClipboardPaste.png" />
+    <Content Include="Images\Common32\Collection.png" />
+    <Content Include="Images\Common32\Columns1.png" />
+    <Content Include="Images\Common32\Columns2.png" />
+    <Content Include="Images\Common32\Columns3.png" />
+    <Content Include="Images\Common32\ColumnsLeft.png" />
+    <Content Include="Images\Common32\ColumnsRight.png" />
+    <Content Include="Images\Common32\Compass.png" />
+    <Content Include="Images\Common32\Compile.png" />
+    <Content Include="Images\Common32\Condition.png" />
+    <Content Include="Images\Common32\ConfigurationApplication.png" />
+    <Content Include="Images\Common32\ConfigurationManagement.png" />
+    <Content Include="Images\Common32\ConfigurationServer.png" />
+    <Content Include="Images\Common32\Configure.png" />
+    <Content Include="Images\Common32\ConfigureOptions.png" />
+    <Content Include="Images\Common32\Correspondence.png" />
+    <Content Include="Images\Common32\CorrespondenceExtendedProperties.png" />
+    <Content Include="Images\Common32\DatabaseConfiguration.png" />
+    <Content Include="Images\Common32\DefinedParameters.png" />
+    <Content Include="Images\Common32\Delete %282%29.png" />
+    <Content Include="Images\Common32\Delete.png" />
+    <Content Include="Images\Common32\Desktop.png" />
+    <Content Include="Images\Common32\DirectorySearch.png" />
+    <Content Include="Images\Common32\DoctorFemale.png" />
+    <Content Include="Images\Common32\DoctorMale.png" />
+    <Content Include="Images\Common32\Document.png" />
+    <Content Include="Images\Common32\Document2.png" />
+    <Content Include="Images\Common32\Document2DatabaseTable.png" />
+    <Content Include="Images\Common32\Document2Preview.png" />
+    <Content Include="Images\Common32\DocumentCollection.png" />
+    <Content Include="Images\Common32\DocumentDesigner.png" />
+    <Content Include="Images\Common32\DocumentExport.png" />
+    <Content Include="Images\Common32\DocumentImport.png" />
+    <Content Include="Images\Common32\DocumentSet.png" />
+    <Content Include="Images\Common32\DocumentSetStop.png" />
+    <Content Include="Images\Common32\DocumentSetWarn.png" />
+    <Content Include="Images\Common32\Domain.png" />
+    <Content Include="Images\Common32\DropZone.png" />
+    <Content Include="Images\Common32\DutyRoster.png" />
+    <Content Include="Images\Common32\Edit.png" />
+    <Content Include="Images\Common32\EnterpriseManagement.png" />
+    <Content Include="Images\Common32\Entity.png" />
+    <Content Include="Images\Common32\Envelope.png" />
+    <Content Include="Images\Common32\EpisodicCareManagement.png" />
+    <Content Include="Images\Common32\EventLog.png" />
+    <Content Include="Images\Common32\Exception.png" />
+    <Content Include="Images\Common32\Export.png" />
+    <Content Include="Images\Common32\FaxServer.png" />
+    <Content Include="Images\Common32\FileCabinet.png" />
+    <Content Include="Images\Common32\Filter.png" />
+    <Content Include="Images\Common32\FirstAidKit.png" />
+    <Content Include="Images\Common32\FolderClose.png" />
+    <Content Include="Images\Common32\FolderDirectory.png" />
+    <Content Include="Images\Common32\FolderMove.png" />
+    <Content Include="Images\Common32\FolderOpen.png" />
+    <Content Include="Images\Common32\FolderOpenTabs.png" />
+    <Content Include="Images\Common32\Form.png" />
+    <Content Include="Images\Common32\FormDesigner.png" />
+    <Content Include="Images\Common32\Gears.png" />
+    <Content Include="Images\Common32\Help.png" />
+    <Content Include="Images\Common32\History.png" />
+    <Content Include="Images\Common32\Hospital.png" />
+    <Content Include="Images\Common32\ImportNcqaNdc.png" />
+    <Content Include="Images\Common32\IndividualCareManagement.png" />
+    <Content Include="Images\Common32\Information.png" />
+    <Content Include="Images\Common32\Information3.png" />
+    <Content Include="Images\Common32\Informational.png" />
+    <Content Include="Images\Common32\Informational2.png" />
+    <Content Include="Images\Common32\Input.png" />
+    <Content Include="Images\Common32\Insurer.png" />
+    <Content Include="Images\Common32\InsurerConfiguration.png" />
+    <Content Include="Images\Common32\Journal.png" />
+    <Content Include="Images\Common32\Keys.png" />
+    <Content Include="Images\Common32\KidneyDish.png" />
+    <Content Include="Images\Common32\Label.png" />
+    <Content Include="Images\Common32\LastThreeMonths.png" />
+    <Content Include="Images\Common32\Letter.png" />
+    <Content Include="Images\Common32\Mercury.png" />
+    <Content Include="Images\Common32\Metric.png" />
+    <Content Include="Images\Common32\MicrosoftWord.gif" />
+    <Content Include="Images\Common32\MyAssignedCases.png" />
+    <Content Include="Images\Common32\MyAssignedWork.png" />
+    <Content Include="Images\Common32\MyTeamCases.png" />
+    <Content Include="Images\Common32\New.png" />
+    <Content Include="Images\Common32\Note.png" />
+    <Content Include="Images\Common32\Notepad.gif" />
+    <Content Include="Images\Common32\NotepadPen.gif" />
+    <Content Include="Images\Common32\Ok.png" />
+    <Content Include="Images\Common32\PatientData.png" />
+    <Content Include="Images\Common32\PatientFemale.png" />
+    <Content Include="Images\Common32\PatientFile.png" />
+    <Content Include="Images\Common32\PatientMale.png" />
+    <Content Include="Images\Common32\People.png" />
+    <Content Include="Images\Common32\PeopleLock.png" />
+    <Content Include="Images\Common32\PermissionDenied.png" />
+    <Content Include="Images\Common32\Person.png" />
+    <Content Include="Images\Common32\Phone.png" />
+    <Content Include="Images\Common32\Pills.png" />
+    <Content Include="Images\Common32\PointerDown.png" />
+    <Content Include="Images\Common32\PointerRight.png" />
+    <Content Include="Images\Common32\Policy.png" />
+    <Content Include="Images\Common32\PolicyApplication.png" />
+    <Content Include="Images\Common32\PolicyConfigure.png" />
+    <Content Include="Images\Common32\PolicyServer.png" />
+    <Content Include="Images\Common32\PolicyStop.png" />
+    <Content Include="Images\Common32\PolicyWarn.png" />
+    <Content Include="Images\Common32\PopulationCareManagement.png" />
+    <Content Include="Images\Common32\PopulationCareManagementActivityEvent.png" />
+    <Content Include="Images\Common32\PopulationCareManagementCriteria.png" />
+    <Content Include="Images\Common32\PopulationCareManagementEvent.png" />
+    <Content Include="Images\Common32\PopulationCareManagementExtendedProperties.png" />
+    <Content Include="Images\Common32\PopulationCareManagementPreview.png" />
+    <Content Include="Images\Common32\PopulationCareManagementServiceEvent.png" />
+    <Content Include="Images\Common32\PopulationCareManagementTriggerEvent.png" />
+    <Content Include="Images\Common32\PopulationType.png" />
+    <Content Include="Images\Common32\Prescription.png" />
+    <Content Include="Images\Common32\Printer.png" />
+    <Content Include="Images\Common32\PrinterSettings.png" />
+    <Content Include="Images\Common32\PrintPreview.png" />
+    <Content Include="Images\Common32\ProblemStatement.png" />
+    <Content Include="Images\Common32\Question.png" />
+    <Content Include="Images\Common32\Question2.png" />
+    <Content Include="Images\Common32\Radioactive.png" />
+    <Content Include="Images\Common32\Redo.png" />
+    <Content Include="Images\Common32\Refresh.png" />
+    <Content Include="Images\Common32\RejectCalibration.png" />
+    <Content Include="Images\Common32\RejectQualityControl.png" />
+    <Content Include="Images\Common32\ReportingConfiguration.png" />
+    <Content Include="Images\Common32\ReportingServer.png" />
+    <Content Include="Images\Common32\RerunCalibration.png" />
+    <Content Include="Images\Common32\RerunQualityControl.png" />
+    <Content Include="Images\Common32\RoleClientProfile.png" />
+    <Content Include="Images\Common32\RoutingRule.png" />
+    <Content Include="Images\Common32\RoutingRuleChecked.png" />
+    <Content Include="Images\Common32\Ruler.png" />
+    <Content Include="Images\Common32\RunCalibration.png" />
+    <Content Include="Images\Common32\Save %282%29.png" />
+    <Content Include="Images\Common32\Save.png" />
+    <Content Include="Images\Common32\SaveAs.png" />
+    <Content Include="Images\Common32\Schedule.png" />
+    <Content Include="Images\Common32\Scheduling.png" />
+    <Content Include="Images\Common32\Search %282%29.png" />
+    <Content Include="Images\Common32\Search.png" />
+    <Content Include="Images\Common32\SearchMember.png" />
+    <Content Include="Images\Common32\SearchWarning.png" />
+    <Content Include="Images\Common32\Section.png" />
+    <Content Include="Images\Common32\SectionBreakContinuous.png" />
+    <Content Include="Images\Common32\SectionColumn.png" />
+    <Content Include="Images\Common32\SecurityServer.png" />
+    <Content Include="Images\Common32\SecurityShieldOk.png" />
+    <Content Include="Images\Common32\SecurityShieldWarn.png" />
+    <Content Include="Images\Common32\Select.png" />
+    <Content Include="Images\Common32\Selection.png" />
+    <Content Include="Images\Common32\SelectionControls.png" />
+    <Content Include="Images\Common32\Server.png" />
+    <Content Include="Images\Common32\ServerConfiguration.png" />
+    <Content Include="Images\Common32\ServerEnvironment.png" />
+    <Content Include="Images\Common32\ServerEnvironmentAdd.png" />
+    <Content Include="Images\Common32\ServerEnvironmentRemove.png" />
+    <Content Include="Images\Common32\ServerPolicy.png" />
+    <Content Include="Images\Common32\Servers.png" />
+    <Content Include="Images\Common32\ServersNetwork.png" />
+    <Content Include="Images\Common32\Service.png" />
+    <Content Include="Images\Common32\ServiceSequence.png" />
+    <Content Include="Images\Common32\Set2.png" />
+    <Content Include="Images\Common32\Signature.png" />
+    <Content Include="Images\Common32\SignatureStop.png" />
+    <Content Include="Images\Common32\SignatureWarn.png" />
+    <Content Include="Images\Common32\SignatureWithHand.png" />
+    <Content Include="Images\Common32\Skalpell.png" />
+    <Content Include="Images\Common32\Stethoscope.png" />
+    <Content Include="Images\Common32\Stop.png" />
+    <Content Include="Images\Common32\Stop2.png" />
+    <Content Include="Images\Common32\StopWatch.png" />
+    <Content Include="Images\Common32\Suspend.png" />
+    <Content Include="Images\Common32\Syringe.png" />
+    <Content Include="Images\Common32\Table.png" />
+    <Content Include="Images\Common32\TableColumn.png" />
+    <Content Include="Images\Common32\TableRow.png" />
+    <Content Include="Images\Common32\Tabs.png" />
+    <Content Include="Images\Common32\Task.png" />
+    <Content Include="Images\Common32\Telephone.png" />
+    <Content Include="Images\Common32\TestTubes.png" />
+    <Content Include="Images\Common32\Text.png" />
+    <Content Include="Images\Common32\TextBox.png" />
+    <Content Include="Images\Common32\Thermometer.png" />
+    <Content Include="Images\Common32\Tooth.png" />
+    <Content Include="Images\Common32\User.png" />
+    <Content Include="Images\Common32\UserProfile.png" />
+    <Content Include="Images\Common32\UserProfiles.png" />
+    <Content Include="Images\Common32\UserProfilesFolder.png" />
+    <Content Include="Images\Common32\Users.png" />
+    <Content Include="Images\Common32\UserSetup.png" />
+    <Content Include="Images\Common32\Vial-O.png" />
+    <Content Include="Images\Common32\Vial-Pills.png" />
+    <Content Include="Images\Common32\Vial-X.png" />
+    <Content Include="Images\Common32\Warn2.png" />
+    <Content Include="Images\Common32\Widget.png" />
+    <Content Include="Images\Common32\WidgetAdd.png" />
+    <Content Include="Images\Common32\WidgetConfigure.png" />
+    <Content Include="Images\Common32\WidgetRemove.png" />
+    <Content Include="Images\Common32\Windows.png" />
+    <Content Include="Images\Common32\Workflow.png" />
+    <Content Include="Images\Common32\WorkflowAssembly.png" />
+    <Content Include="Images\Common32\WorkflowExtendedProperties.png" />
+    <Content Include="Images\Common32\WorkflowParameters.png" />
+    <Content Include="Images\Common32\WorkflowPermissions.png" />
+    <Content Include="Images\Common32\WorkOutcome.png" />
+    <Content Include="Images\Common32\WorkQueue.png" />
+    <Content Include="Images\Common32\WorkQueueExtendedProperties.png" />
+    <Content Include="Images\Common32\WorkQueueTeams.png" />
+    <Content Include="Images\Common32\WorkQueueView.png" />
+    <Content Include="Images\Common32\Workspace.png" />
+    <Content Include="Images\Common32\WorkspacePage.png" />
+    <Content Include="Images\Common32\WorkspaceReturnTo.png" />
+    <Content Include="Images\Common32\WorkTeam.png" />
+    <Content Include="Images\Common32\XRay.png" />
+    <Content Include="Images\Misc\Loading.gif" />
+    <Content Include="Images\Misc\LoadingProgressBar.gif" />
+    <Content Include="Images\SkinOffice2007\BackgroundBar1.png" />
+    <Content Include="Images\SkinOffice2007\BackgroundBar2.png" />
+    <Content Include="Images\SkinOffice2007\BackgroundBar3.png" />
+    <Content Include="Images\SkinOffice2007\BackgroundBar4.png" />
+    <Content Include="Images\SkinOffice2007\ButtonEmpty.png" />
+    <Content Include="Images\SkinOffice2007\ButtonEmptyHover.png" />
+    <Content Include="Images\SkinOffice2007\ButtonFirst.png" />
+    <Content Include="Images\SkinOffice2007\ButtonFirstHover.png" />
+    <Content Include="Images\SkinOffice2007\ButtonLast.png" />
+    <Content Include="Images\SkinOffice2007\ButtonLastHover.png" />
+    <Content Include="Images\SkinOffice2007\ButtonNext.png" />
+    <Content Include="Images\SkinOffice2007\ButtonNextHover.png" />
+    <Content Include="Images\SkinOffice2007\ButtonPrevious.png" />
+    <Content Include="Images\SkinOffice2007\ButtonPreviousHover.png" />
+    <Content Include="Images\TelerikSkins\gridOffice2007sprite.gif" />
+    <Content Include="Styles\PagerOffice2007.css" />
+    <Content Include="Styles\PropertyPage.css" />
+    <Content Include="Application\Configuration\PropertyPages\Workflow.aspx" />
+    <Content Include="Application\Configuration\PropertyPages\WorkTeam.aspx" />
+    <Content Include="Application\PermissionDenied.aspx" />
+    <Content Include="Application\Workspace\Workspace.aspx" />
+    <Content Include="Application\Workspace\Workspace.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Styles\Global.css" />
+    <Content Include="Images\Backgrounds\background_fade_blue.jpg" />
+    <Content Include="Images\Misc\logon_keys.gif" />
+    <Content Include="Images\Misc\logon_lockbang.gif" />
+    <Content Include="Images\Misc\requirements_cookies_icon64.jpg" />
+    <Content Include="Images\Misc\requirements_firefox_icon32.jpg" />
+    <Content Include="Images\Misc\requirements_firefox_icon64.jpg" />
+    <Content Include="Images\Misc\requirements_ie_icon32.jpg" />
+    <Content Include="Images\Misc\requirements_ie_icon64.jpg" />
+    <Content Include="Images\Misc\requirements_javascript_icon64.jpg" />
+    <Content Include="Images\Misc\requirements_popup_icon64.jpg" />
+    <Content Include="LogOff.aspx" />
+    <Content Include="OpenApplication.aspx" />
+    <Content Include="PermissionDenied.aspx" />
+    <Content Include="SessionExpired.aspx" />
+    <Content Include="Styles\RadTabStripBasic.css" />
+    <Content Include="Styles\RadStaticPagerOffice2007.css" />
+    <Content Include="Tour\Introduction.ascx" />
+    <Content Include="Tour\Overview\Images\NavigationMenu01.png" />
+    <Content Include="Tour\Overview\NavigationHome.ascx" />
+    <Content Include="Tour\Overview\NavigationLogout.ascx" />
+    <Content Include="Tour\Overview\NavigationMenu.ascx" />
+    <Content Include="Tour\Overview\NavigationSearch.ascx" />
+    <Content Include="Tour\WorkQueueManagement\Images\Checkbox_Checked.png" />
+    <Content Include="Tour\WorkQueueManagement\Images\Checkbox_Indeterminate.png" />
+    <Content Include="Tour\WorkQueueManagement\Images\Checkbox_Unchecked.png" />
+    <Content Include="Tour\WorkQueueManagement\Images\Filters.png" />
+    <Content Include="Tour\WorkQueueManagement\Introduction.ascx" />
+    <Content Include="Tour\WorkQueueManagement\WorkQueueFilters.ascx" />
+    <Content Include="Tour\WorkQueueManagement\WorkQueueItemGrid.ascx" />
+    <Content Include="Tour\WorkQueueManagement\WorkQueueItemGridColumns.ascx" />
+    <Content Include="Tour\WorkQueueManagement\WorkQueueItemGridColumns2.ascx" />
+    <Content Include="Tour\WorkQueueManagement\WorkQueueItemGridCount.ascx" />
+    <Content Include="Tour\WorkQueueManagement\WorkQueueItemGridRefresh.ascx" />
+    <Content Include="Tour\WorkQueueManagement\WorkQueueItemGridSenders.ascx" />
+    <Content Include="Tour\WorkQueueManagement\WorkQueueSelection.ascx" />
+    <Content Include="Tour\WorkQueueManagement\WorkQueueViewSelection.ascx" />
+    <Content Include="Tour\WorkQueueMonitor\Introduction.ascx" />
+    <Content Include="Tour\WorkQueueMonitor\WorkQueueMonitorAgingChart.ascx" />
+    <Content Include="Tour\WorkQueueMonitor\WorkQueueMonitorSummary.ascx" />
+    <Content Include="Tour\Workspace\Images\MyAssignedWorkGridCollapsed.png" />
+    <Content Include="Tour\Workspace\Images\MyAssignedWorkGridExpanded.png" />
+    <Content Include="Tour\Workspace\Introduction.ascx" />
+    <Content Include="Tour\Workspace\MyAssignedWork.ascx" />
+    <Content Include="Tour\Workspace\MyAssignedWorkGridColumns.ascx" />
+    <Content Include="Tour\Workspace\MyAssignedWorkGridColumns2.ascx" />
+    <Content Include="Tour\Workspace\MyAssignedWorkGridSenders.ascx" />
+    <Content Include="Tour\Workspace\MyAssignedWorkRefresh.ascx" />
+    <Content Include="Tour\Workspace\MyWorkQueuesCount.ascx" />
+    <Content Include="Tour\Workspace\MyWorkQueuesGetWork.ascx" />
+    <Content Include="Tour\Workspace\MyWorkQueuesManage.ascx" />
+    <Content Include="Tour\Workspace\MyWorkQueuesMonitor.ascx" />
+    <Content Include="Tour\Workspace\MyWorkQueuesSelection.ascx" />
+    <Content Include="Tour\Workspace\Images\MyAssignedWorkGridPager.png" />
+    <Content Include="UserSessionInformation.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WindowClose.aspx" />
+    <Content Include="WindowCloseDialog.aspx" />
+    <Content Include="WindowLoading.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\Actions\EntityAddress.aspx.cs">
+      <DependentUpon>EntityAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Actions\EntityAddress.aspx.designer.cs">
+      <DependentUpon>EntityAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Actions\EntityContact.aspx.cs">
+      <DependentUpon>EntityContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Actions\EntityContact.aspx.designer.cs">
+      <DependentUpon>EntityContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Actions\EntityNote.aspx.cs">
+      <DependentUpon>EntityNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Actions\EntityNote.aspx.designer.cs">
+      <DependentUpon>EntityNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Actions\EntitySendCorrespondence.aspx.cs">
+      <DependentUpon>EntitySendCorrespondence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Actions\EntitySendCorrespondence.aspx.designer.cs">
+      <DependentUpon>EntitySendCorrespondence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Application.Master.cs">
+      <DependentUpon>Application.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Application.Master.designer.cs">
+      <DependentUpon>Application.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Common\Image.aspx.cs">
+      <DependentUpon>Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Common\Image.aspx.designer.cs">
+      <DependentUpon>Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\AuthorizedService.aspx.cs">
+      <DependentUpon>AuthorizedService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\AuthorizedService.aspx.designer.cs">
+      <DependentUpon>AuthorizedService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareIntervention.aspx.cs">
+      <DependentUpon>CareIntervention.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareIntervention.aspx.designer.cs">
+      <DependentUpon>CareIntervention.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareLevel.aspx.cs">
+      <DependentUpon>CareLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareLevel.aspx.designer.cs">
+      <DependentUpon>CareLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareMeasure.aspx.cs">
+      <DependentUpon>CareMeasure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareMeasure.aspx.designer.cs">
+      <DependentUpon>CareMeasure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareMeasureScale.aspx.cs">
+      <DependentUpon>CareMeasureScale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareMeasureScale.aspx.designer.cs">
+      <DependentUpon>CareMeasureScale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareOutcome.aspx.cs">
+      <DependentUpon>CareOutcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CareOutcome.aspx.designer.cs">
+      <DependentUpon>CareOutcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CarePlan.aspx.cs">
+      <DependentUpon>CarePlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\CarePlan.aspx.designer.cs">
+      <DependentUpon>CarePlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Condition.aspx.cs">
+      <DependentUpon>Condition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Condition.aspx.designer.cs">
+      <DependentUpon>Condition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ConfigurationExport.aspx.cs">
+      <DependentUpon>ConfigurationExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ConfigurationExport.aspx.designer.cs">
+      <DependentUpon>ConfigurationExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ConfigurationImport.aspx.cs">
+      <DependentUpon>ConfigurationImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ConfigurationImport.aspx.designer.cs">
+      <DependentUpon>ConfigurationImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ConfigurationImportNcqaNdc.aspx.cs">
+      <DependentUpon>ConfigurationImportNcqaNdc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ConfigurationImportNcqaNdc.aspx.designer.cs">
+      <DependentUpon>ConfigurationImportNcqaNdc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ContactRegarding.aspx.cs">
+      <DependentUpon>ContactRegarding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ContactRegarding.aspx.designer.cs">
+      <DependentUpon>ContactRegarding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Correspondence.aspx.cs">
+      <DependentUpon>Correspondence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Correspondence.aspx.designer.cs">
+      <DependentUpon>Correspondence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\FaxServer.aspx.cs">
+      <DependentUpon>FaxServer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\FaxServer.aspx.designer.cs">
+      <DependentUpon>FaxServer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\MedicalServiceSet.aspx.cs">
+      <DependentUpon>MedicalServiceSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\MedicalServiceSet.aspx.designer.cs">
+      <DependentUpon>MedicalServiceSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\MedicalServiceSingleton.aspx.cs">
+      <DependentUpon>MedicalServiceSingleton.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\MedicalServiceSingleton.aspx.designer.cs">
+      <DependentUpon>MedicalServiceSingleton.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Metric.aspx.cs">
+      <DependentUpon>Metric.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Metric.aspx.designer.cs">
+      <DependentUpon>Metric.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\NoteType.aspx.cs">
+      <DependentUpon>NoteType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\NoteType.aspx.designer.cs">
+      <DependentUpon>NoteType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Population.aspx.cs">
+      <DependentUpon>Population.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Population.aspx.designer.cs">
+      <DependentUpon>Population.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\PopulationType.aspx.cs">
+      <DependentUpon>PopulationType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\PopulationType.aspx.designer.cs">
+      <DependentUpon>PopulationType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Printer.aspx.cs">
+      <DependentUpon>Printer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Printer.aspx.designer.cs">
+      <DependentUpon>Printer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ProblemStatement.aspx.cs">
+      <DependentUpon>ProblemStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ProblemStatement.aspx.designer.cs">
+      <DependentUpon>ProblemStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ReportingServer.aspx.cs">
+      <DependentUpon>ReportingServer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ReportingServer.aspx.designer.cs">
+      <DependentUpon>ReportingServer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\RoutingRule.aspx.cs">
+      <DependentUpon>RoutingRule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\RoutingRule.aspx.designer.cs">
+      <DependentUpon>RoutingRule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ServiceSet.aspx.cs">
+      <DependentUpon>ServiceSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ServiceSet.aspx.designer.cs">
+      <DependentUpon>ServiceSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ServiceSingleton.aspx.cs">
+      <DependentUpon>ServiceSingleton.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\ServiceSingleton.aspx.designer.cs">
+      <DependentUpon>ServiceSingleton.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Workflow.aspx.cs">
+      <DependentUpon>Workflow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\Workflow.aspx.designer.cs">
+      <DependentUpon>Workflow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\WorkOutcome.aspx.cs">
+      <DependentUpon>WorkOutcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\WorkOutcome.aspx.designer.cs">
+      <DependentUpon>WorkOutcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\WorkQueue.aspx.cs">
+      <DependentUpon>WorkQueue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\WorkQueue.aspx.designer.cs">
+      <DependentUpon>WorkQueue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\WorkQueueView.aspx.cs">
+      <DependentUpon>WorkQueueView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\WorkQueueView.aspx.designer.cs">
+      <DependentUpon>WorkQueueView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\WorkTeam.aspx.cs">
+      <DependentUpon>WorkTeam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Configuration\PropertyPages\WorkTeam.aspx.designer.cs">
+      <DependentUpon>WorkTeam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntityAddress.ascx.cs">
+      <DependentUpon>EntityAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntityAddress.ascx.designer.cs">
+      <DependentUpon>EntityAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntityAddressHistory.ascx.cs">
+      <DependentUpon>EntityAddressHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntityAddressHistory.ascx.designer.cs">
+      <DependentUpon>EntityAddressHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntityContact.ascx.cs">
+      <DependentUpon>EntityContact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntityContact.ascx.designer.cs">
+      <DependentUpon>EntityContact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntityContactHistory.ascx.cs">
+      <DependentUpon>EntityContactHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntityContactHistory.ascx.designer.cs">
+      <DependentUpon>EntityContactHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntityContactInformationHistory.ascx.cs">
+      <DependentUpon>EntityContactInformationHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntityContactInformationHistory.ascx.designer.cs">
+      <DependentUpon>EntityContactInformationHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntityDocumentHistory.ascx.cs">
+      <DependentUpon>EntityDocumentHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntityDocumentHistory.ascx.designer.cs">
+      <DependentUpon>EntityDocumentHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntityInformationMember.ascx.cs">
+      <DependentUpon>EntityInformationMember.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntityInformationMember.ascx.designer.cs">
+      <DependentUpon>EntityInformationMember.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntityNote.ascx.cs">
+      <DependentUpon>EntityNote.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntityNote.ascx.designer.cs">
+      <DependentUpon>EntityNote.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntityNoteHistory.ascx.cs">
+      <DependentUpon>EntityNoteHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntityNoteHistory.ascx.designer.cs">
+      <DependentUpon>EntityNoteHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\EntitySendCorrespondence.ascx.cs">
+      <DependentUpon>EntitySendCorrespondence.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\EntitySendCorrespondence.ascx.designer.cs">
+      <DependentUpon>EntitySendCorrespondence.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\MemberAuthorizationHistory.ascx.cs">
+      <DependentUpon>MemberAuthorizationHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\MemberAuthorizationHistory.ascx.designer.cs">
+      <DependentUpon>MemberAuthorizationHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\MemberAuthorizedServices.ascx.cs">
+      <DependentUpon>MemberAuthorizedServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\MemberAuthorizedServices.ascx.designer.cs">
+      <DependentUpon>MemberAuthorizedServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\MemberCaseView.ascx.cs">
+      <DependentUpon>MemberCaseView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\MemberCaseView.ascx.designer.cs">
+      <DependentUpon>MemberCaseView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\MemberClaimHistory.ascx.cs">
+      <DependentUpon>MemberClaimHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\MemberClaimHistory.ascx.designer.cs">
+      <DependentUpon>MemberClaimHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\MemberDemographics.ascx.cs">
+      <DependentUpon>MemberDemographics.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\MemberDemographics.ascx.designer.cs">
+      <DependentUpon>MemberDemographics.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\MemberMetrics.ascx.cs">
+      <DependentUpon>MemberMetrics.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\MemberMetrics.ascx.designer.cs">
+      <DependentUpon>MemberMetrics.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\MemberServices.ascx.cs">
+      <DependentUpon>MemberServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\MemberServices.ascx.designer.cs">
+      <DependentUpon>MemberServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\MemberWorkHistory.ascx.cs">
+      <DependentUpon>MemberWorkHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\MemberWorkHistory.ascx.designer.cs">
+      <DependentUpon>MemberWorkHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderAffiliation.ascx.cs">
+      <DependentUpon>ProviderAffiliation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderAffiliation.ascx.designer.cs">
+      <DependentUpon>ProviderAffiliation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderContract.ascx.cs">
+      <DependentUpon>ProviderContract.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderContract.ascx.designer.cs">
+      <DependentUpon>ProviderContract.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderDemographics.ascx.cs">
+      <DependentUpon>ProviderDemographics.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderDemographics.ascx.designer.cs">
+      <DependentUpon>ProviderDemographics.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderScheduler.ascx.cs">
+      <DependentUpon>ProviderScheduler.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderScheduler.ascx.designer.cs">
+      <DependentUpon>ProviderScheduler.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderServiceLocation.ascx.cs">
+      <DependentUpon>ProviderServiceLocation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Controls\ProviderServiceLocation.ascx.designer.cs">
+      <DependentUpon>ProviderServiceLocation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\DataExplorer\DataExplorer.aspx.cs">
+      <DependentUpon>DataExplorer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\DataExplorer\DataExplorer.aspx.designer.cs">
+      <DependentUpon>DataExplorer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\DataExplorer\DataExplorerOld.aspx.cs">
+      <DependentUpon>DataExplorerOld.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\DataExplorer\DataExplorerOld.aspx.designer.cs">
+      <DependentUpon>DataExplorerOld.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\DataExplorer\Exports\DataExplorerNodeResultExportMember.aspx.cs">
+      <DependentUpon>DataExplorerNodeResultExportMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\DataExplorer\Exports\DataExplorerNodeResultExportMember.aspx.designer.cs">
+      <DependentUpon>DataExplorerNodeResultExportMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\DataExplorer\Windows\OpenDataExplorerDialog.aspx.cs">
+      <DependentUpon>OpenDataExplorerDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\DataExplorer\Windows\OpenDataExplorerDialog.aspx.designer.cs">
+      <DependentUpon>OpenDataExplorerDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Enterprise\Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Enterprise\Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnterprisePermissionManage.aspx.cs">
+      <DependentUpon>EnterprisePermissionManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnterprisePermissionManage.aspx.designer.cs">
+      <DependentUpon>EnterprisePermissionManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnvironmentAccessManage.aspx.cs">
+      <DependentUpon>EnvironmentAccessManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnvironmentAccessManage.aspx.designer.cs">
+      <DependentUpon>EnvironmentAccessManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnvironmentDelete.aspx.cs">
+      <DependentUpon>EnvironmentDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnvironmentDelete.aspx.designer.cs">
+      <DependentUpon>EnvironmentDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnvironmentProperties.aspx.cs">
+      <DependentUpon>EnvironmentProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnvironmentProperties.aspx.designer.cs">
+      <DependentUpon>EnvironmentProperties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnvironmentRoleProperties.aspx.cs">
+      <DependentUpon>EnvironmentRoleProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\EnvironmentRoleProperties.aspx.designer.cs">
+      <DependentUpon>EnvironmentRoleProperties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\SecurityAuthorityDelete.aspx.cs">
+      <DependentUpon>SecurityAuthorityDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\SecurityAuthorityDelete.aspx.designer.cs">
+      <DependentUpon>SecurityAuthorityDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\SecurityAuthorityProperties.aspx.cs">
+      <DependentUpon>SecurityAuthorityProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\SecurityAuthorityProperties.aspx.designer.cs">
+      <DependentUpon>SecurityAuthorityProperties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\SecurityGroupProperties.aspx.cs">
+      <DependentUpon>SecurityGroupProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Enterprise\Windows\SecurityGroupProperties.aspx.designer.cs">
+      <DependentUpon>SecurityGroupProperties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\FormDesigner\Controls\OpenDialog.ascx.cs">
+      <DependentUpon>OpenDialog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\FormDesigner\Controls\OpenDialog.ascx.designer.cs">
+      <DependentUpon>OpenDialog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\FormDesigner\FormDesigner.aspx.cs">
+      <DependentUpon>FormDesigner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\FormDesigner\FormDesigner.aspx.designer.cs">
+      <DependentUpon>FormDesigner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\FormDesigner\Windows\EventHandlerEditor.aspx.cs">
+      <DependentUpon>EventHandlerEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\FormDesigner\Windows\EventHandlerEditor.aspx.designer.cs">
+      <DependentUpon>EventHandlerEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\FormDesigner\Windows\FormPreview.aspx.cs">
+      <DependentUpon>FormPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\FormDesigner\Windows\FormPreview.aspx.designer.cs">
+      <DependentUpon>FormPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\FormEditor\DeveloperTools.aspx.cs">
+      <DependentUpon>DeveloperTools.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\FormEditor\DeveloperTools.aspx.designer.cs">
+      <DependentUpon>DeveloperTools.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\FormEditor\EntityControlMemberHeaderTemplate.cs" />
+    <Compile Include="Application\Forms\FormEditor\EntityControlMemberItemTemplate.cs" />
+    <Compile Include="Application\Forms\FormEditor\EntityControlProviderHeaderTemplate.cs" />
+    <Compile Include="Application\Forms\FormEditor\EntityControlProviderItemTemplate.cs" />
+    <Compile Include="Application\Forms\FormEditor\FormEditor.ascx.cs">
+      <DependentUpon>FormEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\FormEditor\FormEditor.ascx.designer.cs">
+      <DependentUpon>FormEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\FormRenderEngine.cs" />
+    <Compile Include="Application\Forms\FormViewer\FormViewer.aspx.cs">
+      <DependentUpon>FormViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\FormViewer\FormViewer.aspx.designer.cs">
+      <DependentUpon>FormViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\Actions\AddCarePlanGoalIntervention.aspx.cs">
+      <DependentUpon>AddCarePlanGoalIntervention.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\Actions\AddCarePlanGoalIntervention.aspx.designer.cs">
+      <DependentUpon>AddCarePlanGoalIntervention.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\Actions\AddProblemStatement.aspx.cs">
+      <DependentUpon>AddProblemStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\Actions\AddProblemStatement.aspx.designer.cs">
+      <DependentUpon>AddProblemStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\Actions\MemberCaseCarePlanAssessment.aspx.cs">
+      <DependentUpon>MemberCaseCarePlanAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\Actions\MemberCaseCarePlanAssessment.aspx.designer.cs">
+      <DependentUpon>MemberCaseCarePlanAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCase.aspx.cs">
+      <DependentUpon>MemberCase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCase.aspx.designer.cs">
+      <DependentUpon>MemberCase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseAuditHistory.ascx.cs">
+      <DependentUpon>MemberCaseAuditHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseAuditHistory.ascx.designer.cs">
+      <DependentUpon>MemberCaseAuditHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlan.ascx.cs">
+      <DependentUpon>MemberCaseCarePlan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlan.ascx.designer.cs">
+      <DependentUpon>MemberCaseCarePlan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlanGoal.ascx.cs">
+      <DependentUpon>MemberCaseCarePlanGoal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlanGoal.ascx.designer.cs">
+      <DependentUpon>MemberCaseCarePlanGoal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlanIntervention.ascx.cs">
+      <DependentUpon>MemberCaseCarePlanIntervention.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlanIntervention.ascx.designer.cs">
+      <DependentUpon>MemberCaseCarePlanIntervention.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlanInterventionActivity.ascx.cs">
+      <DependentUpon>MemberCaseCarePlanInterventionActivity.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlanInterventionActivity.ascx.designer.cs">
+      <DependentUpon>MemberCaseCarePlanInterventionActivity.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlanSelected.ascx.cs">
+      <DependentUpon>MemberCaseCarePlanSelected.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\MemberCase\MemberCaseCarePlanSelected.ascx.designer.cs">
+      <DependentUpon>MemberCaseCarePlanSelected.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Member\MemberProfile.aspx.cs">
+      <DependentUpon>MemberProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Member\MemberProfile.aspx.designer.cs">
+      <DependentUpon>MemberProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\PermissionDenied.aspx.cs">
+      <DependentUpon>PermissionDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\PermissionDenied.aspx.designer.cs">
+      <DependentUpon>PermissionDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Provider\ProviderProfile.aspx.cs">
+      <DependentUpon>ProviderProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Provider\ProviderProfile.aspx.designer.cs">
+      <DependentUpon>ProviderProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Templates\MemberCaseLinkTemplate.cs" />
+    <Compile Include="Application\Templates\MemberLinkTemplate.cs" />
+    <Compile Include="Application\Workflow\UserInteractions\ContactEntity.ascx.cs">
+      <DependentUpon>ContactEntity.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Workflow\UserInteractions\ContactEntity.ascx.designer.cs">
+      <DependentUpon>ContactEntity.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Workflow\UserInteractions\OpenImage.ascx.cs">
+      <DependentUpon>OpenImage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Workflow\UserInteractions\OpenImage.ascx.designer.cs">
+      <DependentUpon>OpenImage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Workflow\UserInteractions\PromptUser.ascx.cs">
+      <DependentUpon>PromptUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Workflow\UserInteractions\PromptUser.ascx.designer.cs">
+      <DependentUpon>PromptUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Workflow\UserInteractions\RequireForm.ascx.cs">
+      <DependentUpon>RequireForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Workflow\UserInteractions\RequireForm.ascx.designer.cs">
+      <DependentUpon>RequireForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Workflow\UserInteractions\SendCorrespondence.ascx.cs">
+      <DependentUpon>SendCorrespondence.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Workflow\UserInteractions\SendCorrespondence.ascx.designer.cs">
+      <DependentUpon>SendCorrespondence.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Workflow\Workflow.aspx.cs">
+      <DependentUpon>Workflow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Workflow\Workflow.aspx.designer.cs">
+      <DependentUpon>Workflow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Workflow\WorkflowControls\WorkflowSummary.ascx.cs">
+      <DependentUpon>WorkflowSummary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Workflow\WorkflowControls\WorkflowSummary.ascx.designer.cs">
+      <DependentUpon>WorkflowSummary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Workspace\Workspace.aspx.cs">
+      <DependentUpon>Workspace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Workspace\Workspace.aspx.designer.cs">
+      <DependentUpon>Workspace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Work\ManageWorkQueueGetWork.aspx.cs">
+      <DependentUpon>ManageWorkQueueGetWork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Work\ManageWorkQueueGetWork.aspx.designer.cs">
+      <DependentUpon>ManageWorkQueueGetWork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Work\WorkQueueItemDetail.aspx.cs">
+      <DependentUpon>WorkQueueItemDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Work\WorkQueueItemDetail.aspx.designer.cs">
+      <DependentUpon>WorkQueueItemDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Work\WorkQueueManagement.aspx.cs">
+      <DependentUpon>WorkQueueManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Work\WorkQueueManagement.aspx.designer.cs">
+      <DependentUpon>WorkQueueManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Work\WorkQueueMonitor.aspx.cs">
+      <DependentUpon>WorkQueueMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application\Work\WorkQueueMonitor.aspx.designer.cs">
+      <DependentUpon>WorkQueueMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFunctions.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOff.aspx.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOff.aspx.designer.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OpenApplication.aspx.cs">
+      <DependentUpon>OpenApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OpenApplication.aspx.designer.cs">
+      <DependentUpon>OpenApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBranding\NoBranding.Master.cs">
+      <DependentUpon>NoBranding.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBranding\NoBranding.Master.designer.cs">
+      <DependentUpon>NoBranding.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionDenied.aspx.cs">
+      <DependentUpon>PermissionDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PermissionDenied.aspx.designer.cs">
+      <DependentUpon>PermissionDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionExpired.aspx.cs">
+      <DependentUpon>SessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SessionExpired.aspx.designer.cs">
+      <DependentUpon>SessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Introduction.ascx.cs">
+      <DependentUpon>Introduction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Introduction.ascx.designer.cs">
+      <DependentUpon>Introduction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\ITourControl.cs" />
+    <Compile Include="Tour\Overview\NavigationHome.ascx.cs">
+      <DependentUpon>NavigationHome.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Overview\NavigationHome.ascx.designer.cs">
+      <DependentUpon>NavigationHome.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Overview\NavigationLogout.ascx.cs">
+      <DependentUpon>NavigationLogout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Overview\NavigationLogout.ascx.designer.cs">
+      <DependentUpon>NavigationLogout.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Overview\NavigationMenu.ascx.cs">
+      <DependentUpon>NavigationMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Overview\NavigationMenu.ascx.designer.cs">
+      <DependentUpon>NavigationMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Overview\NavigationSearch.ascx.cs">
+      <DependentUpon>NavigationSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Overview\NavigationSearch.ascx.designer.cs">
+      <DependentUpon>NavigationSearch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\Introduction.ascx.cs">
+      <DependentUpon>Introduction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\Introduction.ascx.designer.cs">
+      <DependentUpon>Introduction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueFilters.ascx.cs">
+      <DependentUpon>WorkQueueFilters.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueFilters.ascx.designer.cs">
+      <DependentUpon>WorkQueueFilters.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGrid.ascx.cs">
+      <DependentUpon>WorkQueueItemGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGrid.ascx.designer.cs">
+      <DependentUpon>WorkQueueItemGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridColumns.ascx.cs">
+      <DependentUpon>WorkQueueItemGridColumns.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridColumns.ascx.designer.cs">
+      <DependentUpon>WorkQueueItemGridColumns.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridColumns2.ascx.cs">
+      <DependentUpon>WorkQueueItemGridColumns2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridColumns2.ascx.designer.cs">
+      <DependentUpon>WorkQueueItemGridColumns2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridCount.ascx.cs">
+      <DependentUpon>WorkQueueItemGridCount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridCount.ascx.designer.cs">
+      <DependentUpon>WorkQueueItemGridCount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridRefresh.ascx.cs">
+      <DependentUpon>WorkQueueItemGridRefresh.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridRefresh.ascx.designer.cs">
+      <DependentUpon>WorkQueueItemGridRefresh.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridSenders.ascx.cs">
+      <DependentUpon>WorkQueueItemGridSenders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueItemGridSenders.ascx.designer.cs">
+      <DependentUpon>WorkQueueItemGridSenders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueSelection.ascx.cs">
+      <DependentUpon>WorkQueueSelection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueSelection.ascx.designer.cs">
+      <DependentUpon>WorkQueueSelection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueViewSelection.ascx.cs">
+      <DependentUpon>WorkQueueViewSelection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueManagement\WorkQueueViewSelection.ascx.designer.cs">
+      <DependentUpon>WorkQueueViewSelection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueMonitor\Introduction.ascx.cs">
+      <DependentUpon>Introduction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueMonitor\Introduction.ascx.designer.cs">
+      <DependentUpon>Introduction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueMonitor\WorkQueueMonitorAgingChart.ascx.cs">
+      <DependentUpon>WorkQueueMonitorAgingChart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueMonitor\WorkQueueMonitorAgingChart.ascx.designer.cs">
+      <DependentUpon>WorkQueueMonitorAgingChart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\WorkQueueMonitor\WorkQueueMonitorSummary.ascx.cs">
+      <DependentUpon>WorkQueueMonitorSummary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\WorkQueueMonitor\WorkQueueMonitorSummary.ascx.designer.cs">
+      <DependentUpon>WorkQueueMonitorSummary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\Introduction.ascx.cs">
+      <DependentUpon>Introduction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\Introduction.ascx.designer.cs">
+      <DependentUpon>Introduction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWork.ascx.cs">
+      <DependentUpon>MyAssignedWork.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWork.ascx.designer.cs">
+      <DependentUpon>MyAssignedWork.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWorkGridColumns.ascx.cs">
+      <DependentUpon>MyAssignedWorkGridColumns.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWorkGridColumns.ascx.designer.cs">
+      <DependentUpon>MyAssignedWorkGridColumns.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWorkGridColumns2.ascx.cs">
+      <DependentUpon>MyAssignedWorkGridColumns2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWorkGridColumns2.ascx.designer.cs">
+      <DependentUpon>MyAssignedWorkGridColumns2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWorkGridSenders.ascx.cs">
+      <DependentUpon>MyAssignedWorkGridSenders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWorkGridSenders.ascx.designer.cs">
+      <DependentUpon>MyAssignedWorkGridSenders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWorkRefresh.ascx.cs">
+      <DependentUpon>MyAssignedWorkRefresh.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyAssignedWorkRefresh.ascx.designer.cs">
+      <DependentUpon>MyAssignedWorkRefresh.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesCount.ascx.cs">
+      <DependentUpon>MyWorkQueuesCount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesCount.ascx.designer.cs">
+      <DependentUpon>MyWorkQueuesCount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesGetWork.ascx.cs">
+      <DependentUpon>MyWorkQueuesGetWork.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesGetWork.ascx.designer.cs">
+      <DependentUpon>MyWorkQueuesGetWork.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesManage.ascx.cs">
+      <DependentUpon>MyWorkQueuesManage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesManage.ascx.designer.cs">
+      <DependentUpon>MyWorkQueuesManage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesMonitor.ascx.cs">
+      <DependentUpon>MyWorkQueuesMonitor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesMonitor.ascx.designer.cs">
+      <DependentUpon>MyWorkQueuesMonitor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesSelection.ascx.cs">
+      <DependentUpon>MyWorkQueuesSelection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tour\Workspace\MyWorkQueuesSelection.ascx.designer.cs">
+      <DependentUpon>MyWorkQueuesSelection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserSessionInformation.aspx.cs">
+      <DependentUpon>UserSessionInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserSessionInformation.aspx.designer.cs">
+      <DependentUpon>UserSessionInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WindowClose.aspx.cs">
+      <DependentUpon>WindowClose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WindowClose.aspx.designer.cs">
+      <DependentUpon>WindowClose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WindowCloseDialog.aspx.cs">
+      <DependentUpon>WindowCloseDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WindowCloseDialog.aspx.designer.cs">
+      <DependentUpon>WindowCloseDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WindowLoading.aspx.cs">
+      <DependentUpon>WindowLoading.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WindowLoading.aspx.designer.cs">
+      <DependentUpon>WindowLoading.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\Automation\" />
+    <Folder Include="Application\Enterprise\PropertyPages\" />
+    <Folder Include="Application\Forms\FormDataEntry\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Images\Common48\" />
+    <Folder Include="Images\Common64\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mercury.Client\Mercury.Client.csproj">
+      <Project>{48D47D69-57F7-4E61-A0B6-573C28EE775D}</Project>
+      <Name>Mercury.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PageBranding\NoBranding.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application\Application.Master" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>80</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

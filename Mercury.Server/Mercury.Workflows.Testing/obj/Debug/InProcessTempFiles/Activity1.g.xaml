@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<this:Activity1 this:WorkflowManager="[Nothing]" this:WorkQueueItemId="0" mva:VisualBasic.Settings="Assembly references and imported namespaces for internal implementation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ms="clr-namespace:Mercury.Server;assembly=Mercury.Server" xmlns:msc="clr-namespace:Mercury.Server.Core;assembly=Mercury.Server" xmlns:msce="clr-namespace:Mercury.Server.Core.Entity;assembly=Mercury.Server" xmlns:msce1="clr-namespace:Mercury.Server.Core.Enumerations;assembly=Mercury.Server" xmlns:mscf="clr-namespace:Mercury.Server.Core.Forms;assembly=Mercury.Server" xmlns:mscm="clr-namespace:Mercury.Server.Core.Member;assembly=Mercury.Server" xmlns:mscw="clr-namespace:Mercury.Server.Core.Work;assembly=Mercury.Server" xmlns:msw="clr-namespace:Mercury.Server.Workflows;assembly=Mercury.Server" xmlns:mswa="clr-namespace:Mercury.Server.Workflows.Activities;assembly=Mercury.Server" xmlns:mswac="clr-namespace:Mercury.Server.Workflows.Activities.ContactEntity;assembly=Mercury.Server" xmlns:mswar="clr-namespace:Mercury.Server.Workflows.Activities.RequireForm;assembly=Mercury.Server" xmlns:mswas="clr-namespace:Mercury.Server.Workflows.Activities.SendCorrespondence;assembly=Mercury.Server" xmlns:mswaw="clr-namespace:Mercury.Server.Workflows.Activities.WorkQueueItem;assembly=Mercury.Server" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:this="clr-namespace:Mercury.Workflows.Testing;assembly=Mercury.Workflows.Testing" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <this:Activity1.Implementation>
+    <Sequence DisplayName="Main Workflow" sad:XamlDebuggerXmlReader.FileName="C:\Mercury.Development\Mercury.Server\Mercury.Workflows.Testing\Activity1.xaml">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Default="False" Name="ActivityCanceled" />
+        <Variable x:TypeArguments="x:Int32" Default="0" Name="ContactAttempts" />
+        <Variable x:TypeArguments="mscf:Form" Default="[Nothing]" Name="Form" />
+        <Variable x:TypeArguments="x:Boolean" Default="False" Name="FormSaveAsDraft" />
+        <Variable x:TypeArguments="msce1:ContactOutcome" Default="[ContactOutcome.NotSpecified]" Name="ContactOutcome" />
+        <Variable x:TypeArguments="x:Boolean" Default="False" Name="ContactSuccessful" />
+        <Variable x:TypeArguments="msce:EntityContact" Default="[Nothing]" Name="EntityContact" />
+        <Variable x:TypeArguments="mscw:WorkQueue" Default="[Nothing]" Name="WorkQueue" />
+        <Variable x:TypeArguments="x:String" Name="variable1" />
+        <Variable x:TypeArguments="x:Boolean" Default="False" Name="TestBoolean" />
+        <Variable x:TypeArguments="mscw:WorkQueueItem" Default="[Nothing]" Name="WorkQueueItem" />
+        <Variable x:TypeArguments="mscm:Member" Default="[Nothing]" Name="Member" />
+        <Variable x:TypeArguments="x:String" Name="variable2" />
+      </Sequence.Variables>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[TestBoolean]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="mscw:WorkQueueItem">[WorkQueueItem]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="mscw:WorkQueueItem">[WorkflowManager.Application.WorkQueueItemGet(WorkQueueItemId)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="mscm:Member">[Member]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="mscm:Member">[WorkflowManager.Application.MemberGet(WorkQueueItem.ItemObjectId)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <If Condition="[TestBoolean = False]">
+        <If.Then>
+          <Sequence>
+            <Assign>
+              <Assign.To>
+                <OutArgument x:TypeArguments="scg:List(msw:WorkflowStep)">[WorkflowSteps]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="scg:List(msw:WorkflowStep)">[New List(Of Workflows.WorkflowStep)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <mswaw:WorkQueueItemSuspend Success="{x:Null}" SuspendMessage="{x:Null}" ConstraintDays="0" MilestoneDays="0" ReleaseItem="False" SuspendWorkflow="True" WorkQueueItem="[WorkQueueItem]" WorkflowLastStep="Last Step" WorkflowManager="[WorkflowManager]" WorkflowNextStep="Next Step" WorkflowSteps="[WorkflowSteps]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence>
+            <mswac:ContactEntity ActivityCanceled="[ActivityCanceled]" AllowCancel="False" AllowEditContactDateTime="True" AllowEditRegarding="True" AutoSaveContact="False" ContactAttempts="[ContactAttempts]" ContactOutcome="[ContactOutcome]" ContactSuccessful="[ContactSuccessful]" Entity="[Member.Entity]" EntityContact="[EntityContact]" IntroductionScript="Introduction Script" RegardingMessage="Regarding Message" WorkQueueItemId="0" WorkflowManager="[WorkflowManager]" WorkflowSteps="[WorkflowSteps]" />
+            <mswar:RequireForm ActivityCanceled="[ActivityCanceled]" AllowCancel="True" AllowSaveAsDraft="True" Entity="[Member.Entity]" Form="[Form]" FormName="EPSDT Reminder Call Script" SaveAsDraft="[FormSaveAsDraft]" WorkQueueItemId="0" WorkflowManager="[WorkflowManager]" WorkflowSteps="[WorkflowSteps]" />
+            <mswas:SendCorrespondence ActivityCanceled="{x:Null}" EntityCorrespondence="{x:Null}" AllowAlternateAddress="False" AllowCancel="False" AllowFutureSendDate="False" AllowHistoricalSendDate="False" AllowSendByEmail="False" AllowSendByFacsimile="False" AllowSendByInPerson="False" AllowUserSelection="False" AlternateAddress="[Nothing]" AlternateEmail="[String.Empty]" AlternateFaxNumber="[String.Empty]" Attention="[String.Empty]" AutoSaveCorrespondence="True" CorrespondenceMessage="[String.Empty]" CorrespondenceName="Loss of Contact" Entity="[Member.Entity]" SendDate="[System.DateTime.Now]" WorkQueueItemId="0" WorkflowManager="[WorkflowManager]" WorkflowSteps="[WorkflowSteps]" />
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+  </this:Activity1.Implementation>
+</this:Activity1>

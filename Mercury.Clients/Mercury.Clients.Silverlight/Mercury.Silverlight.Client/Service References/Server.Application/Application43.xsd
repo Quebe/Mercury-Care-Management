@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Mercury.Server.Core.Individual.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="CarePlanStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="UnderDevelopment" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Closed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CarePlanStatus" nillable="true" type="tns:CarePlanStatus" />
+  <xs:simpleType name="CaseStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="UnderDevelopment" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Closed" />
+      <xs:enumeration value="Void" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CaseStatus" nillable="true" type="tns:CaseStatus" />
+  <xs:simpleType name="CarePlanGoalActivityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Intervention" />
+      <xs:enumeration value="MemberTask" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CarePlanGoalActivityType" nillable="true" type="tns:CarePlanGoalActivityType" />
+  <xs:simpleType name="CarePlanGoalTimeframe">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ShortTerm" />
+      <xs:enumeration value="LongTerm" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CarePlanGoalTimeframe" nillable="true" type="tns:CarePlanGoalTimeframe" />
+</xs:schema>
